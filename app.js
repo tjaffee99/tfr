@@ -164,51 +164,16 @@
     setYear(state.year);
   }
 
-  /* ---------------- timeline (TFR barcode of the selected place) ---------------- */
-  let tl = null;
+  /* ---------------- timeline: a plain range input with year ticks ---------------- */
   function drawTimeline() {
-    const el = $("#timeline"), svg = d3.select(el).select("svg");
-    svg.selectAll("*").remove();
-    const W = el.clientWidth, H = el.clientHeight;
-    if (!W) return;
-    const x = d3.scaleLinear().domain([Y0, maxYear()]).range([0, W]);
-    const s = state.loc ? state.byId.get(state.loc.id) : state.byId.get(900);
-    const stripY = 14, stripH = Math.max(12, H - 34);
-    const defs = svg.append("defs");
-    const pat = defs.append("pattern").attr("id", "tl-hatch").attr("width", 6).attr("height", 6)
-      .attr("patternUnits", "userSpaceOnUse").attr("patternTransform", "rotate(45)");
-    pat.append("line").attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 6).style("stroke", "var(--paper)").attr("stroke-width", 2).attr("opacity", 0.55);
-
-    svg.append("text").attr("class", "annot").attr("x", 0).attr("y", 9)
-      .text(s ? `${s.name} · fertility rate by year` : "");
-    const yrs = d3.range(Y0, maxYear() + 1);
-    const bw = W / yrs.length;
-    svg.append("g").selectAll("rect").data(yrs).join("rect")
-      .attr("x", (y) => x(y) - (y === Y0 ? 0 : bw / 2)).attr("width", (y) => (y === Y0 || y === maxYear() ? bw / 2 : bw) + 0.6)
-      .attr("y", stripY).attr("height", stripH)
-      .attr("fill", (y) => (s ? colorOf(tfrInfo(s, y).v) : "var(--nodata)"));
-    if (state.proj) {
-      svg.append("rect").attr("x", x(BASE)).attr("width", W - x(BASE)).attr("y", stripY).attr("height", stripH).attr("fill", "url(#tl-hatch)");
-      svg.append("text").attr("class", "annot").attr("x", W).attr("y", 9).attr("text-anchor", "end").text("projection →");
-    }
-    svg.append("line").attr("x1", x(BASE)).attr("x2", x(BASE)).attr("y1", stripY - 3).attr("y2", stripY + stripH + 3).style("stroke", "var(--ink)").attr("stroke-width", 1);
-    const ax = svg.append("g").attr("class", "axis");
-    const step = W < 420 ? 25 : W < 800 ? 10 : 10;
-    for (let y = Y0; y <= maxYear(); y += step) {
-      ax.append("line").attr("x1", x(y)).attr("x2", x(y)).attr("y1", stripY + stripH).attr("y2", stripY + stripH + 4).style("stroke", "var(--axis)");
-      if (y % (W < 560 ? 50 : 25) === 0 || (W >= 900 && y % 10 === 0))
-        ax.append("text").attr("x", x(y)).attr("y", stripY + stripH + 15).attr("text-anchor", y === Y0 ? "start" : y === maxYear() ? "end" : "middle").text(y);
-    }
-    if (maxYear() === BASE) ax.append("text").attr("x", W).attr("y", stripY + stripH + 15).attr("text-anchor", "end").text(BASE);
-    const cur = svg.append("g").attr("class", "cursor");
-    cur.append("rect").attr("y", stripY - 4).attr("height", stripH + 8).attr("width", 5).attr("x", -2.5).attr("rx", 1.5)
-      .style("fill", "none").style("stroke", "var(--ink)").attr("stroke-width", 2);
-    tl = { x: x.copy().range([2.5, W - 2.5]), cur };
-    moveTimelineCursor();
+    const max = maxYear(), thumb = 8; // keep labels aligned with the slider thumb's travel
+    const years = max === END ? [1950, 1975, 2000, BASE, 2050, 2075, 2100] : [1950, 1975, 2000, BASE];
+    $("#ticks").innerHTML = years.map((y) => {
+      const f = (y - Y0) / (max - Y0);
+      return `<span class="${y === BASE ? "today" : ""}" style="left:calc(${thumb}px + (100% - ${2 * thumb}px) * ${f.toFixed(4)})">${y === BASE ? "today" : y}</span>`;
+    }).join("");
   }
-  function moveTimelineCursor() {
-    if (tl) tl.cur.attr("transform", `translate(${tl.x(state.year)},0)`);
-  }
+  const moveTimelineCursor = () => {};
 
   /* ---------------- map ---------------- */
   let mapSvg, mapG, mapPaths, zoom;
@@ -222,7 +187,6 @@
       .attr("role", "img").attr("aria-label", "World map colored by total fertility rate. Click a country to explore it.");
     mapG = mapSvg.append("g");
     mapG.append("path").attr("class", "sphere").attr("d", path({ type: "Sphere" }));
-    mapG.append("path").attr("class", "graticule").attr("d", path(d3.geoGraticule10()));
     const feats = topojson.feature(state.topo, state.topo.objects.countries).features.filter((f) => f.properties.name !== "Antarctica");
     for (const f of feats) f.locId = GEO_ALIAS[f.properties.name] || GEO_ALIAS[f.id] || (f.id != null ? +f.id : null);
     mapPaths = mapG.selectAll("path.country").data(feats).join("path").attr("class", "country").attr("d", path)
@@ -389,21 +353,18 @@
   function buildDossier() {
     const loc = state.loc;
     $("#dossier").innerHTML = `
-      <div class="section-head"><h2>Selected</h2><div class="tools"><span class="kicker">Fig. 1 · population pyramid</span></div></div>
       <h2 class="name">${esc(loc.name)}</h2>
       <div class="figs" id="figs"></div>
       <p class="source-line" id="src-line"></p>
-      <div class="pyr-tools">
-        <div class="group">
-          <label class="kicker" for="compare">Outline</label>
-          <select id="compare">
+      <div class="pyr-head">
+        <h2>Population pyramid</h2>
+        <div class="toolbar">
+          <label class="sub" style="margin:0">Outline <select id="compare">
             <option value="today">${BASE} (today)</option>
             <option value="un">UN medium, same year</option>
             <option value="2000">2000</option><option value="1975">1975</option><option value="1950">1950</option>
             <option value="none">None</option>
-          </select>
-        </div>
-        <div class="group">
+          </select></label>
           <div class="seg" id="pyr-group"><button type="button" class="btn" data-g="5">5-yr</button><button type="button" class="btn" data-g="1">1-yr</button></div>
           <div class="seg" id="pyr-pct"><button type="button" class="btn" data-p="0">People</button><button type="button" class="btn" data-p="1">%</button></div>
         </div>
@@ -562,17 +523,17 @@
         <div class="lbl">Fertility path</div>
         <div class="seg" id="mode"><button type="button" class="btn" data-m="un">UN medium</button><button type="button" class="btn" data-m="custom">Custom</button><button type="button" class="btn" data-m="constant">Hold today</button></div>
         <div class="hint" id="mode-hint"></div>
-        <button type="button" class="btn ghost" id="reset" style="margin-top:8px">Reset</button>
+        <button type="button" class="btn" id="reset" style="margin-top:8px">Reset to UN medium</button>
       </div>
       <div class="ctl" id="ctl-target">
         <label class="lbl" for="target">Future TFR <output id="target-out"></output></label>
         <input class="rng" type="range" id="target" min="0.5" max="7" step="0.05">
-        <div class="presets" id="presets">${[0.8, 1.2, 1.6, 2.1, 3].map((v) => `<button type="button" class="btn ghost" data-v="${v}">${v}</button>`).join("")}</div>
+        <div class="presets" id="presets">${[0.8, 1.2, 1.6, 2.1, 3].map((v) => `<button type="button" class="btn" data-v="${v}">${v}</button>`).join("")}</div>
       </div>
       <div class="ctl" id="ctl-year">
         <label class="lbl" for="tyear">Reached by <output id="tyear-out"></output></label>
         <input class="rng" type="range" id="tyear" min="${BASE + 1}" max="${END}" step="1">
-        <div class="hint">A straight line from today's <span class="num">${sc.startTfr.toFixed(2)}</span> to the target, then held. Or drag the dot in Fig. 2.</div>
+        <div class="hint">A straight line from today's <span class="num">${sc.startTfr.toFixed(2)}</span> to your target, then holds. You can also drag the handle on the fertility chart.</div>
       </div>
       <div class="ctl">
         <label class="lbl" for="mig">Migration <output id="mig-out"></output></label>
@@ -655,11 +616,11 @@
     svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - M.b})`).call(d3.axisBottom(x).tickValues(xt).tickFormat(d3.format("d")).tickSize(3));
 
     if (xMax > BASE) {
-      svg.append("rect").attr("x", x(BASE)).attr("width", x(xMax) - x(BASE)).attr("y", M.t).attr("height", H - M.t - M.b).style("fill", "var(--hatch)");
-      svg.append("text").attr("class", "annot").attr("x", x(BASE) + 4).attr("y", M.t + 10).text("projection");
+      svg.append("line").attr("x1", x(BASE)).attr("x2", x(BASE)).attr("y1", M.t).attr("y2", H - M.b).style("stroke", "var(--axis)");
+      svg.append("text").attr("class", "annot").attr("x", x(BASE) + 4).attr("y", M.t + 9).text("projection →");
     }
     for (const h of o.hlines || []) {
-      svg.append("line").attr("x1", M.l).attr("x2", W - M.r).attr("y1", y(h.y)).attr("y2", y(h.y)).style("stroke", "var(--muted)").attr("stroke-dasharray", "1 3");
+      svg.append("line").attr("x1", M.l).attr("x2", W - M.r).attr("y1", y(h.y)).attr("y2", y(h.y)).style("stroke", "var(--muted)").attr("stroke-width", 1);
       svg.append("text").attr("class", "annot").attr("x", M.l + 4).attr("y", y(h.y) - 4).text(h.label);
     }
     if (band && band.length) svg.append("path").datum(band).style("fill", "var(--band)").attr("d", d3.area().x((p) => x(p[0])).y0((p) => y(p[1])).y1((p) => y(p[2])));
@@ -671,10 +632,10 @@
       if (s.endLabel) { const last = s.points.at(-1); svg.append("text").attr("class", "lbl-direct").attr("x", x(last[0]) + 5).attr("y", y(last[1]) + 4).text(s.endLabel(last[1])); }
     }
     for (const pt of (o.points || []).filter((p) => p.x <= xMax)) {
-      svg.append("circle").attr("cx", x(pt.x)).attr("cy", y(pt.y)).attr("r", 4).style("fill", pt.hollow ? "var(--paper)" : pt.color).style("stroke", pt.color).attr("stroke-width", 1.8);
+      svg.append("circle").attr("cx", x(pt.x)).attr("cy", y(pt.y)).attr("r", 4).style("fill", pt.hollow ? "var(--surface)" : pt.color).style("stroke", pt.color).attr("stroke-width", 1.8);
     }
 
-    const marker = svg.append("line").attr("y1", M.t).attr("y2", H - M.b).style("stroke", "var(--ink)").attr("stroke-width", 1.2);
+    const marker = svg.append("line").attr("class", "year-marker").attr("y1", M.t).attr("y2", H - M.b).style("stroke", "var(--ink)").attr("stroke-width", 1).attr("opacity", 0.35);
     const cross = svg.append("line").attr("y1", M.t).attr("y2", H - M.b).style("stroke", "var(--ink-2)").attr("opacity", 0).attr("stroke-dasharray", "2 2");
     const dots = svg.append("g");
     svg.append("rect").attr("x", M.l).attr("y", M.t).attr("width", W - M.l - M.r).attr("height", H - M.t - M.b).attr("fill", "transparent").style("cursor", "crosshair")
@@ -686,7 +647,7 @@
         for (const s of series) {
           const v = valueAt(s.points, yr);
           if (v == null) continue;
-          if (!s.area) dots.append("circle").attr("cx", x(yr)).attr("cy", y(v)).attr("r", 3.2).style("fill", s.color).style("stroke", "var(--paper)").attr("stroke-width", 1.5);
+          if (!s.area) dots.append("circle").attr("cx", x(yr)).attr("cy", y(v)).attr("r", 3.2).style("fill", s.color).style("stroke", "var(--surface)").attr("stroke-width", 1.5);
           html += `<div class="r"><span><i style="background:${s.color}"></i>${s.label}</span><b>${(s.tipFmt || o.tipFmt)(v)}</b></div>`;
         }
         for (const pt of o.points || []) if (pt.x === yr) html += `<div class="r"><span><i style="background:${pt.color}"></i>${pt.label}</span><b>${o.tipFmt(pt.y)}</b></div>`;
@@ -700,7 +661,7 @@
     if (o.handle) {
       const h = o.handle, hg = svg.append("g").attr("class", "handle").attr("transform", `translate(${x(h.x)},${y(h.y)})`).style("touch-action", "none");
       hg.append("circle").attr("r", 15).attr("fill", "transparent");
-      hg.append("circle").attr("r", 6.5).style("fill", "var(--scenario)").style("stroke", "var(--paper)").attr("stroke-width", 2.5);
+      hg.append("circle").attr("r", 6.5).style("fill", "var(--scenario)").style("stroke", "var(--surface)").attr("stroke-width", 2.5);
       hg.append("title").text("Drag to set target fertility and year");
       // redraws replace this element mid-gesture, so follow the pointer on the window against the live chart
       hg.on("pointerdown", (ev) => {
@@ -733,7 +694,7 @@
     const INK = "var(--ink)", UN = "var(--un)", SC = "var(--scenario)";
     const tfr2 = (v) => v.toFixed(2);
 
-    $("#c-tfr").previousElementSibling.textContent = on ? "Children per woman · drag the dot to set a target" : "Children per woman";
+    $("#c-tfr").previousElementSibling.textContent = on ? "Children per woman · drag the handle to set a target" : "Children per woman";
     $("#c-pop").previousElementSibling.textContent = on ? "Shaded: UN 95% prediction interval" : "UN estimates";
 
     // Fig 2 · fertility
@@ -839,7 +800,7 @@
     };
     search.addEventListener("change", go);
     search.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
-    $("#regions").insertAdjacentHTML("beforeend", REGION_ORDER.map((id) => `<button type="button" class="btn ghost" data-id="${id}">${REGION_LABEL[id]}</button>`).join(""));
+    $("#regions").insertAdjacentHTML("beforeend", REGION_ORDER.map((id) => `<button type="button" class="btn" data-id="${id}">${REGION_LABEL[id]}</button>`).join(""));
     $("#regions").onclick = (e) => { const b = e.target.closest("[data-id]"); if (b) selectLoc(+b.dataset.id); };
     for (const id of ["#ext-low", "#ext-high"]) $(id).onclick = (e) => { const li = e.target.closest("li[data-id]"); if (li) selectLoc(+li.dataset.id); };
   }
