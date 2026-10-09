@@ -221,7 +221,8 @@
       .on("click", (ev, f) => { ev.stopPropagation(); if (state.byId.has(f.locId)) pick(f.locId); });
     zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => mapG.attr("transform", ev.transform));
     mapSvg.call(zoom).on("dblclick.zoom", null);
-    mapSvg.on("click", () => zoomWorld()); // clicking the ocean zooms back out
+    // clicking the ocean goes back to the whole world: map view and selection
+    mapSvg.on("click", () => { if (state.loc && state.loc.id === 900) zoomWorld(); else pick(900); });
     $("#zin").onclick = () => mapSvg.transition().duration(250).call(zoom.scaleBy, 1.6);
     $("#zout").onclick = () => mapSvg.transition().duration(250).call(zoom.scaleBy, 1 / 1.6);
     colorMap();
