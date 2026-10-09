@@ -3,6 +3,9 @@ import json, math, os, sys
 import numpy as np
 import pandas as pd
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from names import conventional
+
 W = os.environ.get("WPP_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "wpp"))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
 os.makedirs(os.path.join(OUT, "loc"), exist_ok=True)
@@ -137,7 +140,7 @@ for _, L in locs.iterrows():
                 variants[key] = {"y0": int(d.Time.iloc[0]),
                                  "pop": [rnd(v * 1000, 0) for v in d.TPopulation1July],
                                  "tfr": [rnd(v, 3) for v in d.TFR]}
-    name = L.Location if lid not in REGIONS else REGIONS[lid]
+    name = conventional(L.Location if lid not in REGIONS else REGIONS[lid])
     rec = {
         "id": lid, "iso3": L.ISO3_code if isinstance(L.ISO3_code, str) else None, "name": name,
         "base": {"year": BASE, "m": [round(v) for v in m], "f": [round(v) for v in f]},

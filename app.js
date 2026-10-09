@@ -18,17 +18,17 @@
 
   const state = {
     summary: null, byId: new Map(), topo: null,
-    year: BASE, proj: true,
+    year: BASE, proj: false, popMode: "count",
     loc: null, pyr: null, sc: null, result: null, resByYear: null, pyrMax: 0,
     compare: "today", pyrGroup: 5, pyrPct: false,
-    tableSort: { key: "tfr", dir: -1 }, view: "map",
+    tableSort: { key: "tfr", dir: 1 }, view: "map",
     cache: new Map(), playTimer: null, hoverId: null,
   };
 
   /* ---------------- helpers ---------------- */
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const maxYear = () => (state.proj ? END : BASE);
+  const maxYear = () => (state.proj ? END : BASE); // last year shown in charts
 
   function fmtPop(n) {
     if (n == null || !isFinite(n)) return "–";
@@ -81,7 +81,7 @@
   function tfrInfo(s, y) {
     if (state.proj && y > BASE && state.loc && s.id === state.loc.id && state.resByYear) {
       const d = state.resByYear.get(y);
-      return { v: d.tfr, kind: "scenario", label: state.sc.mode === "un" ? `${y} UN medium projection` : `${y} · your scenario`, src: state.sc.mode === "un" ? "UN WPP 2024" : "Your scenario" };
+      return { v: d.tfr, kind: "scenario", label: `${y} projection`, src: state.sc.mode === "un" ? "default (UN medium fertility)" : "your scenario" };
     }
     const obs = s.obs || [];
     let o = obs.find((d) => d.year === y);
@@ -95,7 +95,7 @@
   }
 
   function yearStatus(y) {
-    if (y > BASE) return { text: state.sc && state.sc.mode !== "un" ? "Projection · your scenario" : "Projection · UN medium", proj: true };
+    if (y > BASE) return { text: state.sc && state.sc.mode !== "un" ? "Projection · your scenario" : "Projection · default (UN medium)", proj: true };
     if (y === BASE) return { text: "Today · latest data", proj: false };
     if (y >= 2024) return { text: "Reported where available", proj: false };
     return { text: "UN estimates", proj: false };
@@ -115,7 +115,7 @@
       const sc = state.sc, p = new URLSearchParams();
       p.set("loc", state.loc.id);
       p.set("yr", state.year);
-      if (!state.proj) p.set("proj", "0");
+      if (state.proj) p.set("proj", "1");
       if (sc.mode !== "un") p.set("mode", sc.mode);
       if (sc.mode === "custom") { p.set("tfr", sc.target.toFixed(2)); p.set("by", sc.targetYear); }
       if (sc.migMult !== 1) p.set("mig", Math.round(sc.migMult * 100));
@@ -126,7 +126,8 @@
 
   /* ---------------- master year ---------------- */
   function setYear(y) {
-    y = Math.max(Y0, Math.min(maxYear(), Math.round(y)));
+    y = Math.max(Y0, Math.min(END, Math.round(y)));
+    if (y > BASE && !state.proj) { state.year = y; setProjections(true); return; }
     state.year = y;
     const inp = $("#year");
     if (+inp.value !== y) inp.value = y;
@@ -141,33 +142,36 @@
     writeHash();
   }
 
+  function stopPlay() {
+    if (!state.playTimer) return;
+    clearInterval(state.playTimer); state.playTimer = null;
+    $("#play").textContent = "▶"; $("#play").setAttribute("aria-label", "Play through the years");
+  }
+  // Play stops at today; pressing play again continues into the projection.
   function togglePlay() {
-    const btn = $("#play");
-    if (state.playTimer) { clearInterval(state.playTimer); state.playTimer = null; btn.textContent = "▶"; btn.setAttribute("aria-label", "Play through the years"); return; }
-    if (state.year >= maxYear()) setYear(Y0);
-    btn.textContent = "❚❚"; btn.setAttribute("aria-label", "Pause");
+    if (state.playTimer) return stopPlay();
+    if (state.year >= END) setYear(Y0);
+    const stopAt = state.year < BASE ? BASE : END;
+    $("#play").textContent = "❚❚"; $("#play").setAttribute("aria-label", "Pause");
     state.playTimer = setInterval(() => {
-      if (state.year >= maxYear()) { togglePlay(); return; }
+      if (state.year >= stopAt) return stopPlay();
       setYear(state.year + 1);
     }, 140);
   }
 
   function setProjections(on) {
     state.proj = on;
-    $("#proj").checked = on;
-    $("#year").max = maxYear();
+    for (const b of $$("#proj-seg .btn")) b.setAttribute("aria-pressed", (b.dataset.on === "1") === on);
     $("#future").classList.toggle("off", !on);
-    $("#future-title").textContent = on ? "The road to 2100" : "How we got here";
-    if (state.year > maxYear()) state.year = maxYear();
-    drawTimeline();
+    if (!on && state.year > BASE) state.year = BASE;
     if (state.loc) { computePyrMax(); drawFutureCharts(); }
     setYear(state.year);
   }
 
   /* ---------------- timeline: a plain range input with year ticks ---------------- */
   function drawTimeline() {
-    const max = maxYear(), thumb = 8; // keep labels aligned with the slider thumb's travel
-    const years = max === END ? [1950, 1975, 2000, BASE, 2050, 2075, 2100] : [1950, 1975, 2000, BASE];
+    const max = END, thumb = 8; // keep labels aligned with the slider thumb's travel
+    const years = [1950, 1975, 2000, BASE, 2050, 2075, 2100];
     $("#ticks").innerHTML = years.map((y) => {
       const f = (y - Y0) / (max - Y0);
       return `<span class="${y === BASE ? "today" : ""}" style="left:calc(${thumb}px + (100% - ${2 * thumb}px) * ${f.toFixed(4)})">${y === BASE ? "today" : y}</span>`;
@@ -193,12 +197,8 @@
       .on("mousemove", (ev, f) => {
         const s = state.byId.get(f.locId);
         if (!s) return showTip(`<div class="t">${esc(f.properties.name)}</div><div class="m">No data</div>`, ev);
-        const info = tfrInfo(s, state.year);
         state.hoverId = s.id; drawLegendMarkers();
-        showTip(`<div class="t">${esc(s.name)}</div>
-          <div class="r"><span><i style="background:${colorOf(info.v)}"></i>Fertility rate</span><b>${info.v != null ? info.v.toFixed(2) : "–"}</b></div>
-          <div class="r"><span>Population</span><b>${fmtPop(popAt(s, state.year))}</b></div>
-          <div class="m">${esc(info.label)} · ${esc(info.src)}</div>`, ev);
+        showTip(locTip(s), ev);
       })
       .on("mouseleave", () => { hideTip(); state.hoverId = null; drawLegendMarkers(); })
       .on("click", (ev, f) => { if (state.byId.has(f.locId)) selectLoc(f.locId); });
@@ -209,6 +209,14 @@
     colorMap();
   }
 
+  function locTip(s) {
+    const info = tfrInfo(s, state.year);
+    return `<div class="t">${esc(s.name)}</div>
+      <div class="r"><span><i style="background:${colorOf(info.v)}"></i>Fertility rate</span><b>${info.v != null ? info.v.toFixed(2) : "–"}</b></div>
+      <div class="r"><span>Population</span><b>${fmtPop(popAt(s, state.year))}</b></div>
+      <div class="m">${esc(info.label)} · ${esc(info.src)}</div>`;
+  }
+
   function colorMap() {
     if (mapPaths) {
       mapPaths.attr("fill", (f) => { const s = state.byId.get(f.locId); return s ? colorOf(tfrInfo(s, state.year).v) : "var(--nodata)"; })
@@ -216,19 +224,7 @@
       mapPaths.filter(".selected").raise();
     }
     drawLegendMarkers();
-    renderExtremes();
     if (state.view === "table") renderTable();
-  }
-
-  function renderExtremes() {
-    const y = state.year;
-    const rows = state.summary.locs.filter((s) => !s.region && popAt(s, y) >= 1e6)
-      .map((s) => ({ s, v: tfrInfo(s, y).v })).filter((r) => r.v != null).sort((a, b) => a.v - b.v);
-    const li = (r, i) => `<li data-id="${r.s.id}" class="${state.loc && r.s.id === state.loc.id ? "sel" : ""}"><span class="rk">${i}</span><span class="nm">${esc(r.s.name)}</span>` +
-      `<span class="bar" style="width:${Math.min(100, Math.max(4, (r.v / 7.5) * 100)).toFixed(1)}%;background:${colorOf(r.v)}"></span><span class="vv">${r.v.toFixed(2)}</span></li>`;
-    $("#ext-low").innerHTML = rows.slice(0, 8).map((r, i) => li(r, i + 1)).join("");
-    $("#ext-high").innerHTML = rows.slice(-8).reverse().map((r, i) => li(r, rows.length - i)).join("");
-    $("#ext-year").textContent = y;
   }
 
   // legend: continuous gradient on a log axis, with markers for the selected / hovered place
@@ -269,36 +265,41 @@
 
   function setView(v) {
     state.view = v;
-    $("#view-map").setAttribute("aria-pressed", v === "map");
-    $("#view-table").setAttribute("aria-pressed", v === "table");
+    for (const b of $$("[data-view]")) b.setAttribute("aria-pressed", b.dataset.view === v);
     $("#mapwrap").style.display = v === "map" ? "" : "none";
     $("#table-view").style.display = v === "table" ? "block" : "none";
+    $("#about-view").style.display = v === "about" ? "block" : "none";
     if (v === "table") renderTable();
   }
 
   function renderTable() {
     const { key, dir } = state.tableSort, y = state.year;
-    const rows = state.summary.locs.filter((s) => !s.region).map((s) => {
-      const i = tfrInfo(s, y);
-      return { id: s.id, name: s.name, tfr: i.v, label: i.label, src: i.src, pop: popAt(s, y) };
-    });
+    const rows = state.summary.locs.filter((s) => !s.region).map((s) => ({ s, id: s.id, name: s.name, tfr: tfrInfo(s, y).v, pop: popAt(s, y) }));
+    [...rows].filter((r) => r.tfr != null).sort((a, b) => a.tfr - b.tfr).forEach((r, i) => (r.rank = i + 1));
     rows.sort((a, b) => {
       const va = a[key], vb = b[key];
       if (va == null) return 1;
       if (vb == null) return -1;
       return (typeof va === "string" ? va.localeCompare(vb) : va - vb) * dir;
     });
-    const th = (k, l, cls = "") => `<th class="${cls}" data-k="${k}">${l}${key === k ? (dir > 0 ? " ↑" : " ↓") : ""}</th>`;
-    $("#table-view").innerHTML = `<table><thead><tr>${th("name", "Country")}${th("tfr", "TFR " + y, "n")}<th>Basis</th>${th("pop", "Population", "n")}</tr></thead><tbody>` +
-      rows.map((r) => `<tr data-id="${r.id}"><td>${esc(r.name)}</td><td class="n"><span class="chip" style="background:${colorOf(r.tfr)}"></span>${r.tfr != null ? r.tfr.toFixed(2) : "–"}</td><td>${esc(r.label)} · ${esc(r.src)}</td><td class="n">${fmtPop(r.pop)}</td></tr>`).join("") +
-      "</tbody></table>";
-    $("#table-view thead").onclick = (e) => {
+    const arrow = (k) => (key === k ? (dir > 0 ? " ↑" : " ↓") : "");
+    const tv = $("#table-view"), top = tv.scrollTop;
+    tv.innerHTML = `<table><thead><tr><th class="rk" data-k="rank">#${arrow("rank")}</th><th data-k="name">Country${arrow("name")}</th>` +
+      `<th class="tfr" data-k="tfr">TFR ${y}${arrow("tfr")}</th><th class="pop" data-k="pop"><span class="lg">Population</span><span class="sm">Pop.</span>${arrow("pop")}</th></tr></thead><tbody>` +
+      rows.map((r) => `<tr data-id="${r.id}"${state.loc && r.id === state.loc.id ? ' class="sel"' : ""}><td class="rk">${r.rank ?? ""}</td><td class="nm">${esc(r.name)}</td>` +
+        `<td><div class="tfrv"><div class="bw"><span style="width:${r.tfr != null ? Math.min(100, (r.tfr / 7) * 100).toFixed(1) : 0}%;background:${colorOf(r.tfr)}"></span></div><b>${r.tfr != null ? r.tfr.toFixed(2) : "–"}</b></div></td>` +
+        `<td class="pop">${fmtPop(r.pop)}</td></tr>`).join("") + "</tbody></table>";
+    tv.scrollTop = top;
+    tv.querySelector("thead").onclick = (e) => {
       const k = e.target.closest("th")?.dataset.k;
       if (!k) return;
-      state.tableSort = { key: k, dir: state.tableSort.key === k ? -state.tableSort.dir : k === "name" ? 1 : -1 };
+      state.tableSort = { key: k, dir: state.tableSort.key === k ? -state.tableSort.dir : k === "name" || k === "rank" ? 1 : -1 };
       renderTable();
     };
-    $("#table-view tbody").onclick = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) selectLoc(+tr.dataset.id); };
+    const body = tv.querySelector("tbody");
+    body.onclick = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) selectLoc(+tr.dataset.id); };
+    body.onmousemove = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) showTip(locTip(state.byId.get(+tr.dataset.id)), e); };
+    body.onmouseleave = hideTip;
   }
 
   /* ---------------- selection & scenario ---------------- */
@@ -328,7 +329,7 @@
     state.sc = {
       mode: h.mode === "custom" || h.mode === "constant" ? h.mode : "un",
       startTfr: st,
-      target: h.tfr ? Math.min(7, Math.max(0.5, +h.tfr)) : Math.round(st * 20) / 20,
+      target: h.tfr ? Math.min(10, Math.max(0, +h.tfr)) : Math.round(st * 100) / 100,
       targetYear: h.by ? Math.min(END, Math.max(BASE + 1, +h.by)) : 2050,
       migMult: h.mig != null ? Math.min(2, Math.max(0, +h.mig / 100)) : 1,
       mortality: h.mort === "frozen" ? "frozen" : "un",
@@ -359,7 +360,7 @@
       <div class="pyr-head">
         <h2>Population pyramid</h2>
         <div class="toolbar">
-          <label class="sub" style="margin:0">Outline <select id="compare">
+          <label class="sub" style="margin:0">Outline <select id="compare" style="max-width:150px">
             <option value="today">${BASE} (today)</option>
             <option value="un">UN medium, same year</option>
             <option value="2000">2000</option><option value="1975">1975</option><option value="1950">1950</option>
@@ -404,6 +405,11 @@
   function pyramidAt(y) {
     if (state.proj && y >= BASE) { const d = state.resByYear.get(y); return { m: d.m, f: d.f, year: y, kind: "scenario" }; }
     return { ...histPyr(y), kind: "un" };
+  }
+  function ageCounts(m, f) {
+    let k = 0, w = 0, o = 0;
+    for (let x = 0; x <= 100; x++) { const p = m[x] + f[x]; if (x < 15) k += p; else if (x < 65) w += p; else o += p; }
+    return { kids: k, work: w, old: o, total: k + w + o };
   }
   function ageShares(m, f) {
     let k = 0, w = 0, o = 0;
@@ -455,7 +461,7 @@
     else max = state.pyrMax[g];
     max *= 1.04;
 
-    const W = el.clientWidth || 420, H = Math.max(330, Math.min(470, W * 0.85));
+    const W = el.clientWidth || 420, H = el.clientHeight || 360;
     const mid = 34, M = { t: 24, r: 4, b: 24, l: 4 };
     const half = (W - M.l - M.r - mid) / 2;
     const xL = d3.scaleLinear().domain([0, max]).range([M.l + half, M.l]);
@@ -463,7 +469,7 @@
     const y = d3.scaleBand().domain(d3.range(gm.length)).range([H - M.b, M.t]).paddingInner(g === 5 ? 0.14 : 0.05);
 
     d3.select(el).selectAll("*").remove();
-    const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("height", H)
+    const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`)
       .attr("role", "img").attr("aria-label", `Population pyramid for ${state.loc.name}, ${year}`);
     const nT = Math.max(2, Math.floor(half / 64));
     const ticks = xR.ticks(nT), fmtX = pct ? xR.tickFormat(nT, "%") : fmtAxisPop;
@@ -521,13 +527,13 @@
     $("#scenario").innerHTML = `
       <div class="ctl">
         <div class="lbl">Fertility path</div>
-        <div class="seg" id="mode"><button type="button" class="btn" data-m="un">UN medium</button><button type="button" class="btn" data-m="custom">Custom</button><button type="button" class="btn" data-m="constant">Hold today</button></div>
+        <div class="seg" id="mode"><button type="button" class="btn" data-m="un">Default</button><button type="button" class="btn" data-m="custom">Custom</button><button type="button" class="btn" data-m="constant">Hold today</button></div>
         <div class="hint" id="mode-hint"></div>
-        <button type="button" class="btn" id="reset" style="margin-top:8px">Reset to UN medium</button>
+        <button type="button" class="btn" id="reset" style="margin-top:8px">Reset</button>
       </div>
       <div class="ctl" id="ctl-target">
-        <label class="lbl" for="target">Future TFR <output id="target-out"></output></label>
-        <input class="rng" type="range" id="target" min="0.5" max="7" step="0.05">
+        <div class="lbl"><label for="target">Future TFR</label><output id="target-out" class="editable" tabindex="0" title="Double-click to type an exact value"></output></div>
+        <input class="rng" type="range" id="target" min="0" max="7" step="0.01">
         <div class="presets" id="presets">${[0.8, 1.2, 1.6, 2.1, 3].map((v) => `<button type="button" class="btn" data-v="${v}">${v}</button>`).join("")}</div>
       </div>
       <div class="ctl" id="ctl-year">
@@ -547,7 +553,27 @@
     $("#presets").onclick = (e) => { const b = e.target.closest("[data-v]"); if (b) { sc.target = +b.dataset.v; sc.mode = "custom"; update(); } };
     $("#mig").oninput = (e) => { sc.migMult = +e.target.value; update(); };
     $("#mort").onchange = (e) => { sc.mortality = e.target.checked ? "un" : "frozen"; update(); };
-    $("#reset").onclick = () => { Object.assign(sc, { mode: "un", target: Math.round(sc.startTfr * 20) / 20, targetYear: 2050, migMult: 1, mortality: "un" }); update(); };
+    $("#reset").onclick = () => { Object.assign(sc, { mode: "un", target: Math.round(sc.startTfr * 100) / 100, targetYear: 2050, migMult: 1, mortality: "un" }); update(); };
+
+    // double-click (or Enter) the value to type an exact target, to 0.01
+    const out = $("#target-out");
+    const edit = () => {
+      const inp = document.createElement("input");
+      Object.assign(inp, { type: "number", step: "0.01", min: "0", max: "10", value: sc.target.toFixed(2), className: "num-edit" });
+      inp.setAttribute("aria-label", "Future TFR");
+      out.replaceWith(inp); inp.focus(); inp.select();
+      let done = false;
+      const finish = (commit) => {
+        if (done) return; done = true;
+        const v = parseFloat(inp.value);
+        if (commit && isFinite(v)) { sc.target = Math.round(Math.min(10, Math.max(0, v)) * 100) / 100; sc.mode = "custom"; }
+        inp.replaceWith(out); update();
+      };
+      inp.addEventListener("keydown", (e) => { if (e.key === "Enter") finish(true); else if (e.key === "Escape") finish(false); });
+      inp.addEventListener("blur", () => finish(true));
+    };
+    out.addEventListener("dblclick", edit);
+    out.addEventListener("keydown", (e) => { if (e.key === "Enter") edit(); });
   }
 
   function syncScenario() {
@@ -560,7 +586,7 @@
     $("#ctl-target").classList.toggle("disabled", sc.mode !== "custom");
     $("#ctl-year").classList.toggle("disabled", sc.mode !== "custom");
     $("#mode-hint").textContent = sc.mode === "un"
-      ? `UN: ${unAt(loc, "tfr", BASE).toFixed(2)} now → ${unAt(loc, "tfr", END).toFixed(2)} by 2100.`
+      ? `The UN medium fertility projection: ${unAt(loc, "tfr", BASE).toFixed(2)} now → ${unAt(loc, "tfr", END).toFixed(2)} by 2100.`
       : sc.mode === "constant" ? `Stays at ${sc.startTfr.toFixed(2)} forever.` : `${sc.startTfr.toFixed(2)} → ${sc.target.toFixed(2)} by ${sc.targetYear}.`;
   }
 
@@ -623,10 +649,10 @@
       svg.append("line").attr("x1", M.l).attr("x2", W - M.r).attr("y1", y(h.y)).attr("y2", y(h.y)).style("stroke", "var(--muted)").attr("stroke-width", 1);
       svg.append("text").attr("class", "annot").attr("x", M.l + 4).attr("y", y(h.y) - 4).text(h.label);
     }
-    if (band && band.length) svg.append("path").datum(band).style("fill", "var(--band)").attr("d", d3.area().x((p) => x(p[0])).y0((p) => y(p[1])).y1((p) => y(p[2])));
     if (o.stack) o.stack(svg, x, y, xMax);
+    if (band && band.length) svg.append("path").datum(band).style("fill", "var(--band)").attr("d", d3.area().x((p) => x(p[0])).y0((p) => y(p[1])).y1((p) => y(p[2])));
     for (const s of series) {
-      if (s.area || !s.points.length) continue;
+      if (s.area || s.hidden || !s.points.length) continue;
       svg.append("path").datum(s.points).attr("fill", "none").style("stroke", s.color).attr("stroke-width", s.width || 1.8)
         .attr("stroke-dasharray", s.dash ? "5 3" : null).attr("stroke-linejoin", "round").attr("d", d3.line().x((p) => x(p[0])).y((p) => y(p[1])));
       if (s.endLabel) { const last = s.points.at(-1); svg.append("text").attr("class", "lbl-direct").attr("x", x(last[0]) + 5).attr("y", y(last[1]) + 4).text(s.endLabel(last[1])); }
@@ -671,7 +697,7 @@
           if (!svgEl || !c) return;
           const r = svgEl.getBoundingClientRect(), k = c.W / r.width;
           h.onDrag(Math.round(Math.max(BASE + 1, Math.min(END, c.x.invert((e.clientX - r.left) * k)))),
-            Math.round(Math.max(0.5, Math.min(7, c.y.invert((e.clientY - r.top) * k))) * 20) / 20);
+            Math.round(Math.max(0, Math.min(7, c.y.invert((e.clientY - r.top) * k))) * 20) / 20);
         };
         const up = () => { window.removeEventListener("pointermove", move); window.removeEventListener("pointerup", up); };
         window.addEventListener("pointermove", move); window.addEventListener("pointerup", up);
@@ -695,7 +721,6 @@
     const tfr2 = (v) => v.toFixed(2);
 
     $("#c-tfr").previousElementSibling.textContent = on ? "Children per woman · drag the handle to set a target" : "Children per woman";
-    $("#c-pop").previousElementSibling.textContent = on ? "Shaded: UN 95% prediction interval" : "UN estimates";
 
     // Fig 2 · fertility
     const obs = (s.obs || []).map((o) => ({ x: o.year, y: o.tfr, color: "var(--deaths)", hollow: o.kind === "estimate", label: o.kind === "estimate" ? "Estimate (births so far)" : "Reported" }));
@@ -719,17 +744,33 @@
       } : null,
     });
 
-    // Fig 3 · population
+    // population by age group: counts (stacked to the total) or shares
+    const share = state.popMode === "share";
+    for (const b of $$("#pop-mode .btn")) b.setAttribute("aria-pressed", b.dataset.mode === state.popMode);
+    const ages = range(Y0, on ? BASE - 1 : BASE).map((y) => { const p = histPyr(y); return { year: y, ...ageCounts(p.m, p.f) }; })
+      .concat(on ? res.map((d) => ({ year: d.year, ...ageCounts(d.m, d.f) })) : []);
+    const rows = share ? ages.map((d) => ({ year: d.year, kids: d.kids / d.total, work: d.work / d.total, old: d.old / d.total, total: 1 })) : ages;
+    const ageKeys = [["old", "65+", "var(--age3)"], ["work", "15–64", "var(--age2)"], ["kids", "Under 15", "var(--age1)"]];
+    const fmtV = share ? (v) => (v * 100).toFixed(1) + "%" : fmtPop;
     const v = loc.variants || {};
-    const band = on && v.lo95 && v.hi95 ? v.lo95.pop.map((lo, i) => [v.lo95.y0 + i, lo, v.hi95.pop[i]]).filter((p) => p[0] >= BASE && p[1] != null && p[2] != null) : null;
+    const band = !share && on && v.lo95 && v.hi95 ? v.lo95.pop.map((lo, i) => [v.lo95.y0 + i, lo, v.hi95.pop[i]]).filter((p) => p[0] >= BASE && p[1] != null && p[2] != null) : null;
+    $("#pop-sub").textContent = share ? "Share of the population by age group" : on ? "Stacked to the total · dashed: UN medium total · shaded: UN 95% range" : "Stacked to the total population";
     charts.pop = lineChart($("#c-pop"), {
+      height: 250,
       series: [
-        { label: "UN estimates", color: INK, points: unSeries("pop", Y0, BASE) },
-        { label: "UN medium", color: UN, dash: true, points: on ? unSeries("pop", BASE, END) : [] },
-        { label: sc.mode === "un" ? "Projection" : "Your scenario", color: SC, width: 2.6, points: scen((d) => d.pop), endLabel: fmtPop },
+        ...ageKeys.map(([k, l, c]) => ({ label: l, color: c, area: true, points: rows.map((d) => [d.year, d[k]]), tipFmt: fmtV })),
+        ...(share ? [] : [{ label: "Total", color: "var(--ink)", hidden: true, legend: false, points: rows.map((d) => [d.year, d.total]) }]),
+        ...(share || !on ? [] : [{ label: "UN medium total", color: "var(--ink-2)", dash: true, width: 1.5, points: unSeries("pop", BASE, END) }]),
       ],
       band: band && band.length ? { label: "UN 95% range", points: band } : null,
-      yFmt: fmtAxisPop, tipFmt: fmtPop,
+      yDomain: share ? [0, 1] : null, yFmt: share ? d3.format(".0%") : fmtAxisPop, tipFmt: fmtV,
+      stack: (svg, x, y) => {
+        const order = ["kids", "work", "old"], color = { kids: "var(--age1)", work: "var(--age2)", old: "var(--age3)" };
+        d3.stack().keys(order)(rows).forEach((layer, i) => {
+          svg.append("path").datum(layer).style("fill", color[order[i]])
+            .attr("d", d3.area().x((p) => x(p.data.year)).y0((p) => y(p[0]) - (i ? 0.5 : 0)).y1((p) => y(p[1]) + (i < 2 ? 0.5 : 0)));
+        });
+      },
     });
 
     // Fig 4 · births and deaths
@@ -740,22 +781,6 @@
         { label: "Deaths", color: "var(--deaths)", width: 2, points: unSeries("deaths", Y0, on ? BASE - 1 : BASE).concat(on ? fut("deaths") : []) },
       ],
       yFmt: fmtAxisPop, tipFmt: fmtPop,
-    });
-
-    // Fig 5 · age structure (annual: UN pyramids to 2025, then the scenario)
-    const shares = range(Y0, on ? BASE - 1 : BASE).map((y) => { const p = histPyr(y); return { year: y, ...ageShares(p.m, p.f) }; })
-      .concat(on ? res.map((d) => ({ year: d.year, ...ageShares(d.m, d.f) })) : []);
-    const ageKeys = [["old", "65+", "var(--age3)"], ["work", "15–64", "var(--age2)"], ["kids", "Under 15", "var(--age1)"]];
-    const pctFmt = (v) => (v * 100).toFixed(1) + "%";
-    charts.age = lineChart($("#c-age"), {
-      series: ageKeys.map(([k, l, c]) => ({ label: l, color: c, area: true, points: shares.map((d) => [d.year, d[k]]), tipFmt: pctFmt })),
-      yDomain: [0, 1], yFmt: d3.format(".0%"), tipFmt: pctFmt,
-      stack: (svg, x, y) => {
-        d3.stack().keys(["old", "work", "kids"])(shares).forEach((layer, i) => {
-          svg.append("path").datum(layer).style("fill", ageKeys[i][2])
-            .attr("d", d3.area().x((p) => x(p.data.year)).y0((p) => y(p[0]) - (i ? 1 : 0)).y1((p) => y(p[1]) + (i < 2 ? 1 : 0)));
-        });
-      },
     });
 
     // Fig 6 · median age
@@ -782,12 +807,22 @@
 
   /* ---------------- controls & boot ---------------- */
   function setupControls() {
-    $("#year").addEventListener("input", (e) => setYear(+e.target.value));
+    // Dragging pauses playback and catches at today: a drag can't cross 2026; release and drag again to go on.
+    const yr = $("#year");
+    let dragFrom = null;
+    yr.addEventListener("pointerdown", () => { stopPlay(); dragFrom = state.year; });
+    for (const ev of ["pointerup", "pointercancel"]) window.addEventListener(ev, () => (dragFrom = null));
+    yr.addEventListener("input", () => {
+      stopPlay();
+      let v = +yr.value;
+      if (dragFrom != null && ((dragFrom < BASE && v > BASE) || (dragFrom > BASE && v < BASE))) { v = BASE; yr.value = BASE; }
+      setYear(v);
+    });
     $("#play").onclick = togglePlay;
-    $("#proj").onchange = (e) => setProjections(e.target.checked);
-    $("#today-btn").onclick = () => setYear(BASE);
-    $("#view-map").onclick = () => setView("map");
-    $("#view-table").onclick = () => setView("table");
+    $("#today-btn").onclick = () => { stopPlay(); setYear(BASE); };
+    $("#proj-seg").onclick = (e) => { const b = e.target.closest("[data-on]"); if (b) { stopPlay(); setProjections(b.dataset.on === "1"); } };
+    $("#pop-mode").onclick = (e) => { const b = e.target.closest("[data-mode]"); if (b) { state.popMode = b.dataset.mode; if (state.result) drawFutureCharts(); } };
+    for (const b of $$("[data-view]")) b.onclick = () => setView(b.dataset.view);
 
     const sorted = [...state.summary.locs].sort((a, b) => a.name.localeCompare(b.name));
     $("#loc-list").innerHTML = sorted.map((s) => `<option value="${esc(s.name)}"></option>`).join("");
@@ -802,7 +837,6 @@
     search.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
     $("#regions").insertAdjacentHTML("beforeend", REGION_ORDER.map((id) => `<button type="button" class="btn" data-id="${id}">${REGION_LABEL[id]}</button>`).join(""));
     $("#regions").onclick = (e) => { const b = e.target.closest("[data-id]"); if (b) selectLoc(+b.dataset.id); };
-    for (const id of ["#ext-low", "#ext-high"]) $(id).onclick = (e) => { const li = e.target.closest("li[data-id]"); if (li) selectLoc(+li.dataset.id); };
   }
 
   async function init() {
@@ -819,12 +853,10 @@
     }
     if (state.summary.stamp) $("#data-stamp").textContent = state.summary.stamp;
     const h = readHash();
-    state.proj = h.proj !== "0";
-    if (h.yr) state.year = Math.max(Y0, Math.min(state.proj ? END : BASE, +h.yr || BASE));
-    $("#proj").checked = state.proj;
-    $("#year").max = maxYear();
+    if (h.yr) state.year = Math.max(Y0, Math.min(END, +h.yr || BASE));
+    state.proj = h.proj === "1" || state.year > BASE;
+    for (const b of $$("#proj-seg .btn")) b.setAttribute("aria-pressed", (b.dataset.on === "1") === state.proj);
     $("#future").classList.toggle("off", !state.proj);
-    $("#future-title").textContent = state.proj ? "The road to 2100" : "How we got here";
     buildMap();
     drawLegend();
     setupControls();
@@ -835,8 +867,15 @@
     let rt = null;
     window.addEventListener("resize", () => {
       clearTimeout(rt);
-      rt = setTimeout(() => { drawLegend(); drawTimeline(); if (state.result) { drawPyramid(); drawFutureCharts(); } }, 150);
+      rt = setTimeout(() => { drawLegend(); drawTimeline(); if (state.result) drawFutureCharts(); }, 150);
     });
+    // the pyramid stretches to the map column's height, so redraw whenever its box changes
+    let lastBox = "";
+    new ResizeObserver(() => {
+      const el = $("#pyramid");
+      const box = el ? `${el.clientWidth}x${el.clientHeight}` : "";
+      if (box !== lastBox) { lastBox = box; drawPyramid(); }
+    }).observe($("#dossier"));
   }
 
   init();

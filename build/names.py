@@ -1,0 +1,41 @@
+"""Conventional English names for UN WPP locations (applied to the generated data)."""
+NAMES = {
+    "United Republic of Tanzania": "Tanzania",
+    "Congo": "Republic of the Congo",
+    "Sao Tome and Principe": "São Tomé and Príncipe",
+    "Cabo Verde": "Cape Verde",
+    "Côte d'Ivoire": "Ivory Coast",
+    "Gambia": "The Gambia",
+    "China, Hong Kong SAR": "Hong Kong",
+    "China, Macao SAR": "Macau",
+    "China, Taiwan Province of China": "Taiwan",
+    "Dem. People's Republic of Korea": "North Korea",
+    "Republic of Korea": "South Korea",
+    "Iran (Islamic Republic of)": "Iran",
+    "Brunei Darussalam": "Brunei",
+    "Lao People's Democratic Republic": "Laos",
+    "Timor-Leste": "East Timor",
+    "Viet Nam": "Vietnam",
+    "State of Palestine": "Palestine",
+    "Syrian Arab Republic": "Syria",
+    "Türkiye": "Turkey",
+    "Czechia": "Czech Republic",
+    "Republic of Moldova": "Moldova",
+    "Russian Federation": "Russia",
+    "Holy See": "Vatican City",
+    "Kosovo (under UNSC res. 1244)": "Kosovo",
+    "Bonaire, Sint Eustatius and Saba": "Caribbean Netherlands",
+    "Saint Martin (French part)": "Saint Martin",
+    "Sint Maarten (Dutch part)": "Sint Maarten",
+    "Bolivia (Plurinational State of)": "Bolivia",
+    "Falkland Islands (Malvinas)": "Falkland Islands",
+    "Venezuela (Bolivarian Republic of)": "Venezuela",
+    "United States of America": "United States",
+    "Micronesia (Fed. States of)": "Micronesia",
+    "Wallis and Futuna Islands": "Wallis and Futuna",
+    "Latin America and the Caribbean": "Latin America & Caribbean",
+}
+
+
+def conventional(name):
+    return NAMES.get(name, name)

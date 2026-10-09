@@ -9,12 +9,6 @@
 </head>
 <body>
 <div class="wrap">
-  <header class="top">
-    <h1>Fertility Explorer</h1>
-    <a class="back" href="https://theojaffee.net/">← theojaffee.net</a>
-  </header>
-  <p class="lede">Total fertility rate (TFR) is the number of children a woman would have at current age-specific birth rates. About 2.1 keeps a population stable without migration. Click any country to see its population pyramid and where it's headed, drag the timeline to move through time, and change future fertility to see what happens. <span class="stamp" id="data-stamp"></span></p>
-
   <div class="card timebar" role="region" aria-label="Year">
     <button type="button" class="btn play" id="play" aria-label="Play through the years">▶</button>
     <div class="year-readout"><span class="y" id="year-num">2026</span><span class="s" id="year-status">Today · latest data</span></div>
@@ -22,74 +16,80 @@
       <input type="range" id="year" min="1950" max="2100" step="1" value="2026" aria-label="Year">
       <div class="ticks" id="ticks"></div>
     </div>
-    <label class="check"><input type="checkbox" id="proj" checked> Projections</label>
     <button type="button" class="btn" id="today-btn">Today</button>
   </div>
 
-  <div class="atlas">
-    <section class="card" aria-label="World map of fertility">
+  <section class="card atlas">
+    <div class="atlas-map">
       <div class="map-head">
-        <div class="map-title" id="map-title">Total fertility rate, 2026</div>
+        <div class="map-title" id="map-title">Fertility rate, 2026</div>
         <div class="toolbar">
           <input type="search" id="search" list="loc-list" placeholder="Find a country…" aria-label="Find a country">
           <datalist id="loc-list"></datalist>
           <div class="seg" role="group" aria-label="View">
-            <button type="button" class="btn" id="view-map" aria-pressed="true">Map</button>
-            <button type="button" class="btn" id="view-table" aria-pressed="false">Table</button>
+            <button type="button" class="btn" data-view="map" aria-pressed="true">Map</button>
+            <button type="button" class="btn" data-view="table" aria-pressed="false">Table</button>
+            <button type="button" class="btn" data-view="about" aria-pressed="false">About</button>
           </div>
         </div>
       </div>
-      <div class="mapwrap" id="mapwrap">
-        <div id="map"><div class="loading">Loading map…</div></div>
-        <div class="zoom-ctl"><button type="button" id="zin" aria-label="Zoom in">+</button><button type="button" id="zout" aria-label="Zoom out">−</button></div>
+      <div class="viewbox">
+        <div class="view" id="mapwrap">
+          <div id="map"><div class="loading">Loading map…</div></div>
+          <div class="zoom-ctl"><button type="button" id="zin" aria-label="Zoom in">+</button><button type="button" id="zout" aria-label="Zoom out">−</button></div>
+        </div>
+        <div class="view" id="table-view"></div>
+        <div class="view" id="about-view">
+          <h3>Fertility Explorer</h3>
+          <p>Total fertility rate (TFR) is the number of children a woman would have at current age-specific birth rates. About 2.1 keeps a population stable without migration. Click a country to see its population pyramid, move the timeline to travel through time, and turn on projections to change future fertility and see what happens.</p>
+          <h3>Data</h3>
+          <p>Population by single year of age and sex, life tables, age-specific fertility, migration and all historical series come from the <a href="https://population.un.org/wpp/">UN World Population Prospects 2024</a> (the latest revision; estimates through 2023, projections after). Newer TFRs come from national statistics offices, Eurostat and recent surveys. 2026 values are current-year estimates: the latest official TFR scaled by births reported so far this year versus the same months of last year, the method used by trackers like Birth Gauge and More Births. Hover a country to see its source. <span id="data-stamp"></span></p>
+          <h3>Model</h3>
+          <p>Projections are a standard cohort-component model run in your browser: single-year ages 0–100+, annual steps from mid-2026 to 2100. Each year people age one year and die according to the UN's projected life tables, births come from the chosen TFR applied to the UN's projected age pattern of childbearing, and migrants are added by age and sex following the UN's projected migration. With the default fertility path it reproduces the UN medium variant to within about 1% for most countries by 2100.</p>
+          <h3>Caveats</h3>
+          <p>Projections are scenarios, not forecasts. Migration is held to the UN's assumptions (scaled by the slider) and doesn't respond to population pressure. Current-year estimates use partial-year births and can move as more months are published. Regions use the UN's regional aggregates. Very small territories can deviate more.</p>
+          <p class="muted">By <a href="https://theojaffee.net/">Theo Jaffee</a>.</p>
+        </div>
       </div>
-      <div id="table-view"></div>
       <div class="map-foot">
         <svg id="legend" aria-hidden="true"></svg>
         <div class="cap">children per woman<br><span id="legend-note"></span></div>
       </div>
       <div class="regions" id="regions"></div>
-    </section>
-
-    <section class="card dossier" id="dossier" aria-live="polite">
+    </div>
+    <div class="atlas-country" id="dossier" aria-live="polite">
       <div class="loading">Loading…</div>
-    </section>
+    </div>
+  </section>
 
-    <section class="card extremes" aria-label="Lowest and highest fertility">
-      <h2>Lowest and highest, <span id="ext-year">2026</span></h2>
-      <p class="sub">Countries with over 1M people</p>
-      <div class="ext-cols"><ol id="ext-low"></ol><ol id="ext-high"></ol></div>
-    </section>
-  </div>
-
-  <section class="future" id="future">
-    <div class="panel-head"><h2 id="future-title">The road to 2100</h2><div class="facts" id="future-kicker"></div></div>
-    <p class="off-note">Projections are off. Turn them on in the timeline bar to model the future.</p>
+  <section class="future off" id="future">
+    <div class="panel-head">
+      <h2>Projections</h2><div class="facts" id="future-kicker"></div>
+      <div class="seg" id="proj-seg" role="group" aria-label="Projections">
+        <button type="button" class="btn" data-on="0" aria-pressed="true">Off</button>
+        <button type="button" class="btn" data-on="1" aria-pressed="false">On</button>
+      </div>
+    </div>
+    <p class="off-note">Projections are off. Turn them on, or play or drag the timeline past 2026.</p>
     <div class="layout">
-      <aside class="card controls" aria-label="Scenario controls">
-        <h2>Your scenario</h2>
-        <p class="sub">Change future fertility and see the population respond.</p>
-        <div id="scenario"></div>
-      </aside>
+      <aside class="card controls" aria-label="Scenario controls"><div id="scenario"></div></aside>
       <div>
         <div class="tiles" id="outcomes"></div>
         <div class="charts">
+          <div class="card wide">
+            <div class="card-head">
+              <div><h2>Population by age</h2><p class="sub" id="pop-sub"></p></div>
+              <div class="seg" id="pop-mode" role="group" aria-label="Units"><button type="button" class="btn" data-mode="count">Count</button><button type="button" class="btn" data-mode="share">Share</button></div>
+            </div>
+            <div class="chart" id="c-pop"></div>
+          </div>
           <div class="card"><h2>Fertility rate</h2><p class="sub">Children per woman</p><div class="chart" id="c-tfr"></div></div>
-          <div class="card"><h2>Total population</h2><p class="sub">Shaded: UN 95% prediction interval</p><div class="chart" id="c-pop"></div></div>
           <div class="card"><h2>Births and deaths</h2><p class="sub">Per year</p><div class="chart" id="c-bd"></div></div>
-          <div class="card"><h2>Age structure</h2><p class="sub">Share of population</p><div class="chart" id="c-age"></div></div>
           <div class="card"><h2>Median age</h2><p class="sub">Years</p><div class="chart" id="c-med"></div></div>
           <div class="card"><h2>Old-age dependency</h2><p class="sub">People 65+ per 100 aged 15–64</p><div class="chart" id="c-dep"></div></div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="about">
-    <h2>About the data &amp; model</h2>
-    <p><b>Data.</b> Population by single year of age and sex, life tables, age-specific fertility, migration and all historical series come from the <a href="https://population.un.org/wpp/">UN World Population Prospects 2024</a> (the latest revision; estimates through 2023, projections after). Newer TFRs come from national statistics offices, Eurostat and recent surveys. 2026 values are current-year estimates: the latest official TFR scaled by births reported so far this year versus the same months of last year, the method used by trackers like Birth Gauge and More Births. Hover a country to see its source.</p>
-    <p><b>Model.</b> Your scenario is a standard cohort-component projection run in your browser: single-year ages 0–100+, annual steps from mid-2026 to 2100. Each year people age one year and die according to the UN's projected life tables, births come from your TFR applied to the UN's projected age pattern of childbearing, and migrants are added by age and sex following the UN's projected migration. With the UN fertility path selected it reproduces the UN medium variant to within about 1% for most countries by 2100.</p>
-    <p><b>Caveats.</b> Projections are scenarios, not forecasts. Migration is held to the UN's assumptions (scaled by the slider) and doesn't respond to population pressure. Current-year estimates use partial-year births and can move as more months are published. Regions use the UN's regional aggregates. Very small territories can deviate more.</p>
   </section>
 </div>
 <div class="tip" id="tip" role="tooltip"></div>
