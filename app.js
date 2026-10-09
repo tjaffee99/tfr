@@ -783,21 +783,22 @@
     if (t == null) { el.innerHTML = ""; return; }
     const vals = [0, 1, 2, 3].map((g) => 100 * (t / 2) ** g);
     const labels = ["Parents", "Children", "Grandchildren", "Great-grandchildren"];
-    const max = Math.max(...vals);
-    const unit = max <= 200 ? 1 : max <= 4000 ? 10 : 100;
-    const cols = Math.max(...vals.map((v) => Math.round(v / unit))) <= 100 ? 10 : 20;
-    const colW = Math.max(120, (el.clientWidth - 60) / (window.innerWidth <= 640 ? 2 : 4));
-    const pitch = Math.min(12, colW / cols), r = pitch * 0.36;
-    const rows = Math.ceil(Math.max(...vals.map((v) => Math.round(v / unit))) / cols);
+    // One dot is one person in every column, at the same size, so the columns compare honestly.
+    // Dots shrink only as far as needed to keep the biggest generation within a readable height.
+    const ncol = window.innerWidth <= 640 ? 2 : 4;
+    const colW = Math.max(120, (el.clientWidth - 20 * (ncol - 1)) / ncol);
+    const maxN = Math.max(...vals.map((v) => Math.round(v)));
+    const pitch = Math.max(2.5, Math.min(12, Math.sqrt((colW * 360) / maxN)));
+    const cols = Math.max(1, Math.floor(colW / pitch)), dot = pitch * 0.72;
     const fmt = (v) => (v < 10 ? v.toFixed(1) : Math.round(v).toLocaleString());
     el.innerHTML = vals.map((v, g) => {
-      const n = Math.round(v / unit), color = g === 0 ? "var(--axis)" : colorOf(t);
-      let dots = "";
-      for (let i = 0; i < n; i++) dots += `<circle cx="${(i % cols) * pitch + pitch / 2}" cy="${Math.floor(i / cols) * pitch + pitch / 2}" r="${r}" fill="${color}"/>`;
-      if (!n && v > 0) dots = `<circle cx="${pitch / 2}" cy="${pitch / 2}" r="${r}" fill="${color}" opacity="${Math.max(0.15, v / unit)}"/>`;
-      return `<div class="gen"><div class="gv">${fmt(v)}</div><div class="gl">${labels[g]}</div>` +
-        `<svg viewBox="0 0 ${cols * pitch} ${rows * pitch}" style="max-width:${cols * pitch}px" aria-hidden="true">${dots}</svg></div>`;
-    }).join("") + (unit > 1 ? `<div class="gen-unit" style="grid-column:1/-1">Each dot is ${unit} people.</div>` : "");
+      const n = Math.round(v), color = g === 0 ? "var(--axis)" : colorOf(t), rows = Math.ceil(n / cols);
+      let d = "";
+      for (let i = 0; i < n; i++) d += `M${((i % cols) + 0.5) * pitch} ${(Math.floor(i / cols) + 0.5) * pitch}h0`;
+      const svg = n ? `<svg viewBox="0 0 ${cols * pitch} ${rows * pitch}" style="max-width:${cols * pitch}px" aria-hidden="true">` +
+        `<path d="${d}" stroke="${color}" stroke-width="${dot}" stroke-linecap="round"/></svg>` : "";
+      return `<div class="gen"><div class="gv">${fmt(v)}</div><div class="gl">${labels[g]}</div>${svg}</div>`;
+    }).join("");
     $("#gen-sub").textContent = `At a fertility rate of ${t.toFixed(2)} (${state.year}${info.kind === "scenario" && state.sc.mode !== "un" ? ", your scenario" : ""}), every 100 people have ${fmt(vals[1])} children, ${fmt(vals[2])} grandchildren and ${fmt(vals[3])} great-grandchildren. Ignores mortality and migration.`;
   }
 
