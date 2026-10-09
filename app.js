@@ -748,7 +748,7 @@
       points: obs,
       markLegend: [
         hasRep ? `<span class="dot" style="background:var(--deaths)"></span>Reported` : "",
-        hasEst ? `<span class="dot" style="border:1.8px solid var(--deaths)"></span>${new Date().getFullYear()} estimate` : "",
+        hasEst ? `<span class="dot" style="border:1.8px solid var(--deaths)"></span>${BASE} estimate` : "",
       ].filter(Boolean),
       hlines: [{ y: 2.1, label: "replacement ≈ 2.1" }],
       yFmt: d3.format(".1f"), tipFmt: tfr2,

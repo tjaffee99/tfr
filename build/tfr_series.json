@@ -1,0 +1,2401 @@
+[
+ {
+  "iso3": "ALB",
+  "country": "Albania",
+  "year": 2022,
+  "tfr": 1.21,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "ALB",
+  "country": "Albania",
+  "year": 2024,
+  "tfr": 1.64,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022",
+  "note": "large jump from 1.21 (2022), likely post-census population revision"
+ },
+ {
+  "iso3": "AGO",
+  "country": "Angola",
+  "year": 2023,
+  "tfr": 4.8,
+  "kind": "official",
+  "source": "DHS Program (DHS 2023) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=AO2023DHS&breakdown=national",
+  "note": "survey (AO2023DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "AUS",
+  "country": "Australia",
+  "year": 2024,
+  "tfr": 1.48,
+  "kind": "official",
+  "source": "ABS Births, Australia 2024 (from latest_tfr.json)",
+  "url": "https://www.abs.gov.au/statistics/people/population/births-australia/latest-release",
+  "tfr_unrounded": 1.481
+ },
+ {
+  "iso3": "AUT",
+  "country": "Austria",
+  "year": 2022,
+  "tfr": 1.41,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "AUT",
+  "country": "Austria",
+  "year": 2023,
+  "tfr": 1.32,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "AUT",
+  "country": "Austria",
+  "year": 2024,
+  "tfr": 1.31,
+  "kind": "official",
+  "source": "Statistik Austria press release 'Demographie' (29 Jun 2026): Gesamtfertilitätsrate 2025 1,30 (2024: 1,31)",
+  "url": "https://www.statistik.at/fileadmin/announcement/2026/08/20260629Demographie.pdf"
+ },
+ {
+  "iso3": "AUT",
+  "country": "Austria",
+  "year": 2025,
+  "tfr": 1.3,
+  "kind": "official",
+  "source": "Statistik Austria press release 'Demographie' (29 Jun 2026): Gesamtfertilitätsrate 2025 1,30 (2024: 1,31)",
+  "url": "https://www.statistik.at/fileadmin/announcement/2026/08/20260629Demographie.pdf",
+  "note": "Final 2025 figure (preliminary Feb 2026 release had 1.29)"
+ },
+ {
+  "iso3": "BEL",
+  "country": "Belgium",
+  "year": 2022,
+  "tfr": 1.53,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "BEL",
+  "country": "Belgium",
+  "year": 2023,
+  "tfr": 1.47,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "BEL",
+  "country": "Belgium",
+  "year": 2024,
+  "tfr": 1.44,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "BEL",
+  "country": "Belgium",
+  "year": 2025,
+  "tfr": 1.43,
+  "kind": "official",
+  "source": "Statbel (via La Libre Belgique) (from latest_tfr.json)",
+  "url": "https://www.lalibre.be/belgique/societe/2026/06/15/lage-des-mamans-a-la-naissance-grimpe-a-315-ans-en-belgique-HJXWCHZOCZHJ5CCGM7OZHG7O6M/"
+ },
+ {
+  "iso3": "BGR",
+  "country": "Bulgaria",
+  "year": 2022,
+  "tfr": 1.78,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "BGR",
+  "country": "Bulgaria",
+  "year": 2023,
+  "tfr": 1.81,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "BGR",
+  "country": "Bulgaria",
+  "year": 2024,
+  "tfr": 1.72,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "BGR",
+  "country": "Bulgaria",
+  "year": 2025,
+  "tfr": 1.63,
+  "kind": "official",
+  "source": "National Statistical Institute of Bulgaria (NSI) (from latest_tfr.json)",
+  "url": "https://www.nsi.bg/press-release/naselenie-i-demografski-procesi-9002",
+  "note": "final data"
+ },
+ {
+  "iso3": "CAN",
+  "country": "Canada",
+  "year": 2025,
+  "tfr": 1.26,
+  "kind": "official",
+  "source": "Statistics Canada (from latest_tfr.json)",
+  "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/260923/dq260923e-eng.htm"
+ },
+ {
+  "iso3": "CAN",
+  "country": "Canada",
+  "year": 2026,
+  "tfr": 1.271,
+  "kind": "estimate",
+  "months": "Q1–Q2",
+  "base": {
+   "tfr": 1.26,
+   "year": 2025
+  },
+  "births_ytd": 184121,
+  "births_prev_same_months": 182553,
+  "births_ratio": 1.0086,
+  "source": "Statistics Canada table 17-10-0059-01 (estimates of the components of natural increase, quarterly: births)",
+  "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710005901",
+  "note": "Quarterly births are StatCan preliminary demographic estimates (administrative data plus modelling for the latest quarters), not final registration counts; subject to revision."
+ },
+ {
+  "iso3": "CHL",
+  "country": "Chile",
+  "year": 2025,
+  "tfr": 0.99,
+  "kind": "provisional",
+  "source": "INE Chile Estadísticas Vitales cifras provisionales 2025 (from latest_tfr.json)",
+  "url": "https://www.ine.gob.cl/sala-de-prensa/prensa/general/noticia/2026/05/27/estad%C3%ADsticas-vitales-cifras-provisionales-2025-confirman-que-los-nacimientos-en-chile-disminuyeron-un-46-9-en-32-a%C3%B1os",
+  "note": "provisional"
+ },
+ {
+  "iso3": "CHL",
+  "country": "Chile",
+  "year": 2026,
+  "tfr": 0.993,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 0.99,
+   "year": 2025
+  },
+  "births_ytd": 74363,
+  "births_prev_same_months": 74130,
+  "births_ratio": 1.0031,
+  "source": "INE Chile, Estadísticas Vitales Coyunturales (monthly provisional bulletins, Jan–Jun 2026)",
+  "url": "https://www.ine.gob.cl/docs/default-source/nacimientos-matrimonios-y-defunciones/boletines/2026/estad%C3%ADsticas-vitales-cifras-coyunturales-junio-2026.pdf",
+  "urls": [
+   "https://www.ine.gob.cl/docs/default-source/nacimientos-matrimonios-y-defunciones/boletines/2026/estad%C3%ADsticas-vitales-cifras-coyunturales-junio-2026.pdf",
+   "https://www.ine.gob.cl/docs/default-source/nacimientos-matrimonios-y-defunciones/boletines/2026/estad%C3%ADsticas-vitales-cifras-coyunturales-mayo-2026.pdf",
+   "https://www.ine.gob.cl/docs/default-source/nacimientos-matrimonios-y-defunciones/boletines/2026/estad%C3%ADsticas-vitales-cifras-coyunturales-abril-2026.pdf",
+   "https://www.ine.gob.cl/docs/default-source/nacimientos-matrimonios-y-defunciones/boletines/2026/estad%C3%ADsticas-vitales-cifras-coyunturales-marzo-2026.pdf",
+   "https://www.ine.gob.cl/docs/default-source/nacimientos-matrimonios-y-defunciones/boletines/2026/estad%C3%ADsticas-vitales-cifras-coyunturales-febrero-2026.pdf",
+   "https://www.ine.gob.cl/docs/default-source/nacimientos-matrimonios-y-defunciones/boletines/2026/estad%C3%ADsticas-vitales-cifras-coyunturales-enero-2026.pdf"
+  ],
+  "note": "INE Chile 'Estadísticas Vitales Coyunturales' monthly bulletins (provisional, by month of occurrence, Registro Civil data): 2026 births Jan 12,717 (-148 y/y), Feb 11,481 (-51), Mar 13,123 (+446), Apr 12,542 (-68), May 12,420 (-151), Jun 12,080 (+205). births_prev_same_months = 74,363 - 233 (sum of published y/y differences). Each month is as first published in its bulletin (Apr–Sep 2026)."
+ },
+ {
+  "iso3": "COL",
+  "country": "Colombia",
+  "year": 2025,
+  "tfr": 1.0,
+  "kind": "provisional",
+  "source": "DANE (via Infobae) (from latest_tfr.json)",
+  "url": "https://www.infobae.com/colombia/2026/09/25/colombia-registra-mas-nacimientos-en-2026-pero-la-fecundidad-toca-minimo-historico-asi-cambio-la-poblacion/",
+  "note": "preliminary; published to 1 decimal"
+ },
+ {
+  "iso3": "CRI",
+  "country": "Costa Rica",
+  "year": 2024,
+  "tfr": 1.12,
+  "kind": "official",
+  "source": "INEC Costa Rica, Indicadores demográficos 2024 (from latest_tfr.json)",
+  "url": "https://admin.inec.cr/sites/default/files/2025-11/rePoblacEV-FID-2024A.pdf"
+ },
+ {
+  "iso3": "HRV",
+  "country": "Croatia",
+  "year": 2022,
+  "tfr": 1.53,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "HRV",
+  "country": "Croatia",
+  "year": 2023,
+  "tfr": 1.47,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "HRV",
+  "country": "Croatia",
+  "year": 2024,
+  "tfr": 1.46,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022"
+ },
+ {
+  "iso3": "CUB",
+  "country": "Cuba",
+  "year": 2025,
+  "tfr": 1.29,
+  "kind": "official",
+  "source": "ONEI (via OnCubaNews) (from latest_tfr.json)",
+  "url": "https://oncubanews.com/cuba/cuba-cerro-el-2025-con-94-millones-de-habitantes-313-mil-menos-en-un-ano/"
+ },
+ {
+  "iso3": "CYP",
+  "country": "Cyprus",
+  "year": 2022,
+  "tfr": 1.44,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "CYP",
+  "country": "Cyprus",
+  "year": 2023,
+  "tfr": 1.45,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "CYP",
+  "country": "Cyprus",
+  "year": 2024,
+  "tfr": 1.38,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022"
+ },
+ {
+  "iso3": "CZE",
+  "country": "Czechia",
+  "year": 2022,
+  "tfr": 1.64,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "CZE",
+  "country": "Czechia",
+  "year": 2023,
+  "tfr": 1.46,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "CZE",
+  "country": "Czechia",
+  "year": 2024,
+  "tfr": 1.36,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "CZE",
+  "country": "Czechia",
+  "year": 2025,
+  "tfr": 1.28,
+  "kind": "official",
+  "source": "Czech Statistical Office (CSU) (from latest_tfr.json)",
+  "url": "https://csu.gov.cz/docs/107508/2f1a5ef7-8a51-2ed8-6e5d-f41764898536/csu_tk260331_jak_v_cesku_ubyva_narozenych_deti_prezentace.pdf"
+ },
+ {
+  "iso3": "CZE",
+  "country": "Czechia",
+  "year": 2026,
+  "tfr": 1.221,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 1.28,
+   "year": 2025
+  },
+  "births_ytd": 36466,
+  "births_prev_same_months": 38225,
+  "births_ratio": 0.954,
+  "source": "Czech Statistical Office (CZSO), Population change – 1st half 2026 (preliminary)",
+  "url": "https://csu.gov.cz/rychle-informace/pohyb-obyvatelstva-1-pololeti-2026",
+  "urls": [
+   "https://csu.gov.cz/rychle-informace/pohyb-obyvatelstva-1-pololeti-2026",
+   "https://csu.gov.cz/docs/107532/4d469843-3dbb-dc4c-c89a-65863386057d/oby091126.xlsx?version=1.0"
+  ],
+  "note": "CZSO quick information 'Pohyb obyvatelstva - 1. pololetí 2026' (11 Sep 2026), Tab. 1: live births H1 2025 = 38,225, H1 2026 = 36,466 (preliminary)."
+ },
+ {
+  "iso3": "COD",
+  "country": "DR Congo",
+  "year": 2023,
+  "tfr": 5.5,
+  "kind": "official",
+  "source": "DHS Program (DHS 2023) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=CD2023DHS&breakdown=national",
+  "note": "survey (CD2023DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "DNK",
+  "country": "Denmark",
+  "year": 2022,
+  "tfr": 1.55,
+  "kind": "official",
+  "source": "Statistics Denmark StatBank FERT1 (per 1,000 women, divided by 1,000)",
+  "url": "https://www.statbank.dk/FERT1",
+  "tfr_unrounded": 1.553
+ },
+ {
+  "iso3": "DNK",
+  "country": "Denmark",
+  "year": 2023,
+  "tfr": 1.5,
+  "kind": "official",
+  "source": "Statistics Denmark StatBank FERT1 (per 1,000 women, divided by 1,000)",
+  "url": "https://www.statbank.dk/FERT1",
+  "tfr_unrounded": 1.496
+ },
+ {
+  "iso3": "DNK",
+  "country": "Denmark",
+  "year": 2024,
+  "tfr": 1.47,
+  "kind": "official",
+  "source": "Statistics Denmark StatBank FERT1 (per 1,000 women, divided by 1,000)",
+  "url": "https://www.statbank.dk/FERT1",
+  "tfr_unrounded": 1.466
+ },
+ {
+  "iso3": "DNK",
+  "country": "Denmark",
+  "year": 2025,
+  "tfr": 1.51,
+  "kind": "official",
+  "source": "Statistics Denmark StatBank FERT1 (per 1,000 women, divided by 1,000)",
+  "url": "https://www.statbank.dk/FERT1",
+  "tfr_unrounded": 1.506
+ },
+ {
+  "iso3": "DNK",
+  "country": "Denmark",
+  "year": 2026,
+  "tfr": 1.53,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 1.506,
+   "year": 2025
+  },
+  "births_ytd": 29564,
+  "births_prev_same_months": 29103,
+  "births_ratio": 1.0158,
+  "source": "Statistics Denmark StatBank BEV3A (live births by month)",
+  "url": "https://www.statbank.dk/BEV3A"
+ },
+ {
+  "iso3": "EGY",
+  "country": "Egypt",
+  "year": 2025,
+  "tfr": 2.33,
+  "kind": "provisional",
+  "source": "CAPMAS EFHS 2025 (via Ahram Online) (from latest_tfr.json)",
+  "url": "https://english.ahram.org.eg/NewsContent/1/1236/577384/Egypt/Health/Egypt%E2%80%99s-Csection-rate-rises-to--as-fertility-decli.aspx",
+  "note": "preliminary, survey (Egypt Family Health Survey 2025, CAPMAS); another report gives 2.34"
+ },
+ {
+  "iso3": "EST",
+  "country": "Estonia",
+  "year": 2022,
+  "tfr": 1.41,
+  "kind": "official",
+  "source": "Statistics Estonia RV033 (fertility indicators)",
+  "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__demograafilised-pehinaitajad/RV033"
+ },
+ {
+  "iso3": "EST",
+  "country": "Estonia",
+  "year": 2023,
+  "tfr": 1.31,
+  "kind": "official",
+  "source": "Statistics Estonia RV033 (fertility indicators)",
+  "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__demograafilised-pehinaitajad/RV033"
+ },
+ {
+  "iso3": "EST",
+  "country": "Estonia",
+  "year": 2024,
+  "tfr": 1.18,
+  "kind": "official",
+  "source": "Statistics Estonia RV033 (fertility indicators)",
+  "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__demograafilised-pehinaitajad/RV033"
+ },
+ {
+  "iso3": "EST",
+  "country": "Estonia",
+  "year": 2025,
+  "tfr": 1.16,
+  "kind": "official",
+  "source": "Statistics Estonia RV033 (fertility indicators)",
+  "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__demograafilised-pehinaitajad/RV033"
+ },
+ {
+  "iso3": "EST",
+  "country": "Estonia",
+  "year": 2026,
+  "tfr": 1.099,
+  "kind": "estimate",
+  "months": "Jan–Aug",
+  "base": {
+   "tfr": 1.16,
+   "year": 2025
+  },
+  "births_ytd": 5811,
+  "births_prev_same_months": 6132,
+  "births_ratio": 0.9477,
+  "source": "Statistics Estonia RV061 (preliminary registration of live births by month)",
+  "url": "https://andmed.stat.ee/en/stat/rahvastik__rahvastikusundmused__sunnid/RV061",
+  "note": "Monthly counts are by registration date (or preliminary registrations), not strictly by date of birth."
+ },
+ {
+  "iso3": "ETH",
+  "country": "Ethiopia",
+  "year": 2024,
+  "tfr": 4,
+  "kind": "official",
+  "source": "DHS Program (DHS 2024) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=ET2024DHS&breakdown=national",
+  "note": "survey (ET2024DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "FIN",
+  "country": "Finland",
+  "year": 2022,
+  "tfr": 1.32,
+  "kind": "official",
+  "source": "Statistics Finland StatFin synt 12dt (total fertility rate)",
+  "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__synt/statfin_synt_pxt_12dt.px/"
+ },
+ {
+  "iso3": "FIN",
+  "country": "Finland",
+  "year": 2023,
+  "tfr": 1.26,
+  "kind": "official",
+  "source": "Statistics Finland StatFin synt 12dt (total fertility rate)",
+  "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__synt/statfin_synt_pxt_12dt.px/"
+ },
+ {
+  "iso3": "FIN",
+  "country": "Finland",
+  "year": 2024,
+  "tfr": 1.25,
+  "kind": "official",
+  "source": "Statistics Finland StatFin synt 12dt (total fertility rate)",
+  "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__synt/statfin_synt_pxt_12dt.px/"
+ },
+ {
+  "iso3": "FIN",
+  "country": "Finland",
+  "year": 2025,
+  "tfr": 1.3,
+  "kind": "official",
+  "source": "Statistics Finland StatFin synt 12dt (total fertility rate)",
+  "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__synt/statfin_synt_pxt_12dt.px/"
+ },
+ {
+  "iso3": "FIN",
+  "country": "Finland",
+  "year": 2026,
+  "tfr": 1.375,
+  "kind": "estimate",
+  "months": "Jan–Aug",
+  "base": {
+   "tfr": 1.3,
+   "year": 2025
+  },
+  "births_ytd": 32303,
+  "births_prev_same_months": 30534,
+  "births_ratio": 1.0579,
+  "source": "Statistics Finland StatFin vamuu 11ll (vital statistics by month; 2026 preliminary)",
+  "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__vamuu/statfin_vamuu_pxt_11ll.px/"
+ },
+ {
+  "iso3": "FRA",
+  "country": "France",
+  "year": 2022,
+  "tfr": 1.78,
+  "kind": "official",
+  "source": "INSEE BDM series 001686832 (total period fertility rate, France incl. Mayotte)",
+  "url": "https://www.insee.fr/fr/statistiques/serie/001686832"
+ },
+ {
+  "iso3": "FRA",
+  "country": "France",
+  "year": 2023,
+  "tfr": 1.65,
+  "kind": "provisional",
+  "source": "INSEE BDM series 001686832 (total period fertility rate, France incl. Mayotte)",
+  "url": "https://www.insee.fr/fr/statistiques/serie/001686832"
+ },
+ {
+  "iso3": "FRA",
+  "country": "France",
+  "year": 2024,
+  "tfr": 1.61,
+  "kind": "provisional",
+  "source": "INSEE BDM series 001686832 (total period fertility rate, France incl. Mayotte)",
+  "url": "https://www.insee.fr/fr/statistiques/serie/001686832"
+ },
+ {
+  "iso3": "FRA",
+  "country": "France",
+  "year": 2025,
+  "tfr": 1.56,
+  "kind": "provisional",
+  "source": "INSEE BDM series 001686832 (total period fertility rate, France incl. Mayotte)",
+  "url": "https://www.insee.fr/fr/statistiques/serie/001686832"
+ },
+ {
+  "iso3": "FRA",
+  "country": "France",
+  "year": 2026,
+  "tfr": 1.544,
+  "kind": "estimate",
+  "months": "Jan–Aug",
+  "base": {
+   "tfr": 1.56,
+   "year": 2025
+  },
+  "births_ytd": 425811,
+  "births_prev_same_months": 430283,
+  "births_ratio": 0.9896,
+  "source": "INSEE BDM series 001641601 (live births per month, France incl. Mayotte; 2026 provisional)",
+  "url": "https://www.insee.fr/fr/statistiques/serie/001641601"
+ },
+ {
+  "iso3": "GEO",
+  "country": "Georgia",
+  "year": 2022,
+  "tfr": 1.83,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "GEO",
+  "country": "Georgia",
+  "year": 2023,
+  "tfr": 1.71,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "GEO",
+  "country": "Georgia",
+  "year": 2024,
+  "tfr": 1.69,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "GEO",
+  "country": "Georgia",
+  "year": 2025,
+  "tfr": 1.61,
+  "kind": "official",
+  "source": "Geostat (via Civil.ge) (from latest_tfr.json)",
+  "url": "https://civil.ge/archives/727708"
+ },
+ {
+  "iso3": "GEO",
+  "country": "Georgia",
+  "year": 2026,
+  "tfr": 1.591,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 1.61,
+   "year": 2025
+  },
+  "births_ytd": 17509,
+  "births_prev_same_months": 17719,
+  "births_ratio": 0.9881,
+  "source": "National Statistics Office of Georgia (Geostat), preliminary vital statistics Jan–Jun",
+  "url": "https://georgiatoday.ge/georgia-registers-10006-marriages-and-6095-divorces-in-first-half-of-2026/",
+  "urls": [
+   "https://georgiatoday.ge/georgia-registers-10006-marriages-and-6095-divorces-in-first-half-of-2026/",
+   "https://www.geostat.ge/media/73247/SUMMARY-OF-VITAL-STATISTICS---JANUARY-JUNE-2025.pdf"
+  ],
+  "note": "Geostat preliminary half-year data: 17,509 live births in Jan–Jun 2026 (as reported by Georgia Today from the Geostat release) vs 17,719 in Jan–Jun 2025 (Geostat 'Summary of Vital Statistics, January–June 2025', preliminary). Both are first-release preliminary figures."
+ },
+ {
+  "iso3": "DEU",
+  "country": "Germany",
+  "year": 2022,
+  "tfr": 1.46,
+  "kind": "official",
+  "source": "Destatis, zusammengefasste Geburtenziffer (table) and press release PD26_230_12",
+  "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Geburten/Tabellen/geburtenziffer.html"
+ },
+ {
+  "iso3": "DEU",
+  "country": "Germany",
+  "year": 2023,
+  "tfr": 1.38,
+  "kind": "official",
+  "source": "Destatis, zusammengefasste Geburtenziffer (table) and press release PD26_230_12",
+  "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Geburten/Tabellen/geburtenziffer.html"
+ },
+ {
+  "iso3": "DEU",
+  "country": "Germany",
+  "year": 2024,
+  "tfr": 1.35,
+  "kind": "official",
+  "source": "Destatis, zusammengefasste Geburtenziffer (table) and press release PD26_230_12",
+  "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Geburten/Tabellen/geburtenziffer.html"
+ },
+ {
+  "iso3": "DEU",
+  "country": "Germany",
+  "year": 2025,
+  "tfr": 1.32,
+  "kind": "official",
+  "source": "Destatis, zusammengefasste Geburtenziffer (table) and press release PD26_230_12",
+  "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Geburten/Tabellen/geburtenziffer.html"
+ },
+ {
+  "iso3": "DEU",
+  "country": "Germany",
+  "year": 2026,
+  "tfr": 1.309,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 1.32,
+   "year": 2025
+  },
+  "births_ytd": 317000,
+  "births_prev_same_months": 319768,
+  "births_ratio": 0.9913,
+  "source": "Destatis (monthly births, provisional) / Statistikportal des Bundes und der Länder",
+  "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Geburten/geburten-aktuell.html",
+  "urls": [
+   "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Geburten/geburten-aktuell.html",
+   "https://www.statistikportal.de/de/deutschland-insgesamt/bevoelkerung"
+  ],
+  "note": "Destatis 'Monatliche Geburtenzahlen' (14 Sep 2026): rund 317 000 births Jan–Jun 2026 (provisional, incomplete), -0.9% vs Jan–Jun 2025; 2025 Jan–Jun = sum of provisional monthly values on Statistikportal (54382+49212+53637+52386+55286+54865). 2026 total is rounded to the nearest 1,000."
+ },
+ {
+  "iso3": "GRC",
+  "country": "Greece",
+  "year": 2022,
+  "tfr": 1.32,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "GRC",
+  "country": "Greece",
+  "year": 2023,
+  "tfr": 1.26,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "GRC",
+  "country": "Greece",
+  "year": 2024,
+  "tfr": 1.24,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022"
+ },
+ {
+  "iso3": "HKG",
+  "country": "Hong Kong",
+  "year": 2024,
+  "tfr": 0.84,
+  "kind": "official",
+  "source": "Census and Statistics Department (C&SD) (from latest_tfr.json)",
+  "url": "https://www.censtatd.gov.hk/en/chat20250625.html",
+  "tfr_unrounded": 0.841
+ },
+ {
+  "iso3": "HUN",
+  "country": "Hungary",
+  "year": 2022,
+  "tfr": 1.55,
+  "kind": "official",
+  "source": "KSH STADAT 22.1.1.6 (live births, total fertility rate)",
+  "url": "https://www.ksh.hu/stadat_files/nep/en/nep0006.html"
+ },
+ {
+  "iso3": "HUN",
+  "country": "Hungary",
+  "year": 2023,
+  "tfr": 1.51,
+  "kind": "official",
+  "source": "KSH STADAT 22.1.1.6 (live births, total fertility rate)",
+  "url": "https://www.ksh.hu/stadat_files/nep/en/nep0006.html"
+ },
+ {
+  "iso3": "HUN",
+  "country": "Hungary",
+  "year": 2024,
+  "tfr": 1.39,
+  "kind": "official",
+  "source": "KSH STADAT 22.1.1.6 (live births, total fertility rate)",
+  "url": "https://www.ksh.hu/stadat_files/nep/en/nep0006.html"
+ },
+ {
+  "iso3": "HUN",
+  "country": "Hungary",
+  "year": 2025,
+  "tfr": 1.31,
+  "kind": "provisional",
+  "source": "KSH STADAT 22.1.1.6 (live births, total fertility rate)",
+  "url": "https://www.ksh.hu/stadat_files/nep/en/nep0006.html"
+ },
+ {
+  "iso3": "HUN",
+  "country": "Hungary",
+  "year": 2026,
+  "tfr": 1.265,
+  "kind": "estimate",
+  "months": "Jan–Aug",
+  "base": {
+   "tfr": 1.31,
+   "year": 2025
+  },
+  "births_ytd": 46497,
+  "births_prev_same_months": 48160,
+  "births_ratio": 0.9655,
+  "source": "KSH STADAT 22.2.1.1 (main indicators of vital events, monthly data; 2026 preliminary)",
+  "url": "https://www.ksh.hu/stadat_files/nep/en/nep0064.html",
+  "nso_ytd_tfr": {
+   "value": 1.29,
+   "months": "Jan–Aug",
+   "prev_same_months": 1.31,
+   "note": "KSH publishes its own Jan–Aug 2026 TFR (1.29) vs Jan–Aug 2025 (1.31) in the same table"
+  }
+ },
+ {
+  "iso3": "ISL",
+  "country": "Iceland",
+  "year": 2022,
+  "tfr": 1.59,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "ISL",
+  "country": "Iceland",
+  "year": 2023,
+  "tfr": 1.55,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "ISL",
+  "country": "Iceland",
+  "year": 2024,
+  "tfr": 1.56,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "ISL",
+  "country": "Iceland",
+  "year": 2025,
+  "tfr": 1.56,
+  "kind": "official",
+  "source": "Statistics Iceland (Hagstofa) (from latest_tfr.json)",
+  "url": "https://hagstofa.is/utgafur/frettasafn/mannfjoldi/faedingar-2025/"
+ },
+ {
+  "iso3": "ISL",
+  "country": "Iceland",
+  "year": 2026,
+  "tfr": 1.625,
+  "kind": "estimate",
+  "months": "Q1–Q2",
+  "base": {
+   "tfr": 1.56,
+   "year": 2025
+  },
+  "births_ytd": 2240,
+  "births_prev_same_months": 2150,
+  "births_ratio": 1.0419,
+  "source": "Statistics Iceland (Hagstofa) MAN10002 (births by quarter; published rounded to the nearest 10)",
+  "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__1_yfirlit__arsfjordungstolur/MAN10002.px",
+  "note": "Quarterly counts are rounded to the nearest 10, so the ratio is uncertain by roughly ±1%; small population (≈4,400 births/yr)."
+ },
+ {
+  "iso3": "IND",
+  "country": "India",
+  "year": 2024,
+  "tfr": 1.9,
+  "kind": "official",
+  "source": "Office of the Registrar General, Sample Registration System (from latest_tfr.json)",
+  "url": "https://visionias.in/current-affairs/news-today/2026-05-22/society/sample-registration-system-srs-statistical-report-2024-released",
+  "note": "SRS Statistical Report 2024 (reported as 1.9; ~1.88 unrounded per press)"
+ },
+ {
+  "iso3": "IDN",
+  "country": "Indonesia",
+  "year": 2025,
+  "tfr": 2.13,
+  "kind": "official",
+  "source": "BPS-Statistics Indonesia (from latest_tfr.json)",
+  "url": "https://www.bps.go.id/en/pressrelease/2026/05/05/2645/supas-2025--angka-kelahiran-total--tfr--sebesar-2-13---angka-kematian-bayi--imr--sebesar-14-12--dan-persentase-lansia-mencapai-11-97-persen-.html",
+  "note": "survey (SUPAS 2025 intercensal survey)"
+ },
+ {
+  "iso3": "IRL",
+  "country": "Ireland",
+  "year": 2022,
+  "tfr": 1.51,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "IRL",
+  "country": "Ireland",
+  "year": 2023,
+  "tfr": 1.5,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "IRL",
+  "country": "Ireland",
+  "year": 2024,
+  "tfr": 1.47,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "IRL",
+  "country": "Ireland",
+  "year": 2025,
+  "tfr": 1.5,
+  "kind": "official",
+  "source": "CSO Ireland Vital Statistics Yearly Summary 2025 (from latest_tfr.json)",
+  "url": "https://www.cso.ie/en/releasesandpublications/ep/p-vsys/vitalstatisticsyearlysummary2025/",
+  "note": "published to 1 decimal only"
+ },
+ {
+  "iso3": "IRL",
+  "country": "Ireland",
+  "year": 2026,
+  "tfr": 1.507,
+  "kind": "estimate",
+  "months": "Q1",
+  "base": {
+   "tfr": 1.47,
+   "year": 2024
+  },
+  "births_ytd": 13823,
+  "births_prev_same_months": 13482,
+  "births_ratio": 1.0253,
+  "source": "CSO Ireland PxStat VSQ04 (births registered per quarter)",
+  "url": "https://data.cso.ie/table/VSQ04",
+  "base_note": "No 2025 official TFR available; base is TFR_2024 and births in the same months of 2024",
+  "note": "Only Q1 2026 is published (births by quarter of registration). The official 2025 TFR is published only to one decimal (1.5), so the 2-decimal Eurostat 2024 TFR (1.47) and Q1 2024 registrations are used as the base instead; using 2025 instead gives 1.5 x 13,823/13,665 = 1.52. Monthly counts are by registration date (or preliminary registrations), not strictly by date of birth."
+ },
+ {
+  "iso3": "ISR",
+  "country": "Israel",
+  "year": 2025,
+  "tfr": 2.88,
+  "kind": "official",
+  "source": "Israel CBS (via Jerusalem Post) (from latest_tfr.json)",
+  "url": "https://www.jpost.com/israel-news/article-908103",
+  "note": "CBS figures released Sept 2026 (183,678 births)"
+ },
+ {
+  "iso3": "ITA",
+  "country": "Italy",
+  "year": 2022,
+  "tfr": 1.24,
+  "kind": "official",
+  "source": "ISTAT Indicatori demografici (IstatData 22_293_DF_DCIS_INDDEMOG1_1, TFR)",
+  "url": "https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,POP,1.0/POP_POPULATION/DCIS_INDDEMOG1"
+ },
+ {
+  "iso3": "ITA",
+  "country": "Italy",
+  "year": 2023,
+  "tfr": 1.2,
+  "kind": "official",
+  "source": "ISTAT Indicatori demografici (IstatData 22_293_DF_DCIS_INDDEMOG1_1, TFR)",
+  "url": "https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,POP,1.0/POP_POPULATION/DCIS_INDDEMOG1"
+ },
+ {
+  "iso3": "ITA",
+  "country": "Italy",
+  "year": 2024,
+  "tfr": 1.18,
+  "kind": "official",
+  "source": "ISTAT Indicatori demografici (IstatData 22_293_DF_DCIS_INDDEMOG1_1, TFR)",
+  "url": "https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,POP,1.0/POP_POPULATION/DCIS_INDDEMOG1"
+ },
+ {
+  "iso3": "ITA",
+  "country": "Italy",
+  "year": 2025,
+  "tfr": 1.14,
+  "kind": "provisional",
+  "source": "ISTAT Indicatori demografici (IstatData 22_293_DF_DCIS_INDDEMOG1_1, TFR)",
+  "url": "https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,POP,1.0/POP_POPULATION/DCIS_INDDEMOG1"
+ },
+ {
+  "iso3": "ITA",
+  "country": "Italy",
+  "year": 2026,
+  "tfr": 1.131,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 1.14,
+   "year": 2025
+  },
+  "births_ytd": 165521,
+  "births_prev_same_months": 166789,
+  "births_ratio": 0.9924,
+  "source": "ISTAT Bilancio demografico mensile (IstatData dataflow 22_315_DF_DCIS_POPORESBIL1_2, live births; provisional)",
+  "url": "https://esploradati.istat.it/databrowser/#/it/dw/categories/IT1,POP,1.0/POP_POPULATION/DCIS_POPORESBIL1",
+  "note": "Monthly counts are by registration date (or preliminary registrations), not strictly by date of birth."
+ },
+ {
+  "iso3": "JPN",
+  "country": "Japan",
+  "year": 2022,
+  "tfr": 1.26,
+  "kind": "official",
+  "source": "MHLW 令和7年人口動態統計月報年計(概数) 第2表",
+  "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/nengai25/index.html"
+ },
+ {
+  "iso3": "JPN",
+  "country": "Japan",
+  "year": 2023,
+  "tfr": 1.2,
+  "kind": "official",
+  "source": "MHLW 令和7年人口動態統計月報年計(概数) 第2表",
+  "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/nengai25/index.html"
+ },
+ {
+  "iso3": "JPN",
+  "country": "Japan",
+  "year": 2024,
+  "tfr": 1.15,
+  "kind": "official",
+  "source": "MHLW 令和7年人口動態統計月報年計(概数) 第2表",
+  "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/nengai25/index.html"
+ },
+ {
+  "iso3": "JPN",
+  "country": "Japan",
+  "year": 2025,
+  "tfr": 1.14,
+  "kind": "provisional",
+  "source": "MHLW 令和7年人口動態統計月報年計(概数) 第2表",
+  "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/nengai25/index.html"
+ },
+ {
+  "iso3": "JPN",
+  "country": "Japan",
+  "year": 2026,
+  "tfr": 1.145,
+  "kind": "estimate",
+  "months": "Jan–Jul",
+  "base": {
+   "tfr": 1.14,
+   "year": 2025
+  },
+  "births_ytd": 404547,
+  "births_prev_same_months": 402695,
+  "births_ratio": 1.0046,
+  "source": "MHLW 人口動態統計速報 (preliminary flash, July 2026 issue; includes foreigners in Japan and Japanese abroad)",
+  "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/s2026/07.html",
+  "note": "Flash (速報) counts include foreign nationals; base TFR is for Japanese nationals (概数). Ratio method assumes same relative change."
+ },
+ {
+  "iso3": "JOR",
+  "country": "Jordan",
+  "year": 2023,
+  "tfr": 2.6,
+  "kind": "official",
+  "source": "DHS Program (DHS 2023) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=JO2023DHS&breakdown=national",
+  "note": "survey (JO2023DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "KAZ",
+  "country": "Kazakhstan",
+  "year": 2025,
+  "tfr": 2.57,
+  "kind": "official",
+  "source": "Bureau of National Statistics (via ENPF demographic portrait) (from latest_tfr.json)",
+  "url": "https://www.enpf.kz/ru/press-center/news/282542/",
+  "note": "Bureau of National Statistics data as reported by ENPF"
+ },
+ {
+  "iso3": "KAZ",
+  "country": "Kazakhstan",
+  "year": 2026,
+  "tfr": 2.388,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 2.57,
+   "year": 2025
+  },
+  "births_ytd": 149774,
+  "births_prev_same_months": 161200,
+  "births_ratio": 0.9291,
+  "source": "Bureau of National Statistics of Kazakhstan, natural population movement Jan–Jun 2026",
+  "url": "https://stat.gov.kz/api/iblock/element/510630/file/ru/",
+  "urls": [
+   "https://stat.gov.kz/api/iblock/element/510630/file/ru/",
+   "https://stat.gov.kz/ru/news/o-demograficheskoy-situatsii-za-yanvar-iyun-2025-goda-/",
+   "https://stat.gov.kz/ru/industries/social-statistics/demography/"
+  ],
+  "note": "Bureau of National Statistics (ASPIR RK): 149,774 live births in Jan–Jun 2026 ('Естественное движение населения, январь-июнь 2026', 10 Aug 2026); Jan–Jun 2025 = 161.2 thousand per the Bureau's 11 Aug 2025 release (rounded to 0.1k, preliminary at the time). The Bureau also shows 201,462 births for Jan–Aug 2026 (no matching 2025 figure retrieved)."
+ },
+ {
+  "iso3": "LVA",
+  "country": "Latvia",
+  "year": 2022,
+  "tfr": 1.47,
+  "kind": "official",
+  "source": "Official Statistics Portal of Latvia (CSP) IDK010 (total fertility rate)",
+  "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__ID__IDK/IDK010/"
+ },
+ {
+  "iso3": "LVA",
+  "country": "Latvia",
+  "year": 2023,
+  "tfr": 1.34,
+  "kind": "official",
+  "source": "Official Statistics Portal of Latvia (CSP) IDK010 (total fertility rate)",
+  "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__ID__IDK/IDK010/"
+ },
+ {
+  "iso3": "LVA",
+  "country": "Latvia",
+  "year": 2024,
+  "tfr": 1.23,
+  "kind": "official",
+  "source": "Official Statistics Portal of Latvia (CSP) IDK010 (total fertility rate)",
+  "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__ID__IDK/IDK010/"
+ },
+ {
+  "iso3": "LVA",
+  "country": "Latvia",
+  "year": 2025,
+  "tfr": 1.16,
+  "kind": "official",
+  "source": "Official Statistics Portal of Latvia (CSP) IDK010 (total fertility rate)",
+  "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__ID__IDK/IDK010/"
+ },
+ {
+  "iso3": "LVA",
+  "country": "Latvia",
+  "year": 2026,
+  "tfr": 1.106,
+  "kind": "estimate",
+  "months": "Jan–Jul",
+  "base": {
+   "tfr": 1.16,
+   "year": 2025
+  },
+  "births_ytd": 6613,
+  "births_prev_same_months": 6935,
+  "births_ratio": 0.9536,
+  "source": "Official Statistics Portal of Latvia (CSP) IDS010m (live births by month)",
+  "url": "https://data.stat.gov.lv/pxweb/en/OSP_PUB/START__POP__ID__IDS/IDS010m/"
+ },
+ {
+  "iso3": "LSO",
+  "country": "Lesotho",
+  "year": 2023,
+  "tfr": 2.5,
+  "kind": "official",
+  "source": "DHS Program (DHS 2023) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=LS2023DHS&breakdown=national",
+  "note": "survey (LS2023DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "LIE",
+  "country": "Liechtenstein",
+  "year": 2022,
+  "tfr": 1.47,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "LIE",
+  "country": "Liechtenstein",
+  "year": 2023,
+  "tfr": 1.45,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "LIE",
+  "country": "Liechtenstein",
+  "year": 2024,
+  "tfr": 1.37,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022"
+ },
+ {
+  "iso3": "LTU",
+  "country": "Lithuania",
+  "year": 2022,
+  "tfr": 1.27,
+  "kind": "official",
+  "source": "State Data Agency (Statistics Lithuania) S3R484_M3010508 (total fertility rate)",
+  "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R484#/"
+ },
+ {
+  "iso3": "LTU",
+  "country": "Lithuania",
+  "year": 2023,
+  "tfr": 1.18,
+  "kind": "official",
+  "source": "State Data Agency (Statistics Lithuania) S3R484_M3010508 (total fertility rate)",
+  "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R484#/"
+ },
+ {
+  "iso3": "LTU",
+  "country": "Lithuania",
+  "year": 2024,
+  "tfr": 1.11,
+  "kind": "official",
+  "source": "State Data Agency (Statistics Lithuania) S3R484_M3010508 (total fertility rate)",
+  "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R484#/"
+ },
+ {
+  "iso3": "LTU",
+  "country": "Lithuania",
+  "year": 2025,
+  "tfr": 1.04,
+  "kind": "official",
+  "source": "State Data Agency (Statistics Lithuania) S3R484_M3010508 (total fertility rate)",
+  "url": "https://osp.stat.gov.lt/statistiniu-rodikliu-analize?indicator=S3R484#/"
+ },
+ {
+  "iso3": "LUX",
+  "country": "Luxembourg",
+  "year": 2022,
+  "tfr": 1.31,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "LUX",
+  "country": "Luxembourg",
+  "year": 2023,
+  "tfr": 1.25,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "LUX",
+  "country": "Luxembourg",
+  "year": 2024,
+  "tfr": 1.25,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "LUX",
+  "country": "Luxembourg",
+  "year": 2025,
+  "tfr": 1.23,
+  "kind": "official",
+  "source": "STATEC (from latest_tfr.json)",
+  "url": "https://statistiques.public.lu/fr/actualites/2026/stn15-population-2026.html"
+ },
+ {
+  "iso3": "MAC",
+  "country": "Macao",
+  "year": 2025,
+  "tfr": 0.47,
+  "kind": "official",
+  "source": "DSEC Macao (via Plataforma) (from latest_tfr.json)",
+  "url": "https://www.plataformamedia.com/en/2026/03/28/macaus-fertility-rate-falls-to-new-record-low-in-2025/"
+ },
+ {
+  "iso3": "MAC",
+  "country": "Macao",
+  "year": 2026,
+  "tfr": 0.443,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 0.47,
+   "year": 2025
+  },
+  "births_ytd": 1340,
+  "births_prev_same_months": 1421,
+  "births_ratio": 0.943,
+  "source": "DSEC Macao, demographic statistics (half-year 2026 and Q2 2025 releases)",
+  "url": "https://www.gcs.gov.mo/news/detail/en/N26HGUrK3K",
+  "urls": [
+   "https://www.gcs.gov.mo/news/detail/en/N26HGUrK3K",
+   "https://www.gcs.gov.mo/detail/en/N25HEsZjgm"
+  ],
+  "note": "DSEC (Statistics and Census Service) releases: 1,340 live births in H1 2026 (7 Aug 2026). H1 2025 = Q1 2025 (750) + Q2 2025 (671); the Q2 2025 release (5 Aug 2025) gives 671 births, 'fell by 79' vs Q1, i.e. Q1 = 750. Very small numbers (≈2,700 births/yr)."
+ },
+ {
+  "iso3": "MWI",
+  "country": "Malawi",
+  "year": 2024,
+  "tfr": 3.7,
+  "kind": "official",
+  "source": "DHS Program (DHS 2024) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=MW2024DHS&breakdown=national",
+  "note": "survey (MW2024DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "MYS",
+  "country": "Malaysia",
+  "year": 2024,
+  "tfr": 1.6,
+  "kind": "official",
+  "source": "DOSM Vital Statistics Malaysia (from latest_tfr.json)",
+  "url": "https://www.dosm.gov.my/portal-main/release-content/vital-statistics-malaysia-2025",
+  "note": "published to 1 decimal"
+ },
+ {
+  "iso3": "MLI",
+  "country": "Mali",
+  "year": 2023,
+  "tfr": 6,
+  "kind": "official",
+  "source": "DHS Program (DHS 2023) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=ML2023DHS&breakdown=national",
+  "note": "survey (ML2023DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "MLT",
+  "country": "Malta",
+  "year": 2022,
+  "tfr": 1.08,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "MLT",
+  "country": "Malta",
+  "year": 2023,
+  "tfr": 1.06,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "MLT",
+  "country": "Malta",
+  "year": 2024,
+  "tfr": 1.01,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022"
+ },
+ {
+  "iso3": "MEX",
+  "country": "Mexico",
+  "year": 2024,
+  "tfr": 1.2,
+  "kind": "official",
+  "source": "INEGI Encuesta Intercensal 2025 (via El Imparcial) (from latest_tfr.json)",
+  "url": "https://www.elimparcial.com/mexico/2026/09/23/el-mapa-demografico-de-mexico-cambio-pues-ahora-la-poblacion-envejece-y-tiene-menos-hijos-inegi-reporta-que-la-fecundidad-cayo-a-12-por-mujer/",
+  "note": "survey-based (INEGI Encuesta Intercensal 2025); 1 decimal"
+ },
+ {
+  "iso3": "MDA",
+  "country": "Moldova",
+  "year": 2022,
+  "tfr": 1.71,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "MDA",
+  "country": "Moldova",
+  "year": 2023,
+  "tfr": 1.68,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "MDA",
+  "country": "Moldova",
+  "year": 2024,
+  "tfr": 1.78,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022",
+  "note": "Eurostat estimate"
+ },
+ {
+  "iso3": "MNE",
+  "country": "Montenegro",
+  "year": 2022,
+  "tfr": 1.78,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "MNE",
+  "country": "Montenegro",
+  "year": 2023,
+  "tfr": 1.76,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "MNE",
+  "country": "Montenegro",
+  "year": 2024,
+  "tfr": 1.75,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022"
+ },
+ {
+  "iso3": "MAR",
+  "country": "Morocco",
+  "year": 2024,
+  "tfr": 1.97,
+  "kind": "official",
+  "source": "HCP Morocco, RGPH 2024 (from latest_tfr.json)",
+  "url": "https://fesnews.media/294229/2024/12/17/",
+  "note": "census (RGPH 2024)"
+ },
+ {
+  "iso3": "NLD",
+  "country": "Netherlands",
+  "year": 2022,
+  "tfr": 1.49,
+  "kind": "official",
+  "source": "CBS StatLine 37201 (Gemiddeld kindertal per vrouw)",
+  "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/37201/table"
+ },
+ {
+  "iso3": "NLD",
+  "country": "Netherlands",
+  "year": 2023,
+  "tfr": 1.43,
+  "kind": "official",
+  "source": "CBS StatLine 37201 (Gemiddeld kindertal per vrouw)",
+  "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/37201/table"
+ },
+ {
+  "iso3": "NLD",
+  "country": "Netherlands",
+  "year": 2024,
+  "tfr": 1.43,
+  "kind": "official",
+  "source": "CBS StatLine 37201 (Gemiddeld kindertal per vrouw)",
+  "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/37201/table"
+ },
+ {
+  "iso3": "NLD",
+  "country": "Netherlands",
+  "year": 2025,
+  "tfr": 1.42,
+  "kind": "official",
+  "source": "CBS StatLine 37201 (Gemiddeld kindertal per vrouw)",
+  "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/37201/table"
+ },
+ {
+  "iso3": "NLD",
+  "country": "Netherlands",
+  "year": 2026,
+  "tfr": 1.429,
+  "kind": "estimate",
+  "months": "Jan–Aug",
+  "base": {
+   "tfr": 1.42,
+   "year": 2025
+  },
+  "births_ytd": 112144,
+  "births_prev_same_months": 111451,
+  "births_ratio": 1.0062,
+  "source": "CBS StatLine 37230ned (Bevolkingsontwikkeling; regio per maand), live births",
+  "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/37230ned/table"
+ },
+ {
+  "iso3": "NZL",
+  "country": "New Zealand",
+  "year": 2025,
+  "tfr": 1.55,
+  "kind": "official",
+  "source": "Stats NZ (from latest_tfr.json)",
+  "url": "https://www.stats.govt.nz/information-releases/births-and-deaths-year-ended-december-2025-including-abridged-period-life-table/"
+ },
+ {
+  "iso3": "NGA",
+  "country": "Nigeria",
+  "year": 2024,
+  "tfr": 4.8,
+  "kind": "official",
+  "source": "NPC / DHS Program NDHS 2023-24 (from latest_tfr.json)",
+  "url": "https://dhsprogram.com/pubs/pdf/PR157/PR157.pdf",
+  "note": "survey (2023-24 NDHS; 3-year reference period)"
+ },
+ {
+  "iso3": "MKD",
+  "country": "North Macedonia",
+  "year": 2022,
+  "tfr": 1.58,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "MKD",
+  "country": "North Macedonia",
+  "year": 2023,
+  "tfr": 1.49,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "MKD",
+  "country": "North Macedonia",
+  "year": 2024,
+  "tfr": 1.44,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022"
+ },
+ {
+  "iso3": "NOR",
+  "country": "Norway",
+  "year": 2022,
+  "tfr": 1.41,
+  "kind": "official",
+  "source": "Statistics Norway (SSB) table 04232 (samlet fruktbarhetstall)",
+  "url": "https://www.ssb.no/en/statbank/table/04232"
+ },
+ {
+  "iso3": "NOR",
+  "country": "Norway",
+  "year": 2023,
+  "tfr": 1.4,
+  "kind": "official",
+  "source": "Statistics Norway (SSB) table 04232 (samlet fruktbarhetstall)",
+  "url": "https://www.ssb.no/en/statbank/table/04232"
+ },
+ {
+  "iso3": "NOR",
+  "country": "Norway",
+  "year": 2024,
+  "tfr": 1.44,
+  "kind": "official",
+  "source": "Statistics Norway (SSB) table 04232 (samlet fruktbarhetstall)",
+  "url": "https://www.ssb.no/en/statbank/table/04232"
+ },
+ {
+  "iso3": "NOR",
+  "country": "Norway",
+  "year": 2025,
+  "tfr": 1.48,
+  "kind": "official",
+  "source": "Statistics Norway (SSB) table 04232 (samlet fruktbarhetstall)",
+  "url": "https://www.ssb.no/en/statbank/table/04232"
+ },
+ {
+  "iso3": "NOR",
+  "country": "Norway",
+  "year": 2026,
+  "tfr": 1.565,
+  "kind": "estimate",
+  "months": "Q1–Q2",
+  "base": {
+   "tfr": 1.48,
+   "year": 2025
+  },
+  "births_ytd": 29194,
+  "births_prev_same_months": 27610,
+  "births_ratio": 1.0574,
+  "source": "Statistics Norway (SSB) table 01222, live births per quarter",
+  "url": "https://www.ssb.no/en/statbank/table/01222"
+ },
+ {
+  "iso3": "PER",
+  "country": "Peru",
+  "year": 2025,
+  "tfr": 1.7,
+  "kind": "official",
+  "source": "INEI ENDES 2025 (from latest_tfr.json)",
+  "url": "https://www.gob.pe/institucion/inei/noticias/1408994-endes-2025-tasa-global-de-fecundidad-fue-de-1-7-hijos-por-mujer",
+  "note": "survey (ENDES 2025); 1 decimal"
+ },
+ {
+  "iso3": "PHL",
+  "country": "Philippines",
+  "year": 2025,
+  "tfr": 1.7,
+  "kind": "official",
+  "source": "PSA 2025 National Demographic and Health Survey (from latest_tfr.json)",
+  "url": "https://www.pna.gov.ph/index.php/articles/1272079",
+  "note": "survey (2025 NDHS)"
+ },
+ {
+  "iso3": "POL",
+  "country": "Poland",
+  "year": 2022,
+  "tfr": 1.26,
+  "kind": "official",
+  "source": "Statistics Poland (GUS) Local Data Bank (BDL) variable 59049 'dzietność'",
+  "url": "https://bdl.stat.gov.pl/bdl/dane/podgrup/temat",
+  "tfr_unrounded": 1.261
+ },
+ {
+  "iso3": "POL",
+  "country": "Poland",
+  "year": 2023,
+  "tfr": 1.16,
+  "kind": "official",
+  "source": "Statistics Poland (GUS) Local Data Bank (BDL) variable 59049 'dzietność'",
+  "url": "https://bdl.stat.gov.pl/bdl/dane/podgrup/temat",
+  "tfr_unrounded": 1.158
+ },
+ {
+  "iso3": "POL",
+  "country": "Poland",
+  "year": 2024,
+  "tfr": 1.1,
+  "kind": "official",
+  "source": "Statistics Poland (GUS) Local Data Bank (BDL) variable 59049 'dzietność'",
+  "url": "https://bdl.stat.gov.pl/bdl/dane/podgrup/temat",
+  "tfr_unrounded": 1.099
+ },
+ {
+  "iso3": "POL",
+  "country": "Poland",
+  "year": 2025,
+  "tfr": 1.07,
+  "kind": "official",
+  "source": "Statistics Poland (GUS) Local Data Bank (BDL) variable 59049 'dzietność'",
+  "url": "https://bdl.stat.gov.pl/bdl/dane/podgrup/temat",
+  "tfr_unrounded": 1.068
+ },
+ {
+  "iso3": "POL",
+  "country": "Poland",
+  "year": 2026,
+  "tfr": 1.059,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 1.068,
+   "year": 2025
+  },
+  "births_ytd": 115000,
+  "births_prev_same_months": 116000,
+  "births_ratio": 0.9914,
+  "source": "Statistics Poland (GUS), Sytuacja społeczno-gospodarcza kraju 07.2026",
+  "url": "https://ssgk.stat.gov.pl/Sytuacja_spo%C5%82eczno-gospodarcza_kraju_07.2026.pdf",
+  "urls": [
+   "https://ssgk.stat.gov.pl/Sytuacja_spo%C5%82eczno-gospodarcza_kraju_07.2026.pdf",
+   "https://ssgk.stat.gov.pl/Sytuacja_spo%C5%82eczno-gospodarcza_kraju_07.2025.pdf"
+  ],
+  "note": "GUS 'Sytuacja społeczno-gospodarcza kraju 07.2026' (preliminary estimate): 115.0 thousand live births in H1 2026, '-1 tys. r/r'; births_prev_same_months = 115.0k + 1k (both rounded to the nearest 0.1k / 1k; ratio uncertain by roughly ±0.5%). The July 2025 issue had put H1 2025 at 115.5k (preliminary); using that instead gives 1.063 vs 1.059 — both round to 1.06."
+ },
+ {
+  "iso3": "PRT",
+  "country": "Portugal",
+  "year": 2022,
+  "tfr": 1.43,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "PRT",
+  "country": "Portugal",
+  "year": 2023,
+  "tfr": 1.45,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "PRT",
+  "country": "Portugal",
+  "year": 2024,
+  "tfr": 1.41,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022"
+ },
+ {
+  "iso3": "PRI",
+  "country": "Puerto Rico",
+  "year": 2024,
+  "tfr": 0.87,
+  "kind": "provisional",
+  "source": "Puerto Rico Institute of Statistics (via Primera Hora) (from latest_tfr.json)",
+  "url": "https://www.primerahora.com/noticias/puerto-rico/notas/en-descenso-los-embarazos-en-puerto-rico/",
+  "note": "preliminary (Instituto de Estadísticas de Puerto Rico)"
+ },
+ {
+  "iso3": "ROU",
+  "country": "Romania",
+  "year": 2022,
+  "tfr": 1.75,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "ROU",
+  "country": "Romania",
+  "year": 2023,
+  "tfr": 1.54,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "ROU",
+  "country": "Romania",
+  "year": 2024,
+  "tfr": 1.39,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT) (from latest_tfr.json)",
+  "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?indic_de=TOTFERRT&format=JSON&sinceTimePeriod=2022",
+  "note": "Eurostat estimate"
+ },
+ {
+  "iso3": "RUS",
+  "country": "Russia",
+  "year": 2025,
+  "tfr": 1.37,
+  "kind": "provisional",
+  "source": "Rosstat (via Kommersant) (from latest_tfr.json)",
+  "url": "https://www.kommersant.ru/doc/8365181",
+  "tfr_unrounded": 1.374,
+  "note": "preliminary (Rosstat operational data)"
+ },
+ {
+  "iso3": "RWA",
+  "country": "Rwanda",
+  "year": 2025,
+  "tfr": 3.7,
+  "kind": "official",
+  "source": "DHS Program (DHS 2025) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=RW2025DHS&breakdown=national",
+  "note": "survey (RW2025DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "SAU",
+  "country": "Saudi Arabia",
+  "year": 2024,
+  "tfr": 2.0,
+  "kind": "official",
+  "source": "GASTAT Population Estimates 2024 (from latest_tfr.json)",
+  "url": "https://www.stats.gov.sa/documents/20117/2435273/Population+Estimates+Statistics+2024+EN.pdf/9b71e303-5fd9-19cb-9913-850a9d521639",
+  "note": "total resident population (Saudi nationals 2.7; non-Saudi 0.8)"
+ },
+ {
+  "iso3": "SEN",
+  "country": "Senegal",
+  "year": 2023,
+  "tfr": 4,
+  "kind": "official",
+  "source": "DHS Program (DHS 2023) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=SN2023DHS&breakdown=national",
+  "note": "survey (SN2023DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "SRB",
+  "country": "Serbia",
+  "year": 2022,
+  "tfr": 1.59,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "SRB",
+  "country": "Serbia",
+  "year": 2023,
+  "tfr": 1.62,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "SRB",
+  "country": "Serbia",
+  "year": 2024,
+  "tfr": 1.64,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "SRB",
+  "country": "Serbia",
+  "year": 2025,
+  "tfr": 1.62,
+  "kind": "official",
+  "source": "Statistical Office of the Republic of Serbia (via Politika) (from latest_tfr.json)",
+  "url": "https://www.politika.rs/sr/clanak/768421/u-2025-u-srbiji-rodeno-najmanje-beba-za-poslednjih-sto-godina"
+ },
+ {
+  "iso3": "SRB",
+  "country": "Serbia",
+  "year": 2026,
+  "tfr": 1.637,
+  "kind": "estimate",
+  "months": "Jan–Aug",
+  "base": {
+   "tfr": 1.62,
+   "year": 2025
+  },
+  "births_ytd": 38319,
+  "births_prev_same_months": 37923,
+  "births_ratio": 1.0104,
+  "source": "Statistical Office of the Republic of Serbia (RZS), monthly births and deaths release",
+  "url": "https://www.stat.gov.rs/en-US/oblasti/stanovnistvo/rodjeni-i-umrli",
+  "note": "Statistical Office of the Republic of Serbia release (25 Sep 2026): live births Jan–Aug 2026 = 38,319 vs 37,923 in Jan–Aug 2025 (+1.0%). Preliminary data by month of registration. Monthly counts are by registration date (or preliminary registrations), not strictly by date of birth."
+ },
+ {
+  "iso3": "SGP",
+  "country": "Singapore",
+  "year": 2022,
+  "tfr": 1.04,
+  "kind": "official",
+  "source": "Singapore Department of Statistics, SingStat M810091 (resident total fertility rate)",
+  "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810091"
+ },
+ {
+  "iso3": "SGP",
+  "country": "Singapore",
+  "year": 2023,
+  "tfr": 0.97,
+  "kind": "official",
+  "source": "Singapore Department of Statistics, SingStat M810091 (resident total fertility rate)",
+  "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810091"
+ },
+ {
+  "iso3": "SGP",
+  "country": "Singapore",
+  "year": 2024,
+  "tfr": 0.97,
+  "kind": "official",
+  "source": "Singapore Department of Statistics, SingStat M810091 (resident total fertility rate)",
+  "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810091"
+ },
+ {
+  "iso3": "SGP",
+  "country": "Singapore",
+  "year": 2025,
+  "tfr": 0.87,
+  "kind": "official",
+  "source": "Singapore Department of Statistics, SingStat M810091 (resident total fertility rate)",
+  "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810091"
+ },
+ {
+  "iso3": "SGP",
+  "country": "Singapore",
+  "year": 2026,
+  "tfr": 0.799,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 0.87,
+   "year": 2025
+  },
+  "births_ytd": 13669,
+  "births_prev_same_months": 14876,
+  "births_ratio": 0.9189,
+  "source": "Singapore Department of Statistics, SingStat Table Builder M810051 (live-births by sex and ethnic group, monthly; total live-births)",
+  "url": "https://tablebuilder.singstat.gov.sg/table/TS/M810051",
+  "note": "SingStat note: 2026 monthly data are by date of registration, 2025 by date of occurrence. Counts are total live-births (incl. non-residents) while the base TFR is the resident TFR."
+ },
+ {
+  "iso3": "SVK",
+  "country": "Slovakia",
+  "year": 2022,
+  "tfr": 1.57,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "SVK",
+  "country": "Slovakia",
+  "year": 2023,
+  "tfr": 1.49,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "SVK",
+  "country": "Slovakia",
+  "year": 2024,
+  "tfr": 1.46,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table",
+  "note": "Eurostat value (national series not retrieved for this year)"
+ },
+ {
+  "iso3": "SVK",
+  "country": "Slovakia",
+  "year": 2025,
+  "tfr": 1.36,
+  "kind": "official",
+  "source": "Statistical Office of the Slovak Republic (via MPSVR SR social situation report 2025) (from latest_tfr.json)",
+  "url": "https://www.employment.gov.sk/files/slovensky/ministerstvo/analyticke-centrum/2026/sprava_o_social_situacii_obyvatelstva_sr_2025_pub.pdf",
+  "note": "ŠÚ SR data as cited in Ministry of Labour report"
+ },
+ {
+  "iso3": "SVK",
+  "country": "Slovakia",
+  "year": 2026,
+  "tfr": 1.344,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 1.36,
+   "year": 2025
+  },
+  "births_ytd": 20235,
+  "births_prev_same_months": 20470,
+  "births_ratio": 0.9885,
+  "source": "Statistical Office of the Slovak Republic, DATAcube om2801ms (selected indicators of population change, monthly)",
+  "url": "https://data.statistics.sk/api/v2/dataset/om2801ms/all/all/all?lang=en"
+ },
+ {
+  "iso3": "SVN",
+  "country": "Slovenia",
+  "year": 2022,
+  "tfr": 1.55,
+  "kind": "official",
+  "source": "Statistical Office of Slovenia (SURS) SiStat 05J1002S (total fertility rate)",
+  "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05J1002S.px"
+ },
+ {
+  "iso3": "SVN",
+  "country": "Slovenia",
+  "year": 2023,
+  "tfr": 1.51,
+  "kind": "official",
+  "source": "Statistical Office of Slovenia (SURS) SiStat 05J1002S (total fertility rate)",
+  "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05J1002S.px"
+ },
+ {
+  "iso3": "SVN",
+  "country": "Slovenia",
+  "year": 2024,
+  "tfr": 1.52,
+  "kind": "official",
+  "source": "Statistical Office of Slovenia (SURS) SiStat 05J1002S (total fertility rate)",
+  "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05J1002S.px"
+ },
+ {
+  "iso3": "SVN",
+  "country": "Slovenia",
+  "year": 2025,
+  "tfr": 1.54,
+  "kind": "official",
+  "source": "Statistical Office of Slovenia (SURS) SiStat 05J1002S (total fertility rate)",
+  "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05J1002S.px"
+ },
+ {
+  "iso3": "SVN",
+  "country": "Slovenia",
+  "year": 2026,
+  "tfr": 1.554,
+  "kind": "estimate",
+  "months": "Jan–Jul",
+  "base": {
+   "tfr": 1.54,
+   "year": 2025
+  },
+  "births_ytd": 9799,
+  "births_prev_same_months": 9711,
+  "births_ratio": 1.0091,
+  "source": "Statistical Office of Slovenia (SURS) SiStat 05J1031S (live births by month and day)",
+  "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05J1031S.px",
+  "note": "August 2026 (1,431 vs 1,550) excluded as probably incomplete; including it gives Jan–Aug ratio 0.9972."
+ },
+ {
+  "iso3": "ZAF",
+  "country": "South Africa",
+  "year": 2025,
+  "tfr": 2.21,
+  "kind": "official",
+  "source": "Stats SA Mid-year population estimates 2025 (from latest_tfr.json)",
+  "url": "https://www.statssa.gov.za/?p=18613",
+  "note": "model-based estimate (Stats SA mid-year population estimates)"
+ },
+ {
+  "iso3": "KOR",
+  "country": "South Korea",
+  "year": 2024,
+  "tfr": 0.75,
+  "kind": "official",
+  "source": "Statistics Korea / Ministry of Data and Statistics, 2025 Birth Statistics (final), via KDI Economic Information summary",
+  "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=285815",
+  "note": "Implied by the 2025 release ('0.80, up 0.05 from the previous year')"
+ },
+ {
+  "iso3": "KOR",
+  "country": "South Korea",
+  "year": 2025,
+  "tfr": 0.8,
+  "kind": "official",
+  "source": "Statistics Korea / Ministry of Data and Statistics, 2025 Birth Statistics (final), via KDI Economic Information summary",
+  "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=285815",
+  "note": "Final 2025 birth statistics released 26 Aug 2026 (254,300 births)"
+ },
+ {
+  "iso3": "KOR",
+  "country": "South Korea",
+  "year": 2026,
+  "tfr": 0.918,
+  "kind": "estimate",
+  "months": "Jan–Jul",
+  "base": {
+   "tfr": 0.8,
+   "year": 2025
+  },
+  "births_ytd": 170079,
+  "births_prev_same_months": 148282,
+  "births_ratio": 1.147,
+  "source": "Statistics Korea / Ministry of Data and Statistics, Monthly Population Trends (July 2026), as reported by SBS Biz",
+  "url": "https://biz.sbs.co.kr/amp/article/20000336486",
+  "urls": [
+   "https://biz.sbs.co.kr/amp/article/20000336486",
+   "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B8000F"
+  ],
+  "note": "Statistics Korea (Ministry of Data and Statistics) 'July 2026 Population Trends' (23 Sep 2026): Jan–Jul 2026 births 170,079, +14.7% y/y. births_prev_same_months is derived as 170,079/1.147 (the y/y % is published to 1 decimal; exact 2025 Jan–Jul count not retrieved). Ratio used = 1.147. Korea's monthly TFR for July 2026 was 0.89 (+0.08 y/y). Cross-check: summing the 2025 monthly counts in HFD STFF (KOSTAT preliminary, Jan–Jul 2025 = 147,805) gives ratio 1.1507 and 0.921."
+ },
+ {
+  "iso3": "ESP",
+  "country": "Spain",
+  "year": 2022,
+  "tfr": 1.16,
+  "kind": "official",
+  "source": "INE Indicadores Demográficos Básicos, table 1407 (Indicador Coyuntural de Fecundidad)",
+  "url": "https://www.ine.es/jaxiT3/Tabla.htm?t=1407"
+ },
+ {
+  "iso3": "ESP",
+  "country": "Spain",
+  "year": 2023,
+  "tfr": 1.12,
+  "kind": "official",
+  "source": "INE Indicadores Demográficos Básicos, table 1407 (Indicador Coyuntural de Fecundidad)",
+  "url": "https://www.ine.es/jaxiT3/Tabla.htm?t=1407"
+ },
+ {
+  "iso3": "ESP",
+  "country": "Spain",
+  "year": 2024,
+  "tfr": 1.1,
+  "kind": "official",
+  "source": "INE Indicadores Demográficos Básicos, table 1407 (Indicador Coyuntural de Fecundidad)",
+  "url": "https://www.ine.es/jaxiT3/Tabla.htm?t=1407"
+ },
+ {
+  "iso3": "ESP",
+  "country": "Spain",
+  "year": 2026,
+  "tfr": 1.119,
+  "kind": "estimate",
+  "months": "Jan–Jul",
+  "base": {
+   "tfr": 1.1,
+   "year": 2024
+  },
+  "births_ytd": 184990,
+  "births_prev_same_months": 181859,
+  "births_ratio": 1.0172,
+  "source": "INE Estimación Mensual de Nacimientos (EMN), table 46682",
+  "url": "https://www.ine.es/jaxiT3/Tabla.htm?t=46682",
+  "base_note": "No 2025 official TFR available; base is TFR_2024 and births in the same months of 2024",
+  "note": "No official INE 2025 TFR found in INE API (IDB table 1407 ends 2024); base = 2024 TFR and 2024 same-month births (EMN, final 2024). Cross-check vs 2025 EMN: Jan–Jul 2026 / Jan–Jul 2025 = 184,990 / 182,461 = 1.0139."
+ },
+ {
+  "iso3": "SWE",
+  "country": "Sweden",
+  "year": 2022,
+  "tfr": 1.52,
+  "kind": "official",
+  "source": "Statistics Sweden (SCB) BE0101H/FruktsamhetSum (summerad fruktsamhet, women)",
+  "url": "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101H/FruktsamhetSum/"
+ },
+ {
+  "iso3": "SWE",
+  "country": "Sweden",
+  "year": 2023,
+  "tfr": 1.45,
+  "kind": "official",
+  "source": "Statistics Sweden (SCB) BE0101H/FruktsamhetSum (summerad fruktsamhet, women)",
+  "url": "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101H/FruktsamhetSum/"
+ },
+ {
+  "iso3": "SWE",
+  "country": "Sweden",
+  "year": 2024,
+  "tfr": 1.43,
+  "kind": "official",
+  "source": "Statistics Sweden (SCB) BE0101H/FruktsamhetSum (summerad fruktsamhet, women)",
+  "url": "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101H/FruktsamhetSum/"
+ },
+ {
+  "iso3": "SWE",
+  "country": "Sweden",
+  "year": 2025,
+  "tfr": 1.42,
+  "kind": "official",
+  "source": "Statistics Sweden (SCB) BE0101H/FruktsamhetSum (summerad fruktsamhet, women)",
+  "url": "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101H/FruktsamhetSum/"
+ },
+ {
+  "iso3": "SWE",
+  "country": "Sweden",
+  "year": 2026,
+  "tfr": 1.429,
+  "kind": "estimate",
+  "months": "Jan–Aug",
+  "base": {
+   "tfr": 1.42,
+   "year": 2025
+  },
+  "births_ytd": 67868,
+  "births_prev_same_months": 67428,
+  "births_ratio": 1.0065,
+  "source": "Statistics Sweden (SCB) BE0101G/MBefStatRegionCKM, births per month (preliminary)",
+  "url": "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101G/MBefStatRegionCKM/"
+ },
+ {
+  "iso3": "CHE",
+  "country": "Switzerland",
+  "year": 2022,
+  "tfr": 1.39,
+  "kind": "official",
+  "source": "Swiss FSO (BFS) STAT-TAB px-x-0102020204_111 (Zusammengefasste Geburtenziffer)",
+  "url": "https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0102020204_111/px-x-0102020204_111/px-x-0102020204_111.px"
+ },
+ {
+  "iso3": "CHE",
+  "country": "Switzerland",
+  "year": 2023,
+  "tfr": 1.33,
+  "kind": "official",
+  "source": "Swiss FSO (BFS) STAT-TAB px-x-0102020204_111 (Zusammengefasste Geburtenziffer)",
+  "url": "https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0102020204_111/px-x-0102020204_111/px-x-0102020204_111.px"
+ },
+ {
+  "iso3": "CHE",
+  "country": "Switzerland",
+  "year": 2024,
+  "tfr": 1.29,
+  "kind": "official",
+  "source": "Swiss FSO (BFS) STAT-TAB px-x-0102020204_111 (Zusammengefasste Geburtenziffer)",
+  "url": "https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0102020204_111/px-x-0102020204_111/px-x-0102020204_111.px"
+ },
+ {
+  "iso3": "CHE",
+  "country": "Switzerland",
+  "year": 2025,
+  "tfr": 1.28,
+  "kind": "official",
+  "source": "Swiss FSO (BFS) STAT-TAB px-x-0102020204_111 (Zusammengefasste Geburtenziffer)",
+  "url": "https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0102020204_111/px-x-0102020204_111/px-x-0102020204_111.px"
+ },
+ {
+  "iso3": "CHE",
+  "country": "Switzerland",
+  "year": 2026,
+  "tfr": 1.296,
+  "kind": "estimate",
+  "months": "Jan–Jun",
+  "base": {
+   "tfr": 1.29,
+   "year": 2024
+  },
+  "births_ytd": 37765,
+  "births_prev_same_months": 37604,
+  "births_ratio": 1.0043,
+  "source": "Swiss FSO (BFS) 'Lebendgeburten nach Kanton, provisorische Monatsdaten' 2026 (asset 36856567, 17 Sep 2026) vs the same provisional series for 2024 (asset 33927739)",
+  "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36856567/master",
+  "base_note": "No 2025 official TFR available; base is TFR_2024 and births in the same months of 2024",
+  "note": "Provisional monthly counts undercount definitive ones by ~3% (2024 provisional Jan–Jun 37,604 vs definitive 38,683), and no 2025 provisional monthly file is published, so 2026 provisional is compared with 2024 provisional (base TFR_2024 = 1.29). July 2026 excluded as incomplete. Cross-check: adjusting 2026 provisional for the 2024 completeness ratio and comparing with definitive 2025 (38,455) gives +1.0% → 1.28 × 1.010 ≈ 1.29."
+ },
+ {
+  "iso3": "TWN",
+  "country": "Taiwan",
+  "year": 2025,
+  "tfr": 0.69,
+  "kind": "official",
+  "source": "Ministry of the Interior (via Liberty Times) (from latest_tfr.json)",
+  "url": "https://ec.ltn.com.tw/article/breakingnews/5393039",
+  "tfr_unrounded": 0.695,
+  "note": "as reported in press citing Ministry of the Interior"
+ },
+ {
+  "iso3": "TWN",
+  "country": "Taiwan",
+  "year": 2026,
+  "tfr": 0.59,
+  "kind": "estimate",
+  "months": "Jan–Aug",
+  "base": {
+   "tfr": 0.695,
+   "year": 2025
+  },
+  "births_ytd": 61742,
+  "births_prev_same_months": 72778,
+  "births_ratio": 0.8484,
+  "source": "Ministry of the Interior (Taiwan), monthly household registration statistics",
+  "url": "https://www.businesstoday.com.tw/article/category/183027/post/202609100018/",
+  "urls": [
+   "https://www.businesstoday.com.tw/article/category/183027/post/202609100018/",
+   "https://www.humanfertility.org/File/GetDocumentFree/STFF/stff.csv",
+   "https://www.ris.gov.tw/app/portal/346",
+   "https://www.ris.gov.tw/info-liferay/app/channel/newsEnglishDetail/26247263"
+  ],
+  "note": "2026 Jan–Aug registered births 61,742 per Ministry of the Interior (Dept. of Household Registration) August 2026 release (10 Sep 2026), as reported by Business Today; 2025 Jan–Aug = sum of MOI monthly registered births 2025 (9495+10407+9388+8684+8433+8968+8939+8464) taken from HFD STFF (which sources MOI; its Jan–Jun 2025 sum 55,375 matches the MOI figure cited in press). Registration-based counts. MOI English release (10 Sep 2026): 7,492 births in Aug 2026, -11.48% vs Aug 2025 (implies 8,464, matching the 2025 monthly series used). Monthly counts are by registration date (or preliminary registrations), not strictly by date of birth."
+ },
+ {
+  "iso3": "TJK",
+  "country": "Tajikistan",
+  "year": 2023,
+  "tfr": 3.5,
+  "kind": "official",
+  "source": "DHS Program (DHS 2023) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=TJ2023DHS&breakdown=national",
+  "note": "survey (TJ2023DHS, DHS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "TUN",
+  "country": "Tunisia",
+  "year": 2024,
+  "tfr": 1.54,
+  "kind": "official",
+  "source": "INS Tunisia (via La Presse de Tunisie) (from latest_tfr.json)",
+  "url": "https://www.lapresse.tn/2026/06/05/demographie-en-tunisie-pourquoi-la-croissance-est-au-plus-bas-selon-lins/",
+  "note": "INS (Flash projection de la population, May 2026, RGPH 2024 based)"
+ },
+ {
+  "iso3": "TUR",
+  "country": "Türkiye",
+  "year": 2022,
+  "tfr": 1.63,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "TUR",
+  "country": "Türkiye",
+  "year": 2023,
+  "tfr": 1.51,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "TUR",
+  "country": "Türkiye",
+  "year": 2024,
+  "tfr": 1.48,
+  "kind": "official",
+  "source": "Eurostat demo_find (TOTFERRT)",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table"
+ },
+ {
+  "iso3": "TUR",
+  "country": "Türkiye",
+  "year": 2025,
+  "tfr": 1.42,
+  "kind": "official",
+  "source": "TurkStat Birth Statistics 2025 (via Daily Sabah) (from latest_tfr.json)",
+  "url": "https://www.dailysabah.com/turkiye/turkiyes-fertility-rate-drops-to-142-as-births-keep-falling/news/amp"
+ },
+ {
+  "iso3": "UGA",
+  "country": "Uganda",
+  "year": 2024,
+  "tfr": 4.6,
+  "kind": "official",
+  "source": "DHS Program (MIS 2024) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=UG2024MIS&breakdown=national",
+  "note": "survey (UG2024MIS, MIS; TFR for ~3 years before survey)"
+ },
+ {
+  "iso3": "GBR",
+  "country": "United Kingdom",
+  "year": 2025,
+  "tfr": 1.39,
+  "kind": "official",
+  "source": "ONS Births in England and Wales: 2025 (from latest_tfr.json)",
+  "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/bulletins/birthsummarytablesenglandandwales/2025finalrates",
+  "note": "England and Wales only (ONS); Scotland 2025 = 1.23 (NRS); no UK-wide 2025 figure found"
+ },
+ {
+  "iso3": "USA",
+  "country": "United States",
+  "year": 2022,
+  "tfr": 1.66,
+  "kind": "official",
+  "source": "NCHS NVSR Vol. 75 No. 2, Births: Final Data for 2024, Table 2",
+  "url": "https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-02.pdf",
+  "tfr_unrounded": 1.657
+ },
+ {
+  "iso3": "USA",
+  "country": "United States",
+  "year": 2023,
+  "tfr": 1.62,
+  "kind": "official",
+  "source": "NCHS NVSR Vol. 75 No. 2, Births: Final Data for 2024, Table 2",
+  "url": "https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-02.pdf",
+  "tfr_unrounded": 1.621
+ },
+ {
+  "iso3": "USA",
+  "country": "United States",
+  "year": 2024,
+  "tfr": 1.6,
+  "kind": "official",
+  "source": "NCHS NVSR Vol. 75 No. 2, Births: Final Data for 2024, Table 2",
+  "url": "https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-02.pdf",
+  "note": "1,599.5 per 1,000"
+ },
+ {
+  "iso3": "USA",
+  "country": "United States",
+  "year": 2025,
+  "tfr": 1.57,
+  "kind": "provisional",
+  "source": "NCHS VSRR No. 43, Births: Provisional Data for 2025",
+  "url": "https://www.cdc.gov/nchs/data/vsrr/vsrr043.pdf",
+  "tfr_unrounded": 1.574,
+  "note": "5 x sum of provisional 5-year ASFRs in NCHS VSRR No. 43 Table 1 (NCHS's own TFR formula); the report itself does not print a TFR"
+ },
+ {
+  "iso3": "USA",
+  "country": "United States",
+  "year": 2026,
+  "tfr": 1.552,
+  "kind": "estimate",
+  "months": "Jan–Jul",
+  "base": {
+   "tfr": 1.574,
+   "year": 2025
+  },
+  "births_ytd": 2060022,
+  "births_prev_same_months": 2089424,
+  "births_ratio": 0.9859,
+  "source": "CDC WONDER Provisional Natality (D192), births by year and month; vintage '2026 through August 31, 2026 as of September 29, 2026'",
+  "url": "https://wonder.cdc.gov/natality-expanded-provisional.html",
+  "note": "August 2026 excluded because the most recent provisional month is typically incomplete. Base TFR 2025 = 5 x sum of provisional 5-year age-specific birth rates in NCHS VSRR No. 43 (Births: Provisional Data for 2025), Table 1 = 1.574."
+ },
+ {
+  "iso3": "VNM",
+  "country": "Vietnam",
+  "year": 2025,
+  "tfr": 1.93,
+  "kind": "official",
+  "source": "Vietnam Statistics Office / Population Dept., MoH (via VnExpress) (from latest_tfr.json)",
+  "url": "https://vnexpress.net/muc-sinh-nam-2025-cua-viet-nam-tang-nhe-4995025.html",
+  "note": "survey-based (Population and Family Planning Survey, 1 April 2025)"
+ },
+ {
+  "iso3": "ZMB",
+  "country": "Zambia",
+  "year": 2024,
+  "tfr": 4,
+  "kind": "official",
+  "source": "DHS Program (DHS 2024) (from latest_tfr.json)",
+  "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&surveyIds=ZM2024DHS&breakdown=national",
+  "note": "survey (ZM2024DHS, DHS; TFR for ~3 years before survey)"
+ }
+]
