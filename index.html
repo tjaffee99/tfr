@@ -12,8 +12,9 @@
   <div class="card timebar" role="region" aria-label="Year">
     <button type="button" class="btn play" id="play" aria-label="Play through the years">▶</button>
     <div class="year-readout"><span class="y" id="year-num">2026</span><span class="s" id="year-status">Today · latest data</span></div>
-    <div class="timeline" id="timeline">
-      <input type="range" id="year" min="1950" max="2100" step="1" value="2026" aria-label="Year">
+    <div class="scrubber" id="scrubber" role="slider" tabindex="0" aria-label="Year" aria-valuemin="1950" aria-valuemax="2100" aria-valuenow="2026">
+      <div class="track"><div class="past"></div><div class="fill"></div><div class="notch"></div></div>
+      <div class="thumb"></div>
       <div class="ticks" id="ticks"></div>
     </div>
     <button type="button" class="btn" id="today-btn">Today</button>
@@ -40,6 +41,7 @@
         </div>
         <div class="view" id="table-view"></div>
         <div class="view" id="about-view">
+          <div id="about-country"></div>
           <h3>Fertility Explorer</h3>
           <p>Total fertility rate (TFR) is the number of children a woman would have at current age-specific birth rates. About 2.1 keeps a population stable without migration. Click a country to see its population pyramid, move the timeline to travel through time, and turn on projections to change future fertility and see what happens.</p>
           <h3>Data</h3>
@@ -64,7 +66,7 @@
 
   <section class="future off" id="future">
     <div class="panel-head">
-      <h2>Projections</h2><div class="facts" id="future-kicker"></div>
+      <h2 id="future-title">World TFR Projections</h2>
       <div class="seg" id="proj-seg" role="group" aria-label="Projections">
         <button type="button" class="btn" data-on="0" aria-pressed="true">Off</button>
         <button type="button" class="btn" data-on="1" aria-pressed="false">On</button>

@@ -71,6 +71,8 @@
     return y0 + ((y1 - y0) * (x - x0)) / (x1 - x0);
   }
 
+  const shortSrc = (src) => String(src || "").split(/ \(| — |, |; | via | as reported/)[0].trim();
+
   function obsLabel(o) {
     if (o.kind === "estimate") return `${o.year} estimate from ${o.months || "year-to-date"} births`;
     if (o.kind === "provisional") return `${o.year} provisional`;
@@ -95,10 +97,10 @@
   }
 
   function yearStatus(y) {
-    if (y > BASE) return { text: state.sc && state.sc.mode !== "un" ? "Projection · your scenario" : "Projection · default (UN medium)", proj: true };
+    if (y > BASE) return { text: state.sc && state.sc.mode !== "un" ? "Projection · custom" : "Projection", proj: true };
     if (y === BASE) return { text: "Today · latest data", proj: false };
-    if (y >= 2024) return { text: "Reported where available", proj: false };
-    return { text: "UN estimates", proj: false };
+    if (y >= 2024) return { text: "Reported data", proj: false };
+    return { text: "UN estimate", proj: false };
   }
 
   /* ---------------- URL hash ---------------- */
@@ -129,17 +131,22 @@
     y = Math.max(Y0, Math.min(END, Math.round(y)));
     if (y > BASE && !state.proj) { state.year = y; setProjections(true); return; }
     state.year = y;
-    const inp = $("#year");
-    if (+inp.value !== y) inp.value = y;
+    positionScrubber();
     $("#year-num").textContent = y;
     const st = yearStatus(y);
     $("#year-status").textContent = st.text;
     $("#year-status").classList.toggle("proj", st.proj);
     $("#map-title").textContent = `Fertility rate, ${y}`;
-    moveTimelineCursor();
     colorMap();
     if (state.loc) { updateFigs(); drawPyramid(); moveChartMarkers(); }
     writeHash();
+  }
+
+  // coalesce rapid scrubbing into one repaint per animation frame
+  let yearRaf = 0, pendingYear = null;
+  function requestYear(y) {
+    pendingYear = y;
+    if (!yearRaf) yearRaf = requestAnimationFrame(() => { yearRaf = 0; setYear(pendingYear); });
   }
 
   function stopPlay() {
@@ -168,31 +175,41 @@
     setYear(state.year);
   }
 
-  /* ---------------- timeline: a plain range input with year ticks ---------------- */
+  /* ---------------- timeline scrubber ---------------- */
+  const yearFrac = (y) => (y - Y0) / (END - Y0);
+  const atFrac = (f) => `calc(9px + (100% - 18px) * ${f.toFixed(4)})`; // thumb travel is inset 9px each side
   function drawTimeline() {
-    const max = END, thumb = 8; // keep labels aligned with the slider thumb's travel
-    const years = [1950, 1975, 2000, BASE, 2050, 2075, 2100];
-    $("#ticks").innerHTML = years.map((y) => {
-      const f = (y - Y0) / (max - Y0);
-      return `<span class="${y === BASE ? "today" : ""}" style="left:calc(${thumb}px + (100% - ${2 * thumb}px) * ${f.toFixed(4)})">${y === BASE ? "today" : y}</span>`;
-    }).join("");
+    $("#ticks").innerHTML = [1950, 1975, 2000, BASE, 2050, 2075, 2100].map((y) =>
+      `<span class="${y === BASE ? "today" : ""}" style="left:${atFrac(yearFrac(y))}">${y === BASE ? "today" : y}</span>`).join("");
+    const f = yearFrac(BASE);
+    $("#scrubber .notch").style.left = `${(f * 100).toFixed(3)}%`;
+    $("#scrubber .past").style.width = `${(f * 100).toFixed(3)}%`;
+    positionScrubber();
   }
-  const moveTimelineCursor = () => {};
+  function positionScrubber() {
+    const f = yearFrac(state.year), sc = $("#scrubber");
+    sc.querySelector(".thumb").style.left = atFrac(f);
+    sc.querySelector(".fill").style.width = `${(f * 100).toFixed(3)}%`;
+    sc.setAttribute("aria-valuenow", state.year);
+    sc.setAttribute("aria-valuetext", `${state.year}${state.year > BASE ? " (projection)" : ""}`);
+  }
 
   /* ---------------- map ---------------- */
-  let mapSvg, mapG, mapPaths, zoom;
+  let mapSvg, mapG, mapPaths, zoom, mapFeats, mapPath;
+  const MAP_W = 960, MAP_H = 500;
   function buildMap() {
     const el = $("#map");
     el.innerHTML = "";
-    const W = 960, H = 500;
+    const W = MAP_W, H = MAP_H;
     const projection = d3.geoNaturalEarth1().fitExtent([[6, 6], [W - 6, H - 6]], { type: "Sphere" });
-    const path = d3.geoPath(projection);
+    const path = (mapPath = d3.geoPath(projection));
     mapSvg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`)
       .attr("role", "img").attr("aria-label", "World map colored by total fertility rate. Click a country to explore it.");
     mapG = mapSvg.append("g");
     mapG.append("path").attr("class", "sphere").attr("d", path({ type: "Sphere" }));
     const feats = topojson.feature(state.topo, state.topo.objects.countries).features.filter((f) => f.properties.name !== "Antarctica");
     for (const f of feats) f.locId = GEO_ALIAS[f.properties.name] || GEO_ALIAS[f.id] || (f.id != null ? +f.id : null);
+    mapFeats = feats;
     mapPaths = mapG.selectAll("path.country").data(feats).join("path").attr("class", "country").attr("d", path)
       .on("mousemove", (ev, f) => {
         const s = state.byId.get(f.locId);
@@ -201,9 +218,10 @@
         showTip(locTip(s), ev);
       })
       .on("mouseleave", () => { hideTip(); state.hoverId = null; drawLegendMarkers(); })
-      .on("click", (ev, f) => { if (state.byId.has(f.locId)) selectLoc(f.locId); });
+      .on("click", (ev, f) => { ev.stopPropagation(); if (state.byId.has(f.locId)) pick(f.locId); });
     zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => mapG.attr("transform", ev.transform));
     mapSvg.call(zoom).on("dblclick.zoom", null);
+    mapSvg.on("click", () => zoomWorld()); // clicking the ocean zooms back out
     $("#zin").onclick = () => mapSvg.transition().duration(250).call(zoom.scaleBy, 1.6);
     $("#zout").onclick = () => mapSvg.transition().duration(250).call(zoom.scaleBy, 1 / 1.6);
     colorMap();
@@ -214,7 +232,28 @@
     return `<div class="t">${esc(s.name)}</div>
       <div class="r"><span><i style="background:${colorOf(info.v)}"></i>Fertility rate</span><b>${info.v != null ? info.v.toFixed(2) : "–"}</b></div>
       <div class="r"><span>Population</span><b>${fmtPop(popAt(s, state.year))}</b></div>
-      <div class="m">${esc(info.label)} · ${esc(info.src)}</div>`;
+      <div class="m">${esc(info.label)} · ${esc(shortSrc(info.src))}</div>`;
+  }
+
+  // Zoom to a country's main landmass (largest polygon, so e.g. France isn't framed with French Guiana).
+  function zoomToLoc(id, ms = 650) {
+    const f = mapFeats && mapFeats.find((d) => d.locId === id);
+    if (!f) return zoomWorld(ms);
+    let geom = f;
+    if (f.geometry.type === "MultiPolygon") {
+      const polys = f.geometry.coordinates.map((c) => ({ type: "Polygon", coordinates: c }));
+      geom = polys.reduce((a, b) => (d3.geoArea(b) > d3.geoArea(a) ? b : a));
+    }
+    const [[x0, y0], [x1, y1]] = mapPath.bounds(geom);
+    const k = Math.max(1, Math.min(8, 0.75 / Math.max((x1 - x0) / MAP_W, (y1 - y0) / MAP_H)));
+    const t = d3.zoomIdentity.translate(MAP_W / 2, MAP_H / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
+    mapSvg.transition().duration(ms).call(zoom.transform, t);
+  }
+  function zoomWorld(ms = 500) { if (mapSvg) mapSvg.transition().duration(ms).call(zoom.transform, d3.zoomIdentity); }
+  // select from the UI: frame countries on the map, show the whole world for regions
+  function pick(id) {
+    if (state.byId.get(id)?.region) zoomWorld(); else zoomToLoc(id);
+    selectLoc(id);
   }
 
   function colorMap() {
@@ -297,7 +336,7 @@
       renderTable();
     };
     const body = tv.querySelector("tbody");
-    body.onclick = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) selectLoc(+tr.dataset.id); };
+    body.onclick = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) pick(+tr.dataset.id); };
     body.onmousemove = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) showTip(locTip(state.byId.get(+tr.dataset.id)), e); };
     body.onmouseleave = hideTip;
   }
@@ -327,9 +366,9 @@
     state.loc = loc; state.pyr = pyr;
     const st = startTfr(loc), h = fromHash || {};
     state.sc = {
-      mode: h.mode === "custom" || h.mode === "constant" ? h.mode : "un",
+      mode: h.mode === "custom" || h.mode === "constant" ? "custom" : "un",
       startTfr: st,
-      target: h.tfr ? Math.min(10, Math.max(0, +h.tfr)) : Math.round(st * 100) / 100,
+      target: h.tfr && h.mode !== "constant" ? Math.min(10, Math.max(0, +h.tfr)) : Math.round(st * 100) / 100,
       targetYear: h.by ? Math.min(END, Math.max(BASE + 1, +h.by)) : 2050,
       migMult: h.mig != null ? Math.min(2, Math.max(0, +h.mig / 100)) : 1,
       mortality: h.mort === "frozen" ? "frozen" : "un",
@@ -356,26 +395,25 @@
     $("#dossier").innerHTML = `
       <h2 class="name">${esc(loc.name)}</h2>
       <div class="figs" id="figs"></div>
-      <p class="source-line" id="src-line"></p>
       <div class="pyr-head">
         <h2>Population pyramid</h2>
         <div class="toolbar">
-          <label class="sub" style="margin:0">Outline <select id="compare" style="max-width:150px">
-            <option value="today">${BASE} (today)</option>
-            <option value="un">UN medium, same year</option>
-            <option value="2000">2000</option><option value="1975">1975</option><option value="1950">1950</option>
-            <option value="none">None</option>
-          </select></label>
+          <select id="compare" aria-label="Outline">
+            <option value="today">Outline: ${BASE}</option>
+            <option value="un">Outline: UN medium</option>
+            <option value="2000">Outline: 2000</option><option value="1975">Outline: 1975</option><option value="1950">Outline: 1950</option>
+            <option value="none">No outline</option>
+          </select>
           <div class="seg" id="pyr-group"><button type="button" class="btn" data-g="5">5-yr</button><button type="button" class="btn" data-g="1">1-yr</button></div>
           <div class="seg" id="pyr-pct"><button type="button" class="btn" data-p="0">People</button><button type="button" class="btn" data-p="1">%</button></div>
         </div>
       </div>
-      <div class="legend-row" id="pyr-legend"></div>
       <div class="chart" id="pyramid"></div>`;
     $("#compare").value = state.compare;
     $("#compare").onchange = (e) => { state.compare = e.target.value; drawPyramid(); };
     $("#pyr-group").onclick = (e) => { const b = e.target.closest("[data-g]"); if (b) { state.pyrGroup = +b.dataset.g; drawPyramid(); } };
-    $("#pyr-pct").onclick = (e) => { const b = e.target.closest("[data-p]"); if (b) { state.pyrPct = b.dataset.p === "1"; computePyrMax(); drawPyramid(); } };
+    $("#pyr-pct").onclick = (e) => { const b = e.target.closest("[data-p]"); if (b) { state.pyrPct = b.dataset.p === "1"; drawPyramid(); } };
+    renderAboutCountry();
   }
 
   function updateFigs() {
@@ -387,15 +425,31 @@
     const med = useScen ? state.resByYear.get(y).medAge : unAt(loc, "medAge", y);
     const old = ageShares(p.m, p.f).old;
     $("#figs").innerHTML = `
-      <div><div class="v"><span class="sw" style="background:${colorOf(info.v)}"></span>${info.v != null ? info.v.toFixed(2) : "–"}</div><div class="l">Fertility rate</div></div>
+      <div><div class="v"><span class="sw" style="background:${colorOf(info.v)}"></span>${info.v != null ? info.v.toFixed(2) : "–"}</div>
+        <div class="l">Fertility rate <button type="button" class="info" id="src-info" aria-label="Source">ⓘ</button></div></div>
       <div><div class="v">${fmtPop(pop)}</div><div class="l">Population</div></div>
-      <div><div class="v">${med != null ? med.toFixed(1) : "–"}</div><div class="l">Median age · ${(old * 100).toFixed(0)}% are 65+</div></div>`;
-    let src = `<b>${esc(info.label)}</b> · `;
-    src += info.url ? `<a href="${esc(info.url)}" target="_blank" rel="noopener">${esc(info.src)}</a>` : esc(info.src);
-    const o = info.obs;
-    if (o && o.kind === "estimate" && o.base) src += ` — ${o.base.year} TFR ${o.base.tfr} scaled by births ${o.births_prev_same_months ? fmtPct(o.births_ytd / o.births_prev_same_months - 1) + " vs. same months of " + o.base.year : "so far this year"}`;
-    else if (o && o.note && o.note.length < 90) src += ` — ${esc(o.note)}`;
-    $("#src-line").innerHTML = src;
+      <div><div class="v">${med != null ? med.toFixed(1) : "–"}</div><div class="l">Median age</div></div>
+      <div><div class="v">${(old * 100).toFixed(0)}%</div><div class="l">Aged 65+</div></div>`;
+    const btn = $("#src-info");
+    btn.onmousemove = (e) => showTip(`<div class="t">${esc(info.label)}</div><div class="m">${esc(shortSrc(info.src))} · click for sources</div>`, e);
+    btn.onmouseleave = hideTip;
+    btn.onclick = () => { hideTip(); setView("about"); $("#about-view").scrollTop = 0; };
+  }
+
+  // the About tab lists every figure we show for the selected place, with sources and the estimate arithmetic
+  function renderAboutCountry() {
+    const s = state.byId.get(state.loc.id), obs = s.obs || [];
+    const item = (o) => {
+      let t = `<b>${o.year}: ${o.tfr.toFixed(2)}</b> — ${o.kind === "estimate" ? `estimate from ${esc(o.months || "year-to-date")} births` : o.kind}`;
+      if (o.kind === "estimate" && o.base && o.births_prev_same_months)
+        t += ` (${o.base.year} TFR ${o.base.tfr} × births ${fmtPct(o.births_ytd / o.births_prev_same_months - 1)} vs. the same months of ${o.base.year})`;
+      t += `. ${o.url ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.source)}</a>` : esc(o.source)}`;
+      if (o.note && o.kind !== "estimate") t += ` <span class="muted">${esc(o.note)}</span>`;
+      return `<li>${t}</li>`;
+    };
+    $("#about-country").innerHTML = `<h3>Sources for ${esc(s.name)}</h3>` +
+      (obs.length ? `<ul>${obs.slice().reverse().map(item).join("")}</ul><p class="muted">All other years: UN World Population Prospects 2024.</p>`
+        : `<p>All figures: UN World Population Prospects 2024 (estimates to 2023, medium projection after).</p>`);
   }
 
   function histPyr(y) {
@@ -453,13 +507,11 @@
     else if (state.compare !== "none") { cmp = histPyr(+state.compare); cmpLabel = state.compare; }
 
     const tot = (p) => d3.sum(p.m) + d3.sum(p.f);
-    const norm = (p) => { const t = pct ? tot(p) : 1; return { m: p.m.map((v) => v / t), f: p.f.map((v) => v / t) }; };
-    const C = norm(cur), K = cmp && norm(cmp);
-    const gm = group(C.m, g), gf = group(C.f, g), km = K && group(K.m, g), kf = K && group(K.f, g);
-    let max;
-    if (pct) { max = 0; for (const a of [gm, gf, km, kf]) if (a) for (const b of a) max = Math.max(max, b.v); }
-    else max = state.pyrMax[g];
-    max *= 1.04;
+    const curTot = tot(cur);
+    // In % mode the outline is rescaled to this year's total so shapes compare like-for-like.
+    const K = cmp && (pct ? (() => { const k = curTot / tot(cmp); return { m: cmp.m.map((v) => v * k), f: cmp.f.map((v) => v * k) }; })() : cmp);
+    const gm = group(cur.m, g), gf = group(cur.f, g), km = K && group(K.m, g), kf = K && group(K.f, g);
+    const max = state.pyrMax[g] * 1.04;
 
     const W = el.clientWidth || 420, H = el.clientHeight || 360;
     const mid = 34, M = { t: 24, r: 4, b: 24, l: 4 };
@@ -472,7 +524,9 @@
     const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`)
       .attr("role", "img").attr("aria-label", `Population pyramid for ${state.loc.name}, ${year}`);
     const nT = Math.max(2, Math.floor(half / 64));
-    const ticks = xR.ticks(nT), fmtX = pct ? xR.tickFormat(nT, "%") : fmtAxisPop;
+    const pctScale = d3.scaleLinear().domain([0, max / curTot]);
+    const ticks = pct ? pctScale.ticks(nT).map((t) => t * curTot) : xR.ticks(nT);
+    const fmtX = pct ? (v) => pctScale.tickFormat(nT, "%")(v / curTot) : fmtAxisPop;
     const grid = svg.append("g").attr("class", "grid"), ax = svg.append("g").attr("class", "axis");
     for (const t of ticks) for (const sc of [xL, xR]) {
       grid.append("line").attr("x1", sc(t)).attr("x2", sc(t)).attr("y1", M.t).attr("y2", H - M.b);
@@ -496,7 +550,7 @@
     svg.append("text").attr("class", "age-lbl").attr("x", W - M.r).attr("y", 9).attr("text-anchor", "end").text("Women");
     svg.append("text").attr("class", "lbl-direct").attr("x", M.l + half + mid / 2).attr("y", 9).attr("text-anchor", "middle").text(year);
 
-    const fmtV = pct ? (v) => (v * 100).toFixed(2) + "%" : fmtPop;
+    const fmtV = pct ? (v) => ((v / curTot) * 100).toFixed(2) + "%" : fmtPop;
     svg.append("g").selectAll("rect").data(gm).join("rect")
       .attr("x", 0).attr("width", W).attr("y", (b, i) => y(i) - (y.step() - y.bandwidth()) / 2).attr("height", y.step()).attr("fill", "transparent")
       .on("mousemove", (ev, b) => {
@@ -509,58 +563,62 @@
       })
       .on("mouseleave", hideTip);
 
-    const kind = cur.kind === "scenario" ? (year === BASE ? "UN estimate · start of projection" : state.sc.mode === "un" ? "UN medium assumptions" : "your scenario") : year <= 2023 ? "UN estimate" : "UN projection";
-    $("#pyr-legend").innerHTML =
-      `<span class="it"><span class="bx" style="background:var(--male)"></span>Men</span>` +
-      `<span class="it"><span class="bx" style="background:var(--female)"></span>Women</span>` +
-      (K ? `<span class="it"><span class="ln" style="border-color:var(--ink)"></span>${cmpLabel}</span>` : "") +
-      `<span class="it" style="color:var(--muted)">${year} · ${kind} · total ${fmtPop(tot(cur))}</span>`;
     for (const b of $$("#pyr-group .btn")) b.setAttribute("aria-pressed", +b.dataset.g === g);
     for (const b of $$("#pyr-pct .btn")) b.setAttribute("aria-pressed", (b.dataset.p === "1") === pct);
   }
 
   /* ---------------- scenario controls ---------------- */
+  const MIG_STEPS = [[0, "None"], [0.5, "Half"], [1, "UN"], [2, "Double"]];
   function buildScenario() {
     const loc = state.loc, sc = state.sc;
     const migAvg = d3.mean(d3.range(BASE, 2051), (y) => unAt(loc, "mig", y));
-    $("#future-kicker").textContent = loc.name;
+    const today = Math.round(sc.startTfr * 100) / 100;
+    $("#future-title").textContent = `${loc.name} TFR Projections`;
     $("#scenario").innerHTML = `
       <div class="ctl">
-        <div class="lbl">Fertility path</div>
-        <div class="seg" id="mode"><button type="button" class="btn" data-m="un">Default</button><button type="button" class="btn" data-m="custom">Custom</button><button type="button" class="btn" data-m="constant">Hold today</button></div>
+        <div class="lbl">Fertility</div>
+        <div class="seg" id="mode"><button type="button" class="btn" data-m="un">Default</button><button type="button" class="btn" data-m="custom">Custom</button></div>
         <div class="hint" id="mode-hint"></div>
-        <button type="button" class="btn" id="reset" style="margin-top:8px">Reset</button>
       </div>
-      <div class="ctl" id="ctl-target">
-        <div class="lbl"><label for="target">Future TFR</label><output id="target-out" class="editable" tabindex="0" title="Double-click to type an exact value"></output></div>
-        <input class="rng" type="range" id="target" min="0" max="7" step="0.01">
-        <div class="presets" id="presets">${[0.8, 1.2, 1.6, 2.1, 3].map((v) => `<button type="button" class="btn" data-v="${v}">${v}</button>`).join("")}</div>
-      </div>
-      <div class="ctl" id="ctl-year">
-        <label class="lbl" for="tyear">Reached by <output id="tyear-out"></output></label>
-        <input class="rng" type="range" id="tyear" min="${BASE + 1}" max="${END}" step="1">
-        <div class="hint">A straight line from today's <span class="num">${sc.startTfr.toFixed(2)}</span> to your target, then holds. You can also drag the handle on the fertility chart.</div>
+      <div id="custom-ctl">
+        <div class="ctl">
+          <div class="lbl"><label for="target">Target</label><output id="target-out" class="editable" tabindex="0" title="Double-click to type an exact value"></output></div>
+          <input class="rng" type="range" id="target" min="0" max="7" step="0.01">
+          <div class="presets" id="presets">
+            <button type="button" class="btn" data-v="${today}">Today ${today.toFixed(2)}</button>
+            <button type="button" class="btn" data-v="1.5">1.5</button>
+            <button type="button" class="btn" data-v="2.1">2.1 replacement</button>
+          </div>
+        </div>
+        <div class="ctl">
+          <div class="lbl"><label for="tyear">Reached by</label><output id="tyear-out"></output></div>
+          <input class="rng" type="range" id="tyear" min="${BASE + 1}" max="${END}" step="1">
+        </div>
       </div>
       <div class="ctl">
-        <label class="lbl" for="mig">Migration <output id="mig-out"></output></label>
-        <input class="rng" type="range" id="mig" min="0" max="2" step="0.1">
-        <div class="hint">Share of the UN's assumption (avg ${migAvg >= 0 ? "+" : "−"}${fmtPop(Math.abs(migAvg))}/yr net, 2026–50).</div>
-        <label class="check"><input type="checkbox" id="mort"> Life expectancy keeps improving (off: frozen at ${BASE})</label>
-      </div>`;
+        <div class="lbl">Migration</div>
+        <div class="seg" id="mig-seg">${MIG_STEPS.map(([v, l]) => `<button type="button" class="btn" data-v="${v}">${l}</button>`).join("")}</div>
+        <div class="hint">UN assumes ${migAvg >= 0 ? "+" : "−"}${fmtPop(Math.abs(migAvg))} people a year (net).</div>
+      </div>
+      <div class="ctl">
+        <div class="lbl">Life expectancy</div>
+        <div class="seg" id="mort-seg"><button type="button" class="btn" data-v="un">Keeps rising</button><button type="button" class="btn" data-v="frozen">Frozen at ${BASE}</button></div>
+      </div>
+      <button type="button" class="link" id="reset">Reset all</button>`;
     $("#mode").onclick = (e) => { const b = e.target.closest("[data-m]"); if (b) { sc.mode = b.dataset.m; update(); } };
     $("#target").oninput = (e) => { sc.target = +e.target.value; sc.mode = "custom"; update(); };
     $("#tyear").oninput = (e) => { sc.targetYear = +e.target.value; sc.mode = "custom"; update(); };
     $("#presets").onclick = (e) => { const b = e.target.closest("[data-v]"); if (b) { sc.target = +b.dataset.v; sc.mode = "custom"; update(); } };
-    $("#mig").oninput = (e) => { sc.migMult = +e.target.value; update(); };
-    $("#mort").onchange = (e) => { sc.mortality = e.target.checked ? "un" : "frozen"; update(); };
-    $("#reset").onclick = () => { Object.assign(sc, { mode: "un", target: Math.round(sc.startTfr * 100) / 100, targetYear: 2050, migMult: 1, mortality: "un" }); update(); };
+    $("#mig-seg").onclick = (e) => { const b = e.target.closest("[data-v]"); if (b) { sc.migMult = +b.dataset.v; update(); } };
+    $("#mort-seg").onclick = (e) => { const b = e.target.closest("[data-v]"); if (b) { sc.mortality = b.dataset.v; update(); } };
+    $("#reset").onclick = () => { Object.assign(sc, { mode: "un", target: today, targetYear: 2050, migMult: 1, mortality: "un" }); update(); };
 
     // double-click (or Enter) the value to type an exact target, to 0.01
     const out = $("#target-out");
     const edit = () => {
       const inp = document.createElement("input");
       Object.assign(inp, { type: "number", step: "0.01", min: "0", max: "10", value: sc.target.toFixed(2), className: "num-edit" });
-      inp.setAttribute("aria-label", "Future TFR");
+      inp.setAttribute("aria-label", "Target fertility rate");
       out.replaceWith(inp); inp.focus(); inp.select();
       let done = false;
       const finish = (commit) => {
@@ -577,17 +635,17 @@
   }
 
   function syncScenario() {
-    const sc = state.sc, loc = state.loc;
+    const sc = state.sc, loc = state.loc, custom = sc.mode === "custom";
     for (const b of $$("#mode .btn")) b.setAttribute("aria-pressed", b.dataset.m === sc.mode);
+    $("#custom-ctl").style.display = custom ? "" : "none";
     $("#target").value = sc.target; $("#target-out").textContent = sc.target.toFixed(2);
     $("#tyear").value = sc.targetYear; $("#tyear-out").textContent = sc.targetYear;
-    $("#mig").value = sc.migMult; $("#mig-out").textContent = Math.round(sc.migMult * 100) + "%";
-    $("#mort").checked = sc.mortality === "un";
-    $("#ctl-target").classList.toggle("disabled", sc.mode !== "custom");
-    $("#ctl-year").classList.toggle("disabled", sc.mode !== "custom");
-    $("#mode-hint").textContent = sc.mode === "un"
-      ? `The UN medium fertility projection: ${unAt(loc, "tfr", BASE).toFixed(2)} now → ${unAt(loc, "tfr", END).toFixed(2)} by 2100.`
-      : sc.mode === "constant" ? `Stays at ${sc.startTfr.toFixed(2)} forever.` : `${sc.startTfr.toFixed(2)} → ${sc.target.toFixed(2)} by ${sc.targetYear}.`;
+    for (const b of $$("#presets .btn")) b.setAttribute("aria-pressed", Math.abs(+b.dataset.v - sc.target) < 0.005);
+    for (const b of $$("#mig-seg .btn")) b.setAttribute("aria-pressed", +b.dataset.v === sc.migMult);
+    for (const b of $$("#mort-seg .btn")) b.setAttribute("aria-pressed", b.dataset.v === sc.mortality);
+    $("#mode-hint").textContent = custom
+      ? `From ${sc.startTfr.toFixed(2)} today, in a straight line to your target, then held. You can also drag the dot on the fertility chart.`
+      : `The UN medium projection: ${unAt(loc, "tfr", BASE).toFixed(2)} now → ${unAt(loc, "tfr", END).toFixed(2)} in 2100.`;
   }
 
   function drawOutcomes() {
@@ -620,7 +678,9 @@
       it.append("span").text(s.label);
     }
     for (const m of o.markLegend || []) legend.append("span").attr("class", "it").html(m);
-    if (o.band) legend.append("span").attr("class", "it").html(`<span class="bx" style="background:var(--band)"></span>${o.band.label}`);
+    if (o.band) legend.append("span").attr("class", "it").html(o.band.lines
+      ? `<span class="ln" style="border-top:1.5px dotted var(--ink-2)"></span>${o.band.label}`
+      : `<span class="bx" style="background:var(--band)"></span>${o.band.label}`);
 
     // clip everything to the visible range and drop gaps so tooltips can interpolate
     const clip = (pts) => pts.filter((p) => p[0] <= xMax && p[1] != null && isFinite(p[1]));
@@ -650,7 +710,12 @@
       svg.append("text").attr("class", "annot").attr("x", M.l + 4).attr("y", y(h.y) - 4).text(h.label);
     }
     if (o.stack) o.stack(svg, x, y, xMax);
-    if (band && band.length) svg.append("path").datum(band).style("fill", "var(--band)").attr("d", d3.area().x((p) => x(p[0])).y0((p) => y(p[1])).y1((p) => y(p[2])));
+    if (band && band.length) {
+      if (o.band.lines) { // over stacked areas a fill would wash them out, so draw the range's edges
+        for (const k of [1, 2]) svg.append("path").datum(band).attr("fill", "none").style("stroke", "var(--ink-2)").attr("stroke-width", 1).attr("stroke-dasharray", "1 2.5")
+          .attr("d", d3.line().x((p) => x(p[0])).y((p) => y(p[k])));
+      } else svg.append("path").datum(band).style("fill", "var(--band)").attr("d", d3.area().x((p) => x(p[0])).y0((p) => y(p[1])).y1((p) => y(p[2])));
+    }
     for (const s of series) {
       if (s.area || s.hidden || !s.points.length) continue;
       svg.append("path").datum(s.points).attr("fill", "none").style("stroke", s.color).attr("stroke-width", s.width || 1.8)
@@ -754,7 +819,7 @@
     const fmtV = share ? (v) => (v * 100).toFixed(1) + "%" : fmtPop;
     const v = loc.variants || {};
     const band = !share && on && v.lo95 && v.hi95 ? v.lo95.pop.map((lo, i) => [v.lo95.y0 + i, lo, v.hi95.pop[i]]).filter((p) => p[0] >= BASE && p[1] != null && p[2] != null) : null;
-    $("#pop-sub").textContent = share ? "Share of the population by age group" : on ? "Stacked to the total · dashed: UN medium total · shaded: UN 95% range" : "Stacked to the total population";
+    $("#pop-sub").textContent = share ? "Share of the population by age group" : on ? "Stacked to the total, compared with the UN medium projection and its 95% range" : "Stacked to the total population";
     charts.pop = lineChart($("#c-pop"), {
       height: 250,
       series: [
@@ -762,7 +827,7 @@
         ...(share ? [] : [{ label: "Total", color: "var(--ink)", hidden: true, legend: false, points: rows.map((d) => [d.year, d.total]) }]),
         ...(share || !on ? [] : [{ label: "UN medium total", color: "var(--ink-2)", dash: true, width: 1.5, points: unSeries("pop", BASE, END) }]),
       ],
-      band: band && band.length ? { label: "UN 95% range", points: band } : null,
+      band: band && band.length ? { label: "UN 95% range", points: band, lines: true } : null,
       yDomain: share ? [0, 1] : null, yFmt: share ? d3.format(".0%") : fmtAxisPop, tipFmt: fmtV,
       stack: (svg, x, y) => {
         const order = ["kids", "work", "old"], color = { kids: "var(--age1)", work: "var(--age2)", old: "var(--age3)" };
@@ -807,16 +872,35 @@
 
   /* ---------------- controls & boot ---------------- */
   function setupControls() {
-    // Dragging pauses playback and catches at today: a drag can't cross 2026; release and drag again to go on.
-    const yr = $("#year");
+    // Scrubbing pauses playback and catches at today: one drag can't cross 2026; release and drag again to go on.
+    const scrub = $("#scrubber"), track = scrub.querySelector(".track");
     let dragFrom = null;
-    yr.addEventListener("pointerdown", () => { stopPlay(); dragFrom = state.year; });
-    for (const ev of ["pointerup", "pointercancel"]) window.addEventListener(ev, () => (dragFrom = null));
-    yr.addEventListener("input", () => {
-      stopPlay();
-      let v = +yr.value;
-      if (dragFrom != null && ((dragFrom < BASE && v > BASE) || (dragFrom > BASE && v < BASE))) { v = BASE; yr.value = BASE; }
-      setYear(v);
+    const yearAt = (clientX) => {
+      const r = track.getBoundingClientRect();
+      return Math.round(Y0 + Math.max(0, Math.min(1, (clientX - r.left) / r.width)) * (END - Y0));
+    };
+    const dragTo = (e) => {
+      let y = yearAt(e.clientX);
+      if ((dragFrom < BASE && y > BASE) || (dragFrom > BASE && y < BASE)) y = BASE;
+      requestYear(y);
+    };
+    scrub.addEventListener("pointerdown", (e) => {
+      if (e.button > 0) return;
+      e.preventDefault(); scrub.focus({ preventScroll: true });
+      stopPlay(); dragFrom = state.year;
+      scrub.setPointerCapture(e.pointerId); scrub.classList.add("dragging");
+      dragTo(e);
+    });
+    scrub.addEventListener("pointermove", (e) => { if (dragFrom != null) dragTo(e); });
+    const end = () => { dragFrom = null; scrub.classList.remove("dragging"); };
+    scrub.addEventListener("pointerup", end);
+    scrub.addEventListener("pointercancel", end);
+    scrub.addEventListener("keydown", (e) => {
+      const step = { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1, PageDown: -10, PageUp: 10 }[e.key];
+      let y = null;
+      if (step) y = state.year + step; else if (e.key === "Home") y = Y0; else if (e.key === "End") y = END;
+      if (y == null) return;
+      e.preventDefault(); stopPlay(); setYear(y);
     });
     $("#play").onclick = togglePlay;
     $("#today-btn").onclick = () => { stopPlay(); setYear(BASE); };
@@ -831,12 +915,12 @@
       const q = search.value.trim().toLowerCase();
       if (!q) return;
       const hit = sorted.find((s) => s.name.toLowerCase() === q) || sorted.find((s) => s.name.toLowerCase().startsWith(q)) || sorted.find((s) => s.name.toLowerCase().includes(q));
-      if (hit) { selectLoc(hit.id); search.value = ""; search.blur(); }
+      if (hit) { pick(hit.id); search.value = ""; search.blur(); }
     };
     search.addEventListener("change", go);
     search.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
     $("#regions").insertAdjacentHTML("beforeend", REGION_ORDER.map((id) => `<button type="button" class="btn" data-id="${id}">${REGION_LABEL[id]}</button>`).join(""));
-    $("#regions").onclick = (e) => { const b = e.target.closest("[data-id]"); if (b) selectLoc(+b.dataset.id); };
+    $("#regions").onclick = (e) => { const b = e.target.closest("[data-id]"); if (b) pick(+b.dataset.id); };
   }
 
   async function init() {
@@ -862,7 +946,9 @@
     setupControls();
     drawTimeline();
     setYear(state.year);
-    selectLoc(h.loc && state.byId.has(+h.loc) ? +h.loc : 900, h);
+    const startId = h.loc && state.byId.has(+h.loc) ? +h.loc : 900;
+    selectLoc(startId, h);
+    if (!state.byId.get(startId).region) zoomToLoc(startId, 0);
 
     let rt = null;
     window.addEventListener("resize", () => {
