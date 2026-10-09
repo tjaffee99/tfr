@@ -19,3 +19,5 @@
    Edit those files to add newer figures, then re-run the merge.
 
 `data/countries-50m.json` is `world-atlas@2/countries-50m.json` (Natural Earth, public domain).
+
+After changing `style.css`, `app.js` or `projection.js`, run `python3 stamp_versions.py` so browsers load the new files instead of cached ones.
