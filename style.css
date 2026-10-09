@@ -224,6 +224,12 @@ input[type="range"] { accent-color: var(--scenario); }
 .tiles .d { font-size: .78rem; color: var(--muted); margin-top: 2px; }
 .charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .charts .wide { grid-column: 1 / -1; }
+.gens { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 20px; margin-top: 6px; }
+@media (max-width: 640px) { .gens { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.gen .gv { font-size: 1.4rem; font-weight: 650; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.gen .gl { font-size: .78rem; color: var(--ink-2); margin-bottom: 6px; white-space: nowrap; }
+.gen svg { display: block; width: 100%; }
+.gen-unit { font-size: .75rem; color: var(--muted); margin-top: 6px; }
 .card-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 8px; }
 .card-head .seg .btn { padding: 4px 10px; font-size: .8rem; }
 @media (max-width: 760px) { .charts { grid-template-columns: minmax(0, 1fr); } }

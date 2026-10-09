@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fertility Explorer</title>
 <meta name="description" content="Interactive map of total fertility rates worldwide, with population projections you can steer by changing future fertility.">
-<link rel="stylesheet" href="style.css?v=0684895d">
+<link rel="stylesheet" href="style.css?v=21758fa4">
 </head>
 <body>
 <div class="wrap">
@@ -79,6 +79,10 @@
         <div class="tiles" id="outcomes"></div>
         <div class="charts">
           <div class="card wide">
+            <h2>Generations</h2><p class="sub" id="gen-sub"></p>
+            <div class="gens" id="gens"></div>
+          </div>
+          <div class="card wide">
             <div class="card-head">
               <div><h2>Population by age</h2><p class="sub" id="pop-sub"></p></div>
               <div class="seg" id="pop-mode" role="group" aria-label="Units"><button type="button" class="btn" data-mode="count">Count</button><button type="button" class="btn" data-mode="share">Share</button></div>
@@ -99,6 +103,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script src="projection.js?v=db235282"></script>
-<script src="app.js?v=fdda73d9"></script>
+<script src="app.js?v=367a2491"></script>
 </body>
 </html>
