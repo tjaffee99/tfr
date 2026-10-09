@@ -6,6 +6,7 @@ import pandas as pd
 W = os.environ.get("WPP_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "wpp"))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
 os.makedirs(os.path.join(OUT, "loc"), exist_ok=True)
+os.makedirs(os.path.join(OUT, "pyr"), exist_ok=True)
 
 BASE = 2026
 MORT_ANCHORS = [2026, 2035, 2050, 2065, 2080, 2100]
@@ -37,9 +38,8 @@ var = rd("WPP2024_Demographic_Indicators_OtherVariants.csv.gz",
          variants=["Low", "High", "Lower 95 PI", "Upper 95 PI", "Constant fertility", "Zero migration"])
 
 print("pop")
-pyr_years = list(range(1950, 2021, 5)) + [2023]
 pop_hist = rd("WPP2024_PopulationBySingleAgeSex_Medium_1950-2023.csv.gz",
-              ["LocID", "LocTypeID", "Time", "AgeGrpStart", "PopMale", "PopFemale"], years=pyr_years)
+              ["LocID", "LocTypeID", "Time", "AgeGrpStart", "PopMale", "PopFemale"])
 pop_fut = rd("WPP2024_PopulationBySingleAgeSex_Medium_2024-2100.csv.gz",
              ["LocID", "LocTypeID", "Time", "AgeGrpStart", "PopMale", "PopFemale"])
 
@@ -105,16 +105,16 @@ for _, L in locs.iterrows():
 
     m, f = pyramid(pf, BASE)
 
-    def scaled_pyr(m, f):
-        mx = max(m.max(), f.max(), 1)
-        sc = 10 ** max(0, math.ceil(math.log10(mx / 99999)))
-        return {"s": sc, "m": [int(round(v / sc)) for v in m], "f": [int(round(v / sc)) for v in f]}
-
-    pyrs = {}
-    for y in pyr_years:
-        pyrs[y] = scaled_pyr(*pyramid(ph, y))
-    for y in [2024, 2025] + list(range(2030, 2101, 5)):
-        pyrs[y] = scaled_pyr(*pyramid(pf, y))
+    # UN estimates (to 2023) + medium projection, every year: ints scaled so each year's max is 9999
+    pyr = {"y0": 1950, "s": [], "m": [], "f": []}
+    for y in range(1950, 2101):
+        pm, pfe = pyramid(ph if y <= 2023 else pf, y)
+        sc = max(pm.max(), pfe.max(), 1) / 9999
+        pyr["s"].append(sig(sc, 6))
+        pyr["m"].append([int(round(v / sc)) for v in pm])
+        pyr["f"].append([int(round(v / sc)) for v in pfe])
+    with open(os.path.join(OUT, "pyr", f"{lid}.json"), "w") as fh:
+        json.dump(pyr, fh, separators=(",", ":"))
 
     asfr = {}
     for y in ASFR_ANCHORS:
@@ -141,7 +141,6 @@ for _, L in locs.iterrows():
     rec = {
         "id": lid, "iso3": L.ISO3_code if isinstance(L.ISO3_code, str) else None, "name": name,
         "base": {"year": BASE, "m": [round(v) for v in m], "f": [round(v) for v in f]},
-        "pyr": pyrs,
         "asfr": asfr,
         "mort": mort,
         "migAge": mig_age,
@@ -164,6 +163,7 @@ for _, L in locs.iterrows():
         "id": lid, "iso3": rec["iso3"], "name": name, "region": lid in REGIONS,
         "pop": rnd(I[I.Time == BASE].TPopulation1July.iloc[0] * 1000, 0),
         "tfr": [rnd(v, 2) for v in I[I.Time <= 2100].TFR],
+        "popK": [sig(v, 3) for v in I[I.Time <= 2100].TPopulation1July],  # thousands, 1950-2100
     })
 
 with open(os.path.join(OUT, "summary.json"), "w") as fh:
