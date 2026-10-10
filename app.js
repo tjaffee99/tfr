@@ -215,9 +215,10 @@
         const s = state.byId.get(f.locId);
         if (!s) return showTip(`<div class="t">${esc(f.properties.name)}</div><div class="m">No data</div>`, ev);
         state.hoverId = s.id; drawLegendMarkers();
+        hoverTip = { id: s.id, clientX: ev.clientX, clientY: ev.clientY };
         showTip(locTip(s), ev);
       })
-      .on("mouseleave", () => { hideTip(); state.hoverId = null; drawLegendMarkers(); })
+      .on("mouseleave", () => { hideTip(); hoverTip = null; state.hoverId = null; drawLegendMarkers(); })
       .on("click", (ev, f) => { ev.stopPropagation(); if (state.byId.has(f.locId)) pick(f.locId); });
     zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => mapG.attr("transform", ev.transform));
     mapSvg.call(zoom).on("dblclick.zoom", null);
@@ -257,6 +258,12 @@
     selectLoc(id);
   }
 
+  // The country under a still cursor keeps its tooltip current while the years play.
+  let hoverTip = null;
+  function refreshHoverTip() {
+    if (hoverTip) showTip(locTip(state.byId.get(hoverTip.id)), hoverTip);
+  }
+
   function colorMap() {
     if (mapPaths) {
       mapPaths.attr("fill", (f) => { const s = state.byId.get(f.locId); return s ? colorOf(tfrInfo(s, state.year).v) : "var(--nodata)"; })
@@ -265,6 +272,7 @@
     }
     drawLegendMarkers();
     if (state.view === "table") renderTable();
+    refreshHoverTip();
   }
 
   // legend: continuous gradient on a log axis, with markers for the selected / hovered place
@@ -338,8 +346,13 @@
     };
     const body = tv.querySelector("tbody");
     body.onclick = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) pick(+tr.dataset.id); };
-    body.onmousemove = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) showTip(locTip(state.byId.get(+tr.dataset.id)), e); };
-    body.onmouseleave = hideTip;
+    body.onmousemove = (e) => {
+      const tr = e.target.closest("tr[data-id]");
+      if (!tr) return;
+      hoverTip = { id: +tr.dataset.id, clientX: e.clientX, clientY: e.clientY };
+      showTip(locTip(state.byId.get(hoverTip.id)), e);
+    };
+    tv.onmouseleave = () => { hoverTip = null; hideTip(); };
   }
 
   /* ---------------- selection & scenario ---------------- */
