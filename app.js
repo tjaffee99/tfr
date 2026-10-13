@@ -198,13 +198,14 @@
   }
 
   /* ---------------- map ---------------- */
-  let mapSvg, mapG, mapPaths, zoom, mapFeats, mapPath;
+  let mapSvg, mapG, mapPaths, zoom, mapFeats, mapPath, mapProj;
   const MAP_W = 960, MAP_H = 500;
   function buildMap() {
     const el = $("#map");
     el.innerHTML = "";
     const W = MAP_W, H = MAP_H;
     const projection = d3.geoNaturalEarth1().fitExtent([[6, 6], [W - 6, H - 6]], { type: "Sphere" });
+    mapProj = projection;
     const path = (mapPath = d3.geoPath(projection));
     mapSvg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`)
       .attr("role", "img").attr("aria-label", "World map colored by total fertility rate. Click a country to explore it.");
@@ -271,12 +272,24 @@
   function zoomToLoc(id, ms = 650) {
     const f = mapFeats && mapFeats.find((d) => d.locId === id);
     if (!f) return zoomWorld(ms);
+    zoomToFeature(f, ms);
+  }
+  function zoomToFeature(f, ms = 650) {
     let geom = f;
     if (f.geometry.type === "MultiPolygon") {
       const polys = f.geometry.coordinates.map((c) => ({ type: "Polygon", coordinates: c }));
       geom = polys.reduce((a, b) => (d3.geoArea(b) > d3.geoArea(a) ? b : a));
     }
-    const [[x0, y0], [x1, y1]] = mapPath.bounds(geom);
+    // frame by projected points, ignoring anything past 169° (Chukotka, the Aleutians) so the antimeridian
+    // doesn't stretch the box across the whole map
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    const polys = geom.geometry ? (geom.geometry.type === "Polygon" ? [geom.geometry.coordinates] : geom.geometry.coordinates) : [geom.coordinates];
+    for (const poly of polys) for (const [lon, lat] of poly[0]) {
+      if (Math.abs(lon) > 169) continue;
+      const [px, py] = mapProj([lon, lat]);
+      x0 = Math.min(x0, px); x1 = Math.max(x1, px); y0 = Math.min(y0, py); y1 = Math.max(y1, py);
+    }
+    if (!isFinite(x0)) [[x0, y0], [x1, y1]] = mapPath.bounds(geom);
     const k = Math.max(1, Math.min(40, 0.75 / Math.max((x1 - x0) / MAP_W, (y1 - y0) / MAP_H)));
     const t = d3.zoomIdentity.translate(MAP_W / 2, MAP_H / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
     mapSvg.transition().duration(ms).call(zoom.transform, t);
@@ -290,66 +303,144 @@
   }
 
   /* ---------------- subdivisions (shown while zoomed into a country) ---------------- */
-  // Each file has TopoJSON units with a per-year series {year: TFR}; a unit shows the latest value at or
-  // before the timeline year, from its first data year through today. Outside that range the national color shows.
-  let subLayer = null, subToken = 0;
+  // A subdivision file has one or more epochs (boundary sets, e.g. one per DHS survey), each with per-unit
+  // TFR series {year: value}. The epoch nearest the timeline year is drawn. A unit shows its value for that
+  // exact year; failing that, its nearest value within SUB_GAP years, scaled by how the parent (country or
+  // state) changed between the two years, i.e. its level relative to the parent is carried over.
+  // Beyond that, or in projection years, the parent's color shows through.
+  const SUB_GAP = 10;
+  let subLayer = null, childLayer = null, subToken = 0;
+  const plural = (w, n) => (n === 1 ? w : w.endsWith("y") ? w.slice(0, -1) + "ies" : w + "s");
+
+  function loadSubDoc(path) {
+    if (!state.subCache) state.subCache = new Map();
+    if (!state.subCache.has(path)) {
+      const pr = fetch(DATA + path).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+      pr.catch(() => state.subCache.delete(path));
+      state.subCache.set(path, pr);
+    }
+    return state.subCache.get(path);
+  }
+  function removeLayer(layer) { if (layer) layer.g.remove(); }
+
   async function showSubdivisions(id) {
     const token = ++subToken;
-    if (subLayer) { subLayer.g.remove(); subLayer = null; }
+    removeLayer(childLayer); childLayer = null;
+    removeLayer(subLayer); subLayer = null;
     const s = state.byId.get(id), meta = s && s.iso3 && state.subIndex && state.subIndex[s.iso3];
     if (!meta || !mapG) { drawLegendMarkers(); return; }
-    if (!state.subCache) state.subCache = new Map();
-    let doc = state.subCache.get(s.iso3);
-    if (!doc) {
-      try { doc = await fetch(`${DATA}sub/${s.iso3}.json`).then((r) => r.json()); } catch (e) { return; }
-      state.subCache.set(s.iso3, doc);
-    }
+    let doc;
+    try { doc = await loadSubDoc(`sub/${s.iso3}.json`); } catch (e) { return; }
     if (token !== subToken) return; // another country was picked meanwhile
-    const feats = topojson.feature(doc.topo, doc.topo.objects.units || Object.values(doc.topo.objects)[0]).features.map(rewind);
-    const g = mapG.append("g").attr("class", "subs");
-    const paths = g.selectAll("path").data(feats).join("path").attr("class", "sub").attr("d", mapPath)
-      .on("mousemove", (ev, f) => {
-        hoverTip = { sub: f, clientX: ev.clientX, clientY: ev.clientY };
-        state.hoverSub = f; drawLegendMarkers();
-        showTip(subTip(f), ev);
-      })
-      .on("mouseleave", () => { hideTip(); hoverTip = null; state.hoverSub = null; drawLegendMarkers(); })
-      .on("click", (ev) => ev.stopPropagation());
-    // the country outline comes from the same detailed boundaries, so edges line up at any zoom
-    const outline = doc.topo.objects.outline ? topojson.feature(doc.topo, doc.topo.objects.outline).features.map(rewind) : [mapFeats.find((f) => f.locId === id)];
-    for (const o of outline) if (o) g.append("path").attr("class", "sub-outline").attr("d", mapPath(o));
-    subLayer = { g, paths, doc, s };
-    colorSubdivisions();
+    subLayer = makeLayer(doc, { name: s.name, parentAt: (y) => tfrInfo(s, y).v, drill: meta.children ? s.iso3 : null });
+    renderLayer(subLayer);
     drawLegendMarkers();
   }
-  function subValue(f) {
-    const ys = Object.keys(f.properties.s).map(Number).filter((y) => y <= state.year);
-    if (!ys.length || state.year > BASE) return null;
-    const y = Math.max(...ys);
-    return { v: f.properties.s[y], y };
+
+  async function showChildren(f) {
+    const token = ++subToken, parent = subLayer;
+    removeLayer(childLayer); childLayer = null;
+    let doc;
+    try { doc = await loadSubDoc(`sub/${parent.ctx.drill}/${f.properties.c}.json`); } catch (e) { return; }
+    if (token !== subToken || subLayer !== parent) return;
+    childLayer = makeLayer(doc, { name: f.properties.n, parentAt: (y) => unitValue(parent, f, y)?.v });
+    renderLayer(childLayer);
+    drawLegendMarkers();
   }
-  function colorSubdivisions() {
-    if (!subLayer) return;
-    subLayer.g.raise(); // stay above the (raised) selected country
+  function closeChildren() {
+    removeLayer(childLayer); childLayer = null;
+    if (state.loc) zoomToLoc(state.loc.id);
+    colorMap();
+  }
+
+  function makeLayer(doc, ctx) {
+    return { doc, ctx, g: mapG.append("g").attr("class", "subs"), epoch: -1 };
+  }
+  function pickEpoch(doc, y) {
+    let best = 0, bestD = Infinity;
+    doc.epochs.forEach((e, i) => {
+      const a = e.years[0], b = e.years[e.years.length - 1], d = y < a ? a - y : y > b ? y - b : 0;
+      if (d < bestD || (d === bestD && b > doc.epochs[best].years.at(-1))) { best = i; bestD = d; }
+    });
+    return best;
+  }
+  // (re)draw a layer's boundaries when the timeline moves into another epoch, then recolor
+  function renderLayer(layer) {
+    if (!layer) return;
+    const ei = pickEpoch(layer.doc, state.year);
+    if (ei !== layer.epoch) {
+      layer.epoch = ei;
+      const topo = layer.doc.epochs[ei].topo;
+      layer.g.selectAll("*").remove();
+      layer.feats = topojson.feature(topo, topo.objects.units || Object.values(topo.objects)[0]).features.map(rewind);
+      layer.paths = layer.g.selectAll("path.sub").data(layer.feats).join("path").attr("class", "sub").attr("d", mapPath)
+        .on("mousemove", (ev, f) => {
+          hoverTip = { layer, sub: f, clientX: ev.clientX, clientY: ev.clientY };
+          state.hoverSub = { layer, f }; drawLegendMarkers();
+          showTip(subTip(layer, f), ev);
+        })
+        .on("mouseleave", () => { hideTip(); hoverTip = null; state.hoverSub = null; drawLegendMarkers(); })
+        .on("click", (ev, f) => {
+          ev.stopPropagation();
+          zoomToFeature(f);
+          if (layer === subLayer && layer.ctx.drill && f.properties.c) showChildren(f);
+        });
+      const outline = topo.objects.outline ? topojson.feature(topo, topo.objects.outline).features.map(rewind) : [];
+      for (const o of outline) layer.g.append("path").attr("class", "sub-outline").attr("d", mapPath(o));
+    }
+    colorLayer(layer);
+  }
+  function unitValue(layer, f, y) {
+    if (y > BASE) return null;
+    const s = f.properties.s;
+    if (s[y] != null) return { v: s[y], y, exact: true };
+    let y0 = null;
+    for (const k in s) if (y0 == null || Math.abs(k - y) < Math.abs(y0 - y)) y0 = +k;
+    if (y0 == null || Math.abs(y0 - y) > SUB_GAP) return null;
+    const p1 = layer.ctx.parentAt(y), p0 = layer.ctx.parentAt(y0);
+    if (!p1 || !p0) return null;
+    return { v: s[y0] * (p1 / p0), y: y0, exact: false };
+  }
+  function colorLayer(layer) {
+    if (!layer || !layer.paths) return;
+    layer.g.raise(); // above the (raised) selected country; counties above states
     let shown = 0;
-    subLayer.paths.attr("fill", (f) => { const r = subValue(f); if (r) shown++; return r ? colorOf(r.v) : "none"; })
-      .style("display", (f) => (subValue(f) ? null : "none"));
-    subLayer.shown = shown;
+    layer.paths.each(function (f) {
+      const r = unitValue(layer, f, state.year);
+      if (r) shown++;
+      d3.select(this).attr("fill", r ? colorOf(r.v) : "none").style("display", r ? null : "none");
+    });
+    layer.shown = shown;
   }
-  function subTip(f) {
-    const r = subValue(f), src = r && subLayer.doc.sources[r.y];
-    if (!r) return `<div class="t">${esc(f.properties.n)}</div><div class="m">No subdivision data for ${state.year}</div>`;
-    const kind = src && src.kind === "estimate" ? `${r.y} estimate${src.months ? " from " + esc(src.months) + " births" : ""}` : src && src.kind === "survey" ? `${r.y} survey` : `${r.y}`;
+  function colorSubdivisions() { renderLayer(subLayer); renderLayer(childLayer); }
+  function subTip(layer, f) {
+    const y = state.year, r = unitValue(layer, f, y);
+    if (!r) return `<div class="t">${esc(f.properties.n)}</div><div class="m">No ${esc(layer.doc.level)} data near ${y}</div>`;
+    const src = layer.doc.epochs[layer.epoch].sources[r.y];
+    let basis;
+    if (!r.exact) basis = `${y} estimate: its ${r.y} level relative to ${esc(layer.ctx.name)}`;
+    else if (src && src.kind === "estimate") basis = `${y} estimate${src.months ? " from " + esc(src.months) + " births" : ""}`;
+    else if (src && src.kind === "survey") basis = `${y} survey`;
+    else basis = `${y}${src && src.kind ? " " + esc(src.kind) : ""}`;
     return `<div class="t">${esc(f.properties.n)}</div>
       <div class="r"><span><i style="background:${colorOf(r.v)}"></i>Fertility rate</span><b>${r.v.toFixed(2)}</b></div>
-      <div class="m">${esc(subLayer.s.name)} · ${kind}${src ? " · " + esc(shortSrc(src.source)) : ""}</div>`;
+      <div class="m">${basis}${src ? " · " + esc(shortSrc(src.source)) : ""}</div>`;
+  }
+  function layerNote(layer) {
+    const n = layer.feats ? layer.feats.length : 0, lvl = plural(layer.doc.level, n);
+    if (!layer.shown) {
+      const ys = layer.doc.epochs.flatMap((e) => e.years);
+      return `${plural(layer.doc.level, 2)} shown ${Math.max(Math.min(...ys) - SUB_GAP, Y0)}–${BASE}`;
+    }
+    const exact = layer.feats.some((f) => f.properties.s[state.year] != null);
+    return `${n} ${lvl}, ${exact ? state.year + " data" : "estimated from nearest data"}`;
   }
 
   // The country under a still cursor keeps its tooltip current while the years play.
   let hoverTip = null;
   function refreshHoverTip() {
     if (!hoverTip) return;
-    showTip(hoverTip.sub ? subTip(hoverTip.sub) : locTip(state.byId.get(hoverTip.id)), hoverTip);
+    showTip(hoverTip.sub ? subTip(hoverTip.layer, hoverTip.sub) : locTip(state.byId.get(hoverTip.id)), hoverTip);
   }
 
   function colorMap() {
@@ -396,18 +487,18 @@
       const cx = lg.x(Math.max(0.7, Math.min(6.4, v)));
       lg.g.append("path").attr("d", `M${cx - 5},0 L${cx + 5},0 L${cx},7 Z`).style("fill", m.strong ? "var(--ink)" : "var(--ink-2)");
     }
-    const hv = state.hoverSub && subLayer && subValue(state.hoverSub);
+    const hv = state.hoverSub && unitValue(state.hoverSub.layer, state.hoverSub.f, state.year);
     if (hv) {
       const cx = lg.x(Math.max(0.7, Math.min(6.4, hv.v)));
       lg.g.append("path").attr("d", `M${cx - 5},0 L${cx + 5},0 L${cx},7 Z`).style("fill", "var(--ink-2)");
     }
-    const s = state.loc && state.byId.get(state.loc.id);
-    let note = s ? `▼ ${s.name}` : "";
-    if (subLayer && subLayer.shown) {
-      const ys = [...new Set(subLayer.paths.data().map((f) => subValue(f)?.y).filter(Boolean))].sort();
-      note += ` · ${subLayer.paths.data().length} ${subLayer.doc.level}s, ${ys.length > 1 ? ys[0] + "–" + ys.at(-1) : ys[0]} data`;
-    } else if (subLayer) note += ` · ${subLayer.doc.level}s shown for ${subLayer.doc.years[0]}–${BASE}`;
-    $("#legend-note").textContent = note;
+    const s = state.loc && state.byId.get(state.loc.id), el = $("#legend-note");
+    if (childLayer) {
+      el.innerHTML = `▼ <a href="#" id="crumb-up">${esc(s ? s.name : "")}</a> › ${esc(childLayer.ctx.name)} · ${esc(layerNote(childLayer))}`;
+      $("#crumb-up").onclick = (e) => { e.preventDefault(); closeChildren(); };
+    } else {
+      el.textContent = (s ? `▼ ${s.name}` : "") + (subLayer ? ` · ${layerNote(subLayer)}` : "");
+    }
   }
 
   function setView(v) {

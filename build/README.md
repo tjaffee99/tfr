@@ -23,3 +23,14 @@
 `data/countries-50m.json` is `world-atlas@2/countries-50m.json` (Natural Earth, public domain).
 
 After changing `style.css`, `app.js` or `projection.js`, run `python3 stamp_versions.py` so browsers load the new files instead of cached ones.
+
+## Subdivisions (data/sub/)
+
+1. `sh fetch_sub_sources.sh` downloads raw boundaries and data into `build/raw/` (not committed) and refreshes `build/sub/`.
+2. Research outputs from national statistics offices go in `build/sub/agent_*.json`; `python3 prep_national.py`
+   normalizes them into `build/sub/national_*.json`.
+3. `python3 us_counties.py` builds US county estimates (`data/sub/USA/US-XX.json`), then
+   `python3 subnational.py` builds every country file plus `data/sub/index.json`.
+   Both need mapshaper (`npm i -g mapshaper`, or set `MAPSHAPER=/path/to/mapshaper`).
+
+Priority per country: national statistics, then Eurostat NUTS 3 (2013+), then DHS surveys (one boundary set per survey).
