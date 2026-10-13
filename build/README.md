@@ -17,6 +17,8 @@
    `latest_tfr.json` (latest official annual TFR) and `tfr_series.json` (2022–2026 series incl. current-year
    estimates = latest official TFR × births so far this year ÷ births in the same months last year).
    Edit those files to add newer figures, then re-run the merge.
+4. `node default_pops.js` adds each country's population under the default fertility path (latest data,
+   following the UN's projected declines but not its assumed rebounds) for the map and table.
 
 `data/countries-50m.json` is `world-atlas@2/countries-50m.json` (Natural Earth, public domain).
 

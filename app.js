@@ -83,21 +83,24 @@
   function tfrInfo(s, y) {
     if (state.proj && y > BASE && state.loc && s.id === state.loc.id && state.resByYear) {
       const d = state.resByYear.get(y);
-      return { v: d.tfr, kind: "scenario", label: `${y} projection`, src: state.sc.mode === "un" ? "default (UN medium fertility)" : "your scenario" };
+      return { v: d.tfr, kind: "scenario", label: `${y} projection`, src: MODE_SRC[state.sc.mode] };
     }
     const obs = s.obs || [];
     let o = obs.find((d) => d.year === y);
     if (!o && y === BASE) o = obs.filter((d) => d.year >= 2024).at(-1); // "today" = newest data we have
     if (o) return { v: o.tfr, kind: o.kind || "official", label: obsLabel(o), src: o.source, url: o.url, obs: o };
+    if (y > BASE) return { v: defaultTfrAt(s, y), kind: "default", label: `${y} projection`, src: MODE_SRC.default };
     return { v: s.tfr[y - Y0], kind: y <= 2023 ? "un" : "un-proj", label: `${y} ${y <= 2023 ? "UN estimate" : "UN projection"}`, src: "UN WPP 2024" };
   }
+  const MODE_SRC = { default: "default: latest data, no assumed rebound", un: "UN medium projection", custom: "your scenario" };
   function popAt(s, y) {
+    if (y >= BASE && s.popD && !(state.proj && state.loc && s.id === state.loc.id)) return s.popD[y - BASE] * 1000;
     if (state.proj && y >= BASE && state.loc && s.id === state.loc.id && state.resByYear) return state.resByYear.get(y).pop;
     return s.popK[y - Y0] * 1000;
   }
 
   function yearStatus(y) {
-    if (y > BASE) return { text: state.sc && state.sc.mode !== "un" ? "Projection · custom" : "Projection", proj: true };
+    if (y > BASE) return { text: !state.sc || state.sc.mode === "default" ? "Projection" : state.sc.mode === "un" ? "Projection · UN" : "Projection · custom", proj: true };
     if (y === BASE) return { text: "Today · latest data", proj: false };
     if (y >= 2024) return { text: "Reported data", proj: false };
     return { text: "UN estimate", proj: false };
@@ -118,7 +121,7 @@
       p.set("loc", state.loc.id);
       p.set("yr", state.year);
       if (state.proj) p.set("proj", "1");
-      if (sc.mode !== "un") p.set("mode", sc.mode);
+      if (sc.mode !== "default") p.set("mode", sc.mode);
       if (sc.mode === "custom") { p.set("tfr", sc.target.toFixed(2)); p.set("by", sc.targetYear); }
       if (sc.migMult !== 1) p.set("mig", Math.round(sc.migMult * 100));
       if (sc.mortality !== "un") p.set("mort", "frozen");
@@ -366,9 +369,14 @@
     return state.cache.get(id);
   }
 
-  function startTfr(loc) {
-    const s = state.byId.get(loc.id), obs = (s.obs || []).filter((o) => o.year >= 2024);
-    return obs.length ? obs.at(-1).tfr : unAt(loc, "tfr", BASE);
+  function anchorOf(s) {
+    const obs = (s.obs || []).filter((o) => o.year >= 2024);
+    return obs.length ? { tfr: obs.at(-1).tfr, year: obs.at(-1).year } : { tfr: s.tfr[BASE - Y0], year: BASE };
+  }
+  // default fertility path for any location in the summary (used by the map and table for future years)
+  function defaultTfrAt(s, y) {
+    const a = s._anchor || (s._anchor = anchorOf(s));
+    return Projection.defaultTfr(a.tfr, a.year, (yy) => s.tfr[yy - Y0], y);
   }
 
   async function selectLoc(id, fromHash) {
@@ -378,10 +386,10 @@
       return;
     }
     state.loc = loc; state.pyr = pyr;
-    const st = startTfr(loc), h = fromHash || {};
+    const a = anchorOf(state.byId.get(loc.id)), st = a.tfr, h = fromHash || {};
     state.sc = {
-      mode: h.mode === "custom" || h.mode === "constant" ? "custom" : "un",
-      startTfr: st,
+      mode: h.mode === "custom" || h.mode === "constant" ? "custom" : h.mode === "un" ? "un" : "default",
+      startTfr: st, anchorYear: a.year,
       target: h.tfr && h.mode !== "constant" ? Math.min(10, Math.max(0, +h.tfr)) : Math.round(st * 100) / 100,
       targetYear: h.by ? Math.min(END, Math.max(BASE + 1, +h.by)) : 2050,
       migMult: h.mig != null ? Math.min(2, Math.max(0, +h.mig / 100)) : 1,
@@ -591,7 +599,7 @@
     $("#scenario").innerHTML = `
       <div class="ctl">
         <div class="lbl">Fertility</div>
-        <div class="seg" id="mode"><button type="button" class="btn" data-m="un">Default</button><button type="button" class="btn" data-m="custom">Custom</button></div>
+        <div class="seg" id="mode"><button type="button" class="btn" data-m="default">Default</button><button type="button" class="btn" data-m="un">UN medium</button><button type="button" class="btn" data-m="custom">Custom</button></div>
         <div class="hint" id="mode-hint"></div>
       </div>
       <div id="custom-ctl">
@@ -625,7 +633,7 @@
     $("#presets").onclick = (e) => { const b = e.target.closest("[data-v]"); if (b) { sc.target = +b.dataset.v; sc.mode = "custom"; update(); } };
     $("#mig-seg").onclick = (e) => { const b = e.target.closest("[data-v]"); if (b) { sc.migMult = +b.dataset.v; update(); } };
     $("#mort-seg").onclick = (e) => { const b = e.target.closest("[data-v]"); if (b) { sc.mortality = b.dataset.v; update(); } };
-    $("#reset").onclick = () => { Object.assign(sc, { mode: "un", target: today, targetYear: 2050, migMult: 1, mortality: "un" }); update(); };
+    $("#reset").onclick = () => { Object.assign(sc, { mode: "default", target: today, targetYear: 2050, migMult: 1, mortality: "un" }); update(); };
 
     // double-click (or Enter) the value to type an exact target, to 0.01
     const out = $("#target-out");
@@ -657,9 +665,12 @@
     for (const b of $$("#presets .btn")) b.setAttribute("aria-pressed", Math.abs(+b.dataset.v - sc.target) < 0.005);
     for (const b of $$("#mig-seg .btn")) b.setAttribute("aria-pressed", +b.dataset.v === sc.migMult);
     for (const b of $$("#mort-seg .btn")) b.setAttribute("aria-pressed", b.dataset.v === sc.mortality);
+    const d2100 = Projection.defaultTfr(sc.startTfr, sc.anchorYear, (y) => unAt(loc, "tfr", y), END);
     $("#mode-hint").textContent = custom
       ? `From ${sc.startTfr.toFixed(2)} today, in a straight line to your target, then held. You can also drag the dot on the fertility chart.`
-      : `The UN medium projection: ${unAt(loc, "tfr", BASE).toFixed(2)} now → ${unAt(loc, "tfr", END).toFixed(2)} in 2100.`;
+      : sc.mode === "un"
+        ? `The UN's 2024 medium projection: ${unAt(loc, "tfr", BASE).toFixed(2)} in ${BASE} → ${unAt(loc, "tfr", END).toFixed(2)} in 2100. It predates the latest data and assumes rebounds.`
+        : `Starts from the latest data (${sc.startTfr.toFixed(2)} in ${sc.anchorYear}) and follows the UN's projected declines, but not its assumed rebounds: ${d2100.toFixed(2)} in 2100.`;
   }
 
   function drawOutcomes() {
@@ -812,13 +823,14 @@
         `<path d="${d}" stroke="${color}" stroke-width="${dot}" stroke-linecap="round"/></svg>` : "";
       return `<div class="gen"><div class="gv">${fmt(v)}</div><div class="gl">${labels[g]}</div>${svg}</div>`;
     }).join("");
-    $("#gen-sub").textContent = `At a fertility rate of ${t.toFixed(2)} (${state.year}${info.kind === "scenario" && state.sc.mode !== "un" ? ", your scenario" : ""}), every 100 people have ${fmt(vals[1])} children, ${fmt(vals[2])} grandchildren and ${fmt(vals[3])} great-grandchildren. Ignores mortality and migration.`;
+    $("#gen-sub").textContent = `At a fertility rate of ${t.toFixed(2)} (${state.year}${info.kind === "scenario" && state.sc.mode === "custom" ? ", your scenario" : ""}), every 100 people have ${fmt(vals[1])} children, ${fmt(vals[2])} grandchildren and ${fmt(vals[3])} great-grandchildren. Ignores mortality and migration.`;
   }
 
   function moveChartMarkers() {
     for (const k in charts) { const c = charts[k]; if (c) c.marker.attr("x1", c.x(state.year)).attr("x2", c.x(state.year)); }
   }
 
+  const SCEN_LABEL = { default: "Default projection", un: "UN medium (selected)", custom: "Your scenario" };
   function drawFutureCharts() {
     const loc = state.loc, res = state.result, sc = state.sc, s = state.byId.get(loc.id), on = state.proj;
     const range = (a, b) => d3.range(a, b + 1);
@@ -836,7 +848,7 @@
       series: [
         { label: "UN estimates", color: INK, points: unSeries("tfr", Y0, 2023) },
         { label: on ? "UN medium" : "UN projection", color: UN, dash: true, points: unSeries("tfr", 2023, on ? END : BASE) },
-        { label: sc.mode === "un" ? "Projection" : "Your scenario", color: SC, width: 2.6, points: scen((d) => d.tfr), endLabel: tfr2 },
+        { label: SCEN_LABEL[sc.mode], color: SC, width: 2.6, points: scen((d) => d.tfr), endLabel: tfr2 },
       ],
       points: obs,
       markLegend: [
@@ -845,8 +857,8 @@
       ].filter(Boolean),
       hlines: [{ y: 2.1, label: "replacement ≈ 2.1" }],
       yFmt: d3.format(".1f"), tipFmt: tfr2,
-      handle: on && sc.mode !== "constant" ? {
-        x: sc.mode === "custom" ? sc.targetYear : END, y: sc.mode === "custom" ? sc.target : unAt(loc, "tfr", END),
+      handle: on ? {
+        x: sc.mode === "custom" ? sc.targetYear : END, y: sc.mode === "custom" ? sc.target : res.at(-1).tfr,
         onDrag: (nx, ny) => { sc.mode = "custom"; sc.targetYear = nx; sc.target = ny; update(); },
       } : null,
     });
@@ -895,7 +907,7 @@
       series: [
         { label: "UN estimates", color: INK, points: unSeries("medAge", Y0, BASE) },
         { label: "UN medium", color: UN, dash: true, points: on ? unSeries("medAge", BASE, END) : [] },
-        { label: sc.mode === "un" ? "Projection" : "Your scenario", color: SC, width: 2.6, points: scen((d) => d.medAge), endLabel: (v) => v.toFixed(0) },
+        { label: SCEN_LABEL[sc.mode], color: SC, width: 2.6, points: scen((d) => d.medAge), endLabel: (v) => v.toFixed(0) },
       ],
       zero: false, yFmt: d3.format("d"), tipFmt: (v) => v.toFixed(1),
     });
@@ -906,7 +918,7 @@
       series: [
         { label: "UN estimates", color: INK, points: depUN(Y0, BASE) },
         { label: "UN medium", color: UN, dash: true, points: on ? depUN(BASE, END) : [] },
-        { label: sc.mode === "un" ? "Projection" : "Your scenario", color: SC, width: 2.6, points: scen((d) => ageShares(d.m, d.f).dep), endLabel: (v) => v.toFixed(0) },
+        { label: SCEN_LABEL[sc.mode], color: SC, width: 2.6, points: scen((d) => ageShares(d.m, d.f).dep), endLabel: (v) => v.toFixed(0) },
       ],
       yFmt: d3.format("d"), tipFmt: (v) => v.toFixed(1),
     });

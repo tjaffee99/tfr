@@ -23,7 +23,15 @@
     return arr[i];
   }
 
+  // Default path: start from the latest observed TFR (anchor, observed in anchorYear) and follow the UN's
+  // projected declines proportionally, but never its assumed rebounds above today's rate.
+  function defaultTfr(anchor, anchorYear, unTfr, y) {
+    const r = unTfr(y) / unTfr(anchorYear);
+    return anchor * Math.min(1, isFinite(r) ? r : 1);
+  }
+
   // Build the TFR path for 2026..2100 from scenario settings.
+  //   mode "default": latest data, following UN declines but not its rebounds (see defaultTfr)
   //   mode "un": UN WPP medium path
   //   mode "target": move from startTfr to target linearly by targetYear, then hold
   //   mode "constant": hold startTfr
@@ -31,6 +39,7 @@
     const base = loc.base.year, out = {};
     for (let y = base; y <= LAST; y++) {
       if (sc.mode === "un") out[y] = unSeries(loc, "tfr", y);
+      else if (sc.mode === "default") out[y] = defaultTfr(sc.startTfr, sc.anchorYear || base, (yy) => unSeries(loc, "tfr", yy), y);
       else if (sc.mode === "constant") out[y] = sc.startTfr;
       else {
         const span = Math.max(sc.targetYear - base, 1);
@@ -127,7 +136,7 @@
     return c[sex];
   }
 
-  const api = { project, tfrPath, interpAnchors, medianAge, LAST };
+  const api = { project, tfrPath, defaultTfr, interpAnchors, medianAge, LAST };
   if (typeof module !== "undefined") module.exports = api;
   else root.Projection = api;
 })(this);
