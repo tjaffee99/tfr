@@ -1,0 +1,4682 @@
+{
+ "AF": {
+  "survey": "AF2015DHS",
+  "year": 2015,
+  "country": "Afghanistan",
+  "regions": [
+   {
+    "id": "AFDHS2015534001",
+    "name": "Kabul",
+    "tfr": 4.6
+   },
+   {
+    "id": "AFDHS2015534002",
+    "name": "Kapisa",
+    "tfr": 4.8
+   },
+   {
+    "id": "AFDHS2015534003",
+    "name": "Parwan",
+    "tfr": 5.7
+   },
+   {
+    "id": "AFDHS2015534004",
+    "name": "Wardak",
+    "tfr": 4.2
+   },
+   {
+    "id": "AFDHS2015534005",
+    "name": "Logar",
+    "tfr": 4.2
+   },
+   {
+    "id": "AFDHS2015534006",
+    "name": "Nangarhar",
+    "tfr": 6.4
+   },
+   {
+    "id": "AFDHS2015534007",
+    "name": "Laghman",
+    "tfr": 7.3
+   },
+   {
+    "id": "AFDHS2015534008",
+    "name": "Panjsher",
+    "tfr": 3.2
+   },
+   {
+    "id": "AFDHS2015534009",
+    "name": "Baghlan",
+    "tfr": 4.4
+   },
+   {
+    "id": "AFDHS2015534010",
+    "name": "Bamyan",
+    "tfr": 5.4
+   },
+   {
+    "id": "AFDHS2015534011",
+    "name": "Ghazni",
+    "tfr": 2.8
+   },
+   {
+    "id": "AFDHS2015534012",
+    "name": "Paktika",
+    "tfr": 5.3
+   },
+   {
+    "id": "AFDHS2015534013",
+    "name": "Paktya",
+    "tfr": 5.2
+   },
+   {
+    "id": "AFDHS2015534014",
+    "name": "Khost",
+    "tfr": 5.6
+   },
+   {
+    "id": "AFDHS2015534015",
+    "name": "Kunarha",
+    "tfr": 6.8
+   },
+   {
+    "id": "AFDHS2015534016",
+    "name": "Nooristan",
+    "tfr": 8.9
+   },
+   {
+    "id": "AFDHS2015534017",
+    "name": "Badakhshan",
+    "tfr": 5.3
+   },
+   {
+    "id": "AFDHS2015534018",
+    "name": "Takhar",
+    "tfr": 5.7
+   },
+   {
+    "id": "AFDHS2015534019",
+    "name": "Kunduz",
+    "tfr": 4.4
+   },
+   {
+    "id": "AFDHS2015534020",
+    "name": "Samangan",
+    "tfr": 5.1
+   },
+   {
+    "id": "AFDHS2015534021",
+    "name": "Balkh",
+    "tfr": 5.5
+   },
+   {
+    "id": "AFDHS2015534022",
+    "name": "Sar-E-Pul",
+    "tfr": 4.8
+   },
+   {
+    "id": "AFDHS2015534023",
+    "name": "Ghor",
+    "tfr": 5.8
+   },
+   {
+    "id": "AFDHS2015534024",
+    "name": "Daykundi",
+    "tfr": 5.2
+   },
+   {
+    "id": "AFDHS2015534025",
+    "name": "Urozgan",
+    "tfr": 8.8
+   },
+   {
+    "id": "AFDHS2015534026",
+    "name": "Zabul",
+    "tfr": 5.1
+   },
+   {
+    "id": "AFDHS2015534027",
+    "name": "Kandahar",
+    "tfr": 6.5
+   },
+   {
+    "id": "AFDHS2015534028",
+    "name": "Jawzjan",
+    "tfr": 3.9
+   },
+   {
+    "id": "AFDHS2015534029",
+    "name": "Faryab",
+    "tfr": 6.2
+   },
+   {
+    "id": "AFDHS2015534030",
+    "name": "Helmand",
+    "tfr": 4.7
+   },
+   {
+    "id": "AFDHS2015534031",
+    "name": "Badghis",
+    "tfr": 6.6
+   },
+   {
+    "id": "AFDHS2015534032",
+    "name": "Herat",
+    "tfr": 4.8
+   },
+   {
+    "id": "AFDHS2015534033",
+    "name": "Farah",
+    "tfr": 5.4
+   },
+   {
+    "id": "AFDHS2015534034",
+    "name": "Nimroz",
+    "tfr": 5.4
+   }
+  ]
+ },
+ "AL": {
+  "survey": "AL2017DHS",
+  "year": 2017,
+  "country": "Albania",
+  "regions": [
+   {
+    "id": "ALDHS2017507009",
+    "name": "Berat",
+    "tfr": 2.1
+   },
+   {
+    "id": "ALDHS2017507010",
+    "name": "Dib\u00ebr",
+    "tfr": 2.2
+   },
+   {
+    "id": "ALDHS2017507011",
+    "name": "Durr\u00ebs",
+    "tfr": 2.1
+   },
+   {
+    "id": "ALDHS2017507012",
+    "name": "Elbasan",
+    "tfr": 2.1
+   },
+   {
+    "id": "ALDHS2017507013",
+    "name": "Fier",
+    "tfr": 2
+   },
+   {
+    "id": "ALDHS2017507014",
+    "name": "Gjirokast\u00ebr",
+    "tfr": 1.8
+   },
+   {
+    "id": "ALDHS2017507015",
+    "name": "Kor\u00e7\u00eb",
+    "tfr": 1.6
+   },
+   {
+    "id": "ALDHS2017507016",
+    "name": "Kukes",
+    "tfr": 2.2
+   },
+   {
+    "id": "ALDHS2017507017",
+    "name": "Lezh\u00eb",
+    "tfr": 2.1
+   },
+   {
+    "id": "ALDHS2017507018",
+    "name": "Shkod\u00ebr",
+    "tfr": 1.4
+   },
+   {
+    "id": "ALDHS2017507019",
+    "name": "Tirana",
+    "tfr": 1.5
+   },
+   {
+    "id": "ALDHS2017507020",
+    "name": "Vlor\u00eb",
+    "tfr": 1.5
+   }
+  ]
+ },
+ "AM": {
+  "survey": "AM2016DHS",
+  "year": 2016,
+  "country": "Armenia",
+  "regions": [
+   {
+    "id": "AMDHS2016103001",
+    "name": "Aragatsotn",
+    "tfr": 1.1
+   },
+   {
+    "id": "AMDHS2016103002",
+    "name": "Ararat",
+    "tfr": 1.9
+   },
+   {
+    "id": "AMDHS2016103003",
+    "name": "Armavir",
+    "tfr": 2.2
+   },
+   {
+    "id": "AMDHS2016103004",
+    "name": "Gegharkunik",
+    "tfr": 1.1
+   },
+   {
+    "id": "AMDHS2016103005",
+    "name": "Lori",
+    "tfr": 1.5
+   },
+   {
+    "id": "AMDHS2016103006",
+    "name": "Kotayk",
+    "tfr": 2.1
+   },
+   {
+    "id": "AMDHS2016103007",
+    "name": "Shirak",
+    "tfr": 1.9
+   },
+   {
+    "id": "AMDHS2016103008",
+    "name": "Syunik",
+    "tfr": 2
+   },
+   {
+    "id": "AMDHS2016103009",
+    "name": "Vayots Dzor",
+    "tfr": 1.9
+   },
+   {
+    "id": "AMDHS2016103010",
+    "name": "Tavush",
+    "tfr": 2.4
+   },
+   {
+    "id": "AMDHS2016103011",
+    "name": "Yerevan",
+    "tfr": 1.6
+   }
+  ]
+ },
+ "AO": {
+  "survey": "AO2023DHS",
+  "year": 2023,
+  "country": "Angola",
+  "regions": [
+   {
+    "id": "AODHS2023506011",
+    "name": "Cabinda         ",
+    "tfr": 3.7
+   },
+   {
+    "id": "AODHS2023506012",
+    "name": "Zaire           ",
+    "tfr": 3.6
+   },
+   {
+    "id": "AODHS2023506013",
+    "name": "U\u00edge            ",
+    "tfr": 6.1
+   },
+   {
+    "id": "AODHS2023506014",
+    "name": "Luanda          ",
+    "tfr": 3.1
+   },
+   {
+    "id": "AODHS2023506015",
+    "name": "Cuanza Norte    ",
+    "tfr": 6.6
+   },
+   {
+    "id": "AODHS2023506016",
+    "name": "Cuanza Sul      ",
+    "tfr": 6.6
+   },
+   {
+    "id": "AODHS2023506017",
+    "name": "Malanje         ",
+    "tfr": 5.4
+   },
+   {
+    "id": "AODHS2023506018",
+    "name": "Lunda Norte     ",
+    "tfr": 6.6
+   },
+   {
+    "id": "AODHS2023506019",
+    "name": "Benguela        ",
+    "tfr": 5
+   },
+   {
+    "id": "AODHS2023506020",
+    "name": "Huambo          ",
+    "tfr": 5.4
+   },
+   {
+    "id": "AODHS2023506021",
+    "name": "Bi\u00e9             ",
+    "tfr": 5.8
+   },
+   {
+    "id": "AODHS2023506022",
+    "name": "Moxico          ",
+    "tfr": 6
+   },
+   {
+    "id": "AODHS2023506023",
+    "name": "Cuando Cubango  ",
+    "tfr": 6.1
+   },
+   {
+    "id": "AODHS2023506024",
+    "name": "Namibe          ",
+    "tfr": 4.6
+   },
+   {
+    "id": "AODHS2023506025",
+    "name": "Hu\u00edla           ",
+    "tfr": 5.1
+   },
+   {
+    "id": "AODHS2023506026",
+    "name": "Cunene          ",
+    "tfr": 6.1
+   },
+   {
+    "id": "AODHS2023506027",
+    "name": "Lunda Sul       ",
+    "tfr": 5.5
+   },
+   {
+    "id": "AODHS2023506028",
+    "name": "Bengo           ",
+    "tfr": 5.3
+   }
+  ]
+ },
+ "BD": {
+  "survey": "BD2022DHS",
+  "year": 2022,
+  "country": "Bangladesh",
+  "regions": [
+   {
+    "id": "BDDHS2022360001",
+    "name": "Barishal",
+    "tfr": 2.5
+   },
+   {
+    "id": "BDDHS2022360001",
+    "name": "Barishal",
+    "tfr": 2.5
+   },
+   {
+    "id": "BDDHS2022360003",
+    "name": "Chattogram",
+    "tfr": 2.6
+   },
+   {
+    "id": "BDDHS2022360003",
+    "name": "Chattogram",
+    "tfr": 2.6
+   },
+   {
+    "id": "BDDHS2022360004",
+    "name": "Sylhet",
+    "tfr": 2.3
+   },
+   {
+    "id": "BDDHS2022360004",
+    "name": "Sylhet",
+    "tfr": 2.3
+   },
+   {
+    "id": "BDDHS2022360010",
+    "name": "Dhaka",
+    "tfr": 2.2
+   },
+   {
+    "id": "BDDHS2022360010",
+    "name": "Dhaka",
+    "tfr": 2.2
+   },
+   {
+    "id": "BDDHS2022360011",
+    "name": "Mymensingh",
+    "tfr": 2.7
+   },
+   {
+    "id": "BDDHS2022360011",
+    "name": "Mymensingh",
+    "tfr": 2.7
+   },
+   {
+    "id": "BDDHS2022360006",
+    "name": "Khulna",
+    "tfr": 2.2
+   },
+   {
+    "id": "BDDHS2022360006",
+    "name": "Khulna",
+    "tfr": 2.2
+   },
+   {
+    "id": "BDDHS2022360008",
+    "name": "Rangpur",
+    "tfr": 2.5
+   },
+   {
+    "id": "BDDHS2022360008",
+    "name": "Rangpur",
+    "tfr": 2.5
+   },
+   {
+    "id": "BDDHS2022360009",
+    "name": "Rajshahi",
+    "tfr": 2
+   },
+   {
+    "id": "BDDHS2022360009",
+    "name": "Rajshahi",
+    "tfr": 2
+   }
+  ]
+ },
+ "BF": {
+  "survey": "BF2021DHS",
+  "year": 2021,
+  "country": "Burkina Faso",
+  "regions": [
+   {
+    "id": "BFDHS2021374010",
+    "name": "Centre (including Ouagadougou)",
+    "tfr": 3.3
+   },
+   {
+    "id": "BFDHS2021374011",
+    "name": "Ouagadougou",
+    "tfr": 3.1
+   },
+   {
+    "id": "BFDHS2021374012",
+    "name": "Boucle de Mouhoun",
+    "tfr": 4.5
+   },
+   {
+    "id": "BFDHS2021374014",
+    "name": "Centre-Sud",
+    "tfr": 4.4
+   },
+   {
+    "id": "BFDHS2021374015",
+    "name": "Plateau Central",
+    "tfr": 5
+   },
+   {
+    "id": "BFDHS2021374016",
+    "name": "Centre-Est",
+    "tfr": 4.8
+   },
+   {
+    "id": "BFDHS2021374017",
+    "name": "Centre-Nord",
+    "tfr": 5.1
+   },
+   {
+    "id": "BFDHS2021374018",
+    "name": "Centre-Ouest",
+    "tfr": 4.6
+   },
+   {
+    "id": "BFDHS2021374019",
+    "name": "Est",
+    "tfr": 5.5
+   },
+   {
+    "id": "BFDHS2021374020",
+    "name": "Nord",
+    "tfr": 4.6
+   },
+   {
+    "id": "BFDHS2021374021",
+    "name": "Cascades",
+    "tfr": 4.2
+   },
+   {
+    "id": "BFDHS2021374022",
+    "name": "Hauts Bassins",
+    "tfr": 4.3
+   },
+   {
+    "id": "BFDHS2021374023",
+    "name": "Sahel",
+    "tfr": 5.9
+   },
+   {
+    "id": "BFDHS2021374024",
+    "name": "Sud-Ouest",
+    "tfr": 4.7
+   }
+  ]
+ },
+ "BJ": {
+  "survey": "BJ2017DHS",
+  "year": 2017,
+  "country": "Benin",
+  "regions": [
+   {
+    "id": "BJDHS2017387002",
+    "name": "Atacora",
+    "tfr": 6.7
+   },
+   {
+    "id": "BJDHS2017387003",
+    "name": "Donga",
+    "tfr": 6.8
+   },
+   {
+    "id": "BJDHS2017387005",
+    "name": "Atlantique",
+    "tfr": 4.9
+   },
+   {
+    "id": "BJDHS2017387006",
+    "name": "Littoral (Cotonou)",
+    "tfr": 4
+   },
+   {
+    "id": "BJDHS2017387008",
+    "name": "Borgou",
+    "tfr": 6.2
+   },
+   {
+    "id": "BJDHS2017387009",
+    "name": "Alibori",
+    "tfr": 6.2
+   },
+   {
+    "id": "BJDHS2017387011",
+    "name": "Mono",
+    "tfr": 5.7
+   },
+   {
+    "id": "BJDHS2017387012",
+    "name": "Couffo",
+    "tfr": 5.9
+   },
+   {
+    "id": "BJDHS2017387014",
+    "name": "Ou\u00e9m\u00e9",
+    "tfr": 5.1
+   },
+   {
+    "id": "BJDHS2017387015",
+    "name": "Plateau",
+    "tfr": 5.7
+   },
+   {
+    "id": "BJDHS2017387017",
+    "name": "Zou",
+    "tfr": 5.6
+   },
+   {
+    "id": "BJDHS2017387018",
+    "name": "Collines",
+    "tfr": 5.4
+   }
+  ]
+ },
+ "BU": {
+  "survey": "BU2016DHS",
+  "year": 2016,
+  "country": "Burundi",
+  "regions": [
+   {
+    "id": "BUDHS2016392005",
+    "name": "Bujumbura Mairie",
+    "tfr": 3.7
+   },
+   {
+    "id": "BUDHS2016392018",
+    "name": "Kayanza",
+    "tfr": 4.9
+   },
+   {
+    "id": "BUDHS2016392019",
+    "name": "Kirundo",
+    "tfr": 5.9
+   },
+   {
+    "id": "BUDHS2016392022",
+    "name": "Muyinga",
+    "tfr": 6.6
+   },
+   {
+    "id": "BUDHS2016392024",
+    "name": "Ngozi",
+    "tfr": 5
+   },
+   {
+    "id": "BUDHS2016392014",
+    "name": "Cankuzo",
+    "tfr": 6.5
+   },
+   {
+    "id": "BUDHS2016392016",
+    "name": "Gitega",
+    "tfr": 5.5
+   },
+   {
+    "id": "BUDHS2016392017",
+    "name": "Karusi",
+    "tfr": 5.6
+   },
+   {
+    "id": "BUDHS2016392021",
+    "name": "Muramvya",
+    "tfr": 5.1
+   },
+   {
+    "id": "BUDHS2016392026",
+    "name": "Ruyigi",
+    "tfr": 6.3
+   },
+   {
+    "id": "BUDHS2016392011",
+    "name": "Bubanza",
+    "tfr": 6.4
+   },
+   {
+    "id": "BUDHS2016392012",
+    "name": "Bujumbura Rural",
+    "tfr": 5.3
+   },
+   {
+    "id": "BUDHS2016392015",
+    "name": "Cibitoke",
+    "tfr": 6
+   },
+   {
+    "id": "BUDHS2016392013",
+    "name": "Bururi",
+    "tfr": 4.4
+   },
+   {
+    "id": "BUDHS2016392020",
+    "name": "Makamba",
+    "tfr": 6.2
+   },
+   {
+    "id": "BUDHS2016392023",
+    "name": "Mwaro",
+    "tfr": 4.8
+   },
+   {
+    "id": "BUDHS2016392025",
+    "name": "Rutana",
+    "tfr": 5.9
+   },
+   {
+    "id": "BUDHS2016392028",
+    "name": "Rumonge",
+    "tfr": 6.4
+   }
+  ]
+ },
+ "CD": {
+  "survey": "CD2023DHS",
+  "year": 2023,
+  "country": "Congo Democratic Republic",
+  "regions": [
+   {
+    "id": "CDDHS2023503010",
+    "name": "Kinshasa",
+    "tfr": 3.4
+   },
+   {
+    "id": "CDDHS2023503020",
+    "name": "Bas-Congo",
+    "tfr": 4
+   },
+   {
+    "id": "CDDHS2023503031",
+    "name": "Kwango",
+    "tfr": 6.3
+   },
+   {
+    "id": "CDDHS2023503032",
+    "name": "Kwilu",
+    "tfr": 5.3
+   },
+   {
+    "id": "CDDHS2023503033",
+    "name": "Mai-Ndombe",
+    "tfr": 4.8
+   },
+   {
+    "id": "CDDHS2023503041",
+    "name": "Equateur (>= 2015)",
+    "tfr": 4.9
+   },
+   {
+    "id": "CDDHS2023503042",
+    "name": "Mongala",
+    "tfr": 6.9
+   },
+   {
+    "id": "CDDHS2023503043",
+    "name": "Nord-Ubangi",
+    "tfr": 6.8
+   },
+   {
+    "id": "CDDHS2023503044",
+    "name": "Sud-Ubangi",
+    "tfr": 5.8
+   },
+   {
+    "id": "CDDHS2023503045",
+    "name": "Tshuapa",
+    "tfr": 6.5
+   },
+   {
+    "id": "CDDHS2023503051",
+    "name": "Bas-Uele",
+    "tfr": 6.8
+   },
+   {
+    "id": "CDDHS2023503052",
+    "name": "Haut-Uele",
+    "tfr": 4.6
+   },
+   {
+    "id": "CDDHS2023503053",
+    "name": "Ituri",
+    "tfr": 5
+   },
+   {
+    "id": "CDDHS2023503054",
+    "name": "Tshopo",
+    "tfr": 5.8
+   },
+   {
+    "id": "CDDHS2023503061",
+    "name": "Nord-Kivu",
+    "tfr": 5.4
+   },
+   {
+    "id": "CDDHS2023503062",
+    "name": "Maniema",
+    "tfr": 7.6
+   },
+   {
+    "id": "CDDHS2023503063",
+    "name": "Sud-Kivu",
+    "tfr": 5.6
+   },
+   {
+    "id": "CDDHS2023503071",
+    "name": "Haut-Katanga",
+    "tfr": 5.9
+   },
+   {
+    "id": "CDDHS2023503072",
+    "name": "Haut-Lomani",
+    "tfr": 7.2
+   },
+   {
+    "id": "CDDHS2023503073",
+    "name": "Lualaba",
+    "tfr": 7.6
+   },
+   {
+    "id": "CDDHS2023503074",
+    "name": "Tanganyka",
+    "tfr": 5.9
+   },
+   {
+    "id": "CDDHS2023503081",
+    "name": "Kasai-Oriental (>= 2015)",
+    "tfr": 6.1
+   },
+   {
+    "id": "CDDHS2023503082",
+    "name": "Lomani",
+    "tfr": 7.4
+   },
+   {
+    "id": "CDDHS2023503083",
+    "name": "Sankuru",
+    "tfr": 6.5
+   },
+   {
+    "id": "CDDHS2023503094",
+    "name": "Kasai",
+    "tfr": 6.4
+   },
+   {
+    "id": "CDDHS2023503095",
+    "name": "Kasai-Central",
+    "tfr": 7.1
+   }
+  ]
+ },
+ "CI": {
+  "survey": "CI2021DHS",
+  "year": 2021,
+  "country": "Cote d'Ivoire",
+  "regions": [
+   {
+    "id": "CIDHS2021395001",
+    "name": "Abidjan",
+    "tfr": 3.2
+   },
+   {
+    "id": "CIDHS2021395020",
+    "name": "Yamoussoukro",
+    "tfr": 3.4
+   },
+   {
+    "id": "CIDHS2021395021",
+    "name": "Lacs",
+    "tfr": 4.6
+   },
+   {
+    "id": "CIDHS2021395022",
+    "name": "Como\u00e9",
+    "tfr": 3.8
+   },
+   {
+    "id": "CIDHS2021395010",
+    "name": "Vall\u00e9e du Bandama",
+    "tfr": 4.4
+   },
+   {
+    "id": "CIDHS2021395027",
+    "name": "Sassandra-Marahou\u00e9",
+    "tfr": 4.8
+   },
+   {
+    "id": "CIDHS2021395012",
+    "name": "Savanes",
+    "tfr": 5
+   },
+   {
+    "id": "CIDHS2021395013",
+    "name": "Zanzan",
+    "tfr": 5.2
+   },
+   {
+    "id": "CIDHS2021395014",
+    "name": "Nord-Ouest",
+    "tfr": 5.6
+   },
+   {
+    "id": "CIDHS2021395023",
+    "name": "Dengu\u00e9l\u00e9",
+    "tfr": 6.3
+   },
+   {
+    "id": "CIDHS2021395024",
+    "name": "Woroba",
+    "tfr": 5.4
+   },
+   {
+    "id": "CIDHS2021395015",
+    "name": "Montagnes",
+    "tfr": 5.4
+   },
+   {
+    "id": "CIDHS2021395017",
+    "name": "Bas Sassandra",
+    "tfr": 4.5
+   },
+   {
+    "id": "CIDHS2021395025",
+    "name": "Goh-Djiboua",
+    "tfr": 4.7
+   },
+   {
+    "id": "CIDHS2021395026",
+    "name": "Lagunes",
+    "tfr": 3.9
+   }
+  ]
+ },
+ "CM": {
+  "survey": "CM2022MIS",
+  "year": 2022,
+  "country": "Cameroon",
+  "regions": [
+   {
+    "id": "CMMIS2022396002",
+    "name": "Yaound\u00e9",
+    "tfr": 2.7
+   },
+   {
+    "id": "CMMIS2022396003",
+    "name": "Douala",
+    "tfr": 3.1
+   },
+   {
+    "id": "CMMIS2022396005",
+    "name": "Adamaoua",
+    "tfr": 5.3
+   },
+   {
+    "id": "CMMIS2022396006",
+    "name": "Nord",
+    "tfr": 5.1
+   },
+   {
+    "id": "CMMIS2022396007",
+    "name": "Extr\u00eame-Nord",
+    "tfr": 5.6
+   },
+   {
+    "id": "CMMIS2022396009",
+    "name": "Centre",
+    "tfr": 5
+   },
+   {
+    "id": "CMMIS2022396010",
+    "name": "Sud",
+    "tfr": 4.1
+   },
+   {
+    "id": "CMMIS2022396011",
+    "name": "Est",
+    "tfr": 4.4
+   },
+   {
+    "id": "CMMIS2022396013",
+    "name": "Ouest",
+    "tfr": 4.5
+   },
+   {
+    "id": "CMMIS2022396014",
+    "name": "Littoral",
+    "tfr": 3.9
+   },
+   {
+    "id": "CMMIS2022396016",
+    "name": "Nord Ouest",
+    "tfr": 4.2
+   },
+   {
+    "id": "CMMIS2022396017",
+    "name": "Sud Ouest",
+    "tfr": 3.7
+   }
+  ]
+ },
+ "CO": {
+  "survey": "CO2015DHS",
+  "year": 2015,
+  "country": "Colombia",
+  "regions": [
+   {
+    "id": "CODHS2015397007",
+    "name": "Guajira, Cesar, Magdalena",
+    "tfr": 3.1
+   },
+   {
+    "id": "CODHS2015397008",
+    "name": "Barranquilla A. M.",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397009",
+    "name": "Atl\u00e1ntico, San Andr\u00e9s, Bol\u00edvar Norte",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397010",
+    "name": "Bol\u00edvar Sur, Sucre, C\u00f3rdoba",
+    "tfr": 2.3
+   },
+   {
+    "id": "CODHS2015397011",
+    "name": "Santanderes",
+    "tfr": 2
+   },
+   {
+    "id": "CODHS2015397012",
+    "name": "Boyac\u00e1, Cundinamarca, Meta",
+    "tfr": 2.1
+   },
+   {
+    "id": "CODHS2015397013",
+    "name": "Bogot\u00e1",
+    "tfr": 1.8
+   },
+   {
+    "id": "CODHS2015397014",
+    "name": "Medell\u00edn A.M.",
+    "tfr": 1.1
+   },
+   {
+    "id": "CODHS2015397015",
+    "name": "Antioquia sin Medell\u00edn",
+    "tfr": 2.1
+   },
+   {
+    "id": "CODHS2015397016",
+    "name": "Caldas, Risaralda, Quind\u00edo",
+    "tfr": 1.6
+   },
+   {
+    "id": "CODHS2015397017",
+    "name": "Tolima, Huila, Caquet\u00e1",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397018",
+    "name": "Cali A.M.",
+    "tfr": 1.6
+   },
+   {
+    "id": "CODHS2015397019",
+    "name": "Valle sin Cali ni Litoral",
+    "tfr": 1.7
+   },
+   {
+    "id": "CODHS2015397020",
+    "name": "Cauca y Nari\u00f1o sin Litoral",
+    "tfr": 1.8
+   },
+   {
+    "id": "CODHS2015397021",
+    "name": "Litoral Pac\u00edfico",
+    "tfr": 2.8
+   },
+   {
+    "id": "CODHS2015397022",
+    "name": "Orinoqu\u00eda y Amazon\u00eda",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397023",
+    "name": "La Guajira",
+    "tfr": 3.6
+   },
+   {
+    "id": "CODHS2015397024",
+    "name": "Cesar",
+    "tfr": 2.7
+   },
+   {
+    "id": "CODHS2015397025",
+    "name": "Magdalena",
+    "tfr": 2.9
+   },
+   {
+    "id": "CODHS2015397026",
+    "name": "Atl\u00e1ntico",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397027",
+    "name": "San Andr\u00e9s",
+    "tfr": 2
+   },
+   {
+    "id": "CODHS2015397028",
+    "name": "Bol\u00edvar",
+    "tfr": 2.4
+   },
+   {
+    "id": "CODHS2015397029",
+    "name": "Sucre",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397030",
+    "name": "C\u00f3rdoba",
+    "tfr": 2.1
+   },
+   {
+    "id": "CODHS2015397031",
+    "name": "Norte de Santander",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397032",
+    "name": "Santander",
+    "tfr": 1.8
+   },
+   {
+    "id": "CODHS2015397033",
+    "name": "Boyac\u00e1",
+    "tfr": 1.8
+   },
+   {
+    "id": "CODHS2015397034",
+    "name": "Cundinamarca",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397035",
+    "name": "Meta",
+    "tfr": 2
+   },
+   {
+    "id": "CODHS2015397036",
+    "name": "Bogot\u00e1",
+    "tfr": 1.8
+   },
+   {
+    "id": "CODHS2015397037",
+    "name": "Antioquia",
+    "tfr": 1.4
+   },
+   {
+    "id": "CODHS2015397038",
+    "name": "Caldas",
+    "tfr": 1.3
+   },
+   {
+    "id": "CODHS2015397039",
+    "name": "Risaralda",
+    "tfr": 1.7
+   },
+   {
+    "id": "CODHS2015397040",
+    "name": "Quind\u00edo",
+    "tfr": 1.7
+   },
+   {
+    "id": "CODHS2015397041",
+    "name": "Tolima",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397042",
+    "name": "Huila",
+    "tfr": 2.1
+   },
+   {
+    "id": "CODHS2015397043",
+    "name": "Caquet\u00e1",
+    "tfr": 2.3
+   },
+   {
+    "id": "CODHS2015397044",
+    "name": "Valle",
+    "tfr": 1.6
+   },
+   {
+    "id": "CODHS2015397045",
+    "name": "Cauca",
+    "tfr": 2.2
+   },
+   {
+    "id": "CODHS2015397046",
+    "name": "Nari\u00f1o",
+    "tfr": 1.8
+   },
+   {
+    "id": "CODHS2015397047",
+    "name": "Choc\u00f3",
+    "tfr": 3.4
+   },
+   {
+    "id": "CODHS2015397048",
+    "name": "Arauca",
+    "tfr": 2.1
+   },
+   {
+    "id": "CODHS2015397049",
+    "name": "Casanare",
+    "tfr": 2.1
+   },
+   {
+    "id": "CODHS2015397050",
+    "name": "Guain\u00eda",
+    "tfr": 2.9
+   },
+   {
+    "id": "CODHS2015397051",
+    "name": "Vichada",
+    "tfr": 2.6
+   },
+   {
+    "id": "CODHS2015397052",
+    "name": "Amazonas",
+    "tfr": 3.1
+   },
+   {
+    "id": "CODHS2015397053",
+    "name": "Putumayo",
+    "tfr": 1.8
+   },
+   {
+    "id": "CODHS2015397054",
+    "name": "Guaviare",
+    "tfr": 1.7
+   },
+   {
+    "id": "CODHS2015397055",
+    "name": "Vaup\u00e9s",
+    "tfr": 4.6
+   }
+  ]
+ },
+ "ET": {
+  "survey": "ET2024DHS",
+  "year": 2024,
+  "country": "Ethiopia",
+  "regions": [
+   {
+    "id": "ETDHS2024406001",
+    "name": "Tigray",
+    "tfr": 4.6
+   },
+   {
+    "id": "ETDHS2024406002",
+    "name": "Afar",
+    "tfr": 5.9
+   },
+   {
+    "id": "ETDHS2024406003",
+    "name": "Amhara",
+    "tfr": 3.8
+   },
+   {
+    "id": "ETDHS2024406004",
+    "name": "Oromia",
+    "tfr": 4.2
+   },
+   {
+    "id": "ETDHS2024406005",
+    "name": "Somali",
+    "tfr": 6.5
+   },
+   {
+    "id": "ETDHS2024406006",
+    "name": "Benishangul-Gumuz",
+    "tfr": 4.2
+   },
+   {
+    "id": "ETDHS2024406009",
+    "name": "Sidama",
+    "tfr": 3
+   },
+   {
+    "id": "ETDHS2024406021",
+    "name": "Central Ethiopia",
+    "tfr": 4.5
+   },
+   {
+    "id": "ETDHS2024406022",
+    "name": "South West Ethiopia",
+    "tfr": 3.9
+   },
+   {
+    "id": "ETDHS2024406023",
+    "name": "South Ethiopia",
+    "tfr": 4.6
+   },
+   {
+    "id": "ETDHS2024406012",
+    "name": "Gambela",
+    "tfr": 3.9
+   },
+   {
+    "id": "ETDHS2024406013",
+    "name": "Harari",
+    "tfr": 3.3
+   },
+   {
+    "id": "ETDHS2024406014",
+    "name": "Addis Ababa",
+    "tfr": 2.3
+   },
+   {
+    "id": "ETDHS2024406015",
+    "name": "Dire Dawa",
+    "tfr": 3.3
+   }
+  ]
+ },
+ "GA": {
+  "survey": "GA2019DHS",
+  "year": 2019,
+  "country": "Gabon",
+  "regions": [
+   {
+    "id": "GADHS2019407015",
+    "name": "Libreville",
+    "tfr": 3.6
+   },
+   {
+    "id": "GADHS2019407016",
+    "name": "Port-Gentil",
+    "tfr": 3.9
+   },
+   {
+    "id": "GADHS2019407003",
+    "name": "Ogoou\u00e9 Ivindo",
+    "tfr": 5.6
+   },
+   {
+    "id": "GADHS2019407004",
+    "name": "Woleu Ntem",
+    "tfr": 4.9
+   },
+   {
+    "id": "GADHS2019407006",
+    "name": "Ogoou\u00e9-Lolo",
+    "tfr": 5.1
+   },
+   {
+    "id": "GADHS2019407007",
+    "name": "Haut-Ogoou\u00e9",
+    "tfr": 4.1
+   },
+   {
+    "id": "GADHS2019407009",
+    "name": "Estuaire (excluding Libreville)",
+    "tfr": 3.8
+   },
+   {
+    "id": "GADHS2019407010",
+    "name": "Moyen-Ogoou\u00e9",
+    "tfr": 4.4
+   },
+   {
+    "id": "GADHS2019407011",
+    "name": "Ogoou\u00e9-Maritime (excluding Port-Gentil)",
+    "tfr": 5.1
+   },
+   {
+    "id": "GADHS2019407013",
+    "name": "Ngouni\u00e9",
+    "tfr": 4.8
+   },
+   {
+    "id": "GADHS2019407014",
+    "name": "Nyanga",
+    "tfr": 4.4
+   }
+  ]
+ },
+ "GH": {
+  "survey": "GH2022DHS",
+  "year": 2022,
+  "country": "Ghana",
+  "regions": [
+   {
+    "id": "GHDHS2022408012",
+    "name": "Western (post 2022)",
+    "tfr": 3.6
+   },
+   {
+    "id": "GHDHS2022408013",
+    "name": "Western North",
+    "tfr": 3.8
+   },
+   {
+    "id": "GHDHS2022408002",
+    "name": "Central",
+    "tfr": 3.6
+   },
+   {
+    "id": "GHDHS2022408003",
+    "name": "Greater Accra",
+    "tfr": 2.9
+   },
+   {
+    "id": "GHDHS2022408014",
+    "name": "Volta (post 2022)",
+    "tfr": 3.2
+   },
+   {
+    "id": "GHDHS2022408015",
+    "name": "Oti",
+    "tfr": 5.2
+   },
+   {
+    "id": "GHDHS2022408005",
+    "name": "Eastern",
+    "tfr": 3.5
+   },
+   {
+    "id": "GHDHS2022408006",
+    "name": "Ashanti",
+    "tfr": 3.5
+   },
+   {
+    "id": "GHDHS2022408016",
+    "name": "Ahafo",
+    "tfr": 4.3
+   },
+   {
+    "id": "GHDHS2022408017",
+    "name": "Bono",
+    "tfr": 3.7
+   },
+   {
+    "id": "GHDHS2022408018",
+    "name": "Bono East",
+    "tfr": 4.7
+   },
+   {
+    "id": "GHDHS2022408009",
+    "name": "Northern (pre 2022)",
+    "tfr": 5.8
+   },
+   {
+    "id": "GHDHS2022408019",
+    "name": "Northern(post 2022)",
+    "tfr": 5.6
+   },
+   {
+    "id": "GHDHS2022408020",
+    "name": "Savannah",
+    "tfr": 5.8
+   },
+   {
+    "id": "GHDHS2022408021",
+    "name": "Northeast",
+    "tfr": 6.6
+   },
+   {
+    "id": "GHDHS2022408010",
+    "name": "Upper West",
+    "tfr": 4.5
+   },
+   {
+    "id": "GHDHS2022408011",
+    "name": "Upper East",
+    "tfr": 4.6
+   }
+  ]
+ },
+ "GM": {
+  "survey": "GM2019DHS",
+  "year": 2019,
+  "country": "Gambia",
+  "regions": [
+   {
+    "id": "GMDHS2019533001",
+    "name": "Banjul",
+    "tfr": 3.1
+   },
+   {
+    "id": "GMDHS2019533002",
+    "name": "Kanifing",
+    "tfr": 3.3
+   },
+   {
+    "id": "GMDHS2019533003",
+    "name": "Brikama",
+    "tfr": 4.1
+   },
+   {
+    "id": "GMDHS2019533004",
+    "name": "Mansakonko",
+    "tfr": 5.4
+   },
+   {
+    "id": "GMDHS2019533005",
+    "name": "Kerewan",
+    "tfr": 5.4
+   },
+   {
+    "id": "GMDHS2019533006",
+    "name": "Kuntaur",
+    "tfr": 6.4
+   },
+   {
+    "id": "GMDHS2019533007",
+    "name": "Janjanbureh",
+    "tfr": 5.7
+   },
+   {
+    "id": "GMDHS2019533008",
+    "name": "Basse",
+    "tfr": 5.7
+   }
+  ]
+ },
+ "GN": {
+  "survey": "GN2021MIS",
+  "year": 2021,
+  "country": "Guinea",
+  "regions": [
+   {
+    "id": "GNMIS2021409005",
+    "name": "Conakry",
+    "tfr": 3
+   },
+   {
+    "id": "GNMIS2021409011",
+    "name": "Bok\u00e9",
+    "tfr": 3.7
+   },
+   {
+    "id": "GNMIS2021409013",
+    "name": "Faranah",
+    "tfr": 5.4
+   },
+   {
+    "id": "GNMIS2021409014",
+    "name": "Kankan",
+    "tfr": 5.7
+   },
+   {
+    "id": "GNMIS2021409015",
+    "name": "Kindia",
+    "tfr": 3.9
+   },
+   {
+    "id": "GNMIS2021409016",
+    "name": "Lab\u00e9",
+    "tfr": 4.2
+   },
+   {
+    "id": "GNMIS2021409017",
+    "name": "Mamou",
+    "tfr": 3.9
+   },
+   {
+    "id": "GNMIS2021409018",
+    "name": "N'Z\u00e9r\u00e9kor\u00e9",
+    "tfr": 4
+   }
+  ]
+ },
+ "GU": {
+  "survey": "GU2015DHS",
+  "year": 2015,
+  "country": "Guatemala",
+  "regions": [
+   {
+    "id": "GUDHS2015410001",
+    "name": "Metropolitana",
+    "tfr": 2.3
+   },
+   {
+    "id": "GUDHS2015410002",
+    "name": "Norte",
+    "tfr": 3.8
+   },
+   {
+    "id": "GUDHS2015410003",
+    "name": "Nor-Oriente",
+    "tfr": 3.3
+   },
+   {
+    "id": "GUDHS2015410004",
+    "name": "Sur-Oriente",
+    "tfr": 3.3
+   },
+   {
+    "id": "GUDHS2015410005",
+    "name": "Central",
+    "tfr": 3.1
+   },
+   {
+    "id": "GUDHS2015410006",
+    "name": "Sur-Occidente",
+    "tfr": 3.1
+   },
+   {
+    "id": "GUDHS2015410007",
+    "name": "Nor-Occidente",
+    "tfr": 3.9
+   },
+   {
+    "id": "GUDHS2015410008",
+    "name": "Pet\u00e9n",
+    "tfr": 3.3
+   },
+   {
+    "id": "GUDHS2015410011",
+    "name": "Guatemala municipio",
+    "tfr": 1.8
+   },
+   {
+    "id": "GUDHS2015410012",
+    "name": "Guatemala resto",
+    "tfr": 2.6
+   },
+   {
+    "id": "GUDHS2015410013",
+    "name": "El Progreso",
+    "tfr": 3.1
+   },
+   {
+    "id": "GUDHS2015410014",
+    "name": "Sacatep\u00e9quez",
+    "tfr": 2.7
+   },
+   {
+    "id": "GUDHS2015410015",
+    "name": "Chimaltenango",
+    "tfr": 3.5
+   },
+   {
+    "id": "GUDHS2015410016",
+    "name": "Escuintla",
+    "tfr": 2.9
+   },
+   {
+    "id": "GUDHS2015410017",
+    "name": "Santa Rosa",
+    "tfr": 3.1
+   },
+   {
+    "id": "GUDHS2015410018",
+    "name": "Solol\u00e1",
+    "tfr": 2.7
+   },
+   {
+    "id": "GUDHS2015410019",
+    "name": "Totonicap\u00e1n",
+    "tfr": 3.3
+   },
+   {
+    "id": "GUDHS2015410020",
+    "name": "Quetzaltenango",
+    "tfr": 2.6
+   },
+   {
+    "id": "GUDHS2015410021",
+    "name": "Suchitep\u00e9quez",
+    "tfr": 3.1
+   },
+   {
+    "id": "GUDHS2015410022",
+    "name": "Retalhuleu",
+    "tfr": 2.9
+   },
+   {
+    "id": "GUDHS2015410023",
+    "name": "San Marcos",
+    "tfr": 3.5
+   },
+   {
+    "id": "GUDHS2015410024",
+    "name": "Huehuetenango",
+    "tfr": 3.7
+   },
+   {
+    "id": "GUDHS2015410025",
+    "name": "Quich\u00e9",
+    "tfr": 4.1
+   },
+   {
+    "id": "GUDHS2015410026",
+    "name": "Baja Verapaz",
+    "tfr": 3.3
+   },
+   {
+    "id": "GUDHS2015410027",
+    "name": "Alta Verapaz",
+    "tfr": 3.9
+   },
+   {
+    "id": "GUDHS2015410028",
+    "name": "Pet\u00e9n",
+    "tfr": 3.3
+   },
+   {
+    "id": "GUDHS2015410029",
+    "name": "Izabal",
+    "tfr": 3.1
+   },
+   {
+    "id": "GUDHS2015410030",
+    "name": "Zacapa",
+    "tfr": 2.9
+   },
+   {
+    "id": "GUDHS2015410031",
+    "name": "Chiquimula",
+    "tfr": 3.9
+   },
+   {
+    "id": "GUDHS2015410032",
+    "name": "Jalapa",
+    "tfr": 3.6
+   },
+   {
+    "id": "GUDHS2015410033",
+    "name": "Jutiapa",
+    "tfr": 3.3
+   }
+  ]
+ },
+ "HT": {
+  "survey": "HT2016DHS",
+  "year": 2016,
+  "country": "Haiti",
+  "regions": [
+   {
+    "id": "HTDHS2016412001",
+    "name": "Metropolitan area",
+    "tfr": 2
+   },
+   {
+    "id": "HTDHS2016412002",
+    "name": "Rest of West",
+    "tfr": 3.7
+   },
+   {
+    "id": "HTDHS2016412003",
+    "name": "South-East",
+    "tfr": 3.4
+   },
+   {
+    "id": "HTDHS2016412004",
+    "name": "North",
+    "tfr": 3
+   },
+   {
+    "id": "HTDHS2016412005",
+    "name": "North-East",
+    "tfr": 3.6
+   },
+   {
+    "id": "HTDHS2016412006",
+    "name": "Artibonite",
+    "tfr": 3.2
+   },
+   {
+    "id": "HTDHS2016412007",
+    "name": "Centre",
+    "tfr": 4.2
+   },
+   {
+    "id": "HTDHS2016412008",
+    "name": "South",
+    "tfr": 3.1
+   },
+   {
+    "id": "HTDHS2016412010",
+    "name": "Grande-Anse",
+    "tfr": 4
+   },
+   {
+    "id": "HTDHS2016412011",
+    "name": "Nippes",
+    "tfr": 2.7
+   },
+   {
+    "id": "HTDHS2016412012",
+    "name": "North-West",
+    "tfr": 3.4
+   }
+  ]
+ },
+ "IA": {
+  "survey": "IA2020DHS",
+  "year": 2020,
+  "country": "India",
+  "regions": [
+   {
+    "id": "IADHS2020413000",
+    "name": "New Delhi",
+    "tfr": 1.6
+   },
+   {
+    "id": "IADHS2020413001",
+    "name": "Haryana",
+    "tfr": 1.9
+   },
+   {
+    "id": "IADHS2020413002",
+    "name": "Himachal Pradesh",
+    "tfr": 1.7
+   },
+   {
+    "id": "IADHS2020413050",
+    "name": "Jammu & Kashmir",
+    "tfr": 1.4
+   },
+   {
+    "id": "IADHS2020413051",
+    "name": "Ladakh",
+    "tfr": 1.3
+   },
+   {
+    "id": "IADHS2020413005",
+    "name": "Punjab",
+    "tfr": 1.6
+   },
+   {
+    "id": "IADHS2020413006",
+    "name": "Rajasthan",
+    "tfr": 2
+   },
+   {
+    "id": "IADHS2020413008",
+    "name": "Madhya Pradesh",
+    "tfr": 2
+   },
+   {
+    "id": "IADHS2020413009",
+    "name": "Chhattisgarh",
+    "tfr": 1.8
+   },
+   {
+    "id": "IADHS2020413011",
+    "name": "Uttar Pradesh",
+    "tfr": 2.3
+   },
+   {
+    "id": "IADHS2020413012",
+    "name": "Uttarakhand",
+    "tfr": 1.8
+   },
+   {
+    "id": "IADHS2020413014",
+    "name": "Bihar",
+    "tfr": 3
+   },
+   {
+    "id": "IADHS2020413015",
+    "name": "Jharkhand",
+    "tfr": 2.3
+   },
+   {
+    "id": "IADHS2020413016",
+    "name": "Odisha",
+    "tfr": 1.8
+   },
+   {
+    "id": "IADHS2020413017",
+    "name": "West Bengal",
+    "tfr": 1.6
+   },
+   {
+    "id": "IADHS2020413018",
+    "name": "Arunachal Pradesh",
+    "tfr": 1.8
+   },
+   {
+    "id": "IADHS2020413019",
+    "name": "Assam",
+    "tfr": 1.9
+   },
+   {
+    "id": "IADHS2020413020",
+    "name": "Manipur",
+    "tfr": 2.2
+   },
+   {
+    "id": "IADHS2020413021",
+    "name": "Meghalaya",
+    "tfr": 2.9
+   },
+   {
+    "id": "IADHS2020413022",
+    "name": "Mizoram",
+    "tfr": 1.9
+   },
+   {
+    "id": "IADHS2020413023",
+    "name": "Nagaland",
+    "tfr": 1.7
+   },
+   {
+    "id": "IADHS2020413024",
+    "name": "Sikkim",
+    "tfr": 1
+   },
+   {
+    "id": "IADHS2020413025",
+    "name": "Tripura",
+    "tfr": 1.7
+   },
+   {
+    "id": "IADHS2020413026",
+    "name": "Goa",
+    "tfr": 1.3
+   },
+   {
+    "id": "IADHS2020413027",
+    "name": "Gujarat",
+    "tfr": 1.9
+   },
+   {
+    "id": "IADHS2020413028",
+    "name": "Maharashtra",
+    "tfr": 1.7
+   },
+   {
+    "id": "IADHS2020413046",
+    "name": "Andhra Pradesh",
+    "tfr": 1.7
+   },
+   {
+    "id": "IADHS2020413047",
+    "name": "Telangana",
+    "tfr": 1.7
+   },
+   {
+    "id": "IADHS2020413030",
+    "name": "Karnataka",
+    "tfr": 1.7
+   },
+   {
+    "id": "IADHS2020413031",
+    "name": "Kerala",
+    "tfr": 1.8
+   },
+   {
+    "id": "IADHS2020413032",
+    "name": "Tamil Nadu",
+    "tfr": 1.8
+   },
+   {
+    "id": "IADHS2020413040",
+    "name": "Andaman and Nicobar Islands",
+    "tfr": 1.3
+   },
+   {
+    "id": "IADHS2020413041",
+    "name": "Chandigarh",
+    "tfr": 1.4
+   },
+   {
+    "id": "IADHS2020413052",
+    "name": "Dadra and Nagar Haveli, Daman and Diu",
+    "tfr": 1.8
+   },
+   {
+    "id": "IADHS2020413044",
+    "name": "Lakshadweep",
+    "tfr": 1.4
+   },
+   {
+    "id": "IADHS2020413045",
+    "name": "Puducherry",
+    "tfr": 1.5
+   }
+  ]
+ },
+ "ID": {
+  "survey": "ID2017DHS",
+  "year": 2017,
+  "country": "Indonesia",
+  "regions": [
+   {
+    "id": "IDDHS2017414001",
+    "name": "DKI Jakarta",
+    "tfr": 2.2
+   },
+   {
+    "id": "IDDHS2017414002",
+    "name": "West Java",
+    "tfr": 2.4
+   },
+   {
+    "id": "IDDHS2017414003",
+    "name": "Central Java",
+    "tfr": 2.3
+   },
+   {
+    "id": "IDDHS2017414004",
+    "name": "DI Yogyakarta",
+    "tfr": 2.2
+   },
+   {
+    "id": "IDDHS2017414005",
+    "name": "East Java",
+    "tfr": 2.1
+   },
+   {
+    "id": "IDDHS2017414006",
+    "name": "Banten",
+    "tfr": 2.3
+   },
+   {
+    "id": "IDDHS2017414007",
+    "name": "Bali",
+    "tfr": 2.1
+   },
+   {
+    "id": "IDDHS2017414009",
+    "name": "DI Aceh",
+    "tfr": 2.7
+   },
+   {
+    "id": "IDDHS2017414010",
+    "name": "North Sumatera",
+    "tfr": 2.9
+   },
+   {
+    "id": "IDDHS2017414011",
+    "name": "West Sumatera",
+    "tfr": 2.5
+   },
+   {
+    "id": "IDDHS2017414012",
+    "name": "South Sumatera",
+    "tfr": 2.6
+   },
+   {
+    "id": "IDDHS2017414013",
+    "name": "Bangka Belitung",
+    "tfr": 2.3
+   },
+   {
+    "id": "IDDHS2017414014",
+    "name": "Lampung",
+    "tfr": 2.3
+   },
+   {
+    "id": "IDDHS2017414015",
+    "name": "West Nusa Tenggara",
+    "tfr": 2.5
+   },
+   {
+    "id": "IDDHS2017414016",
+    "name": "West Kalimantan",
+    "tfr": 2.7
+   },
+   {
+    "id": "IDDHS2017414017",
+    "name": "South Kalimantan",
+    "tfr": 2.4
+   },
+   {
+    "id": "IDDHS2017414019",
+    "name": "North Sulawesi",
+    "tfr": 2.2
+   },
+   {
+    "id": "IDDHS2017414020",
+    "name": "Gorontalo",
+    "tfr": 2.5
+   },
+   {
+    "id": "IDDHS2017414021",
+    "name": "South Sulawesi",
+    "tfr": 2.4
+   },
+   {
+    "id": "IDDHS2017414022",
+    "name": "Riau Islands",
+    "tfr": 2.3
+   },
+   {
+    "id": "IDDHS2017414024",
+    "name": "Riau",
+    "tfr": 2.9
+   },
+   {
+    "id": "IDDHS2017414025",
+    "name": "Jambi",
+    "tfr": 2.3
+   },
+   {
+    "id": "IDDHS2017414026",
+    "name": "Bengkulu",
+    "tfr": 2.3
+   },
+   {
+    "id": "IDDHS2017414027",
+    "name": "East Nusa Tenggara",
+    "tfr": 3.4
+   },
+   {
+    "id": "IDDHS2017414029",
+    "name": "Central Kalimantan",
+    "tfr": 2.5
+   },
+   {
+    "id": "IDDHS2017414038",
+    "name": "East Kalimantan (since 2017)",
+    "tfr": 2.7
+   },
+   {
+    "id": "IDDHS2017414039",
+    "name": "North Kalimantan (since 2017)",
+    "tfr": 2.8
+   },
+   {
+    "id": "IDDHS2017414031",
+    "name": "Central Sulawesi",
+    "tfr": 2.7
+   },
+   {
+    "id": "IDDHS2017414032",
+    "name": "Southeast Sulawesi",
+    "tfr": 2.8
+   },
+   {
+    "id": "IDDHS2017414033",
+    "name": "West Sulawesi",
+    "tfr": 2.7
+   },
+   {
+    "id": "IDDHS2017414034",
+    "name": "Maluku",
+    "tfr": 3.3
+   },
+   {
+    "id": "IDDHS2017414035",
+    "name": "North Maluku",
+    "tfr": 2.9
+   },
+   {
+    "id": "IDDHS2017414036",
+    "name": "Papua",
+    "tfr": 3.3
+   },
+   {
+    "id": "IDDHS2017414037",
+    "name": "West Papua",
+    "tfr": 3.2
+   }
+  ]
+ },
+ "JO": {
+  "survey": "JO2023DHS",
+  "year": 2023,
+  "country": "Jordan",
+  "regions": [
+   {
+    "id": "JODHS2023415002",
+    "name": "Amman",
+    "tfr": 2.4
+   },
+   {
+    "id": "JODHS2023415003",
+    "name": "Balqa",
+    "tfr": 2
+   },
+   {
+    "id": "JODHS2023415004",
+    "name": "Zarqa",
+    "tfr": 3
+   },
+   {
+    "id": "JODHS2023415005",
+    "name": "Madaba",
+    "tfr": 2.2
+   },
+   {
+    "id": "JODHS2023415008",
+    "name": "Irbid",
+    "tfr": 2.9
+   },
+   {
+    "id": "JODHS2023415009",
+    "name": "Mafraq",
+    "tfr": 3.1
+   },
+   {
+    "id": "JODHS2023415010",
+    "name": "Jarash",
+    "tfr": 3
+   },
+   {
+    "id": "JODHS2023415011",
+    "name": "Ajloun",
+    "tfr": 3.1
+   },
+   {
+    "id": "JODHS2023415013",
+    "name": "Karak",
+    "tfr": 2.3
+   },
+   {
+    "id": "JODHS2023415014",
+    "name": "Tafiela",
+    "tfr": 2.4
+   },
+   {
+    "id": "JODHS2023415015",
+    "name": "Ma'an",
+    "tfr": 2.4
+   },
+   {
+    "id": "JODHS2023415016",
+    "name": "Aqaba",
+    "tfr": 1.9
+   }
+  ]
+ },
+ "KE": {
+  "survey": "KE2022DHS",
+  "year": 2022,
+  "country": "Kenya",
+  "regions": [
+   {
+    "id": "KEDHS2022416011",
+    "name": "Mombasa",
+    "tfr": 2.9
+   },
+   {
+    "id": "KEDHS2022416012",
+    "name": "Kwale",
+    "tfr": 4.2
+   },
+   {
+    "id": "KEDHS2022416013",
+    "name": "Kilifi",
+    "tfr": 3.4
+   },
+   {
+    "id": "KEDHS2022416014",
+    "name": "Tana River",
+    "tfr": 5.7
+   },
+   {
+    "id": "KEDHS2022416015",
+    "name": "Lamu",
+    "tfr": 4.6
+   },
+   {
+    "id": "KEDHS2022416016",
+    "name": "Taita Taveta",
+    "tfr": 3.5
+   },
+   {
+    "id": "KEDHS2022416021",
+    "name": "Garissa",
+    "tfr": 5.3
+   },
+   {
+    "id": "KEDHS2022416022",
+    "name": "Wajir",
+    "tfr": 6.8
+   },
+   {
+    "id": "KEDHS2022416023",
+    "name": "Mandera",
+    "tfr": 7.7
+   },
+   {
+    "id": "KEDHS2022416031",
+    "name": "Marsabit",
+    "tfr": 6.3
+   },
+   {
+    "id": "KEDHS2022416032",
+    "name": "Isiolo",
+    "tfr": 4.5
+   },
+   {
+    "id": "KEDHS2022416033",
+    "name": "Meru",
+    "tfr": 3.4
+   },
+   {
+    "id": "KEDHS2022416034",
+    "name": "Tharaka-Nithi",
+    "tfr": 3.1
+   },
+   {
+    "id": "KEDHS2022416035",
+    "name": "Embu",
+    "tfr": 3.1
+   },
+   {
+    "id": "KEDHS2022416036",
+    "name": "Kitui",
+    "tfr": 3.2
+   },
+   {
+    "id": "KEDHS2022416037",
+    "name": "Machakos",
+    "tfr": 2.8
+   },
+   {
+    "id": "KEDHS2022416038",
+    "name": "Makueni",
+    "tfr": 3.3
+   },
+   {
+    "id": "KEDHS2022416041",
+    "name": "Nyandarua",
+    "tfr": 3.6
+   },
+   {
+    "id": "KEDHS2022416042",
+    "name": "Nyeri",
+    "tfr": 3.1
+   },
+   {
+    "id": "KEDHS2022416043",
+    "name": "Kirinyaga",
+    "tfr": 2.8
+   },
+   {
+    "id": "KEDHS2022416044",
+    "name": "Murang'a",
+    "tfr": 3.5
+   },
+   {
+    "id": "KEDHS2022416045",
+    "name": "Kiambu",
+    "tfr": 2.9
+   },
+   {
+    "id": "KEDHS2022416051",
+    "name": "Turkana",
+    "tfr": 6
+   },
+   {
+    "id": "KEDHS2022416052",
+    "name": "West Pokot",
+    "tfr": 6.9
+   },
+   {
+    "id": "KEDHS2022416053",
+    "name": "Samburu",
+    "tfr": 5.8
+   },
+   {
+    "id": "KEDHS2022416054",
+    "name": "Trans-Nzoia",
+    "tfr": 3.6
+   },
+   {
+    "id": "KEDHS2022416055",
+    "name": "Uasin Gishu",
+    "tfr": 3.1
+   },
+   {
+    "id": "KEDHS2022416056",
+    "name": "Elgeyo Marakwet",
+    "tfr": 4.1
+   },
+   {
+    "id": "KEDHS2022416057",
+    "name": "Nandi",
+    "tfr": 3
+   },
+   {
+    "id": "KEDHS2022416058",
+    "name": "Baringo",
+    "tfr": 4.4
+   },
+   {
+    "id": "KEDHS2022416059",
+    "name": "Laikipia",
+    "tfr": 3.4
+   },
+   {
+    "id": "KEDHS2022416060",
+    "name": "Nakuru",
+    "tfr": 3.4
+   },
+   {
+    "id": "KEDHS2022416061",
+    "name": "Narok",
+    "tfr": 4.9
+   },
+   {
+    "id": "KEDHS2022416062",
+    "name": "Kajiado",
+    "tfr": 3.5
+   },
+   {
+    "id": "KEDHS2022416063",
+    "name": "Kericho",
+    "tfr": 3.2
+   },
+   {
+    "id": "KEDHS2022416064",
+    "name": "Bomet",
+    "tfr": 3.4
+   },
+   {
+    "id": "KEDHS2022416071",
+    "name": "Kakamega",
+    "tfr": 3.7
+   },
+   {
+    "id": "KEDHS2022416072",
+    "name": "Vihiga",
+    "tfr": 3.5
+   },
+   {
+    "id": "KEDHS2022416073",
+    "name": "Bungoma",
+    "tfr": 3.6
+   },
+   {
+    "id": "KEDHS2022416074",
+    "name": "Busia",
+    "tfr": 3.7
+   },
+   {
+    "id": "KEDHS2022416081",
+    "name": "Siaya",
+    "tfr": 4
+   },
+   {
+    "id": "KEDHS2022416082",
+    "name": "Kisumu",
+    "tfr": 3.5
+   },
+   {
+    "id": "KEDHS2022416083",
+    "name": "Homa Bay",
+    "tfr": 3.7
+   },
+   {
+    "id": "KEDHS2022416084",
+    "name": "Migori",
+    "tfr": 4.4
+   },
+   {
+    "id": "KEDHS2022416085",
+    "name": "Kisii",
+    "tfr": 3
+   },
+   {
+    "id": "KEDHS2022416086",
+    "name": "Nyamira",
+    "tfr": 2.7
+   },
+   {
+    "id": "KEDHS2022416001",
+    "name": "Nairobi",
+    "tfr": 2.6
+   }
+  ]
+ },
+ "KH": {
+  "survey": "KH2021DHS",
+  "year": 2021,
+  "country": "Cambodia",
+  "regions": [
+   {
+    "id": "KHDHS2021417001",
+    "name": "Banteay Meanchey",
+    "tfr": 2.6
+   },
+   {
+    "id": "KHDHS2021417034",
+    "name": "Kampong Cham",
+    "tfr": 3
+   },
+   {
+    "id": "KHDHS2021417033",
+    "name": "Tboung Khmum",
+    "tfr": 2.9
+   },
+   {
+    "id": "KHDHS2021417003",
+    "name": "Kampong Chhnang",
+    "tfr": 2.8
+   },
+   {
+    "id": "KHDHS2021417004",
+    "name": "Kampong Speu",
+    "tfr": 2.5
+   },
+   {
+    "id": "KHDHS2021417005",
+    "name": "Kampong Thom",
+    "tfr": 3.2
+   },
+   {
+    "id": "KHDHS2021417006",
+    "name": "Kandal",
+    "tfr": 2.9
+   },
+   {
+    "id": "KHDHS2021417007",
+    "name": "Phnom Penh",
+    "tfr": 2.3
+   },
+   {
+    "id": "KHDHS2021417008",
+    "name": "Prey Veng",
+    "tfr": 3.3
+   },
+   {
+    "id": "KHDHS2021417009",
+    "name": "Pursat",
+    "tfr": 2.9
+   },
+   {
+    "id": "KHDHS2021417010",
+    "name": "Svay Rieng",
+    "tfr": 3
+   },
+   {
+    "id": "KHDHS2021417011",
+    "name": "Takeo",
+    "tfr": 2.7
+   },
+   {
+    "id": "KHDHS2021417013",
+    "name": "Preah Vihear/Stueng Treng",
+    "tfr": 3.1
+   },
+   {
+    "id": "KHDHS2021417027",
+    "name": "Preah Vihear",
+    "tfr": 3
+   },
+   {
+    "id": "KHDHS2021417030",
+    "name": "Stueng Treng",
+    "tfr": 3.4
+   },
+   {
+    "id": "KHDHS2021417014",
+    "name": "Kratie",
+    "tfr": 3.3
+   },
+   {
+    "id": "KHDHS2021417016",
+    "name": "Siem Reap",
+    "tfr": 2.6
+   },
+   {
+    "id": "KHDHS2021417017",
+    "name": "Otdar Mean Chey",
+    "tfr": 2.5
+   },
+   {
+    "id": "KHDHS2021417024",
+    "name": "Battambang",
+    "tfr": 2.9
+   },
+   {
+    "id": "KHDHS2021417032",
+    "name": "Pailin",
+    "tfr": 2.8
+   },
+   {
+    "id": "KHDHS2021417025",
+    "name": "Kampot",
+    "tfr": 2.5
+   },
+   {
+    "id": "KHDHS2021417031",
+    "name": "Kep",
+    "tfr": 2.3
+   },
+   {
+    "id": "KHDHS2021417029",
+    "name": "Preah Sihanouk",
+    "tfr": 2.6
+   },
+   {
+    "id": "KHDHS2021417022",
+    "name": "Kaoh Kong",
+    "tfr": 2.9
+   },
+   {
+    "id": "KHDHS2021417026",
+    "name": "Mondul Kiri",
+    "tfr": 3.1
+   },
+   {
+    "id": "KHDHS2021417028",
+    "name": "Ratanak Kiri",
+    "tfr": 2.9
+   }
+  ]
+ },
+ "LB": {
+  "survey": "LB2022MIS",
+  "year": 2022,
+  "country": "Liberia",
+  "regions": [
+   {
+    "id": "LBMIS2022421002",
+    "name": "North Western",
+    "tfr": 4.7
+   },
+   {
+    "id": "LBMIS2022421003",
+    "name": "South Central",
+    "tfr": 4.2
+   },
+   {
+    "id": "LBMIS2022421001",
+    "name": "Monrovia",
+    "tfr": 2.7
+   },
+   {
+    "id": "LBMIS2022421008",
+    "name": "South Eastern B",
+    "tfr": 4
+   },
+   {
+    "id": "LBMIS2022421009",
+    "name": "North Central",
+    "tfr": 4.6
+   },
+   {
+    "id": "LBMIS2022421005",
+    "name": "South Eastern A",
+    "tfr": 4.6
+   }
+  ]
+ },
+ "LS": {
+  "survey": "LS2023DHS",
+  "year": 2023,
+  "country": "Lesotho",
+  "regions": [
+   {
+    "id": "LSDHS2023423001",
+    "name": "Butha-Buthe",
+    "tfr": 2.6
+   },
+   {
+    "id": "LSDHS2023423002",
+    "name": "Leribe",
+    "tfr": 2.3
+   },
+   {
+    "id": "LSDHS2023423003",
+    "name": "Berea",
+    "tfr": 2.4
+   },
+   {
+    "id": "LSDHS2023423004",
+    "name": "Maseru",
+    "tfr": 2.4
+   },
+   {
+    "id": "LSDHS2023423005",
+    "name": "Mafeteng",
+    "tfr": 2.2
+   },
+   {
+    "id": "LSDHS2023423006",
+    "name": "Mohale's Hoek",
+    "tfr": 3
+   },
+   {
+    "id": "LSDHS2023423007",
+    "name": "Quthing",
+    "tfr": 2.6
+   },
+   {
+    "id": "LSDHS2023423008",
+    "name": "Qasha's Nek",
+    "tfr": 3
+   },
+   {
+    "id": "LSDHS2023423009",
+    "name": "Mokhotlong",
+    "tfr": 3
+   },
+   {
+    "id": "LSDHS2023423010",
+    "name": "Thaba-Tseka",
+    "tfr": 3.6
+   }
+  ]
+ },
+ "MD": {
+  "survey": "MD2021DHS",
+  "year": 2021,
+  "country": "Madagascar",
+  "regions": [
+   {
+    "id": "MDDHS2021426002",
+    "name": "Analamanga",
+    "tfr": 3.2
+   },
+   {
+    "id": "MDDHS2021426029",
+    "name": "Antananarivo capital",
+    "tfr": 2.9
+   },
+   {
+    "id": "MDDHS2021426030",
+    "name": "Analamanga excluding capital",
+    "tfr": 3.4
+   },
+   {
+    "id": "MDDHS2021426003",
+    "name": "Vakinankarata",
+    "tfr": 4.2
+   },
+   {
+    "id": "MDDHS2021426004",
+    "name": "Itasy",
+    "tfr": 4.2
+   },
+   {
+    "id": "MDDHS2021426005",
+    "name": "Bongolava",
+    "tfr": 4.7
+   },
+   {
+    "id": "MDDHS2021426007",
+    "name": "Haute Matsiatra",
+    "tfr": 4.3
+   },
+   {
+    "id": "MDDHS2021426008",
+    "name": "Anamoroni'i Mania",
+    "tfr": 4.7
+   },
+   {
+    "id": "MDDHS2021426009",
+    "name": "Vatovavy Fitovinany",
+    "tfr": 4.5
+   },
+   {
+    "id": "MDDHS2021426010",
+    "name": "Ihorombe",
+    "tfr": 4.3
+   },
+   {
+    "id": "MDDHS2021426011",
+    "name": "Atsimo Atsinanana",
+    "tfr": 6.2
+   },
+   {
+    "id": "MDDHS2021426013",
+    "name": "Atsinanana",
+    "tfr": 4
+   },
+   {
+    "id": "MDDHS2021426014",
+    "name": "Analanjirofo",
+    "tfr": 3.8
+   },
+   {
+    "id": "MDDHS2021426015",
+    "name": "Alaotra Mangoro",
+    "tfr": 4.1
+   },
+   {
+    "id": "MDDHS2021426017",
+    "name": "Boeny",
+    "tfr": 3.3
+   },
+   {
+    "id": "MDDHS2021426018",
+    "name": "Sofia",
+    "tfr": 3.8
+   },
+   {
+    "id": "MDDHS2021426019",
+    "name": "Betsiboka",
+    "tfr": 4.7
+   },
+   {
+    "id": "MDDHS2021426020",
+    "name": "Melaky",
+    "tfr": 4.8
+   },
+   {
+    "id": "MDDHS2021426022",
+    "name": "Atsimo Andrefana",
+    "tfr": 5.6
+   },
+   {
+    "id": "MDDHS2021426023",
+    "name": "Androy",
+    "tfr": 8
+   },
+   {
+    "id": "MDDHS2021426024",
+    "name": "Anosy",
+    "tfr": 5.6
+   },
+   {
+    "id": "MDDHS2021426025",
+    "name": "Menabe",
+    "tfr": 3.9
+   },
+   {
+    "id": "MDDHS2021426027",
+    "name": "Diana",
+    "tfr": 3.4
+   },
+   {
+    "id": "MDDHS2021426028",
+    "name": "Sava",
+    "tfr": 4.2
+   }
+  ]
+ },
+ "ML": {
+  "survey": "ML2023DHS",
+  "year": 2023,
+  "country": "Mali",
+  "regions": [
+   {
+    "id": "MLDHS2023427002",
+    "name": "Kayes",
+    "tfr": 6.1
+   },
+   {
+    "id": "MLDHS2023427003",
+    "name": "Koulikoro",
+    "tfr": 6.1
+   },
+   {
+    "id": "MLDHS2023427005",
+    "name": "Sikasso",
+    "tfr": 6.5
+   },
+   {
+    "id": "MLDHS2023427006",
+    "name": "S\u00e9gou",
+    "tfr": 6.4
+   },
+   {
+    "id": "MLDHS2023427008",
+    "name": "Mopti",
+    "tfr": 6.5
+   },
+   {
+    "id": "MLDHS2023427010",
+    "name": "Kidal/Gao/Tombouctou",
+    "tfr": 5.8
+   },
+   {
+    "id": "MLDHS2023427012",
+    "name": "Gao",
+    "tfr": 6.1
+   },
+   {
+    "id": "MLDHS2023427013",
+    "name": "Tombouctou",
+    "tfr": 5.3
+   },
+   {
+    "id": "MLDHS2023427014",
+    "name": "Bamako",
+    "tfr": 4.9
+   }
+  ]
+ },
+ "MM": {
+  "survey": "MM2016DHS",
+  "year": 2016,
+  "country": "Myanmar",
+  "regions": [
+   {
+    "id": "MMDHS2016535001",
+    "name": "Kachin",
+    "tfr": 3
+   },
+   {
+    "id": "MMDHS2016535002",
+    "name": "Kayah",
+    "tfr": 3.3
+   },
+   {
+    "id": "MMDHS2016535003",
+    "name": "Kayin",
+    "tfr": 3.9
+   },
+   {
+    "id": "MMDHS2016535004",
+    "name": "Chin",
+    "tfr": 4.6
+   },
+   {
+    "id": "MMDHS2016535005",
+    "name": "Sagaing",
+    "tfr": 2.1
+   },
+   {
+    "id": "MMDHS2016535006",
+    "name": "Taninthayi",
+    "tfr": 3.1
+   },
+   {
+    "id": "MMDHS2016535007",
+    "name": "Bago",
+    "tfr": 1.9
+   },
+   {
+    "id": "MMDHS2016535008",
+    "name": "Magway",
+    "tfr": 1.8
+   },
+   {
+    "id": "MMDHS2016535009",
+    "name": "Mandalay",
+    "tfr": 2
+   },
+   {
+    "id": "MMDHS2016535010",
+    "name": "Mon",
+    "tfr": 2.3
+   },
+   {
+    "id": "MMDHS2016535011",
+    "name": "Rakhine",
+    "tfr": 2.7
+   },
+   {
+    "id": "MMDHS2016535012",
+    "name": "Yangon",
+    "tfr": 1.8
+   },
+   {
+    "id": "MMDHS2016535013",
+    "name": "Shan",
+    "tfr": 3
+   },
+   {
+    "id": "MMDHS2016535014",
+    "name": "Ayeyarwaddy",
+    "tfr": 2.3
+   },
+   {
+    "id": "MMDHS2016535015",
+    "name": "NayPyitaw",
+    "tfr": 2
+   }
+  ]
+ },
+ "MR": {
+  "survey": "MR2020DHS",
+  "year": 2020,
+  "country": "Mauritania",
+  "regions": [
+   {
+    "id": "MRDHS2020428006",
+    "name": "Hodh Echargui",
+    "tfr": 6.3
+   },
+   {
+    "id": "MRDHS2020428007",
+    "name": "Hodh Gharbi",
+    "tfr": 6.1
+   },
+   {
+    "id": "MRDHS2020428008",
+    "name": "Assaba",
+    "tfr": 5.7
+   },
+   {
+    "id": "MRDHS2020428009",
+    "name": "Gorgol",
+    "tfr": 6
+   },
+   {
+    "id": "MRDHS2020428010",
+    "name": "Brakna",
+    "tfr": 6
+   },
+   {
+    "id": "MRDHS2020428011",
+    "name": "Trarza",
+    "tfr": 4.6
+   },
+   {
+    "id": "MRDHS2020428012",
+    "name": "Adrar",
+    "tfr": 4.2
+   },
+   {
+    "id": "MRDHS2020428013",
+    "name": "Dakhlet Nouadhibou",
+    "tfr": 4.6
+   },
+   {
+    "id": "MRDHS2020428014",
+    "name": "Tagant",
+    "tfr": 6
+   },
+   {
+    "id": "MRDHS2020428015",
+    "name": "Guidimagha",
+    "tfr": 6.5
+   },
+   {
+    "id": "MRDHS2020428016",
+    "name": "Tiris Zemour et Inchiri",
+    "tfr": 4.4
+   },
+   {
+    "id": "MRDHS2020428017",
+    "name": "Nouakchott Ouest",
+    "tfr": 4
+   },
+   {
+    "id": "MRDHS2020428018",
+    "name": "Nouakchott Nord",
+    "tfr": 3.9
+   },
+   {
+    "id": "MRDHS2020428019",
+    "name": "Nouakchott Sud",
+    "tfr": 3.8
+   }
+  ]
+ },
+ "MV": {
+  "survey": "MV2016DHS",
+  "year": 2016,
+  "country": "Maldives",
+  "regions": [
+   {
+    "id": "MVDHS2016512001",
+    "name": "Mal\u00e9",
+    "tfr": 1.8
+   },
+   {
+    "id": "MVDHS2016512002",
+    "name": "North",
+    "tfr": 2.6
+   },
+   {
+    "id": "MVDHS2016512003",
+    "name": "North Central",
+    "tfr": 2.4
+   },
+   {
+    "id": "MVDHS2016512004",
+    "name": "Central",
+    "tfr": 2.5
+   },
+   {
+    "id": "MVDHS2016512005",
+    "name": "South Central",
+    "tfr": 2.4
+   },
+   {
+    "id": "MVDHS2016512006",
+    "name": "South",
+    "tfr": 2.4
+   }
+  ]
+ },
+ "MW": {
+  "survey": "MW2024DHS",
+  "year": 2024,
+  "country": "Malawi",
+  "regions": [
+   {
+    "id": "MWDHS2024429011",
+    "name": "Chitipa",
+    "tfr": 3.8
+   },
+   {
+    "id": "MWDHS2024429012",
+    "name": "Karonga",
+    "tfr": 4.3
+   },
+   {
+    "id": "MWDHS2024429013",
+    "name": "Mzimba",
+    "tfr": 3.8
+   },
+   {
+    "id": "MWDHS2024429015",
+    "name": "Rumphi",
+    "tfr": 3.4
+   },
+   {
+    "id": "MWDHS2024429016",
+    "name": "Nkhata Bay",
+    "tfr": 4
+   },
+   {
+    "id": "MWDHS2024429017",
+    "name": "Likoma",
+    "tfr": 2.9
+   },
+   {
+    "id": "MWDHS2024429018",
+    "name": "Mzuzu City",
+    "tfr": 2.5
+   },
+   {
+    "id": "MWDHS2024429021",
+    "name": "Dedza",
+    "tfr": 3.4
+   },
+   {
+    "id": "MWDHS2024429022",
+    "name": "Dowa",
+    "tfr": 3.4
+   },
+   {
+    "id": "MWDHS2024429023",
+    "name": "Kasungu",
+    "tfr": 3.7
+   },
+   {
+    "id": "MWDHS2024429025",
+    "name": "Mchinji",
+    "tfr": 3.3
+   },
+   {
+    "id": "MWDHS2024429026",
+    "name": "Nkhotakota",
+    "tfr": 4.1
+   },
+   {
+    "id": "MWDHS2024429027",
+    "name": "Ntcheu",
+    "tfr": 4.1
+   },
+   {
+    "id": "MWDHS2024429028",
+    "name": "Ntchisi",
+    "tfr": 3.6
+   },
+   {
+    "id": "MWDHS2024429029",
+    "name": "Salima",
+    "tfr": 4.1
+   },
+   {
+    "id": "MWDHS2024429050",
+    "name": "Lilongwe",
+    "tfr": 3.2
+   },
+   {
+    "id": "MWDHS2024429051",
+    "name": "Lilongwe Rural",
+    "tfr": 3.4
+   },
+   {
+    "id": "MWDHS2024429052",
+    "name": "Lilongwe City",
+    "tfr": 2.8
+   },
+   {
+    "id": "MWDHS2024429031",
+    "name": "Balaka",
+    "tfr": 4.4
+   },
+   {
+    "id": "MWDHS2024429033",
+    "name": "Chikwawa",
+    "tfr": 4.5
+   },
+   {
+    "id": "MWDHS2024429034",
+    "name": "Chiradzulu",
+    "tfr": 3.4
+   },
+   {
+    "id": "MWDHS2024429035",
+    "name": "Machinga",
+    "tfr": 5
+   },
+   {
+    "id": "MWDHS2024429036",
+    "name": "Mangochi",
+    "tfr": 5
+   },
+   {
+    "id": "MWDHS2024429037",
+    "name": "Mulanje",
+    "tfr": 3.7
+   },
+   {
+    "id": "MWDHS2024429038",
+    "name": "Mwanza",
+    "tfr": 3.8
+   },
+   {
+    "id": "MWDHS2024429039",
+    "name": "Neno",
+    "tfr": 3.7
+   },
+   {
+    "id": "MWDHS2024429040",
+    "name": "Nsanje",
+    "tfr": 4
+   },
+   {
+    "id": "MWDHS2024429041",
+    "name": "Phalombe",
+    "tfr": 3.7
+   },
+   {
+    "id": "MWDHS2024429042",
+    "name": "Thyolo",
+    "tfr": 3.5
+   },
+   {
+    "id": "MWDHS2024429048",
+    "name": "Blantyre",
+    "tfr": 3.1
+   },
+   {
+    "id": "MWDHS2024429044",
+    "name": "Blantyre Rural",
+    "tfr": 3.7
+   },
+   {
+    "id": "MWDHS2024429045",
+    "name": "Blantyre City",
+    "tfr": 2.8
+   },
+   {
+    "id": "MWDHS2024429049",
+    "name": "Zomba",
+    "tfr": 3.9
+   },
+   {
+    "id": "MWDHS2024429046",
+    "name": "Zomba Rural",
+    "tfr": 4
+   },
+   {
+    "id": "MWDHS2024429047",
+    "name": "Zomba City",
+    "tfr": 2.8
+   }
+  ]
+ },
+ "MZ": {
+  "survey": "MZ2022DHS",
+  "year": 2022,
+  "country": "Mozambique",
+  "regions": [
+   {
+    "id": "MZDHS2022431001",
+    "name": "Niassa",
+    "tfr": 6.8
+   },
+   {
+    "id": "MZDHS2022431002",
+    "name": "Cabo Delgado",
+    "tfr": 6.2
+   },
+   {
+    "id": "MZDHS2022431003",
+    "name": "Nampula",
+    "tfr": 5.8
+   },
+   {
+    "id": "MZDHS2022431004",
+    "name": "Zamb\u00e9zia",
+    "tfr": 5.1
+   },
+   {
+    "id": "MZDHS2022431005",
+    "name": "Tete",
+    "tfr": 5.1
+   },
+   {
+    "id": "MZDHS2022431006",
+    "name": "Manica",
+    "tfr": 5.5
+   },
+   {
+    "id": "MZDHS2022431007",
+    "name": "Sofala",
+    "tfr": 4.9
+   },
+   {
+    "id": "MZDHS2022431008",
+    "name": "Inhambane",
+    "tfr": 4
+   },
+   {
+    "id": "MZDHS2022431009",
+    "name": "Gaza",
+    "tfr": 3.7
+   },
+   {
+    "id": "MZDHS2022431010",
+    "name": "Maputo Provincia",
+    "tfr": 2.8
+   },
+   {
+    "id": "MZDHS2022431011",
+    "name": "Maputo Cidade",
+    "tfr": 2.1
+   }
+  ]
+ },
+ "NG": {
+  "survey": "NG2024DHS",
+  "year": 2024,
+  "country": "Nigeria",
+  "regions": [
+   {
+    "id": "NGDHS2024433011",
+    "name": "FCT Abuja",
+    "tfr": 3.2
+   },
+   {
+    "id": "NGDHS2024433012",
+    "name": "Benue",
+    "tfr": 3.5
+   },
+   {
+    "id": "NGDHS2024433013",
+    "name": "Kogi",
+    "tfr": 4.9
+   },
+   {
+    "id": "NGDHS2024433014",
+    "name": "Kwara",
+    "tfr": 4
+   },
+   {
+    "id": "NGDHS2024433015",
+    "name": "Nasarawa",
+    "tfr": 4.3
+   },
+   {
+    "id": "NGDHS2024433016",
+    "name": "Niger",
+    "tfr": 4.4
+   },
+   {
+    "id": "NGDHS2024433017",
+    "name": "Plateau",
+    "tfr": 4.4
+   },
+   {
+    "id": "NGDHS2024433021",
+    "name": "Adamawa",
+    "tfr": 5.3
+   },
+   {
+    "id": "NGDHS2024433022",
+    "name": "Bauchi",
+    "tfr": 6.2
+   },
+   {
+    "id": "NGDHS2024433023",
+    "name": "Borno",
+    "tfr": 6.5
+   },
+   {
+    "id": "NGDHS2024433024",
+    "name": "Gombe",
+    "tfr": 5.5
+   },
+   {
+    "id": "NGDHS2024433025",
+    "name": "Taraba",
+    "tfr": 5.2
+   },
+   {
+    "id": "NGDHS2024433026",
+    "name": "Yobe",
+    "tfr": 7.5
+   },
+   {
+    "id": "NGDHS2024433031",
+    "name": "Jigawa",
+    "tfr": 6.9
+   },
+   {
+    "id": "NGDHS2024433032",
+    "name": "Kaduna",
+    "tfr": 5.6
+   },
+   {
+    "id": "NGDHS2024433033",
+    "name": "Kano",
+    "tfr": 5.8
+   },
+   {
+    "id": "NGDHS2024433034",
+    "name": "Katsina",
+    "tfr": 5.7
+   },
+   {
+    "id": "NGDHS2024433035",
+    "name": "Kebbi",
+    "tfr": 6.6
+   },
+   {
+    "id": "NGDHS2024433036",
+    "name": "Sokoto",
+    "tfr": 5.4
+   },
+   {
+    "id": "NGDHS2024433037",
+    "name": "Zamfara",
+    "tfr": 6.3
+   },
+   {
+    "id": "NGDHS2024433041",
+    "name": "Abia",
+    "tfr": 3.7
+   },
+   {
+    "id": "NGDHS2024433042",
+    "name": "Anambra",
+    "tfr": 3.7
+   },
+   {
+    "id": "NGDHS2024433043",
+    "name": "Ebonyi",
+    "tfr": 4.7
+   },
+   {
+    "id": "NGDHS2024433044",
+    "name": "Enugu",
+    "tfr": 3.5
+   },
+   {
+    "id": "NGDHS2024433045",
+    "name": "Imo",
+    "tfr": 4.4
+   },
+   {
+    "id": "NGDHS2024433051",
+    "name": "Ekiti",
+    "tfr": 3.8
+   },
+   {
+    "id": "NGDHS2024433052",
+    "name": "Lagos",
+    "tfr": 3.2
+   },
+   {
+    "id": "NGDHS2024433053",
+    "name": "Ogun",
+    "tfr": 4.1
+   },
+   {
+    "id": "NGDHS2024433054",
+    "name": "Ondo",
+    "tfr": 3.1
+   },
+   {
+    "id": "NGDHS2024433055",
+    "name": "Osun",
+    "tfr": 3.3
+   },
+   {
+    "id": "NGDHS2024433056",
+    "name": "Oyo",
+    "tfr": 3.3
+   },
+   {
+    "id": "NGDHS2024433061",
+    "name": "Akwa Ibom",
+    "tfr": 3.3
+   },
+   {
+    "id": "NGDHS2024433062",
+    "name": "Bayelsa",
+    "tfr": 3.8
+   },
+   {
+    "id": "NGDHS2024433063",
+    "name": "Cross River",
+    "tfr": 3
+   },
+   {
+    "id": "NGDHS2024433064",
+    "name": "Delta",
+    "tfr": 3.7
+   },
+   {
+    "id": "NGDHS2024433065",
+    "name": "Edo",
+    "tfr": 3.3
+   },
+   {
+    "id": "NGDHS2024433066",
+    "name": "Rivers",
+    "tfr": 2.9
+   }
+  ]
+ },
+ "NI": {
+  "survey": "NI2021MIS",
+  "year": 2021,
+  "country": "Niger",
+  "regions": [
+   {
+    "id": "NIMIS2021434001",
+    "name": "Niamey",
+    "tfr": 4.3
+   },
+   {
+    "id": "NIMIS2021434002",
+    "name": "Dosso",
+    "tfr": 5.5
+   },
+   {
+    "id": "NIMIS2021434003",
+    "name": "Maradi",
+    "tfr": 7.4
+   },
+   {
+    "id": "NIMIS2021434005",
+    "name": "Tahoua",
+    "tfr": 5.6
+   },
+   {
+    "id": "NIMIS2021434006",
+    "name": "Agadez",
+    "tfr": 5.8
+   },
+   {
+    "id": "NIMIS2021434007",
+    "name": "Tillab\u00e9ri",
+    "tfr": 6
+   },
+   {
+    "id": "NIMIS2021434009",
+    "name": "Zinder",
+    "tfr": 7
+   },
+   {
+    "id": "NIMIS2021434010",
+    "name": "Diffa",
+    "tfr": 5.3
+   }
+  ]
+ },
+ "NP": {
+  "survey": "NP2022DHS",
+  "year": 2022,
+  "country": "Nepal",
+  "regions": [
+   {
+    "id": "NPDHS2022436011",
+    "name": "Koshi province",
+    "tfr": 2.2
+   },
+   {
+    "id": "NPDHS2022436012",
+    "name": "Madhesh province",
+    "tfr": 2.7
+   },
+   {
+    "id": "NPDHS2022436013",
+    "name": "Bagmati province",
+    "tfr": 1.6
+   },
+   {
+    "id": "NPDHS2022436014",
+    "name": "Gandaki province",
+    "tfr": 1.4
+   },
+   {
+    "id": "NPDHS2022436015",
+    "name": "Lumbini province",
+    "tfr": 1.9
+   },
+   {
+    "id": "NPDHS2022436016",
+    "name": "Karnali province",
+    "tfr": 2.6
+   },
+   {
+    "id": "NPDHS2022436017",
+    "name": "Sudurpashchim province",
+    "tfr": 2.3
+   }
+  ]
+ },
+ "PG": {
+  "survey": "PG2017DHS",
+  "year": 2017,
+  "country": "Papua New Guinea",
+  "regions": [
+   {
+    "id": "PGDHS2017609011",
+    "name": "Western",
+    "tfr": 4.7
+   },
+   {
+    "id": "PGDHS2017609012",
+    "name": "Gulf",
+    "tfr": 5.3
+   },
+   {
+    "id": "PGDHS2017609013",
+    "name": "Central",
+    "tfr": 5.2
+   },
+   {
+    "id": "PGDHS2017609014",
+    "name": "National Capital District",
+    "tfr": 3.1
+   },
+   {
+    "id": "PGDHS2017609015",
+    "name": "Milne Bay",
+    "tfr": 4.5
+   },
+   {
+    "id": "PGDHS2017609016",
+    "name": "Northern (Oro)",
+    "tfr": 4.5
+   },
+   {
+    "id": "PGDHS2017609021",
+    "name": "Southern Highlands",
+    "tfr": 3.8
+   },
+   {
+    "id": "PGDHS2017609022",
+    "name": "Enga",
+    "tfr": 4.2
+   },
+   {
+    "id": "PGDHS2017609023",
+    "name": "Western Highlands",
+    "tfr": 3.1
+   },
+   {
+    "id": "PGDHS2017609024",
+    "name": "Chimbu (Simbu)",
+    "tfr": 4
+   },
+   {
+    "id": "PGDHS2017609025",
+    "name": "Eastern Highlands",
+    "tfr": 3.6
+   },
+   {
+    "id": "PGDHS2017609026",
+    "name": "Hela",
+    "tfr": 3.9
+   },
+   {
+    "id": "PGDHS2017609027",
+    "name": "Jiwaka",
+    "tfr": 3.5
+   },
+   {
+    "id": "PGDHS2017609031",
+    "name": "Morobe",
+    "tfr": 3.9
+   },
+   {
+    "id": "PGDHS2017609032",
+    "name": "Madang",
+    "tfr": 4.4
+   },
+   {
+    "id": "PGDHS2017609033",
+    "name": "East Sepik",
+    "tfr": 4.7
+   },
+   {
+    "id": "PGDHS2017609034",
+    "name": "West Sepik (Sandaun)",
+    "tfr": 5.7
+   },
+   {
+    "id": "PGDHS2017609041",
+    "name": "Manus",
+    "tfr": 4.2
+   },
+   {
+    "id": "PGDHS2017609042",
+    "name": "New Ireland",
+    "tfr": 4.7
+   },
+   {
+    "id": "PGDHS2017609043",
+    "name": "East New Britain",
+    "tfr": 4.8
+   },
+   {
+    "id": "PGDHS2017609044",
+    "name": "West New Britain",
+    "tfr": 4.3
+   },
+   {
+    "id": "PGDHS2017609045",
+    "name": "Autonomous Region of Bougainville",
+    "tfr": 4.5
+   }
+  ]
+ },
+ "PH": {
+  "survey": "PH2022DHS",
+  "year": 2022,
+  "country": "Philippines",
+  "regions": [
+   {
+    "id": "PHDHS2022439002",
+    "name": "National Capital Region",
+    "tfr": 1.2
+   },
+   {
+    "id": "PHDHS2022439003",
+    "name": "Cordillera Administ.",
+    "tfr": 2.1
+   },
+   {
+    "id": "PHDHS2022439004",
+    "name": "Ilocos",
+    "tfr": 1.9
+   },
+   {
+    "id": "PHDHS2022439005",
+    "name": "Cagayan Valley",
+    "tfr": 2.1
+   },
+   {
+    "id": "PHDHS2022439006",
+    "name": "Central Luzon",
+    "tfr": 1.9
+   },
+   {
+    "id": "PHDHS2022439007",
+    "name": "CALABARAZON",
+    "tfr": 1.8
+   },
+   {
+    "id": "PHDHS2022439008",
+    "name": "MIMAROPA",
+    "tfr": 2.4
+   },
+   {
+    "id": "PHDHS2022439009",
+    "name": "Bicol",
+    "tfr": 2.2
+   },
+   {
+    "id": "PHDHS2022439011",
+    "name": "Western Visayas",
+    "tfr": 2.2
+   },
+   {
+    "id": "PHDHS2022439012",
+    "name": "Central Visayas",
+    "tfr": 2
+   },
+   {
+    "id": "PHDHS2022439013",
+    "name": "Eastern Visayas",
+    "tfr": 2
+   },
+   {
+    "id": "PHDHS2022439015",
+    "name": "Zamboanga Peninsula",
+    "tfr": 2.6
+   },
+   {
+    "id": "PHDHS2022439016",
+    "name": "Northern Mindanao",
+    "tfr": 2.1
+   },
+   {
+    "id": "PHDHS2022439017",
+    "name": "Davao",
+    "tfr": 1.8
+   },
+   {
+    "id": "PHDHS2022439018",
+    "name": "SOCCSKSARGEN",
+    "tfr": 2.5
+   },
+   {
+    "id": "PHDHS2022439019",
+    "name": "BARMM",
+    "tfr": 3.1
+   },
+   {
+    "id": "PHDHS2022439020",
+    "name": "Caraga",
+    "tfr": 2.3
+   }
+  ]
+ },
+ "PK": {
+  "survey": "PK2017DHS",
+  "year": 2017,
+  "country": "Pakistan",
+  "regions": [
+   {
+    "id": "PKDHS2017440002",
+    "name": "Punjab excluding Islamabad (ICT)",
+    "tfr": 3.4
+   },
+   {
+    "id": "PKDHS2017440003",
+    "name": "Sindh",
+    "tfr": 3.6
+   },
+   {
+    "id": "PKDHS2017440004",
+    "name": "Khyber Pakhtunkhwa",
+    "tfr": 4
+   },
+   {
+    "id": "PKDHS2017440005",
+    "name": "Balochistan",
+    "tfr": 4
+   },
+   {
+    "id": "PKDHS2017440006",
+    "name": "Gilgit Baltistan",
+    "tfr": 4.7
+   },
+   {
+    "id": "PKDHS2017440007",
+    "name": "Islamabad (ICT)",
+    "tfr": 3
+   },
+   {
+    "id": "PKDHS2017440008",
+    "name": "Azad, Jammu and Kashmir",
+    "tfr": 3.5
+   },
+   {
+    "id": "PKDHS2017440009",
+    "name": "Federally Administered Tribal Areas",
+    "tfr": 4.8
+   }
+  ]
+ },
+ "RW": {
+  "survey": "RW2025DHS",
+  "year": 2025,
+  "country": "Rwanda",
+  "regions": [
+   {
+    "id": "RWDHS2025442001",
+    "name": "Kigali",
+    "tfr": 3.1
+   },
+   {
+    "id": "RWDHS2025442002",
+    "name": "South",
+    "tfr": 3.8
+   },
+   {
+    "id": "RWDHS2025442003",
+    "name": "West",
+    "tfr": 3.9
+   },
+   {
+    "id": "RWDHS2025442004",
+    "name": "North",
+    "tfr": 3.4
+   },
+   {
+    "id": "RWDHS2025442005",
+    "name": "East",
+    "tfr": 4
+   }
+  ]
+ },
+ "SL": {
+  "survey": "SL2019DHS",
+  "year": 2019,
+  "country": "Sierra Leone",
+  "regions": [
+   {
+    "id": "SLDHS2019510011",
+    "name": "Kailahun",
+    "tfr": 4.4
+   },
+   {
+    "id": "SLDHS2019510012",
+    "name": "Kenema",
+    "tfr": 4.7
+   },
+   {
+    "id": "SLDHS2019510013",
+    "name": "Kono",
+    "tfr": 4.8
+   },
+   {
+    "id": "SLDHS2019510002",
+    "name": "Northern (before 2017)",
+    "tfr": 4.5
+   },
+   {
+    "id": "SLDHS2019510023",
+    "name": "Koinadugu (before 2017)",
+    "tfr": 3.9
+   },
+   {
+    "id": "SLDHS2019510027",
+    "name": "Koinadugu",
+    "tfr": 4.3
+   },
+   {
+    "id": "SLDHS2019510026",
+    "name": "Falaba",
+    "tfr": 3.4
+   },
+   {
+    "id": "SLDHS2019510029",
+    "name": "Bombali",
+    "tfr": 3.9
+   },
+   {
+    "id": "SLDHS2019510025",
+    "name": "Tonkolili",
+    "tfr": 4.3
+   },
+   {
+    "id": "SLDHS2019510022",
+    "name": "Kambia",
+    "tfr": 4.8
+   },
+   {
+    "id": "SLDHS2019510028",
+    "name": "Karene",
+    "tfr": 5.4
+   },
+   {
+    "id": "SLDHS2019510030",
+    "name": "Port Loko",
+    "tfr": 5
+   },
+   {
+    "id": "SLDHS2019510031",
+    "name": "Bo",
+    "tfr": 4.4
+   },
+   {
+    "id": "SLDHS2019510032",
+    "name": "Bonthe",
+    "tfr": 5.3
+   },
+   {
+    "id": "SLDHS2019510033",
+    "name": "Moyamba",
+    "tfr": 5.4
+   },
+   {
+    "id": "SLDHS2019510034",
+    "name": "Pujehun",
+    "tfr": 5.3
+   },
+   {
+    "id": "SLDHS2019510041",
+    "name": "Western Rural",
+    "tfr": 3.6
+   },
+   {
+    "id": "SLDHS2019510042",
+    "name": "Western Urban",
+    "tfr": 2.5
+   }
+  ]
+ },
+ "SN": {
+  "survey": "SN2023DHS",
+  "year": 2023,
+  "country": "Senegal",
+  "regions": [
+   {
+    "id": "SNDHS2023444018",
+    "name": "Saint Louis",
+    "tfr": 3.6
+   },
+   {
+    "id": "SNDHS2023444009",
+    "name": "Louga",
+    "tfr": 4
+   },
+   {
+    "id": "SNDHS2023444017",
+    "name": "Matam",
+    "tfr": 4.5
+   },
+   {
+    "id": "SNDHS2023444002",
+    "name": "Dakar",
+    "tfr": 3.1
+   },
+   {
+    "id": "SNDHS2023444003",
+    "name": "Thi\u00e8s",
+    "tfr": 3.9
+   },
+   {
+    "id": "SNDHS2023444005",
+    "name": "Diourbel",
+    "tfr": 4.1
+   },
+   {
+    "id": "SNDHS2023444010",
+    "name": "Fatick",
+    "tfr": 4.6
+   },
+   {
+    "id": "SNDHS2023444006",
+    "name": "Kaolack (2005)",
+    "tfr": 4.9
+   },
+   {
+    "id": "SNDHS2023444007",
+    "name": "Kaffrine",
+    "tfr": 6
+   },
+   {
+    "id": "SNDHS2023444008",
+    "name": "Kaolack (2010)",
+    "tfr": 4.3
+   },
+   {
+    "id": "SNDHS2023444012",
+    "name": "Ziguinchor",
+    "tfr": 3.7
+   },
+   {
+    "id": "SNDHS2023444013",
+    "name": "Kolda (2005)",
+    "tfr": 5.1
+   },
+   {
+    "id": "SNDHS2023444014",
+    "name": "S\u00e9dhiou",
+    "tfr": 5.5
+   },
+   {
+    "id": "SNDHS2023444015",
+    "name": "Kolda (2010)",
+    "tfr": 4.9
+   },
+   {
+    "id": "SNDHS2023444019",
+    "name": "Tambacounda (2005)",
+    "tfr": 4.5
+   },
+   {
+    "id": "SNDHS2023444020",
+    "name": "K\u00e9dougou",
+    "tfr": 5.2
+   },
+   {
+    "id": "SNDHS2023444021",
+    "name": "Tambacounda (2010)",
+    "tfr": 4.4
+   }
+  ]
+ },
+ "TG": {
+  "survey": "TG2017MIS",
+  "year": 2017,
+  "country": "Togo",
+  "regions": [
+   {
+    "id": "TGMIS2017446002",
+    "name": "Maritime",
+    "tfr": 4.2
+   },
+   {
+    "id": "TGMIS2017446003",
+    "name": "Lom\u00e9",
+    "tfr": 3.1
+   },
+   {
+    "id": "TGMIS2017446004",
+    "name": "Plateaux",
+    "tfr": 4.9
+   },
+   {
+    "id": "TGMIS2017446005",
+    "name": "Centrale",
+    "tfr": 5.3
+   },
+   {
+    "id": "TGMIS2017446006",
+    "name": "Kara",
+    "tfr": 5.1
+   },
+   {
+    "id": "TGMIS2017446007",
+    "name": "Savanes",
+    "tfr": 5.7
+   }
+  ]
+ },
+ "TJ": {
+  "survey": "TJ2023DHS",
+  "year": 2023,
+  "country": "Tajikistan",
+  "regions": [
+   {
+    "id": "TJDHS2023531001",
+    "name": "Dushanbe",
+    "tfr": 3.2
+   },
+   {
+    "id": "TJDHS2023531002",
+    "name": "GBAO",
+    "tfr": 3.3
+   },
+   {
+    "id": "TJDHS2023531003",
+    "name": "Sughd",
+    "tfr": 3.4
+   },
+   {
+    "id": "TJDHS2023531004",
+    "name": "DRS",
+    "tfr": 3.5
+   },
+   {
+    "id": "TJDHS2023531005",
+    "name": "Khatlon",
+    "tfr": 3.6
+   }
+  ]
+ },
+ "TL": {
+  "survey": "TL2016DHS",
+  "year": 2016,
+  "country": "Timor-Leste",
+  "regions": [
+   {
+    "id": "TLDHS2016515001",
+    "name": "Aileu",
+    "tfr": 4
+   },
+   {
+    "id": "TLDHS2016515002",
+    "name": "Ainaro",
+    "tfr": 5.7
+   },
+   {
+    "id": "TLDHS2016515003",
+    "name": "Baucau",
+    "tfr": 4.6
+   },
+   {
+    "id": "TLDHS2016515004",
+    "name": "Bobonaro",
+    "tfr": 4.6
+   },
+   {
+    "id": "TLDHS2016515005",
+    "name": "Cova Lima",
+    "tfr": 4.2
+   },
+   {
+    "id": "TLDHS2016515006",
+    "name": "Dili",
+    "tfr": 3.6
+   },
+   {
+    "id": "TLDHS2016515007",
+    "name": "Ermera",
+    "tfr": 4.3
+   },
+   {
+    "id": "TLDHS2016515008",
+    "name": "Liquica",
+    "tfr": 4.4
+   },
+   {
+    "id": "TLDHS2016515009",
+    "name": "Lautem",
+    "tfr": 4.9
+   },
+   {
+    "id": "TLDHS2016515010",
+    "name": "Manufahi",
+    "tfr": 4.3
+   },
+   {
+    "id": "TLDHS2016515011",
+    "name": "Manatuto",
+    "tfr": 4.6
+   },
+   {
+    "id": "TLDHS2016515012",
+    "name": "Oecussi",
+    "tfr": 4
+   },
+   {
+    "id": "TLDHS2016515013",
+    "name": "Viqueque",
+    "tfr": 4.6
+   }
+  ]
+ },
+ "TZ": {
+  "survey": "TZ2022DHS",
+  "year": 2022,
+  "country": "Tanzania",
+  "regions": [
+   {
+    "id": "TZDHS2022451052",
+    "name": "Tabora",
+    "tfr": 6.4
+   },
+   {
+    "id": "TZDHS2022451053",
+    "name": "Kigoma",
+    "tfr": 5.8
+   },
+   {
+    "id": "TZDHS2022451055",
+    "name": "Kilimanjaro",
+    "tfr": 4.4
+   },
+   {
+    "id": "TZDHS2022451056",
+    "name": "Tanga",
+    "tfr": 5.2
+   },
+   {
+    "id": "TZDHS2022451058",
+    "name": "Arusha",
+    "tfr": 4.7
+   },
+   {
+    "id": "TZDHS2022451060",
+    "name": "Manyara",
+    "tfr": 5.8
+   },
+   {
+    "id": "TZDHS2022451061",
+    "name": "Dodoma",
+    "tfr": 3.9
+   },
+   {
+    "id": "TZDHS2022451062",
+    "name": "Singida",
+    "tfr": 5.1
+   },
+   {
+    "id": "TZDHS2022451064",
+    "name": "Iringa",
+    "tfr": 3.9
+   },
+   {
+    "id": "TZDHS2022451065",
+    "name": "Njombe",
+    "tfr": 4
+   },
+   {
+    "id": "TZDHS2022451066",
+    "name": "Ruvuma",
+    "tfr": 4.4
+   },
+   {
+    "id": "TZDHS2022451068",
+    "name": "Kagera",
+    "tfr": 5.7
+   },
+   {
+    "id": "TZDHS2022451069",
+    "name": "Mwanza",
+    "tfr": 4.9
+   },
+   {
+    "id": "TZDHS2022451070",
+    "name": "Mara",
+    "tfr": 6.1
+   },
+   {
+    "id": "TZDHS2022451071",
+    "name": "Shinyanga",
+    "tfr": 5.5
+   },
+   {
+    "id": "TZDHS2022451072",
+    "name": "Simiyu",
+    "tfr": 6.6
+   },
+   {
+    "id": "TZDHS2022451073",
+    "name": "Geita",
+    "tfr": 6.1
+   },
+   {
+    "id": "TZDHS2022451075",
+    "name": "Dar es Salaam",
+    "tfr": 2.8
+   },
+   {
+    "id": "TZDHS2022451076",
+    "name": "Pwani",
+    "tfr": 3.8
+   },
+   {
+    "id": "TZDHS2022451077",
+    "name": "Morogoro",
+    "tfr": 4.4
+   },
+   {
+    "id": "TZDHS2022451079",
+    "name": "Lindi",
+    "tfr": 4.1
+   },
+   {
+    "id": "TZDHS2022451080",
+    "name": "Mtwara",
+    "tfr": 3.3
+   },
+   {
+    "id": "TZDHS2022451091",
+    "name": "Mbeya (since 2016)",
+    "tfr": 4.3
+   },
+   {
+    "id": "TZDHS2022451092",
+    "name": "Songwe",
+    "tfr": 5.4
+   },
+   {
+    "id": "TZDHS2022451083",
+    "name": "Rukwa",
+    "tfr": 5.6
+   },
+   {
+    "id": "TZDHS2022451084",
+    "name": "Katavi",
+    "tfr": 5.8
+   },
+   {
+    "id": "TZDHS2022451086",
+    "name": "Kaskazini Unguja",
+    "tfr": 4.5
+   },
+   {
+    "id": "TZDHS2022451087",
+    "name": "Kusini Unguja",
+    "tfr": 5
+   },
+   {
+    "id": "TZDHS2022451088",
+    "name": "Mjini Magharibi",
+    "tfr": 4
+   },
+   {
+    "id": "TZDHS2022451089",
+    "name": "Kaskazini Pemba",
+    "tfr": 5.7
+   },
+   {
+    "id": "TZDHS2022451090",
+    "name": "Kusini Pemba",
+    "tfr": 6.4
+   }
+  ]
+ },
+ "UG": {
+  "survey": "UG2024MIS",
+  "year": 2024,
+  "country": "Uganda",
+  "regions": [
+   {
+    "id": "UGMIS2024452044",
+    "name": "Buganda",
+    "tfr": 4
+   },
+   {
+    "id": "UGMIS2024452002",
+    "name": "South Buganda",
+    "tfr": 3.8
+   },
+   {
+    "id": "UGMIS2024452003",
+    "name": "North Buganda",
+    "tfr": 4.3
+   },
+   {
+    "id": "UGMIS2024452004",
+    "name": "Kampala",
+    "tfr": 3.4
+   },
+   {
+    "id": "UGMIS2024452006",
+    "name": "East Central",
+    "tfr": 5.2
+   },
+   {
+    "id": "UGMIS2024452025",
+    "name": "Busoga",
+    "tfr": 5.2
+   },
+   {
+    "id": "UGMIS2024452007",
+    "name": "Eastern",
+    "tfr": 5.5
+   },
+   {
+    "id": "UGMIS2024452026",
+    "name": "Bukedi",
+    "tfr": 5.5
+   },
+   {
+    "id": "UGMIS2024452027",
+    "name": "Bugisu/Elgon",
+    "tfr": 5.2
+   },
+   {
+    "id": "UGMIS2024452028",
+    "name": "Teso",
+    "tfr": 5.6
+   },
+   {
+    "id": "UGMIS2024452009",
+    "name": "West Nile",
+    "tfr": 4.6
+   },
+   {
+    "id": "UGMIS2024452010",
+    "name": "Northern",
+    "tfr": 4.3
+   },
+   {
+    "id": "UGMIS2024452029",
+    "name": "Lango",
+    "tfr": 4
+   },
+   {
+    "id": "UGMIS2024452030",
+    "name": "Acholi",
+    "tfr": 4.8
+   },
+   {
+    "id": "UGMIS2024452012",
+    "name": "Karamoja",
+    "tfr": 6.4
+   },
+   {
+    "id": "UGMIS2024452014",
+    "name": "Western",
+    "tfr": 5
+   },
+   {
+    "id": "UGMIS2024452031",
+    "name": "Bunyoro",
+    "tfr": 5.4
+   },
+   {
+    "id": "UGMIS2024452032",
+    "name": "Tooro",
+    "tfr": 4.6
+   },
+   {
+    "id": "UGMIS2024452015",
+    "name": "South West",
+    "tfr": 4
+   },
+   {
+    "id": "UGMIS2024452033",
+    "name": "Ankole",
+    "tfr": 3.7
+   },
+   {
+    "id": "UGMIS2024452034",
+    "name": "Kigezi",
+    "tfr": 4.7
+   }
+  ]
+ },
+ "ZA": {
+  "survey": "ZA2016DHS",
+  "year": 2016,
+  "country": "South Africa",
+  "regions": [
+   {
+    "id": "ZADHS2016455001",
+    "name": "Western  Cape",
+    "tfr": 2.1
+   },
+   {
+    "id": "ZADHS2016455002",
+    "name": "Eastern Cape",
+    "tfr": 2.9
+   },
+   {
+    "id": "ZADHS2016455003",
+    "name": "Northern Cape",
+    "tfr": 2.7
+   },
+   {
+    "id": "ZADHS2016455004",
+    "name": "Free State",
+    "tfr": 2.4
+   },
+   {
+    "id": "ZADHS2016455005",
+    "name": "KwaZulu Natal",
+    "tfr": 2.5
+   },
+   {
+    "id": "ZADHS2016455006",
+    "name": "North West",
+    "tfr": 3.1
+   },
+   {
+    "id": "ZADHS2016455007",
+    "name": "Gauteng",
+    "tfr": 2.6
+   },
+   {
+    "id": "ZADHS2016455008",
+    "name": "Mpumalanga",
+    "tfr": 3
+   },
+   {
+    "id": "ZADHS2016455009",
+    "name": "Northern Province",
+    "tfr": 3.1
+   }
+  ]
+ },
+ "ZM": {
+  "survey": "ZM2024DHS",
+  "year": 2024,
+  "country": "Zambia",
+  "regions": [
+   {
+    "id": "ZMDHS2024456001",
+    "name": "Central",
+    "tfr": 4.4
+   },
+   {
+    "id": "ZMDHS2024456002",
+    "name": "Copperbelt",
+    "tfr": 3.2
+   },
+   {
+    "id": "ZMDHS2024456012",
+    "name": "Eastern",
+    "tfr": 4.3
+   },
+   {
+    "id": "ZMDHS2024456004",
+    "name": "Luapula",
+    "tfr": 4.5
+   },
+   {
+    "id": "ZMDHS2024456005",
+    "name": "Lusaka",
+    "tfr": 3.2
+   },
+   {
+    "id": "ZMDHS2024456011",
+    "name": "Muchinga",
+    "tfr": 4.7
+   },
+   {
+    "id": "ZMDHS2024456010",
+    "name": "Northern",
+    "tfr": 4.8
+   },
+   {
+    "id": "ZMDHS2024456007",
+    "name": "North-Western",
+    "tfr": 4.7
+   },
+   {
+    "id": "ZMDHS2024456008",
+    "name": "Southern",
+    "tfr": 4.4
+   },
+   {
+    "id": "ZMDHS2024456009",
+    "name": "Western",
+    "tfr": 4.2
+   }
+  ]
+ },
+ "ZW": {
+  "survey": "ZW2015DHS",
+  "year": 2015,
+  "country": "Zimbabwe",
+  "regions": [
+   {
+    "id": "ZWDHS2015457001",
+    "name": "Manicaland",
+    "tfr": 5
+   },
+   {
+    "id": "ZWDHS2015457002",
+    "name": "Mashonaland Central",
+    "tfr": 4.4
+   },
+   {
+    "id": "ZWDHS2015457003",
+    "name": "Mashonaland East",
+    "tfr": 4.3
+   },
+   {
+    "id": "ZWDHS2015457004",
+    "name": "Mashonaland West",
+    "tfr": 4.3
+   },
+   {
+    "id": "ZWDHS2015457005",
+    "name": "Matabeleland North",
+    "tfr": 4.4
+   },
+   {
+    "id": "ZWDHS2015457006",
+    "name": "Matabeleland South",
+    "tfr": 3.5
+   },
+   {
+    "id": "ZWDHS2015457007",
+    "name": "Midlands",
+    "tfr": 4.2
+   },
+   {
+    "id": "ZWDHS2015457008",
+    "name": "Masvingo",
+    "tfr": 4.4
+   },
+   {
+    "id": "ZWDHS2015457009",
+    "name": "Harare Chitungwiza",
+    "tfr": 2.8
+   },
+   {
+    "id": "ZWDHS2015457010",
+    "name": "Bulawayo",
+    "tfr": 2.7
+   }
+  ]
+ }
+}

@@ -223,7 +223,7 @@
       })
       .on("mouseleave", () => { hideTip(); hoverTip = null; state.hoverId = null; drawLegendMarkers(); })
       .on("click", (ev, f) => { ev.stopPropagation(); if (state.byId.has(f.locId)) pick(f.locId); });
-    zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => mapG.attr("transform", ev.transform));
+    zoom = d3.zoom().scaleExtent([1, 48]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => mapG.attr("transform", ev.transform));
     mapSvg.call(zoom).on("dblclick.zoom", null);
     // clicking the ocean goes back to the whole world: map view and selection
     mapSvg.on("click", () => { if (state.loc && state.loc.id === 900) zoomWorld(); else pick(900); });
@@ -250,7 +250,7 @@
       geom = polys.reduce((a, b) => (d3.geoArea(b) > d3.geoArea(a) ? b : a));
     }
     const [[x0, y0], [x1, y1]] = mapPath.bounds(geom);
-    const k = Math.max(1, Math.min(8, 0.75 / Math.max((x1 - x0) / MAP_W, (y1 - y0) / MAP_H)));
+    const k = Math.max(1, Math.min(40, 0.75 / Math.max((x1 - x0) / MAP_W, (y1 - y0) / MAP_H)));
     const t = d3.zoomIdentity.translate(MAP_W / 2, MAP_H / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
     mapSvg.transition().duration(ms).call(zoom.transform, t);
   }
@@ -258,13 +258,69 @@
   // select from the UI: frame countries on the map, show the whole world for regions
   function pick(id) {
     if (state.byId.get(id)?.region) zoomWorld(); else zoomToLoc(id);
+    showSubdivisions(id);
     selectLoc(id);
+  }
+
+  /* ---------------- subdivisions (shown while zoomed into a country) ---------------- */
+  // Each file has TopoJSON units with a per-year series {year: TFR}; a unit shows the latest value at or
+  // before the timeline year, from its first data year through today. Outside that range the national color shows.
+  let subLayer = null, subToken = 0;
+  async function showSubdivisions(id) {
+    const token = ++subToken;
+    if (subLayer) { subLayer.g.remove(); subLayer = null; }
+    const s = state.byId.get(id), meta = s && s.iso3 && state.subIndex && state.subIndex[s.iso3];
+    if (!meta || !mapG) { drawLegendMarkers(); return; }
+    if (!state.subCache) state.subCache = new Map();
+    let doc = state.subCache.get(s.iso3);
+    if (!doc) {
+      try { doc = await fetch(`${DATA}sub/${s.iso3}.json`).then((r) => r.json()); } catch (e) { return; }
+      state.subCache.set(s.iso3, doc);
+    }
+    if (token !== subToken) return; // another country was picked meanwhile
+    const feats = topojson.feature(doc.topo, doc.topo.objects.units || Object.values(doc.topo.objects)[0]).features;
+    const g = mapG.append("g").attr("class", "subs");
+    const paths = g.selectAll("path").data(feats).join("path").attr("class", "sub").attr("d", mapPath)
+      .on("mousemove", (ev, f) => {
+        hoverTip = { sub: f, clientX: ev.clientX, clientY: ev.clientY };
+        state.hoverSub = f; drawLegendMarkers();
+        showTip(subTip(f), ev);
+      })
+      .on("mouseleave", () => { hideTip(); hoverTip = null; state.hoverSub = null; drawLegendMarkers(); })
+      .on("click", (ev) => ev.stopPropagation());
+    const outline = mapFeats.find((f) => f.locId === id);
+    if (outline) g.append("path").attr("class", "sub-outline").attr("d", mapPath(outline));
+    subLayer = { g, paths, doc, s };
+    colorSubdivisions();
+  }
+  function subValue(f) {
+    const ys = Object.keys(f.properties.s).map(Number).filter((y) => y <= state.year);
+    if (!ys.length || state.year > BASE) return null;
+    const y = Math.max(...ys);
+    return { v: f.properties.s[y], y };
+  }
+  function colorSubdivisions() {
+    if (!subLayer) return;
+    subLayer.g.raise(); // stay above the (raised) selected country
+    let shown = 0;
+    subLayer.paths.attr("fill", (f) => { const r = subValue(f); if (r) shown++; return r ? colorOf(r.v) : "none"; })
+      .style("display", (f) => (subValue(f) ? null : "none"));
+    subLayer.shown = shown;
+  }
+  function subTip(f) {
+    const r = subValue(f), src = r && subLayer.doc.sources[r.y];
+    if (!r) return `<div class="t">${esc(f.properties.n)}</div><div class="m">No subdivision data for ${state.year}</div>`;
+    const kind = src && src.kind === "estimate" ? `${r.y} estimate${src.months ? " from " + esc(src.months) + " births" : ""}` : src && src.kind === "survey" ? `${r.y} survey` : `${r.y}`;
+    return `<div class="t">${esc(f.properties.n)}</div>
+      <div class="r"><span><i style="background:${colorOf(r.v)}"></i>Fertility rate</span><b>${r.v.toFixed(2)}</b></div>
+      <div class="m">${esc(subLayer.s.name)} · ${kind}${src ? " · " + esc(shortSrc(src.source)) : ""}</div>`;
   }
 
   // The country under a still cursor keeps its tooltip current while the years play.
   let hoverTip = null;
   function refreshHoverTip() {
-    if (hoverTip) showTip(locTip(state.byId.get(hoverTip.id)), hoverTip);
+    if (!hoverTip) return;
+    showTip(hoverTip.sub ? subTip(hoverTip.sub) : locTip(state.byId.get(hoverTip.id)), hoverTip);
   }
 
   function colorMap() {
@@ -273,6 +329,7 @@
         .classed("selected", (f) => state.loc && f.locId === state.loc.id);
       mapPaths.filter(".selected").raise();
     }
+    colorSubdivisions();
     drawLegendMarkers();
     if (state.view === "table") renderTable();
     refreshHoverTip();
@@ -310,8 +367,18 @@
       const cx = lg.x(Math.max(0.7, Math.min(6.4, v)));
       lg.g.append("path").attr("d", `M${cx - 5},0 L${cx + 5},0 L${cx},7 Z`).style("fill", m.strong ? "var(--ink)" : "var(--ink-2)");
     }
+    const hv = state.hoverSub && subLayer && subValue(state.hoverSub);
+    if (hv) {
+      const cx = lg.x(Math.max(0.7, Math.min(6.4, hv.v)));
+      lg.g.append("path").attr("d", `M${cx - 5},0 L${cx + 5},0 L${cx},7 Z`).style("fill", "var(--ink-2)");
+    }
     const s = state.loc && state.byId.get(state.loc.id);
-    $("#legend-note").textContent = s ? `▼ ${s.name}` : "";
+    let note = s ? `▼ ${s.name}` : "";
+    if (subLayer && subLayer.shown) {
+      const ys = [...new Set(subLayer.paths.data().map((f) => subValue(f)?.y).filter(Boolean))].sort();
+      note += ` · ${subLayer.paths.data().length} ${subLayer.doc.level}s, ${ys.length > 1 ? ys[0] + "–" + ys.at(-1) : ys[0]} data`;
+    } else if (subLayer) note += ` · ${subLayer.doc.level}s shown for ${subLayer.doc.years[0]}–${BASE}`;
+    $("#legend-note").textContent = note;
   }
 
   function setView(v) {
@@ -979,11 +1046,12 @@
 
   async function init() {
     try {
-      const [summary, topo] = await Promise.all([
+      const [summary, topo, subIndex] = await Promise.all([
         fetch(DATA + "summary.json").then((r) => r.json()),
         fetch(DATA + "countries-50m.json").then((r) => r.json()),
+        fetch(DATA + "sub/index.json").then((r) => (r.ok ? r.json() : {})).catch(() => ({})),
       ]);
-      state.summary = summary; state.topo = topo;
+      state.summary = summary; state.topo = topo; state.subIndex = subIndex;
       for (const s of summary.locs) state.byId.set(s.id, s);
     } catch (e) {
       $("#dossier").innerHTML = `<div class="loading">Couldn't load data. If you opened the file directly, serve the folder over HTTP.</div>`;
@@ -1002,7 +1070,7 @@
     setYear(state.year);
     const startId = h.loc && state.byId.has(+h.loc) ? +h.loc : 900;
     selectLoc(startId, h);
-    if (!state.byId.get(startId).region) zoomToLoc(startId, 0);
+    if (!state.byId.get(startId).region) { zoomToLoc(startId, 0); showSubdivisions(startId); }
 
     let rt = null;
     window.addEventListener("resize", () => {

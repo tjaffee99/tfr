@@ -122,6 +122,9 @@ input[type="range"] { accent-color: var(--scenario); }
 #map path.country { stroke: var(--stroke); stroke-width: .4; vector-effect: non-scaling-stroke; cursor: pointer; }
 #map path.country:hover { stroke: var(--ink); stroke-width: 1; }
 #map path.country.selected { stroke: var(--ink); stroke-width: 1.8; }
+#map path.sub { stroke: var(--stroke); stroke-width: .6; vector-effect: non-scaling-stroke; cursor: default; }
+#map path.sub:hover { stroke: var(--ink); stroke-width: 1.2; }
+#map path.sub-outline { fill: none; stroke: var(--ink); stroke-width: 1.6; vector-effect: non-scaling-stroke; pointer-events: none; }
 .zoom-ctl { position: absolute; right: 8px; bottom: 8px; display: flex; flex-direction: column; gap: 4px; }
 .zoom-ctl button { width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--ink); font-size: 16px; cursor: pointer; }
 .map-foot { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: center; margin-top: 8px; }
