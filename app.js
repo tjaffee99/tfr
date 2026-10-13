@@ -223,7 +223,10 @@
       })
       .on("mouseleave", () => { hideTip(); hoverTip = null; state.hoverId = null; drawLegendMarkers(); })
       .on("click", (ev, f) => { ev.stopPropagation(); if (state.byId.has(f.locId)) pick(f.locId); });
-    zoom = d3.zoom().scaleExtent([1, 48]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => mapG.attr("transform", ev.transform));
+    zoom = d3.zoom().scaleExtent([1, 48]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => {
+      mapG.attr("transform", ev.transform);
+      setMapDetail(ev.transform.k >= 2.5);
+    });
     mapSvg.call(zoom).on("dblclick.zoom", null);
     // clicking the ocean goes back to the whole world: map view and selection
     mapSvg.on("click", () => { if (state.loc && state.loc.id === 900) zoomWorld(); else pick(900); });
@@ -238,6 +241,30 @@
       <div class="r"><span><i style="background:${colorOf(info.v)}"></i>Fertility rate</span><b>${info.v != null ? info.v.toFixed(2) : "–"}</b></div>
       <div class="r"><span>Population</span><b>${fmtPop(popAt(s, state.year))}</b></div>
       <div class="m">${esc(info.label)} · ${esc(shortSrc(info.src))}</div>`;
+  }
+
+  // A ring wound the wrong way covers the whole globe in d3 (the 10m Maldives does this); flip such shapes.
+  function rewind(f) {
+    if (!f || !f.geometry || d3.geoArea(f) <= 2 * Math.PI) return f;
+    const fix = (poly) => (d3.geoArea({ type: "Polygon", coordinates: poly }) > 2 * Math.PI ? poly.map((ring) => ring.slice().reverse()) : poly);
+    const g = f.geometry;
+    return { ...f, geometry: { ...g, coordinates: g.type === "Polygon" ? fix(g.coordinates) : g.coordinates.map(fix) } };
+  }
+
+  // Country borders: 1:50M when zoomed out (light), 1:10M once zoomed in (loaded on first use, ~1 MB).
+  let hiRes = false, hiResLoading = null;
+  async function setMapDetail(hi) {
+    if (hi === hiRes) return;
+    hiRes = hi;
+    if (hi && !mapFeats[0]._d10) {
+      if (!hiResLoading) hiResLoading = fetch(DATA + "countries-10m.json").then((r) => r.json()).then((t) => {
+        const byKey = new Map();
+        for (const f of topojson.feature(t, t.objects.countries).features) byKey.set(`${f.id}|${f.properties.name}`, f);
+        for (const f of mapFeats) { const g = byKey.get(`${f.id}|${f.properties.name}`); f._d10 = g ? mapPath(rewind(g)) : null; }
+      }).catch(() => {});
+      await hiResLoading;
+    }
+    mapPaths.attr("d", (f) => (hiRes && f._d10) || f._d50 || (f._d50 = mapPath(f)));
   }
 
   // Zoom to a country's main landmass (largest polygon, so e.g. France isn't framed with French Guiana).
@@ -278,7 +305,7 @@
       state.subCache.set(s.iso3, doc);
     }
     if (token !== subToken) return; // another country was picked meanwhile
-    const feats = topojson.feature(doc.topo, doc.topo.objects.units || Object.values(doc.topo.objects)[0]).features;
+    const feats = topojson.feature(doc.topo, doc.topo.objects.units || Object.values(doc.topo.objects)[0]).features.map(rewind);
     const g = mapG.append("g").attr("class", "subs");
     const paths = g.selectAll("path").data(feats).join("path").attr("class", "sub").attr("d", mapPath)
       .on("mousemove", (ev, f) => {
@@ -288,10 +315,12 @@
       })
       .on("mouseleave", () => { hideTip(); hoverTip = null; state.hoverSub = null; drawLegendMarkers(); })
       .on("click", (ev) => ev.stopPropagation());
-    const outline = mapFeats.find((f) => f.locId === id);
-    if (outline) g.append("path").attr("class", "sub-outline").attr("d", mapPath(outline));
+    // the country outline comes from the same detailed boundaries, so edges line up at any zoom
+    const outline = doc.topo.objects.outline ? topojson.feature(doc.topo, doc.topo.objects.outline).features.map(rewind) : [mapFeats.find((f) => f.locId === id)];
+    for (const o of outline) if (o) g.append("path").attr("class", "sub-outline").attr("d", mapPath(o));
     subLayer = { g, paths, doc, s };
     colorSubdivisions();
+    drawLegendMarkers();
   }
   function subValue(f) {
     const ys = Object.keys(f.properties.s).map(Number).filter((y) => y <= state.year);

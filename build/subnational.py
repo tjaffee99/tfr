@@ -2,7 +2,8 @@
 
 Sources, in priority order per country:
   1. national statistics compiled in build/sub/national_*.json  (ISO 3166-2 codes -> Natural Earth admin-1)
-  2. Eurostat regional TFR (build/sub/eurostat_find2.json; NUTS 2, NUTS 1 for DE/FR) -> GISCO NUTS boundaries
+  2. Eurostat regional TFR (build/sub/eurostat_find3.json, NUTS 3: districts/départements/provinces)
+     -> GISCO NUTS 3 boundaries at 1:1M
   3. DHS surveys since 2015 (build/sub/dhs_pick.json) -> DHS's own survey-region boundaries
 Raw boundary files live in build/raw/ (see fetch_sub_sources.sh). Needs mapshaper (MAPSHAPER env var or on PATH).
 
@@ -15,8 +16,9 @@ RAW = os.path.join(HERE, "raw")
 SUB = os.path.join(HERE, "sub")
 OUT = os.path.join(HERE, "..", "data", "sub")
 MAPSHAPER = os.environ.get("MAPSHAPER") or shutil.which("mapshaper") or "mapshaper"
-NUTS1_COUNTRIES = {"DE", "FR"}            # Länder and régions read better than NUTS 2 here
-EUROSTAT_SKIP = {"UK", "TR"}              # UK has no NUTS 2021 boundaries; Turkey comes from TurkStat if available
+EUROSTAT_SKIP = {"UK"}                    # UK has no NUTS 2021 boundaries (its regions come from ONS/NRS if available)
+NUTS3_NAMES = {"DE": "district", "FR": "département", "IT": "province", "ES": "province", "PL": "subregion",
+               "TR": "province", "AT": "region", "BE": "arrondissement", "NL": "region", "PT": "region"}
 ISO2_FIX = {"EL": "GR", "UK": "GB"}
 
 
@@ -43,19 +45,22 @@ def wkt_to_geojson(wkt):
     return {"type": "MultiPolygon", "coordinates": [polys("(" + p + ")") for p in parts]}
 
 
-def simplify_to_topo(features, keep_pct):
-    """Simplify a list of GeoJSON features with mapshaper and return TopoJSON (object 'units')."""
+def simplify_to_topo(features, interval_m):
+    """Simplify GeoJSON features with mapshaper (dropping detail finer than interval_m metres, which keeps
+    borders crisp even at high zoom) and return TopoJSON with objects 'units' and 'outline' (dissolved)."""
     with tempfile.TemporaryDirectory() as td:
         src, dst = os.path.join(td, "units.json"), os.path.join(td, "out.json")
         json.dump({"type": "FeatureCollection", "features": features}, open(src, "w"))
-        subprocess.run([MAPSHAPER, src, "-clean", "-simplify", f"{keep_pct}%", "keep-shapes",
-                        "-o", dst, "format=topojson", "quantization=20000"], check=True, capture_output=True)
+        subprocess.run([MAPSHAPER, src, "-clean", "-simplify", f"interval={interval_m}", "keep-shapes",
+                        "-dissolve", "+", "name=outline", "-o", dst, "target=*", "format=topojson", "quantization=100000"],
+                       check=True, capture_output=True)
         return json.load(open(dst))
 
 
 # ---------- sources ----------
 def eurostat_units():
-    d = json.load(open(os.path.join(SUB, "eurostat_find2.json")))
+    """NUTS 3 TFR series per country from Eurostat demo_r_find3."""
+    d = json.load(open(os.path.join(SUB, "eurostat_find3.json")))
     dims, size = d["id"], d["size"]
     strides, acc = [], 1
     for s in reversed(size):
@@ -63,19 +68,14 @@ def eurostat_units():
     geo = {i: c for c, i in d["dimension"]["geo"]["category"]["index"].items()}
     time = {i: c for c, i in d["dimension"]["time"]["category"]["index"].items()}
     gpos, tpos = dims.index("geo"), dims.index("time")
-    series = {}
+    by_country = {}
     for k, v in d["value"].items():
         k, idx = int(k), []
         for s in strides:
             idx.append(k // s); k %= s
-        series.setdefault(geo[idx[gpos]], {})[int(time[idx[tpos]])] = v
-    by_country = {}
-    for code, s in series.items():
-        cc = code[:2]
-        if cc in EUROSTAT_SKIP: continue
-        level = 1 if cc in NUTS1_COUNTRIES else 2
-        if len(code) != 2 + level: continue
-        by_country.setdefault(cc, {})[code] = s
+        code = geo[idx[gpos]]
+        if len(code) != 5 or code[:2] in EUROSTAT_SKIP or code.endswith("ZZZ"): continue
+        by_country.setdefault(code[:2], {}).setdefault(code, {})[int(time[idx[tpos]])] = v
     return by_country
 
 
@@ -95,11 +95,11 @@ def main():
     iso2to3.update({"XK": "KOS", "GR": "GRC", "NO": "NOR", "FR": "FRA"})
     index = {}
 
-    def emit(iso3, level, units, years_meta, keep_pct):
+    def emit(iso3, level, units, years_meta, interval_m):
         feats = [u["feature"] for u in units]
         for u, f in zip(units, feats):
             f["properties"] = {"n": u["name"], "s": {str(y): round(v, 3) for y, v in sorted(u["series"].items())}}
-        topo = simplify_to_topo(feats, keep_pct)
+        topo = simplify_to_topo(feats, interval_m)
         years = sorted({y for u in units for y in u["series"]})
         doc = {"iso3": iso3, "level": level, "years": years, "sources": years_meta, "topo": topo}
         json.dump(doc, open(os.path.join(OUT, f"{iso3}.json"), "w"), separators=(",", ":"), ensure_ascii=False)
@@ -140,27 +140,26 @@ def main():
                     meta.setdefault(str(s["year"]), {k: s[k] for k in ("kind", "source", "url", "months", "method") if s.get(k)})
                 units.append({"name": u["name"], "series": series, "feature": {"type": "Feature", "geometry": f["geometry"]}})
             if len(units) >= max(2, 0.6 * len(c["units"])):
-                emit(iso3, c.get("level", "region"), units, meta, 4 if len(units) > 60 else 6)
+                emit(iso3, c.get("level", "region"), units, meta, 400)
                 done.add(iso3)
             else:
                 print(f"  {iso3}: matched only {len(units)}/{len(c['units'])}, skipped", file=sys.stderr)
 
-    # 2) Eurostat NUTS
+    # 2) Eurostat NUTS 3
     eu = eurostat_units()
-    nuts = {1: nuts_features(1), 2: nuts_features(2)}
+    nuts3 = nuts_features(3)
     for cc, units_raw in sorted(eu.items()):
         iso3 = iso2to3.get(ISO2_FIX.get(cc, cc))
         if not iso3 or iso3 in done: continue
-        level = 1 if cc in NUTS1_COUNTRIES else 2
         units = []
         for code, s in units_raw.items():
-            f = nuts[level].get(code)
+            f = nuts3.get(code)
             if not f or not s: continue
             units.append({"name": f["properties"]["NAME_LATN"], "series": s, "feature": {"type": "Feature", "geometry": f["geometry"]}})
         if len(units) < 2: continue
-        meta = {str(y): {"kind": "official", "source": "Eurostat, fertility indicators by NUTS 2 region (demo_r_find2)",
-                         "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find2/default/table"} for y in range(2018, 2026)}
-        emit(iso3, "state" if cc == "DE" else "region", units, meta, 12)
+        meta = {str(y): {"kind": "official", "source": "Eurostat, fertility indicators by NUTS 3 region (demo_r_find3)",
+                         "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table"} for y in range(2018, 2026)}
+        emit(iso3, NUTS3_NAMES.get(cc, "region"), units, meta, 300)
         done.add(iso3)
 
     # 3) DHS surveys
@@ -179,7 +178,7 @@ def main():
         if len(units) < 2: continue
         meta = {str(sv["year"]): {"kind": "survey", "source": f"DHS Program, {sv['survey']} (TFR for the 3 years before the survey)",
                                   "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&breakdown=subnational&surveyIds=" + sv["survey"]}}
-        emit(iso3, "region", units, meta, 3)
+        emit(iso3, "region", units, meta, 1500)  # survey boundaries are stair-stepped; this smooths them
         done.add(iso3)
 
     json.dump(index, open(os.path.join(OUT, "index.json"), "w"), separators=(",", ":"))
