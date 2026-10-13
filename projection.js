@@ -35,10 +35,12 @@
   //   mode "un": UN WPP medium path
   //   mode "target": move from startTfr to target linearly by targetYear, then hold
   //   mode "constant": hold startTfr
+  //   loc.tfrPaths[mode], when given, overrides "default" / "un" (subdivisions: the country's path, rescaled)
   function tfrPath(loc, sc) {
-    const base = loc.base.year, out = {};
+    const base = loc.base.year, out = {}, fixed = loc.tfrPaths && loc.tfrPaths[sc.mode];
     for (let y = base; y <= LAST; y++) {
-      if (sc.mode === "un") out[y] = unSeries(loc, "tfr", y);
+      if (fixed) out[y] = fixed[y];
+      else if (sc.mode === "un") out[y] = unSeries(loc, "tfr", y);
       else if (sc.mode === "default") out[y] = defaultTfr(sc.startTfr, sc.anchorYear || base, (yy) => unSeries(loc, "tfr", yy), y);
       else if (sc.mode === "constant") out[y] = sc.startTfr;
       else {

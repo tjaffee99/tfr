@@ -10,9 +10,11 @@
   // world-atlas geometries without a numeric id, or territories folded into their parent
   const GEO_ALIAS = { Kosovo: 412, Somaliland: 706, "N. Cyprus": 196, "248": 246 };
 
-  // Continuous diverging scale: red below replacement, cream near 2.1, green above.
-  const TFR_STOPS = [0.7, 1.0, 1.35, 1.75, 2.1, 2.6, 3.4, 4.6, 6.4];
-  const TFR_COLORS = ["#5e0b17", "#9c1c27", "#d24a37", "#efa07a", "#f2ead2", "#b6dca7", "#5fb185", "#1d876b", "#0a5143"];
+  // Continuous diverging scale: red below replacement, darkening to near-black at the very lowest rates,
+  // cream near 2.1, green above.
+  const TFR_LO = 0.4, TFR_HI = 6.4;
+  const TFR_STOPS = [0.4, 0.55, 0.7, 1.0, 1.35, 1.75, 2.1, 2.6, 3.4, 4.6, 6.4];
+  const TFR_COLORS = ["#140304", "#330709", "#5e0b17", "#9c1c27", "#d24a37", "#efa07a", "#f2ead2", "#b6dca7", "#5fb185", "#1d876b", "#0a5143"];
   const tfrColor = d3.scaleLinear().domain(TFR_STOPS).range(TFR_COLORS).interpolate(d3.interpolateLab).clamp(true);
   const colorOf = (v) => (v == null || isNaN(v) ? "var(--nodata)" : tfrColor(v));
 
@@ -22,7 +24,7 @@
     loc: null, pyr: null, sc: null, result: null, resByYear: null, pyrMax: 0,
     compare: "today", pyrGroup: 5, pyrPct: false,
     tableSort: { key: "tfr", dir: 1 }, view: "map",
-    cache: new Map(), playTimer: null, hoverId: null,
+    cache: new Map(), playTimer: null, hoverId: null, selToken: 0,
   };
 
   /* ---------------- helpers ---------------- */
@@ -89,6 +91,9 @@
     let o = obs.find((d) => d.year === y);
     if (!o && y === BASE) o = obs.filter((d) => d.year >= 2024).at(-1); // "today" = newest data we have
     if (o) return { v: o.tfr, kind: o.kind || "official", label: obsLabel(o), src: o.source, url: o.url, obs: o };
+    // between the latest data and today, the latest data stands (not the UN's older projection)
+    const a = y > 2023 && y < BASE ? anchorOf(s) : null;
+    if (a && a.year < y && a.year < BASE) { const ao = obs.find((d) => d.year === a.year); return { v: a.tfr, kind: "carried", label: `${y}: latest data is ${a.year}`, src: ao.source, url: ao.url, obs: ao }; }
     if (y > BASE) return { v: defaultTfrAt(s, y), kind: "default", label: `${y} projection`, src: MODE_SRC.default };
     return { v: s.tfr[y - Y0], kind: y <= 2023 ? "un" : "un-proj", label: `${y} ${y <= 2023 ? "UN estimate" : "UN projection"}`, src: "UN WPP 2024" };
   }
@@ -97,6 +102,24 @@
     if (y >= BASE && s.popD && !(state.proj && state.loc && s.id === state.loc.id)) return s.popD[y - BASE] * 1000;
     if (state.proj && y >= BASE && state.loc && s.id === state.loc.id && state.resByYear) return state.resByYear.get(y).pop;
     return s.popK[y - Y0] * 1000;
+  }
+
+  // the selected place's country (itself, unless a subdivision is selected)
+  const selCountryId = () => (state.loc ? (state.loc.sub ? state.loc.sub.countryId : state.loc.id) : null);
+  // Best TFR for the selected place (country, region or subdivision) in a year, with provenance.
+  function placeInfo(y) {
+    const loc = state.loc;
+    if (!loc) return { v: null };
+    if (!loc.sub) return tfrInfo(state.byId.get(loc.id), y);
+    if (state.proj && y > BASE && state.resByYear) return { v: state.resByYear.get(y).tfr, kind: "scenario", label: `${y} projection`, src: MODE_SRC[state.sc.mode] };
+    const sub = loc.sub, r = sub.tfrAt(y, y === BASE ? Infinity : SUB_GAP);
+    if (!r) return { v: null, kind: "none", label: `No ${sub.level} data near ${y}`, src: "" };
+    const src = sub.hist.srcs[r.y] || {};
+    let label;
+    if (!r.exact) label = `${y} estimate from its ${r.y} level relative to ${sub.parent}`;
+    else if (sub.hist.approx.has(r.y)) label = `${y} estimate from nearby years (Census births look misassigned)`;
+    else label = `${y} ${src.kind === "estimate" ? `estimate from ${src.months || "year-to-date"} births` : src.kind === "survey" ? "survey" : "reported"}`;
+    return { v: r.v, kind: r.exact ? src.kind || "official" : "relative", label, src: src.source, url: src.url };
   }
 
   function yearStatus(y) {
@@ -117,8 +140,12 @@
     clearTimeout(hashTimer);
     hashTimer = setTimeout(() => {
       if (!state.loc) return;
-      const sc = state.sc, p = new URLSearchParams();
-      p.set("loc", state.loc.id);
+      const sc = state.sc, p = new URLSearchParams(), sub = state.loc.sub;
+      p.set("loc", selCountryId());
+      if (sub) {
+        const up = sub.chain.find((c) => c.kind === "parent");
+        if (up) { p.set("sub", up.key); p.set("co", sub.key); } else p.set("sub", sub.key);
+      }
       p.set("yr", state.year);
       if (state.proj) p.set("proj", "1");
       if (sc.mode !== "default") p.set("mode", sc.mode);
@@ -224,13 +251,18 @@
       })
       .on("mouseleave", () => { hideTip(); hoverTip = null; state.hoverId = null; drawLegendMarkers(); })
       .on("click", (ev, f) => { ev.stopPropagation(); if (state.byId.has(f.locId)) pick(f.locId); });
+    lakesG = mapG.append("g").attr("class", "lakes");
+    fetch(DATA + "lakes-50m.json").then((r) => r.json()).then((t) => { lakes50 = lakeFeats(t); drawLakes(); }).catch(() => {});
     zoom = d3.zoom().scaleExtent([1, 48]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => {
       mapG.attr("transform", ev.transform);
       setMapDetail(ev.transform.k >= 2.5);
     });
     mapSvg.call(zoom).on("dblclick.zoom", null);
-    // clicking the ocean goes back to the whole world: map view and selection
-    mapSvg.on("click", () => { if (state.loc && state.loc.id === 900) zoomWorld(); else pick(900); });
+    // clicking the ocean (or a lake) goes up a level: county or subdivision -> its country -> the whole world
+    mapSvg.on("click", () => {
+      if (childLayer || (state.loc && state.loc.sub)) return backToCountry();
+      if (state.loc && state.loc.id === 900) zoomWorld(); else pick(900);
+    });
     $("#zin").onclick = () => mapSvg.transition().duration(250).call(zoom.scaleBy, 1.6);
     $("#zout").onclick = () => mapSvg.transition().duration(250).call(zoom.scaleBy, 1 / 1.6);
     colorMap();
@@ -252,23 +284,42 @@
     return { ...f, geometry: { ...g, coordinates: g.type === "Polygon" ? fix(g.coordinates) : g.coordinates.map(fix) } };
   }
 
+  // Big lakes are drawn as water over countries and subdivisions (their shapes include the Great Lakes etc.).
+  let lakesG = null, lakes50 = null, lakes10 = null;
+  const lakeFeats = (t) => topojson.feature(t, t.objects.lakes).features.map(rewind);
+  function drawLakes() {
+    const feats = (hiRes && lakes10) || lakes50;
+    if (lakesG && feats) lakesG.selectAll("path").data(feats).join("path").attr("d", mapPath);
+    raiseLakes();
+  }
+  function raiseLakes() { if (lakesG) lakesG.raise(); }
+
   // Country borders: 1:50M when zoomed out (light), 1:10M once zoomed in (loaded on first use, ~1 MB).
+  // 1:10M splits off a few leased or base areas that 1:50M leaves inside their country; fold them back in.
+  const GEO10_MERGE = { Baikonur: 398, "USNB Guantanamo Bay": 192, Dhekelia: 196, Akrotiri: 196, "Cyprus U.N. Buffer Zone": 196 };
   let hiRes = false, hiResLoading = null;
   async function setMapDetail(hi) {
     if (hi === hiRes) return;
     hiRes = hi;
     if (hi && !mapFeats[0]._d10) {
       if (!hiResLoading) hiResLoading = fetch(DATA + "countries-10m.json").then((r) => r.json()).then((t) => {
-        const byKey = new Map();
-        for (const f of topojson.feature(t, t.objects.countries).features) byKey.set(`${f.id}|${f.properties.name}`, f);
-        for (const f of mapFeats) { const g = byKey.get(`${f.id}|${f.properties.name}`); f._d10 = g ? mapPath(rewind(g)) : null; }
+        const byKey = new Map(), extra = {};
+        for (const f of topojson.feature(t, t.objects.countries).features) {
+          byKey.set(`${f.id}|${f.properties.name}`, f);
+          const to = GEO10_MERGE[f.properties.name];
+          if (to) extra[to] = (extra[to] || "") + mapPath(rewind(f));
+        }
+        for (const f of mapFeats) { const g = byKey.get(`${f.id}|${f.properties.name}`); f._d10 = g ? mapPath(rewind(g)) + (extra[f.locId] || "") : null; }
       }).catch(() => {});
+      if (!lakes10) fetch(DATA + "lakes-10m.json").then((r) => r.json()).then((t) => { lakes10 = lakeFeats(t); drawLakes(); }).catch(() => {});
       await hiResLoading;
     }
     mapPaths.attr("d", (f) => (hiRes && f._d10) || f._d50 || (f._d50 = mapPath(f)));
+    drawLakes();
   }
 
-  // Zoom to a country's main landmass (largest polygon, so e.g. France isn't framed with French Guiana).
+  // Zoom to a country's main landmass: its largest polygon plus any other piece at least 30% as big lying near it
+  // (both islands of New Zealand, Sumatra with Borneo), so e.g. France isn't framed with French Guiana.
   function zoomToLoc(id, ms = 650) {
     const f = mapFeats && mapFeats.find((d) => d.locId === id);
     if (!f) return zoomWorld(ms);
@@ -277,15 +328,19 @@
   function zoomToFeature(f, ms = 650) {
     let geom = f;
     if (f.geometry.type === "MultiPolygon") {
-      const polys = f.geometry.coordinates.map((c) => ({ type: "Polygon", coordinates: c }));
-      geom = polys.reduce((a, b) => (d3.geoArea(b) > d3.geoArea(a) ? b : a));
+      const polys = f.geometry.coordinates.map((c) => ({ type: "Polygon", coordinates: c, area: d3.geoArea({ type: "Polygon", coordinates: c }) }));
+      const main = polys.reduce((a, b) => (b.area > a.area ? b : a));
+      const [[a0, b0], [a1, b1]] = mapPath.bounds(main), c0 = mapPath.centroid(main), diag = Math.hypot(a1 - a0, b1 - b0);
+      const keep = polys.filter((p) => p === main || (p.area >= 0.3 * main.area && Math.hypot(...mapPath.centroid(p).map((v, i) => v - c0[i])) <= 1.5 * diag));
+      geom = { type: "MultiPolygon", coordinates: keep.map((p) => p.coordinates) };
     }
-    // frame by projected points, ignoring anything past 169° (Chukotka, the Aleutians) so the antimeridian
-    // doesn't stretch the box across the whole map
+    // frame by projected points; for shapes crossing the antimeridian (Russia), ignore anything past 169°
+    // (Chukotka) so the box doesn't stretch across the whole map
     let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
-    const polys = geom.geometry ? (geom.geometry.type === "Polygon" ? [geom.geometry.coordinates] : geom.geometry.coordinates) : [geom.coordinates];
+    const g = geom.geometry || geom, polys = g.type === "Polygon" ? [g.coordinates] : g.coordinates;
+    const lons = polys.flatMap((poly) => poly[0].map((pt) => pt[0])), crosses = lons.some((l) => l < -170) && lons.some((l) => l > 170);
     for (const poly of polys) for (const [lon, lat] of poly[0]) {
-      if (Math.abs(lon) > 169) continue;
+      if (crosses && Math.abs(lon) > 169) continue;
       const [px, py] = mapProj([lon, lat]);
       x0 = Math.min(x0, px); x1 = Math.max(x1, px); y0 = Math.min(y0, py); y1 = Math.max(y1, py);
     }
@@ -306,11 +361,13 @@
   // A subdivision file has one or more epochs (boundary sets, e.g. one per DHS survey), each with per-unit
   // TFR series {year: value}. The epoch nearest the timeline year is drawn. A unit shows its value for that
   // exact year; failing that, its nearest value within SUB_GAP years, scaled by how the parent (country or
-  // state) changed between the two years, i.e. its level relative to the parent is carried over.
-  // Beyond that, or in projection years, the parent's color shows through.
+  // state) changed between the two years, i.e. its level relative to the parent is carried over. Projection
+  // years carry its latest level relative to the parent's path (or show the scenario, for the selected unit).
+  // Beyond that the parent's color shows through.
   const SUB_GAP = 10;
-  let subLayer = null, childLayer = null, subToken = 0;
+  let subLayer = null, childLayer = null, subToken = 0, overseasLayers = [];
   const plural = (w, n) => (n === 1 ? w : w.endsWith("y") ? w.slice(0, -1) + "ies" : w + "s");
+  const unitKey = (f) => f.properties.c || f.properties.n;
 
   function loadSubDoc(path) {
     if (!state.subCache) state.subCache = new Map();
@@ -328,29 +385,71 @@
     removeLayer(childLayer); childLayer = null;
     removeLayer(subLayer); subLayer = null;
     const s = state.byId.get(id), meta = s && s.iso3 && state.subIndex && state.subIndex[s.iso3];
-    if (!meta || !mapG) { drawLegendMarkers(); return; }
+    if (!meta || !mapG) { colorSubdivisions(); drawLegendMarkers(); return null; }
     let doc;
-    try { doc = await loadSubDoc(`sub/${s.iso3}.json`); } catch (e) { return; }
-    if (token !== subToken) return; // another country was picked meanwhile
-    subLayer = makeLayer(doc, { name: s.name, parentAt: (y) => tfrInfo(s, y).v, drill: meta.children ? s.iso3 : null });
-    renderLayer(subLayer);
+    try { doc = await loadSubDoc(`sub/${s.iso3}.json`); } catch (e) { return null; }
+    if (token !== subToken) return null; // another country was picked meanwhile
+    subLayer = makeLayer(doc, {
+      name: s.name, countryId: s.id, popPath: `subpop/${s.iso3}.json`, parentAt: (y) => tfrInfo(s, y).v,
+      drill: meta.children ? s.iso3 : null, chain: [{ name: s.name, kind: "country" }],
+    });
+    colorSubdivisions();
     drawLegendMarkers();
+    return subLayer;
   }
 
   async function showChildren(f) {
     const token = ++subToken, parent = subLayer;
     removeLayer(childLayer); childLayer = null;
     let doc;
-    try { doc = await loadSubDoc(`sub/${parent.ctx.drill}/${f.properties.c}.json`); } catch (e) { return; }
-    if (token !== subToken || subLayer !== parent) return;
-    childLayer = makeLayer(doc, { name: f.properties.n, parentAt: (y) => unitValue(parent, f, y)?.v });
+    try { doc = await loadSubDoc(`sub/${parent.ctx.drill}/${f.properties.c}.json`); } catch (e) { return null; }
+    if (token !== subToken || subLayer !== parent) return null;
+    childLayer = makeLayer(doc, {
+      name: f.properties.n, countryId: parent.ctx.countryId, popPath: `subpop/${parent.ctx.drill}/${f.properties.c}.json`,
+      parentAt: (y) => unitValue(parent, f, y)?.v,
+      chain: [...parent.ctx.chain, { name: f.properties.n, kind: "parent", layer: parent, key: unitKey(f) }],
+    });
     renderLayer(childLayer);
+    raiseLakes();
     drawLegendMarkers();
+    return childLayer;
   }
-  function closeChildren() {
+  // Up one level: from a county or a subdivision back to the whole country and its subdivisions.
+  function backToCountry() {
+    const cid = selCountryId();
     removeLayer(childLayer); childLayer = null;
-    if (state.loc) zoomToLoc(state.loc.id);
-    colorMap();
+    if (cid == null) return;
+    zoomToLoc(cid);
+    if (!subLayer || subLayer.ctx.countryId !== cid) showSubdivisions(cid);
+    if (state.loc.sub) selectLoc(cid); else colorMap();
+  }
+  // the regions of a parent drawn on the map: select one, zooming to it (counties stay in view)
+  function clickUnit(layer, f) {
+    if (layer.ctx.overseas) return pickOverseas(layer, f);
+    if (layer !== childLayer) zoomToFeature(f);
+    if (layer === subLayer && layer.ctx.drill && f.properties.c) showChildren(f);
+    selectSub(layer, f);
+  }
+  // France's overseas regions are colored on the world map; clicking one opens France at that region
+  async function pickOverseas(layer, f) {
+    const key = unitKey(f);
+    zoomToFeature(f);
+    const L = await showSubdivisions(layer.ctx.countryId);
+    const g = L && L.feats && L.feats.find((d) => unitKey(d) === key);
+    if (g) selectSub(L, g); else selectLoc(layer.ctx.countryId);
+  }
+  async function showOverseas() {
+    let docs;
+    try { docs = await loadSubDoc("sub/overseas.json"); } catch (e) { return; }
+    for (const iso3 in docs) {
+      const s = state.summary.locs.find((d) => d.iso3 === iso3);
+      if (!s) continue;
+      overseasLayers.push(makeLayer(docs[iso3], {
+        name: s.name, countryId: s.id, popPath: `subpop/${iso3}.json`, parentAt: (y) => tfrInfo(s, y).v,
+        overseas: true, chain: [{ name: s.name, kind: "country" }],
+      }));
+    }
+    colorSubdivisions();
   }
 
   function makeLayer(doc, ctx) {
@@ -380,26 +479,30 @@
           showTip(subTip(layer, f), ev);
         })
         .on("mouseleave", () => { hideTip(); hoverTip = null; state.hoverSub = null; drawLegendMarkers(); })
-        .on("click", (ev, f) => {
-          ev.stopPropagation();
-          zoomToFeature(f);
-          if (layer === subLayer && layer.ctx.drill && f.properties.c) showChildren(f);
-        });
-      const outline = topo.objects.outline ? topojson.feature(topo, topo.objects.outline).features.map(rewind) : [];
+        .on("click", (ev, f) => { ev.stopPropagation(); clickUnit(layer, f); });
+      const outline = !layer.ctx.overseas && topo.objects.outline ? topojson.feature(topo, topo.objects.outline).features.map(rewind) : [];
       for (const o of outline) layer.g.append("path").attr("class", "sub-outline").attr("d", mapPath(o));
     }
     colorLayer(layer);
   }
-  function unitValue(layer, f, y) {
-    if (y > BASE) return null;
-    const s = f.properties.s;
+  const isSelectedUnit = (layer, f) => !!(state.loc && state.loc.sub && state.loc.sub.countryId === layer.ctx.countryId &&
+    state.loc.sub.level === layer.doc.level && state.loc.sub.key === unitKey(f));
+  // value of a {year: tfr} series in year y: exact, or its nearest year's level relative to the parent
+  function seriesValue(s, parentAt, y, gap = SUB_GAP) {
     if (s[y] != null) return { v: s[y], y, exact: true };
     let y0 = null;
-    for (const k in s) if (y0 == null || Math.abs(k - y) < Math.abs(y0 - y)) y0 = +k;
-    if (y0 == null || Math.abs(y0 - y) > SUB_GAP) return null;
-    const p1 = layer.ctx.parentAt(y), p0 = layer.ctx.parentAt(y0);
+    for (const k in s) {
+      const ky = +k;
+      if (y > BASE ? ky <= BASE && (y0 == null || ky > y0) : y0 == null || Math.abs(ky - y) < Math.abs(y0 - y)) y0 = ky;
+    }
+    if (y0 == null || Math.abs(Math.min(y, BASE) - y0) > gap) return null;
+    const p1 = parentAt(y), p0 = parentAt(y0);
     if (!p1 || !p0) return null;
     return { v: s[y0] * (p1 / p0), y: y0, exact: false };
+  }
+  function unitValue(layer, f, y) {
+    if (state.proj && y > BASE && state.resByYear && isSelectedUnit(layer, f)) return { v: state.resByYear.get(y).tfr, y, exact: false, scen: true };
+    return seriesValue(f.properties.s, layer.ctx.parentAt, y);
   }
   function colorLayer(layer) {
     if (!layer || !layer.paths) return;
@@ -408,23 +511,35 @@
     layer.paths.each(function (f) {
       const r = unitValue(layer, f, state.year);
       if (r) shown++;
-      d3.select(this).attr("fill", r ? colorOf(r.v) : "none").style("display", r ? null : "none");
+      d3.select(this).attr("fill", r ? colorOf(r.v) : "none").style("display", r ? null : "none").classed("selected", isSelectedUnit(layer, f));
     });
+    layer.paths.filter(".selected").raise();
     layer.shown = shown;
   }
-  function colorSubdivisions() { renderLayer(subLayer); renderLayer(childLayer); }
+  function colorSubdivisions() {
+    for (const L of overseasLayers) {
+      const hide = subLayer && subLayer.ctx.countryId === L.ctx.countryId;
+      L.g.style("display", hide ? "none" : null);
+      if (!hide) renderLayer(L);
+    }
+    renderLayer(subLayer); renderLayer(childLayer);
+    raiseLakes();
+  }
   function subTip(layer, f) {
-    const y = state.year, r = unitValue(layer, f, y);
+    const y = state.year, r = unitValue(layer, f, y), x = f.properties.x || [];
     if (!r) return `<div class="t">${esc(f.properties.n)}</div><div class="m">No ${esc(layer.doc.level)} data near ${y}</div>`;
-    const src = layer.doc.epochs[layer.epoch].sources[r.y];
+    const src = r.scen ? null : layer.doc.epochs[layer.epoch].sources[r.y];
     let basis;
-    if (!r.exact) basis = `${y} estimate: its ${r.y} level relative to ${esc(layer.ctx.name)}`;
+    if (r.scen) basis = `${y} projection · ${MODE_SRC[state.sc.mode]}`;
+    else if (y > BASE) basis = `${y} projection: its ${r.y} level relative to ${esc(layer.ctx.name)}`;
+    else if (!r.exact) basis = `${y} estimate: its ${r.y} level relative to ${esc(layer.ctx.name)}`;
+    else if (x.includes(y)) basis = `${y} estimate: Census births look misassigned this year, so its level in nearby years`;
     else if (src && src.kind === "estimate") basis = `${y} estimate${src.months ? " from " + esc(src.months) + " births" : ""}`;
     else if (src && src.kind === "survey") basis = `${y} survey`;
     else basis = `${y}${src && src.kind ? " " + esc(src.kind) : ""}`;
     return `<div class="t">${esc(f.properties.n)}</div>
       <div class="r"><span><i style="background:${colorOf(r.v)}"></i>Fertility rate</span><b>${r.v.toFixed(2)}</b></div>
-      <div class="m">${basis}${src ? " · " + esc(shortSrc(src.source)) : ""}</div>`;
+      <div class="m">${basis}${src ? " · " + esc(shortSrc(src.source)) : ""}</div><div class="m">Click for its pyramid and projections</div>`;
   }
   function layerNote(layer) {
     const n = layer.feats ? layer.feats.length : 0, lvl = plural(layer.doc.level, n);
@@ -432,8 +547,140 @@
       const ys = layer.doc.epochs.flatMap((e) => e.years);
       return `${plural(layer.doc.level, 2)} shown ${Math.max(Math.min(...ys) - SUB_GAP, Y0)}–${BASE}`;
     }
+    if (state.year > BASE) return `${n} ${lvl}, projected relative to ${layer.ctx.name}`;
     const exact = layer.feats.some((f) => f.properties.s[state.year] != null);
     return `${n} ${lvl}, ${exact ? state.year + " data" : "estimated from nearest data"}`;
+  }
+
+  /* ---------------- subdivision places: pyramids and projections ---------------- */
+  // A subdivision has its own fertility series but no UN data, so its population by age is estimated from the
+  // country's UN pyramid for the same year:
+  //   - its total is the country's population times its share (official counts, else the GHS-POP grid; data/subpop)
+  //   - where official counts by age and sex exist (Eurostat, US Census), the country's single-year ages are
+  //     reweighted to match them, 5-year group by group (from the nearest year with counts);
+  //   - elsewhere the country's pyramid is tilted by relative fertility: age x is weighted r^(-x/GEN), where r is
+  //     its TFR over the country's (a damped stable-population approximation: a place with higher fertility for a
+  //     generation has proportionally more children and fewer old people).
+  // Projections run the same cohort-component model with the country's life tables, childbearing pattern by age
+  // and UN migration scaled by population share; moves within the country aren't modeled.
+  const poss = (n) => (n.endsWith("s") ? n + "’" : n + "’s");
+  const GEN = 58; // generation length (29) doubled: half the stable-population tilt, as regional gaps narrow and migration mixes ages
+  function unitHistory(layer, f) {
+    const key = unitKey(f), series = {}, srcs = {}, approx = new Set();
+    for (const e of layer.doc.epochs) {
+      const obj = e.topo.objects.units || Object.values(e.topo.objects)[0];
+      for (const g of obj.geometries) {
+        const p = g.properties;
+        if ((p.c || p.n) !== key) continue;
+        for (const y in p.s) { series[y] = p.s[y]; srcs[y] = e.sources[y] || {}; }
+        for (const y of p.x || []) approx.add(y);
+      }
+    }
+    return { series, srcs, approx };
+  }
+
+  function buildSubPlace(layer, f, nat, natPyr, popDoc) {
+    const key = unitKey(f), countryId = layer.ctx.countryId, natS = state.byId.get(countryId);
+    const hist = unitHistory(layer, f), parentAt = layer.ctx.parentAt;
+    const ep = popDoc ? popDoc.epochs[Math.min(Math.max(layer.epoch, 0), popDoc.epochs.length - 1)] : null;
+    const pu = (ep && ep.units[key]) || {};
+    const tfrAt = (y, gap) => seriesValue(hist.series, parentAt, y, gap);
+    const natPyrAt = (y) => { const i = y - natPyr.y0, k = natPyr.s[i]; return { m: natPyr.m[i].map((v) => v * k), f: natPyr.f[i].map((v) => v * k) }; };
+    const shPts = Object.entries(pu.sh || {}).map(([y, v]) => [+y, v]).sort((a, b) => a[0] - b[0]);
+    const fallbackShare = 1 / Math.max(1, (layer.feats || []).length);
+    const shareAt = (y) => (!shPts.length ? fallbackShare : y <= shPts[0][0] ? shPts[0][1] : y >= shPts.at(-1)[0] ? shPts.at(-1)[1] : valueAt(shPts, y));
+    const agYears = Object.keys(pu.ag || {}).map(Number).sort((a, b) => a - b);
+    const groupOf = (x) => Math.min(17, Math.floor(x / 5));
+    // per-age weights applied to the country's pyramid
+    function weights(y, N) {
+      if (agYears.length) {
+        const ya = agYears.reduce((a, b) => (Math.abs(b - y) < Math.abs(a - y) ? b : a)), A = pu.ag[ya], Na = ya === y ? N : natPyrAt(ya);
+        const w = { m: [], f: [] };
+        ["m", "f"].forEach((sx, si) => {
+          const ng = new Array(18).fill(0);
+          Na[sx].forEach((v, x) => (ng[groupOf(x)] += v));
+          for (let x = 0; x <= 100; x++) w[sx][x] = ng[groupOf(x)] > 0 ? A[si * 18 + groupOf(x)] / ng[groupOf(x)] : 0;
+        });
+        return w;
+      }
+      let r = (tfrAt(y, Infinity)?.v ?? NaN) / tfrInfo(natS, y).v;
+      r = isFinite(r) && r > 0 ? Math.max(0.5, Math.min(2, r)) : 1;
+      const w = d3.range(101).map((x) => r ** (-x / GEN));
+      return { m: w, f: w };
+    }
+    function pyrAt(y) {
+      const N = natPyrAt(y), w = weights(y, N);
+      const m = N.m.map((v, x) => v * w.m[x]), fm = N.f.map((v, x) => v * w.f[x]);
+      const tot = d3.sum(m) + d3.sum(fm), k = tot > 0 ? ((d3.sum(N.m) + d3.sum(N.f)) * shareAt(y)) / tot : 0;
+      return { m: m.map((v) => v * k), f: fm.map((v) => v * k) };
+    }
+
+    // estimated pyramids for the years its fertility is shown (data within SUB_GAP years), and today
+    const P = { y0: Y0, s: [], m: [], f: [] };
+    const un = { y0: nat.un.y0, srb: nat.un.srb, tfr: nat.un.tfr, pop: [], medAge: [], births: [], deaths: [], mig: [] };
+    let first = BASE;
+    for (let y = Y0; y <= BASE; y++) {
+      if (y !== BASE && !tfrAt(y)) continue;
+      first = Math.min(first, y);
+      const p = pyrAt(y), i = y - Y0;
+      P.m[i] = p.m; P.f[i] = p.f; P.s[i] = 1;
+      un.pop[y - un.y0] = d3.sum(p.m) + d3.sum(p.f);
+      un.medAge[y - un.y0] = Projection.medianAge(p.m, p.f);
+    }
+    for (const y in pu.bd || {}) { un.births[y - un.y0] = pu.bd[y][0]; un.deaths[y - un.y0] = pu.bd[y][1]; }
+    // where deaths are recorded (US, Eurostat), scale the country's death rates so the latest years match them
+    let mortK = 1;
+    const dYears = Object.keys(pu.bd || {}).map(Number).filter((y) => y >= 2022 && y < BASE).sort().slice(-3);
+    if (dYears.length) {
+      const q = nat.mort[Object.keys(nat.mort).sort()[0]];
+      let obsD = 0, expD = 0;
+      for (const y of dYears) {
+        const p = pyrAt(y);
+        obsD += pu.bd[y][1];
+        for (let x = 1; x < 100; x++) expD += p.m[x - 1] * q.m[x] + p.f[x - 1] * q.f[x];
+        expD += (p.m[99] + p.m[100]) * q.m[100] + (p.f[99] + p.f[100]) * q.f[100];
+      }
+      if (obsD > 0 && expD > 0) mortK = Math.max(0.6, Math.min(1.5, obsD / expD));
+    }
+    const mort = {};
+    for (const k in nat.mort) mort[k] = { m: nat.mort[k].m.map((v) => Math.min(1, v * mortK)), f: nat.mort[k].f.map((v) => Math.min(1, v * mortK)) };
+    const sh0 = shareAt(BASE);
+    for (let y = BASE; y <= END; y++) un.mig[y - un.y0] = unAt(nat, "mig", y) * sh0;
+    const migAge = {};
+    for (const k in nat.migAge) migAge[k] = nat.migAge[k].map((v) => v * sh0);
+
+    // its default and UN-medium paths keep today's level relative to the country's
+    const start = tfrAt(BASE, Infinity)?.v ?? tfrInfo(natS, BASE).v;
+    const natDef = (y) => defaultTfrAt(natS, y), natUN = (y) => unAt(nat, "tfr", y);
+    const tfrPaths = { default: {}, un: {} };
+    for (let y = BASE; y <= END; y++) {
+      tfrPaths.default[y] = (start * natDef(y)) / natDef(BASE);
+      tfrPaths.un[y] = (start * natUN(y)) / natUN(BASE);
+    }
+    const base = P.m[BASE - Y0];
+    const loc = {
+      id: `${countryId}:${key}`, name: f.properties.n, iso3: null, variants: {},
+      base: { year: BASE, m: base, f: P.f[BASE - Y0] }, mort, asfr: nat.asfr, migAge, un, tfrPaths,
+      sub: {
+        key, countryId, natName: natS.name, level: layer.doc.level, parent: layer.ctx.name, chain: layer.ctx.chain,
+        hist, tfrAt, natPyrAt, start, first, ages: agYears.length > 0, src: (popDoc && popDoc.src) || {}, mortK,
+      },
+    };
+    return { loc, pyr: P };
+  }
+
+  async function selectSub(layer, f, fromHash) {
+    const token = ++state.selToken, cid = layer.ctx.countryId;
+    let nat, natPyr, popDoc = null;
+    try { [nat, natPyr] = await loadLoc(cid); } catch (e) { return; }
+    try { popDoc = await loadSubDoc(layer.ctx.popPath); } catch (e) { /* fall back to an even share */ }
+    if (token !== state.selToken) return;
+    const { loc, pyr } = buildSubPlace(layer, f, nat, natPyr, popDoc);
+    state.loc = loc; state.pyr = pyr;
+    state.sc = makeScenario(loc.sub.start, BASE, fromHash);
+    buildDossier();
+    buildScenario();
+    update();
   }
 
   // The country under a still cursor keeps its tooltip current while the years play.
@@ -446,7 +693,7 @@
   function colorMap() {
     if (mapPaths) {
       mapPaths.attr("fill", (f) => { const s = state.byId.get(f.locId); return s ? colorOf(tfrInfo(s, state.year).v) : "var(--nodata)"; })
-        .classed("selected", (f) => state.loc && f.locId === state.loc.id);
+        .classed("selected", (f) => state.loc && f.locId === selCountryId());
       mapPaths.filter(".selected").raise();
     }
     colorSubdivisions();
@@ -461,14 +708,14 @@
     const svg = d3.select("#legend");
     svg.selectAll("*").remove();
     const W = svg.node().clientWidth || 300;
-    const x = d3.scaleLog().domain([0.7, 6.4]).range([0, W]);
+    const x = d3.scaleLog().domain([TFR_LO, TFR_HI]).range([0, W]);
     const grad = svg.append("defs").append("linearGradient").attr("id", "tfr-grad");
     for (let i = 0; i <= 40; i++) {
       const v = x.invert((i / 40) * W);
       grad.append("stop").attr("offset", `${(i / 40) * 100}%`).attr("stop-color", tfrColor(v));
     }
     svg.append("rect").attr("x", 0).attr("y", 8).attr("width", W).attr("height", 10).attr("rx", 1).attr("fill", "url(#tfr-grad)");
-    for (const t of [0.8, 1, 1.5, 2.1, 3, 4, 6]) {
+    for (const t of [0.5, 0.7, 1, 1.5, 2.1, 3, 4, 6]) {
       svg.append("line").attr("x1", x(t)).attr("x2", x(t)).attr("y1", 18).attr("y2", 22).style("stroke", "var(--ink-2)");
       svg.append("text").attr("x", x(t)).attr("y", 32).attr("text-anchor", "middle").text(t === 2.1 ? "2.1" : t);
     }
@@ -479,25 +726,25 @@
     if (!lg) return;
     lg.g.selectAll("*").remove();
     const marks = [];
-    if (state.loc) marks.push({ id: state.loc.id, strong: true });
-    if (state.hoverId && (!state.loc || state.hoverId !== state.loc.id)) marks.push({ id: state.hoverId });
+    if (state.loc) marks.push({ v: placeInfo(state.year).v, strong: true });
+    if (state.hoverId && (!state.loc || state.hoverId !== state.loc.id)) marks.push({ v: tfrInfo(state.byId.get(state.hoverId), state.year).v });
     for (const m of marks) {
-      const s = state.byId.get(m.id), v = tfrInfo(s, state.year).v;
+      const v = m.v;
       if (v == null) continue;
-      const cx = lg.x(Math.max(0.7, Math.min(6.4, v)));
+      const cx = lg.x(Math.max(TFR_LO, Math.min(TFR_HI, v)));
       lg.g.append("path").attr("d", `M${cx - 5},0 L${cx + 5},0 L${cx},7 Z`).style("fill", m.strong ? "var(--ink)" : "var(--ink-2)");
     }
     const hv = state.hoverSub && unitValue(state.hoverSub.layer, state.hoverSub.f, state.year);
     if (hv) {
-      const cx = lg.x(Math.max(0.7, Math.min(6.4, hv.v)));
+      const cx = lg.x(Math.max(TFR_LO, Math.min(TFR_HI, hv.v)));
       lg.g.append("path").attr("d", `M${cx - 5},0 L${cx + 5},0 L${cx},7 Z`).style("fill", "var(--ink-2)");
     }
-    const s = state.loc && state.byId.get(state.loc.id), el = $("#legend-note");
+    const s = state.loc && state.byId.get(selCountryId()), el = $("#legend-note");
     if (childLayer) {
       el.innerHTML = `▼ <a href="#" id="crumb-up">${esc(s ? s.name : "")}</a> › ${esc(childLayer.ctx.name)} · ${esc(layerNote(childLayer))}`;
-      $("#crumb-up").onclick = (e) => { e.preventDefault(); closeChildren(); };
+      $("#crumb-up").onclick = (e) => { e.preventDefault(); backToCountry(); };
     } else {
-      el.textContent = (s ? `▼ ${s.name}` : "") + (subLayer ? ` · ${layerNote(subLayer)}` : "");
+      el.textContent = (s ? `▼ ${s.name}` : "") + (state.loc && state.loc.sub ? ` › ${state.loc.name}` : "") + (subLayer ? ` · ${layerNote(subLayer)}` : "");
     }
   }
 
@@ -524,7 +771,7 @@
     const tv = $("#table-view"), top = tv.scrollTop;
     tv.innerHTML = `<table><thead><tr><th class="rk" data-k="rank">#${arrow("rank")}</th><th data-k="name">Country${arrow("name")}</th>` +
       `<th class="tfr" data-k="tfr">TFR ${y}${arrow("tfr")}</th><th class="pop" data-k="pop"><span class="lg">Population</span><span class="sm">Pop.</span>${arrow("pop")}</th></tr></thead><tbody>` +
-      rows.map((r) => `<tr data-id="${r.id}"${state.loc && r.id === state.loc.id ? ' class="sel"' : ""}><td class="rk">${r.rank ?? ""}</td><td class="nm">${esc(r.name)}</td>` +
+      rows.map((r) => `<tr data-id="${r.id}"${r.id === selCountryId() ? ' class="sel"' : ""}><td class="rk">${r.rank ?? ""}</td><td class="nm">${esc(r.name)}</td>` +
         `<td><div class="tfrv"><div class="bw"><span style="width:${r.tfr != null ? Math.min(100, (r.tfr / 7) * 100).toFixed(1) : 0}%;background:${colorOf(r.tfr)}"></span></div><b>${r.tfr != null ? r.tfr.toFixed(2) : "–"}</b></div></td>` +
         `<td class="pop">${fmtPop(r.pop)}</td></tr>`).join("") + "</tbody></table>";
     tv.scrollTop = top;
@@ -567,24 +814,30 @@
   }
 
   async function selectLoc(id, fromHash) {
+    const token = ++state.selToken;
     let loc, pyr;
     try { [loc, pyr] = await loadLoc(id); } catch (e) {
       $("#dossier").innerHTML = `<div class="loading">Couldn't load data for this place.</div>`;
       return;
     }
+    if (token !== state.selToken) return; // another place was picked meanwhile
     state.loc = loc; state.pyr = pyr;
-    const a = anchorOf(state.byId.get(loc.id)), st = a.tfr, h = fromHash || {};
-    state.sc = {
+    const a = anchorOf(state.byId.get(loc.id));
+    state.sc = makeScenario(a.tfr, a.year, fromHash);
+    buildDossier();
+    buildScenario();
+    update();
+  }
+
+  function makeScenario(st, anchorYear, h = {}) {
+    return {
       mode: h.mode === "custom" || h.mode === "constant" ? "custom" : h.mode === "un" ? "un" : "default",
-      startTfr: st, anchorYear: a.year,
+      startTfr: st, anchorYear,
       target: h.tfr && h.mode !== "constant" ? Math.min(10, Math.max(0, +h.tfr)) : Math.round(st * 100) / 100,
       targetYear: h.by ? Math.min(END, Math.max(BASE + 1, +h.by)) : 2050,
       migMult: h.mig != null ? Math.min(2, Math.max(0, +h.mig / 100)) : 1,
       mortality: h.mort === "frozen" ? "frozen" : "un",
     };
-    buildDossier();
-    buildScenario();
-    update();
   }
 
   function update() {
@@ -600,18 +853,20 @@
 
   /* ---------------- dossier: name, figures, pyramid ---------------- */
   function buildDossier() {
-    const loc = state.loc;
+    const loc = state.loc, sub = loc.sub;
+    const outlines = sub
+      ? [["today", `Outline: ${BASE}`], ["country", `Outline: ${sub.natName}`], ["none", "No outline"]]
+      : [["today", `Outline: ${BASE}`], ["un", "Outline: UN medium"], ["2000", "Outline: 2000"], ["1975", "Outline: 1975"], ["1950", "Outline: 1950"], ["none", "No outline"]];
+    if (!outlines.some(([v]) => v === state.compare)) state.compare = "today";
+    const crumbs = sub ? `<div class="crumbs">${sub.chain.map((c, i) => `<a href="#" data-crumb="${i}">${esc(c.name)}</a> › `).join("")}</div>` : "";
     $("#dossier").innerHTML = `
-      <h2 class="name">${esc(loc.name)}</h2>
+      ${crumbs}<h2 class="name">${esc(loc.name)}</h2>
       <div class="figs" id="figs"></div>
       <div class="pyr-head">
         <h2>Population pyramid</h2>
         <div class="toolbar">
           <select id="compare" aria-label="Outline">
-            <option value="today">Outline: ${BASE}</option>
-            <option value="un">Outline: UN medium</option>
-            <option value="2000">Outline: 2000</option><option value="1975">Outline: 1975</option><option value="1950">Outline: 1950</option>
-            <option value="none">No outline</option>
+            ${outlines.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join("")}
           </select>
           <div class="seg" id="pyr-group"><button type="button" class="btn" data-g="5">5-yr</button><button type="button" class="btn" data-g="1">1-yr</button></div>
           <div class="seg" id="pyr-pct"><button type="button" class="btn" data-p="0">People</button><button type="button" class="btn" data-p="1">%</button></div>
@@ -619,6 +874,15 @@
       </div>
       <div class="chart" id="pyramid"></div>`;
     $("#compare").value = state.compare;
+    if (sub) $("#dossier .crumbs").onclick = (e) => {
+      const a = e.target.closest("[data-crumb]");
+      if (!a) return;
+      e.preventDefault();
+      const c = sub.chain[+a.dataset.crumb];
+      if (c.kind === "country") return backToCountry();
+      const f = c.layer.feats && c.layer.feats.find((d) => unitKey(d) === c.key);
+      if (f) { zoomToFeature(f); selectSub(c.layer, f); }
+    };
     $("#compare").onchange = (e) => { state.compare = e.target.value; drawPyramid(); };
     $("#pyr-group").onclick = (e) => { const b = e.target.closest("[data-g]"); if (b) { state.pyrGroup = +b.dataset.g; drawPyramid(); } };
     $("#pyr-pct").onclick = (e) => { const b = e.target.closest("[data-p]"); if (b) { state.pyrPct = b.dataset.p === "1"; drawPyramid(); } };
@@ -626,27 +890,41 @@
   }
 
   function updateFigs() {
-    const loc = state.loc, s = state.byId.get(loc.id), y = state.year;
-    const info = tfrInfo(s, y);
+    const loc = state.loc, y = state.year;
+    const info = placeInfo(y);
     const useScen = state.proj && y >= BASE;
     const pop = useScen ? state.resByYear.get(y).pop : unAt(loc, "pop", y);
     const p = pyramidAt(y);
     const med = useScen ? state.resByYear.get(y).medAge : unAt(loc, "medAge", y);
-    const old = ageShares(p.m, p.f).old;
+    const old = p ? ageShares(p.m, p.f).old : null;
     $("#figs").innerHTML = `
       <div><div class="v"><span class="sw" style="background:${colorOf(info.v)}"></span>${info.v != null ? info.v.toFixed(2) : "–"}</div>
         <div class="l">Fertility rate <button type="button" class="info" id="src-info" aria-label="Source">ⓘ</button></div></div>
       <div><div class="v">${fmtPop(pop)}</div><div class="l">Population</div></div>
       <div><div class="v">${med != null ? med.toFixed(1) : "–"}</div><div class="l">Median age</div></div>
-      <div><div class="v">${(old * 100).toFixed(0)}%</div><div class="l">Aged 65+</div></div>`;
+      <div><div class="v">${old != null ? (old * 100).toFixed(0) + "%" : "–"}</div><div class="l">Aged 65+</div></div>`;
     const btn = $("#src-info");
-    btn.onmousemove = (e) => showTip(`<div class="t">${esc(info.label)}</div><div class="m">${esc(shortSrc(info.src))} · click for sources</div>`, e);
+    btn.onmousemove = (e) => showTip(`<div class="t">${esc(info.label)}</div><div class="m">${info.src ? esc(shortSrc(info.src)) + " · " : ""}click for sources</div>`, e);
     btn.onmouseleave = hideTip;
     btn.onclick = () => { hideTip(); setView("about"); $("#about-view").scrollTop = 0; };
   }
 
   // the About tab lists every figure we show for the selected place, with sources and the estimate arithmetic
   function renderAboutCountry() {
+    const sub = state.loc.sub;
+    if (sub) {
+      const h = sub.hist, years = Object.keys(h.series).sort().reverse();
+      const kind = (y) => (h.approx.has(+y) ? "estimate from nearby years (Census births look misassigned)" : (h.srcs[y] || {}).kind || "reported");
+      const link = (src) => (src.url && /^https?:/.test(src.url) ? `<a href="${esc(src.url)}" target="_blank" rel="noopener">${esc(src.source)}</a>` : esc(src.source || ""));
+      const src = sub.src;
+      $("#about-country").innerHTML = `<h3>Sources for ${esc(state.loc.name)}</h3>` +
+        `<ul>${years.map((y) => `<li><b>${y}: ${h.series[y].toFixed(2)}</b> — ${esc(kind(y))}. ${link(h.srcs[y] || {})}</li>`).join("")}</ul>` +
+        `<p class="muted">Years without data use its nearest level relative to ${esc(sub.parent)}. Population: ${esc(src.sh || "estimated share of " + sub.natName)}. ` +
+        (sub.ages ? `Age and sex: ${esc(src.ag)}, spread over single years like ${esc(poss(sub.natName))}. `
+          : `Its age structure is estimated: ${esc(poss(sub.natName))} UN pyramid, tilted toward the young or old by its fertility relative to ${esc(sub.natName)}. `) +
+        `Projections use the UN life tables for ${esc(sub.natName)}${sub.mortK !== 1 ? ` (death rates ×${sub.mortK.toFixed(2)} to match its recorded deaths)` : ""}, its age pattern of childbearing and its migration, scaled to this ${esc(sub.level)}'s population; moves within ${esc(sub.natName)} aren't modeled.</p>`;
+      return;
+    }
     const s = state.byId.get(state.loc.id), obs = s.obs || [];
     const item = (o) => {
       let t = `<b>${o.year}: ${o.tfr.toFixed(2)}</b> — ${o.kind === "estimate" ? `estimate from ${esc(o.months || "year-to-date")} births` : o.kind}`;
@@ -661,13 +939,16 @@
         : `<p>All figures: UN World Population Prospects 2024 (estimates to 2023, medium projection after).</p>`);
   }
 
+  // the selected place's pyramid in a past year (null where a subdivision has no estimate)
   function histPyr(y) {
     const P = state.pyr, i = y - P.y0, s = P.s[i];
+    if (!P.m[i]) return null;
     return { m: P.m[i].map((v) => v * s), f: P.f[i].map((v) => v * s), year: y };
   }
   function pyramidAt(y) {
     if (state.proj && y >= BASE) { const d = state.resByYear.get(y); return { m: d.m, f: d.f, year: y, kind: "scenario" }; }
-    return { ...histPyr(y), kind: "un" };
+    const h = histPyr(y);
+    return h && { ...h, kind: "un" };
   }
   function ageCounts(m, f) {
     let k = 0, w = 0, o = 0;
@@ -700,7 +981,7 @@
       }
     };
     for (let y = Y0; y <= maxYear(); y++) {
-      if (state.proj && y >= BASE) { const d = state.resByYear.get(y); scan(d.m, d.f); } else { const h = histPyr(y); scan(h.m, h.f); }
+      if (state.proj && y >= BASE) { const d = state.resByYear.get(y); scan(d.m, d.f); } else { const h = histPyr(y); if (h) scan(h.m, h.f); }
     }
     state.pyrMax = { 5: m5, 1: m1 };
   }
@@ -708,14 +989,24 @@
   function drawPyramid() {
     const el = $("#pyramid");
     if (!el || !state.loc) return;
-    const year = state.year, g = state.pyrGroup, pct = state.pyrPct;
+    const year = state.year, g = state.pyrGroup, pct = state.pyrPct, sub = state.loc.sub;
     const cur = pyramidAt(year);
+    for (const b of $$("#pyr-group .btn")) b.setAttribute("aria-pressed", +b.dataset.g === g);
+    for (const b of $$("#pyr-pct .btn")) b.setAttribute("aria-pressed", (b.dataset.p === "1") === pct);
+    if (!cur) {
+      el.innerHTML = `<div class="pyr-empty">No data for ${esc(state.loc.name)} in ${year}.<br>Its estimates start in ${sub ? sub.first : Y0}.</div>`;
+      return;
+    }
+    const tot = (p) => d3.sum(p.m) + d3.sum(p.f);
     let cmp = null, cmpLabel = "";
     if (state.compare === "today") { cmp = histPyr(BASE); cmpLabel = `${BASE}`; }
     else if (state.compare === "un") { cmp = histPyr(year); cmpLabel = `UN medium ${year}`; }
+    else if (state.compare === "country" && sub) {
+      const n = sub.natPyrAt(year), k = tot(cur) / tot(n);
+      cmp = { m: n.m.map((v) => v * k), f: n.f.map((v) => v * k) }; cmpLabel = `${sub.natName}, same total`;
+    }
     else if (state.compare !== "none") { cmp = histPyr(+state.compare); cmpLabel = state.compare; }
 
-    const tot = (p) => d3.sum(p.m) + d3.sum(p.f);
     const curTot = tot(cur);
     // In % mode the outline is rescaled to this year's total so shapes compare like-for-like.
     const K = cmp && (pct ? (() => { const k = curTot / tot(cmp); return { m: cmp.m.map((v) => v * k), f: cmp.f.map((v) => v * k) }; })() : cmp);
@@ -772,8 +1063,6 @@
       })
       .on("mouseleave", hideTip);
 
-    for (const b of $$("#pyr-group .btn")) b.setAttribute("aria-pressed", +b.dataset.g === g);
-    for (const b of $$("#pyr-pct .btn")) b.setAttribute("aria-pressed", (b.dataset.p === "1") === pct);
   }
 
   /* ---------------- scenario controls ---------------- */
@@ -807,7 +1096,7 @@
       <div class="ctl">
         <div class="lbl">Migration</div>
         <div class="seg" id="mig-seg">${MIG_STEPS.map(([v, l]) => `<button type="button" class="btn" data-v="${v}">${l}</button>`).join("")}</div>
-        <div class="hint">UN assumes ${migAvg >= 0 ? "+" : "−"}${fmtPop(Math.abs(migAvg))} people a year (net).</div>
+        <div class="hint">${loc.sub ? `UN migration for ${esc(loc.sub.natName)}, scaled to its population: ` : "UN assumes "}${migAvg >= 0 ? "+" : "−"}${fmtPop(Math.abs(migAvg))} people a year (net).${loc.sub ? ` Moves within ${esc(loc.sub.natName)} aren't modeled.` : ""}</div>
       </div>
       <div class="ctl">
         <div class="lbl">Life expectancy</div>
@@ -852,6 +1141,15 @@
     for (const b of $$("#presets .btn")) b.setAttribute("aria-pressed", Math.abs(+b.dataset.v - sc.target) < 0.005);
     for (const b of $$("#mig-seg .btn")) b.setAttribute("aria-pressed", +b.dataset.v === sc.migMult);
     for (const b of $$("#mort-seg .btn")) b.setAttribute("aria-pressed", b.dataset.v === sc.mortality);
+    if (loc.sub) {
+      const P = loc.tfrPaths, n = loc.sub.natName;
+      $("#mode-hint").textContent = custom
+        ? `From ${sc.startTfr.toFixed(2)} today, in a straight line to your target, then held. You can also drag the dot on the fertility chart.`
+        : sc.mode === "un"
+          ? `The UN's 2024 medium projection for ${n}, scaled to this ${loc.sub.level}'s current level: ${P.un[BASE].toFixed(2)} in ${BASE} → ${P.un[END].toFixed(2)} in 2100.`
+          : `Starts from the latest data (${sc.startTfr.toFixed(2)} in ${BASE}) and follows the default path for ${n}, keeping its level relative to ${n}: ${P.default[END].toFixed(2)} in 2100.`;
+      return;
+    }
     const d2100 = Projection.defaultTfr(sc.startTfr, sc.anchorYear, (y) => unAt(loc, "tfr", y), END);
     $("#mode-hint").textContent = custom
       ? `From ${sc.startTfr.toFixed(2)} today, in a straight line to your target, then held. You can also drag the dot on the fertility chart.`
@@ -862,13 +1160,13 @@
 
   function drawOutcomes() {
     const loc = state.loc, res = state.result, now = res[0], end = res[res.length - 1];
-    const all = d3.range(Y0, BASE).map((y) => ({ year: y, pop: unAt(loc, "pop", y) })).concat(res.map((d) => ({ year: d.year, pop: d.pop })));
+    const all = d3.range(Y0, BASE).map((y) => ({ year: y, pop: unAt(loc, "pop", y) })).filter((d) => d.pop != null).concat(res.map((d) => ({ year: d.year, pop: d.pop })));
     const peak = all.reduce((a, b) => (b.pop > a.pop ? b : a));
     const s1 = ageShares(end.m, end.f), s0 = ageShares(now.m, now.f);
     const peakV = peak.year < BASE ? fmtPop(peak.pop) : peak.year >= END ? "Not yet" : fmtPop(peak.pop);
     const peakD = peak.year < BASE ? `already peaked, in ${peak.year}` : peak.year >= END ? `still growing in ${END}` : `in ${peak.year}`;
     const tiles = [
-      { k: `Population, ${END}`, v: fmtPop(end.pop), d: `${fmtPct(end.pop / now.pop - 1)} vs today · UN ${fmtPop(unAt(loc, "pop", END))}` },
+      { k: `Population, ${END}`, v: fmtPop(end.pop), d: `${fmtPct(end.pop / now.pop - 1)} vs today${loc.sub ? "" : ` · UN ${fmtPop(unAt(loc, "pop", END))}`}` },
       { k: "Peak population", v: peakV, d: peakD },
       { k: `Births per year, ${END - 1}`, v: fmtPop(res[res.length - 2].births), d: `today ${fmtPop(now.births)}` },
       { k: `Aged 65+, ${END}`, v: (s1.old * 100).toFixed(0) + "%", d: `today ${(s0.old * 100).toFixed(0)}% · median age ${end.medAge.toFixed(0)}` },
@@ -879,7 +1177,7 @@
   /* ---------------- time-series figures ---------------- */
   const charts = {};
   function lineChart(el, o) {
-    const W = el.clientWidth || 380, H = o.height || 215, xMax = maxYear();
+    const W = el.clientWidth || 380, H = o.height || 215, xMax = maxYear(), x0 = o.x0 || Y0;
     const M = { t: 12, r: 40, b: 22, l: 42 };
     d3.select(el).selectAll("*").remove();
     const legend = d3.select(el).append("div").attr("class", "legend-row");
@@ -895,12 +1193,12 @@
       : `<span class="bx" style="background:var(--band)"></span>${o.band.label}`);
 
     // clip everything to the visible range and drop gaps so tooltips can interpolate
-    const clip = (pts) => pts.filter((p) => p[0] <= xMax && p[1] != null && isFinite(p[1]));
+    const clip = (pts) => pts.filter((p) => p[0] >= x0 && p[0] <= xMax && p[1] != null && isFinite(p[1]));
     const series = o.series.map((s) => ({ ...s, points: clip(s.points) }));
     const band = o.band && o.band.points.filter((p) => p[0] <= xMax);
 
     const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("height", H);
-    const x = d3.scaleLinear().domain([Y0, xMax]).range([M.l, W - M.r]);
+    const x = d3.scaleLinear().domain([x0, xMax]).range([M.l, W - M.r]);
     let ymax = 0, ymin = Infinity;
     for (const s of series) for (const p of s.points) { ymax = Math.max(ymax, p[1]); ymin = Math.min(ymin, p[1]); }
     if (band) for (const p of band) { ymax = Math.max(ymax, p[2]); ymin = Math.min(ymin, p[1]); }
@@ -910,7 +1208,7 @@
 
     svg.append("g").attr("class", "grid").attr("transform", `translate(${M.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - M.l - M.r)).tickFormat(""));
     svg.append("g").attr("class", "axis").attr("transform", `translate(${M.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(0).tickPadding(6).tickFormat(o.yFmt)).call((g) => g.select(".domain").remove());
-    const xt = xMax === END ? [1950, 2000, 2050, 2100] : [1950, 1975, 2000, 2026];
+    const xt = x0 > Y0 ? x.ticks(xMax === END ? 5 : 4).filter((t) => Number.isInteger(t)) : xMax === END ? [1950, 2000, 2050, 2100] : [1950, 1975, 2000, 2026];
     svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - M.b})`).call(d3.axisBottom(x).tickValues(xt).tickFormat(d3.format("d")).tickSize(3));
 
     if (xMax > BASE) {
@@ -943,7 +1241,7 @@
     const dots = svg.append("g");
     svg.append("rect").attr("x", M.l).attr("y", M.t).attr("width", W - M.l - M.r).attr("height", H - M.t - M.b).attr("fill", "transparent").style("cursor", "crosshair")
       .on("mousemove", (ev) => {
-        const yr = Math.max(Y0, Math.min(xMax, Math.round(x.invert(d3.pointer(ev)[0]))));
+        const yr = Math.max(x0, Math.min(xMax, Math.round(x.invert(d3.pointer(ev)[0]))));
         cross.attr("x1", x(yr)).attr("x2", x(yr)).attr("opacity", 0.8);
         dots.selectAll("*").remove();
         let html = `<div class="t">${yr}</div>`;
@@ -990,7 +1288,7 @@
   function drawGenerations() {
     const el = $("#gens");
     if (!el || !state.loc) return;
-    const s = state.byId.get(state.loc.id), info = tfrInfo(s, state.year), t = info.v;
+    const info = placeInfo(state.year), t = info.v;
     if (t == null) { el.innerHTML = ""; return; }
     const vals = [0, 1, 2, 3].map((g) => 100 * (t / 2) ** g);
     const labels = ["Parents", "Children", "Grandchildren", "Great-grandchildren"];
@@ -1019,7 +1317,8 @@
 
   const SCEN_LABEL = { default: "Default projection", un: "UN medium (selected)", custom: "Your scenario" };
   function drawFutureCharts() {
-    const loc = state.loc, res = state.result, sc = state.sc, s = state.byId.get(loc.id), on = state.proj;
+    const loc = state.loc, res = state.result, sc = state.sc, sub = loc.sub, s = sub ? null : state.byId.get(loc.id), on = state.proj;
+    const x0 = sub ? Math.max(Y0, Math.floor(sub.first / 5) * 5) : Y0; // subdivisions: from their first estimate
     const range = (a, b) => d3.range(a, b + 1);
     const unSeries = (key, a, b) => range(a, b).map((y) => [y, unAt(loc, key, y)]);
     const scen = (fn) => (on ? res.map((d) => [d.year, fn(d)]) : []);
@@ -1029,10 +1328,21 @@
     $("#c-tfr").previousElementSibling.textContent = on ? "Children per woman · drag the handle to set a target" : "Children per woman";
 
     // Fig 2 · fertility
-    const obs = (s.obs || []).map((o) => ({ x: o.year, y: o.tfr, color: "var(--deaths)", hollow: o.kind === "estimate", label: o.kind === "estimate" ? "Estimate (births so far)" : "Reported" }));
+    const obs = sub
+      ? Object.keys(sub.hist.series).filter((y) => !sub.hist.approx.has(+y)).map((y) => {
+        const k = (sub.hist.srcs[y] || {}).kind;
+        return { x: +y, y: sub.hist.series[y], color: "var(--deaths)", hollow: k === "estimate", label: k === "estimate" ? "Estimate (births so far)" : k === "survey" ? "Survey" : "Reported" };
+      })
+      : (s.obs || []).map((o) => ({ x: o.year, y: o.tfr, color: "var(--deaths)", hollow: o.kind === "estimate", label: o.kind === "estimate" ? "Estimate (births so far)" : "Reported" }));
+    const natS = sub && state.byId.get(sub.countryId);
     const hasEst = obs.some((p) => p.hollow), hasRep = obs.some((p) => !p.hollow);
     charts.tfr = lineChart($("#c-tfr"), {
-      series: [
+      x0,
+      series: sub ? [
+        { label: natS.name, color: UN, dash: true, width: 1.5, points: range(x0, on ? END : BASE).map((y) => [y, tfrInfo(natS, y).v]) },
+        { label: loc.name, color: INK, points: range(x0, BASE).map((y) => [y, sub.tfrAt(y)?.v ?? null]) },
+        { label: SCEN_LABEL[sc.mode], color: SC, width: 2.6, points: scen((d) => d.tfr), endLabel: tfr2 },
+      ] : [
         { label: "UN estimates", color: INK, points: unSeries("tfr", Y0, 2023) },
         { label: on ? "UN medium" : "UN projection", color: UN, dash: true, points: unSeries("tfr", 2023, on ? END : BASE) },
         { label: SCEN_LABEL[sc.mode], color: SC, width: 2.6, points: scen((d) => d.tfr), endLabel: tfr2 },
@@ -1040,7 +1350,7 @@
       points: obs,
       markLegend: [
         hasRep ? `<span class="dot" style="background:var(--deaths)"></span>Reported` : "",
-        hasEst ? `<span class="dot" style="border:1.8px solid var(--deaths)"></span>${BASE} estimate` : "",
+        hasEst ? `<span class="dot" style="border:1.8px solid var(--deaths)"></span>${sub ? "Estimate" : `${BASE} estimate`}` : "",
       ].filter(Boolean),
       hlines: [{ y: 2.1, label: "replacement ≈ 2.1" }],
       yFmt: d3.format(".1f"), tipFmt: tfr2,
@@ -1053,20 +1363,20 @@
     // population by age group: counts (stacked to the total) or shares
     const share = state.popMode === "share";
     for (const b of $$("#pop-mode .btn")) b.setAttribute("aria-pressed", b.dataset.mode === state.popMode);
-    const ages = range(Y0, on ? BASE - 1 : BASE).map((y) => { const p = histPyr(y); return { year: y, ...ageCounts(p.m, p.f) }; })
+    const ages = range(x0, on ? BASE - 1 : BASE).map((y) => { const p = histPyr(y); return p && { year: y, ...ageCounts(p.m, p.f) }; }).filter(Boolean)
       .concat(on ? res.map((d) => ({ year: d.year, ...ageCounts(d.m, d.f) })) : []);
     const rows = share ? ages.map((d) => ({ year: d.year, kids: d.kids / d.total, work: d.work / d.total, old: d.old / d.total, total: 1 })) : ages;
     const ageKeys = [["old", "65+", "var(--age3)"], ["work", "15–64", "var(--age2)"], ["kids", "Under 15", "var(--age1)"]];
     const fmtV = share ? (v) => (v * 100).toFixed(1) + "%" : fmtPop;
     const v = loc.variants || {};
     const band = !share && on && v.lo95 && v.hi95 ? v.lo95.pop.map((lo, i) => [v.lo95.y0 + i, lo, v.hi95.pop[i]]).filter((p) => p[0] >= BASE && p[1] != null && p[2] != null) : null;
-    $("#pop-sub").textContent = share ? "Share of the population by age group" : on ? "Stacked to the total, compared with the UN medium projection and its 95% range" : "Stacked to the total population";
+    $("#pop-sub").textContent = (share ? "Share of the population by age group" : on && !sub ? "Stacked to the total, compared with the UN medium projection and its 95% range" : "Stacked to the total population") + (sub ? " (estimated)" : "");
     charts.pop = lineChart($("#c-pop"), {
-      height: 250,
+      x0, height: 250,
       series: [
         ...ageKeys.map(([k, l, c]) => ({ label: l, color: c, area: true, points: rows.map((d) => [d.year, d[k]]), tipFmt: fmtV })),
         ...(share ? [] : [{ label: "Total", color: "var(--ink)", hidden: true, legend: false, points: rows.map((d) => [d.year, d.total]) }]),
-        ...(share || !on ? [] : [{ label: "UN medium total", color: "var(--ink-2)", dash: true, width: 1.5, points: unSeries("pop", BASE, END) }]),
+        ...(share || !on || sub ? [] : [{ label: "UN medium total", color: "var(--ink-2)", dash: true, width: 1.5, points: unSeries("pop", BASE, END) }]),
       ],
       band: band && band.length ? { label: "UN 95% range", points: band, lines: true } : null,
       yDomain: share ? [0, 1] : null, yFmt: share ? d3.format(".0%") : fmtAxisPop, tipFmt: fmtV,
@@ -1082,29 +1392,32 @@
     // Fig 4 · births and deaths
     const fut = (k) => res.filter((d) => d[k] != null).map((d) => [d.year, d[k]]);
     charts.bd = lineChart($("#c-bd"), {
+      x0,
       series: [
-        { label: "Births", color: "var(--births)", width: 2, points: unSeries("births", Y0, on ? BASE - 1 : BASE).concat(on ? fut("births") : []) },
-        { label: "Deaths", color: "var(--deaths)", width: 2, points: unSeries("deaths", Y0, on ? BASE - 1 : BASE).concat(on ? fut("deaths") : []) },
+        { label: "Births", color: "var(--births)", width: 2, points: unSeries("births", x0, on ? BASE - 1 : BASE).concat(on ? fut("births") : []) },
+        { label: "Deaths", color: "var(--deaths)", width: 2, points: unSeries("deaths", x0, on ? BASE - 1 : BASE).concat(on ? fut("deaths") : []) },
       ],
       yFmt: fmtAxisPop, tipFmt: fmtPop,
     });
 
     // Fig 6 · median age
     charts.med = lineChart($("#c-med"), {
+      x0,
       series: [
-        { label: "UN estimates", color: INK, points: unSeries("medAge", Y0, BASE) },
-        { label: "UN medium", color: UN, dash: true, points: on ? unSeries("medAge", BASE, END) : [] },
+        { label: sub ? "Estimated" : "UN estimates", color: INK, points: unSeries("medAge", x0, BASE) },
+        { label: "UN medium", color: UN, dash: true, points: on && !sub ? unSeries("medAge", BASE, END) : [] },
         { label: SCEN_LABEL[sc.mode], color: SC, width: 2.6, points: scen((d) => d.medAge), endLabel: (v) => v.toFixed(0) },
       ],
       zero: false, yFmt: d3.format("d"), tipFmt: (v) => v.toFixed(1),
     });
 
     // Fig 7 · old-age dependency
-    const depUN = (a, b) => range(a, b).map((y) => { const p = histPyr(y); return [y, ageShares(p.m, p.f).dep]; });
+    const depUN = (a, b) => range(a, b).map((y) => { const p = histPyr(y); return [y, p ? ageShares(p.m, p.f).dep : null]; });
     charts.dep = lineChart($("#c-dep"), {
+      x0,
       series: [
-        { label: "UN estimates", color: INK, points: depUN(Y0, BASE) },
-        { label: "UN medium", color: UN, dash: true, points: on ? depUN(BASE, END) : [] },
+        { label: sub ? "Estimated" : "UN estimates", color: INK, points: depUN(x0, BASE) },
+        { label: "UN medium", color: UN, dash: true, points: on && !sub ? depUN(BASE, END) : [] },
         { label: SCEN_LABEL[sc.mode], color: SC, width: 2.6, points: scen((d) => ageShares(d.m, d.f).dep), endLabel: (v) => v.toFixed(0) },
       ],
       yFmt: d3.format("d"), tipFmt: (v) => v.toFixed(1),
@@ -1190,7 +1503,20 @@
     setYear(state.year);
     const startId = h.loc && state.byId.has(+h.loc) ? +h.loc : 900;
     selectLoc(startId, h);
-    if (!state.byId.get(startId).region) { zoomToLoc(startId, 0); showSubdivisions(startId); }
+    showOverseas();
+    if (!state.byId.get(startId).region) {
+      zoomToLoc(startId, 0);
+      showSubdivisions(startId).then(async (L) => {
+        const g = h.sub && L && L.feats && L.feats.find((d) => unitKey(d) === h.sub);
+        if (!g) return;
+        zoomToFeature(g, 0);
+        if (h.co && L.ctx.drill) {
+          const C = await showChildren(g), cf = C && C.feats && C.feats.find((d) => unitKey(d) === h.co);
+          if (cf) return selectSub(C, cf, h);
+        }
+        selectSub(L, g, h);
+      });
+    }
 
     let rt = null;
     window.addEventListener("resize", () => {

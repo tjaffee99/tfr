@@ -1,0 +1,7497 @@
+[
+ {
+  "iso2": "DE",
+  "country": "Germany",
+  "level": "NUTS1 (Land)",
+  "source": "Destatis, GENESIS-Online table 12612-0101 \"Lebendgeborene: Bundesländer, Monate, Geschlecht\" (retrieved via the public GENESIS-Online web API, no login). 2024 and 2025 final (status e), 2026 provisional (status p).",
+  "url": "https://genesis.destatis.de/datenbank/online/statistic/12612/table/12612-0101",
+  "api_url": "https://genesis.destatis.de/genesis/api/rest/tables/12612-0101/data",
+  "basis": "residence of mother (Wohngemeinde der Mutter); month of occurrence",
+  "notes": "July 2026 (provisional, latest month) dropped: Germany total July 2026 = 59,241 vs 61,099 in July 2025 (-3.0%) against -1.1% for Jan-Jun, with several Laender showing -6% to -15% in July, consistent with late registrations still to come. Provisional months are revised up as late registrations arrive (Destatis note). Bremen monthly figures are volatile. Finer (Kreis/NUTS3) data exist only annually in the Regionaldatenbank, which needs a login.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "DEF",
+      "name": "Schleswig-Holstein",
+      "births_target": 20776,
+      "births_base": 21760
+     },
+     {
+      "nuts": "DE6",
+      "name": "Hamburg",
+      "births_target": 17633,
+      "births_base": 17553
+     },
+     {
+      "nuts": "DE9",
+      "name": "Niedersachsen",
+      "births_target": 63404,
+      "births_base": 65646
+     },
+     {
+      "nuts": "DE5",
+      "name": "Bremen",
+      "births_target": 6149,
+      "births_base": 6251
+     },
+     {
+      "nuts": "DEA",
+      "name": "Nordrhein-Westfalen",
+      "births_target": 147961,
+      "births_base": 152688
+     },
+     {
+      "nuts": "DE7",
+      "name": "Hessen",
+      "births_target": 51737,
+      "births_base": 53089
+     },
+     {
+      "nuts": "DEB",
+      "name": "Rheinland-Pfalz",
+      "births_target": 32346,
+      "births_base": 33606
+     },
+     {
+      "nuts": "DE1",
+      "name": "Baden-Württemberg",
+      "births_target": 94059,
+      "births_base": 97507
+     },
+     {
+      "nuts": "DE2",
+      "name": "Bayern",
+      "births_target": 110564,
+      "births_base": 114365
+     },
+     {
+      "nuts": "DEC",
+      "name": "Saarland",
+      "births_target": 7342,
+      "births_base": 7566
+     },
+     {
+      "nuts": "DE3",
+      "name": "Berlin",
+      "births_target": 33233,
+      "births_base": 33749
+     },
+     {
+      "nuts": "DE4",
+      "name": "Brandenburg",
+      "births_target": 14498,
+      "births_base": 15154
+     },
+     {
+      "nuts": "DE8",
+      "name": "Mecklenburg-Vorpommern",
+      "births_target": 8383,
+      "births_base": 9157
+     },
+     {
+      "nuts": "DED",
+      "name": "Sachsen",
+      "births_target": 23121,
+      "births_base": 24697
+     },
+     {
+      "nuts": "DEE",
+      "name": "Sachsen-Anhalt",
+      "births_target": 11977,
+      "births_base": 12526
+     },
+     {
+      "nuts": "DEG",
+      "name": "Thüringen",
+      "births_target": 11052,
+      "births_base": 11803
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jun",
+    "regions": [
+     {
+      "nuts": "DEF",
+      "name": "Schleswig-Holstein",
+      "births_target": 9994,
+      "births_base": 10322
+     },
+     {
+      "nuts": "DE6",
+      "name": "Hamburg",
+      "births_target": 8588,
+      "births_base": 8516
+     },
+     {
+      "nuts": "DE9",
+      "name": "Niedersachsen",
+      "births_target": 30609,
+      "births_base": 30922
+     },
+     {
+      "nuts": "DE5",
+      "name": "Bremen",
+      "births_target": 2879,
+      "births_base": 3033
+     },
+     {
+      "nuts": "DEA",
+      "name": "Nordrhein-Westfalen",
+      "births_target": 72153,
+      "births_base": 72217
+     },
+     {
+      "nuts": "DE7",
+      "name": "Hessen",
+      "births_target": 25088,
+      "births_base": 25252
+     },
+     {
+      "nuts": "DEB",
+      "name": "Rheinland-Pfalz",
+      "births_target": 15511,
+      "births_base": 15704
+     },
+     {
+      "nuts": "DE1",
+      "name": "Baden-Württemberg",
+      "births_target": 45162,
+      "births_base": 45951
+     },
+     {
+      "nuts": "DE2",
+      "name": "Bayern",
+      "births_target": 53751,
+      "births_base": 53954
+     },
+     {
+      "nuts": "DEC",
+      "name": "Saarland",
+      "births_target": 3534,
+      "births_base": 3646
+     },
+     {
+      "nuts": "DE3",
+      "name": "Berlin",
+      "births_target": 15918,
+      "births_base": 16187
+     },
+     {
+      "nuts": "DE4",
+      "name": "Brandenburg",
+      "births_target": 6823,
+      "births_base": 7132
+     },
+     {
+      "nuts": "DE8",
+      "name": "Mecklenburg-Vorpommern",
+      "births_target": 4004,
+      "births_base": 4182
+     },
+     {
+      "nuts": "DED",
+      "name": "Sachsen",
+      "births_target": 11184,
+      "births_base": 11378
+     },
+     {
+      "nuts": "DEE",
+      "name": "Sachsen-Anhalt",
+      "births_target": 5870,
+      "births_base": 5874
+     },
+     {
+      "nuts": "DEG",
+      "name": "Thüringen",
+      "births_target": 5309,
+      "births_base": 5479
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "FR",
+  "country": "France",
+  "level": "NUTS3 (département)",
+  "source": "INSEE, statistiques de l'état civil – 'Naissances mensuelles depuis janvier 2024', release of 1 Oct 2026 (file NAIS_AN_DEP_REG_2026_08.xlsx, sheet Départements: annual births and births 1 Jan–end of reference month by département of residence of the mother). 2026 provisional.",
+  "url": "https://www.insee.fr/fr/statistiques/fichier/9058316/NAIS_AN_DEP_REG_2026_08.xlsx",
+  "basis": "residence of mother; date of occurrence",
+  "notes": "All years in this file are by département of residence of the mother (the monthly web tables used place of registration for 2024, but this file is residence for all years). Births of mothers resident abroad ('99 Hors de France') excluded. Jan-Aug 2026 kept: comparing the July-2026 vintage (Jan-Jul 2026 = 371,203) with the August vintage (Jan-Jul = 371,269) shows revisions of only +0.02%, so the latest month is essentially complete.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "FRK21",
+      "name": "Ain",
+      "dept": "01",
+      "births_target": 6129,
+      "births_base": 6214
+     },
+     {
+      "nuts": "FRE21",
+      "name": "Aisne",
+      "dept": "02",
+      "births_target": 4584,
+      "births_base": 4696
+     },
+     {
+      "nuts": "FRK11",
+      "name": "Allier",
+      "dept": "03",
+      "births_target": 2338,
+      "births_base": 2498
+     },
+     {
+      "nuts": "FRL01",
+      "name": "Alpes-de-Haute-Provence",
+      "dept": "04",
+      "births_target": 1269,
+      "births_base": 1276
+     },
+     {
+      "nuts": "FRL02",
+      "name": "Hautes-Alpes",
+      "dept": "05",
+      "births_target": 1105,
+      "births_base": 1122
+     },
+     {
+      "nuts": "FRL03",
+      "name": "Alpes-Maritimes",
+      "dept": "06",
+      "births_target": 10037,
+      "births_base": 9920
+     },
+     {
+      "nuts": "FRK22",
+      "name": "Ardèche",
+      "dept": "07",
+      "births_target": 2450,
+      "births_base": 2466
+     },
+     {
+      "nuts": "FRF21",
+      "name": "Ardennes",
+      "dept": "08",
+      "births_target": 2003,
+      "births_base": 2161
+     },
+     {
+      "nuts": "FRJ21",
+      "name": "Ariège",
+      "dept": "09",
+      "births_target": 1069,
+      "births_base": 1024
+     },
+     {
+      "nuts": "FRF22",
+      "name": "Aube",
+      "dept": "10",
+      "births_target": 2599,
+      "births_base": 2594
+     },
+     {
+      "nuts": "FRJ11",
+      "name": "Aude",
+      "dept": "11",
+      "births_target": 2688,
+      "births_base": 2794
+     },
+     {
+      "nuts": "FRJ22",
+      "name": "Aveyron",
+      "dept": "12",
+      "births_target": 1862,
+      "births_base": 1869
+     },
+     {
+      "nuts": "FRL04",
+      "name": "Bouches-du-Rhône",
+      "dept": "13",
+      "births_target": 21779,
+      "births_base": 22488
+     },
+     {
+      "nuts": "FRD11",
+      "name": "Calvados",
+      "dept": "14",
+      "births_target": 5670,
+      "births_base": 5792
+     },
+     {
+      "nuts": "FRK12",
+      "name": "Cantal",
+      "dept": "15",
+      "births_target": 869,
+      "births_base": 929
+     },
+     {
+      "nuts": "FRI31",
+      "name": "Charente",
+      "dept": "16",
+      "births_target": 2606,
+      "births_base": 2662
+     },
+     {
+      "nuts": "FRI32",
+      "name": "Charente-Maritime",
+      "dept": "17",
+      "births_target": 4398,
+      "births_base": 4619
+     },
+     {
+      "nuts": "FRB01",
+      "name": "Cher",
+      "dept": "18",
+      "births_target": 2322,
+      "births_base": 2374
+     },
+     {
+      "nuts": "FRI21",
+      "name": "Corrèze",
+      "dept": "19",
+      "births_target": 1697,
+      "births_base": 1614
+     },
+     {
+      "nuts": "FRM01",
+      "name": "Corse-du-Sud",
+      "dept": "2A",
+      "births_target": 1125,
+      "births_base": 1152
+     },
+     {
+      "nuts": "FRM02",
+      "name": "Haute-Corse",
+      "dept": "2B",
+      "births_target": 1169,
+      "births_base": 1325
+     },
+     {
+      "nuts": "FRC11",
+      "name": "Côte-d'Or",
+      "dept": "21",
+      "births_target": 4239,
+      "births_base": 4333
+     },
+     {
+      "nuts": "FRH01",
+      "name": "Côtes-d'Armor",
+      "dept": "22",
+      "births_target": 4429,
+      "births_base": 4599
+     },
+     {
+      "nuts": "FRI22",
+      "name": "Creuse",
+      "dept": "23",
+      "births_target": 685,
+      "births_base": 713
+     },
+     {
+      "nuts": "FRI11",
+      "name": "Dordogne",
+      "dept": "24",
+      "births_target": 2647,
+      "births_base": 2669
+     },
+     {
+      "nuts": "FRC21",
+      "name": "Doubs",
+      "dept": "25",
+      "births_target": 4853,
+      "births_base": 4976
+     },
+     {
+      "nuts": "FRK23",
+      "name": "Drôme",
+      "dept": "26",
+      "births_target": 4424,
+      "births_base": 4722
+     },
+     {
+      "nuts": "FRD21",
+      "name": "Eure",
+      "dept": "27",
+      "births_target": 5249,
+      "births_base": 5461
+     },
+     {
+      "nuts": "FRB02",
+      "name": "Eure-et-Loir",
+      "dept": "28",
+      "births_target": 3904,
+      "births_base": 3990
+     },
+     {
+      "nuts": "FRH02",
+      "name": "Finistère",
+      "dept": "29",
+      "births_target": 7030,
+      "births_base": 7119
+     },
+     {
+      "nuts": "FRJ12",
+      "name": "Gard",
+      "dept": "30",
+      "births_target": 6304,
+      "births_base": 6546
+     },
+     {
+      "nuts": "FRJ23",
+      "name": "Haute-Garonne",
+      "dept": "31",
+      "births_target": 14230,
+      "births_base": 14454
+     },
+     {
+      "nuts": "FRJ24",
+      "name": "Gers",
+      "dept": "32",
+      "births_target": 1178,
+      "births_base": 1243
+     },
+     {
+      "nuts": "FRI12",
+      "name": "Gironde",
+      "dept": "33",
+      "births_target": 15009,
+      "births_base": 15392
+     },
+     {
+      "nuts": "FRJ13",
+      "name": "Hérault",
+      "dept": "34",
+      "births_target": 10760,
+      "births_base": 10734
+     },
+     {
+      "nuts": "FRH03",
+      "name": "Ille-et-Vilaine",
+      "dept": "35",
+      "births_target": 10600,
+      "births_base": 10702
+     },
+     {
+      "nuts": "FRB03",
+      "name": "Indre",
+      "dept": "36",
+      "births_target": 1522,
+      "births_base": 1533
+     },
+     {
+      "nuts": "FRB04",
+      "name": "Indre-et-Loire",
+      "dept": "37",
+      "births_target": 5340,
+      "births_base": 5423
+     },
+     {
+      "nuts": "FRK24",
+      "name": "Isère",
+      "dept": "38",
+      "births_target": 11856,
+      "births_base": 12459
+     },
+     {
+      "nuts": "FRC22",
+      "name": "Jura",
+      "dept": "39",
+      "births_target": 2014,
+      "births_base": 1895
+     },
+     {
+      "nuts": "FRI13",
+      "name": "Landes",
+      "dept": "40",
+      "births_target": 2999,
+      "births_base": 3085
+     },
+     {
+      "nuts": "FRB05",
+      "name": "Loir-et-Cher",
+      "dept": "41",
+      "births_target": 2622,
+      "births_base": 2671
+     },
+     {
+      "nuts": "FRK25",
+      "name": "Loire",
+      "dept": "42",
+      "births_target": 6970,
+      "births_base": 7304
+     },
+     {
+      "nuts": "FRK13",
+      "name": "Haute-Loire",
+      "dept": "43",
+      "births_target": 1657,
+      "births_base": 1729
+     },
+     {
+      "nuts": "FRG01",
+      "name": "Loire-Atlantique",
+      "dept": "44",
+      "births_target": 14744,
+      "births_base": 14582
+     },
+     {
+      "nuts": "FRB06",
+      "name": "Loiret",
+      "dept": "45",
+      "births_target": 6589,
+      "births_base": 6960
+     },
+     {
+      "nuts": "FRJ25",
+      "name": "Lot",
+      "dept": "46",
+      "births_target": 1053,
+      "births_base": 1072
+     },
+     {
+      "nuts": "FRI14",
+      "name": "Lot-et-Garonne",
+      "dept": "47",
+      "births_target": 2410,
+      "births_base": 2564
+     },
+     {
+      "nuts": "FRJ14",
+      "name": "Lozère",
+      "dept": "48",
+      "births_target": 480,
+      "births_base": 501
+     },
+     {
+      "nuts": "FRG02",
+      "name": "Maine-et-Loire",
+      "dept": "49",
+      "births_target": 7709,
+      "births_base": 7786
+     },
+     {
+      "nuts": "FRD12",
+      "name": "Manche",
+      "dept": "50",
+      "births_target": 3660,
+      "births_base": 3948
+     },
+     {
+      "nuts": "FRF23",
+      "name": "Marne",
+      "dept": "51",
+      "births_target": 5164,
+      "births_base": 5146
+     },
+     {
+      "nuts": "FRF24",
+      "name": "Haute-Marne",
+      "dept": "52",
+      "births_target": 1241,
+      "births_base": 1250
+     },
+     {
+      "nuts": "FRG03",
+      "name": "Mayenne",
+      "dept": "53",
+      "births_target": 2747,
+      "births_base": 2841
+     },
+     {
+      "nuts": "FRF31",
+      "name": "Meurthe-et-Moselle",
+      "dept": "54",
+      "births_target": 5634,
+      "births_base": 5858
+     },
+     {
+      "nuts": "FRF32",
+      "name": "Meuse",
+      "dept": "55",
+      "births_target": 1229,
+      "births_base": 1297
+     },
+     {
+      "nuts": "FRH04",
+      "name": "Morbihan",
+      "dept": "56",
+      "births_target": 6005,
+      "births_base": 5974
+     },
+     {
+      "nuts": "FRF33",
+      "name": "Moselle",
+      "dept": "57",
+      "births_target": 8268,
+      "births_base": 8693
+     },
+     {
+      "nuts": "FRC12",
+      "name": "Nièvre",
+      "dept": "58",
+      "births_target": 1321,
+      "births_base": 1339
+     },
+     {
+      "nuts": "FRE11",
+      "name": "Nord",
+      "dept": "59",
+      "births_target": 25487,
+      "births_base": 26558
+     },
+     {
+      "nuts": "FRE22",
+      "name": "Oise",
+      "dept": "60",
+      "births_target": 7989,
+      "births_base": 8455
+     },
+     {
+      "nuts": "FRD13",
+      "name": "Orne",
+      "dept": "61",
+      "births_target": 2133,
+      "births_base": 2150
+     },
+     {
+      "nuts": "FRE12",
+      "name": "Pas-de-Calais",
+      "dept": "62",
+      "births_target": 13116,
+      "births_base": 13903
+     },
+     {
+      "nuts": "FRK14",
+      "name": "Puy-de-Dôme",
+      "dept": "63",
+      "births_target": 5418,
+      "births_base": 5415
+     },
+     {
+      "nuts": "FRI15",
+      "name": "Pyrénées-Atlantiques",
+      "dept": "64",
+      "births_target": 5170,
+      "births_base": 5360
+     },
+     {
+      "nuts": "FRJ26",
+      "name": "Hautes-Pyrénées",
+      "dept": "65",
+      "births_target": 1596,
+      "births_base": 1665
+     },
+     {
+      "nuts": "FRJ15",
+      "name": "Pyrénées-Orientales",
+      "dept": "66",
+      "births_target": 3759,
+      "births_base": 4045
+     },
+     {
+      "nuts": "FRF11",
+      "name": "Bas-Rhin",
+      "dept": "67",
+      "births_target": 9897,
+      "births_base": 10408
+     },
+     {
+      "nuts": "FRF12",
+      "name": "Haut-Rhin",
+      "dept": "68",
+      "births_target": 6454,
+      "births_base": 6633
+     },
+     {
+      "nuts": "FRK26",
+      "name": "Rhône",
+      "dept": "69",
+      "births_target": 20827,
+      "births_base": 21420
+     },
+     {
+      "nuts": "FRC23",
+      "name": "Haute-Saône",
+      "dept": "70",
+      "births_target": 1673,
+      "births_base": 1784
+     },
+     {
+      "nuts": "FRC13",
+      "name": "Saône-et-Loire",
+      "dept": "71",
+      "births_target": 4041,
+      "births_base": 4094
+     },
+     {
+      "nuts": "FRG04",
+      "name": "Sarthe",
+      "dept": "72",
+      "births_target": 5099,
+      "births_base": 5088
+     },
+     {
+      "nuts": "FRK27",
+      "name": "Savoie",
+      "dept": "73",
+      "births_target": 3713,
+      "births_base": 3902
+     },
+     {
+      "nuts": "FRK28",
+      "name": "Haute-Savoie",
+      "dept": "74",
+      "births_target": 8979,
+      "births_base": 8818
+     },
+     {
+      "nuts": "FR101",
+      "name": "Paris",
+      "dept": "75",
+      "births_target": 21189,
+      "births_base": 21484
+     },
+     {
+      "nuts": "FRD22",
+      "name": "Seine-Maritime",
+      "dept": "76",
+      "births_target": 11780,
+      "births_base": 12254
+     },
+     {
+      "nuts": "FR102",
+      "name": "Seine-et-Marne",
+      "dept": "77",
+      "births_target": 16644,
+      "births_base": 17109
+     },
+     {
+      "nuts": "FR103",
+      "name": "Yvelines",
+      "dept": "78",
+      "births_target": 16870,
+      "births_base": 17002
+     },
+     {
+      "nuts": "FRI33",
+      "name": "Deux-Sèvres",
+      "dept": "79",
+      "births_target": 2769,
+      "births_base": 2847
+     },
+     {
+      "nuts": "FRE23",
+      "name": "Somme",
+      "dept": "80",
+      "births_target": 4977,
+      "births_base": 5026
+     },
+     {
+      "nuts": "FRJ27",
+      "name": "Tarn",
+      "dept": "81",
+      "births_target": 2898,
+      "births_base": 2818
+     },
+     {
+      "nuts": "FRJ28",
+      "name": "Tarn-et-Garonne",
+      "dept": "82",
+      "births_target": 2210,
+      "births_base": 2222
+     },
+     {
+      "nuts": "FRL05",
+      "name": "Var",
+      "dept": "83",
+      "births_target": 9068,
+      "births_base": 9435
+     },
+     {
+      "nuts": "FRL06",
+      "name": "Vaucluse",
+      "dept": "84",
+      "births_target": 5170,
+      "births_base": 5401
+     },
+     {
+      "nuts": "FRG05",
+      "name": "Vendée",
+      "dept": "85",
+      "births_target": 5091,
+      "births_base": 5143
+     },
+     {
+      "nuts": "FRI34",
+      "name": "Vienne",
+      "dept": "86",
+      "births_target": 3457,
+      "births_base": 3631
+     },
+     {
+      "nuts": "FRI23",
+      "name": "Haute-Vienne",
+      "dept": "87",
+      "births_target": 2854,
+      "births_base": 2919
+     },
+     {
+      "nuts": "FRF34",
+      "name": "Vosges",
+      "dept": "88",
+      "births_target": 2443,
+      "births_base": 2655
+     },
+     {
+      "nuts": "FRC14",
+      "name": "Yonne",
+      "dept": "89",
+      "births_target": 2555,
+      "births_base": 2687
+     },
+     {
+      "nuts": "FRC24",
+      "name": "Territoire de Belfort",
+      "dept": "90",
+      "births_target": 1165,
+      "births_base": 1214
+     },
+     {
+      "nuts": "FR104",
+      "name": "Essonne",
+      "dept": "91",
+      "births_target": 16265,
+      "births_base": 17071
+     },
+     {
+      "nuts": "FR105",
+      "name": "Hauts-de-Seine",
+      "dept": "92",
+      "births_target": 19455,
+      "births_base": 19804
+     },
+     {
+      "nuts": "FR106",
+      "name": "Seine-Saint-Denis",
+      "dept": "93",
+      "births_target": 24206,
+      "births_base": 24946
+     },
+     {
+      "nuts": "FR107",
+      "name": "Val-de-Marne",
+      "dept": "94",
+      "births_target": 17072,
+      "births_base": 17687
+     },
+     {
+      "nuts": "FR108",
+      "name": "Val-d'Oise",
+      "dept": "95",
+      "births_target": 17071,
+      "births_base": 17445
+     },
+     {
+      "nuts": "FRY10",
+      "name": "Guadeloupe",
+      "dept": "971",
+      "births_target": 3389,
+      "births_base": 3608
+     },
+     {
+      "nuts": "FRY20",
+      "name": "Martinique",
+      "dept": "972",
+      "births_target": 2921,
+      "births_base": 2898
+     },
+     {
+      "nuts": "FRY30",
+      "name": "Guyane",
+      "dept": "973",
+      "births_target": 6630,
+      "births_base": 6849
+     },
+     {
+      "nuts": "FRY40",
+      "name": "La Réunion",
+      "dept": "974",
+      "births_target": 11790,
+      "births_base": 11818
+     },
+     {
+      "nuts": "FRY50",
+      "name": "Mayotte",
+      "dept": "976",
+      "births_target": 9072,
+      "births_base": 8908
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Aug",
+    "regions": [
+     {
+      "nuts": "FRK21",
+      "name": "Ain",
+      "dept": "01",
+      "births_target": 4036,
+      "births_base": 4139
+     },
+     {
+      "nuts": "FRE21",
+      "name": "Aisne",
+      "dept": "02",
+      "births_target": 3057,
+      "births_base": 3139
+     },
+     {
+      "nuts": "FRK11",
+      "name": "Allier",
+      "dept": "03",
+      "births_target": 1513,
+      "births_base": 1555
+     },
+     {
+      "nuts": "FRL01",
+      "name": "Alpes-de-Haute-Provence",
+      "dept": "04",
+      "births_target": 770,
+      "births_base": 824
+     },
+     {
+      "nuts": "FRL02",
+      "name": "Hautes-Alpes",
+      "dept": "05",
+      "births_target": 681,
+      "births_base": 722
+     },
+     {
+      "nuts": "FRL03",
+      "name": "Alpes-Maritimes",
+      "dept": "06",
+      "births_target": 6520,
+      "births_base": 6638
+     },
+     {
+      "nuts": "FRK22",
+      "name": "Ardèche",
+      "dept": "07",
+      "births_target": 1517,
+      "births_base": 1652
+     },
+     {
+      "nuts": "FRF21",
+      "name": "Ardennes",
+      "dept": "08",
+      "births_target": 1349,
+      "births_base": 1325
+     },
+     {
+      "nuts": "FRJ21",
+      "name": "Ariège",
+      "dept": "09",
+      "births_target": 678,
+      "births_base": 725
+     },
+     {
+      "nuts": "FRF22",
+      "name": "Aube",
+      "dept": "10",
+      "births_target": 1729,
+      "births_base": 1735
+     },
+     {
+      "nuts": "FRJ11",
+      "name": "Aude",
+      "dept": "11",
+      "births_target": 1767,
+      "births_base": 1750
+     },
+     {
+      "nuts": "FRJ22",
+      "name": "Aveyron",
+      "dept": "12",
+      "births_target": 1286,
+      "births_base": 1234
+     },
+     {
+      "nuts": "FRL04",
+      "name": "Bouches-du-Rhône",
+      "dept": "13",
+      "births_target": 14478,
+      "births_base": 14512
+     },
+     {
+      "nuts": "FRD11",
+      "name": "Calvados",
+      "dept": "14",
+      "births_target": 3654,
+      "births_base": 3866
+     },
+     {
+      "nuts": "FRK12",
+      "name": "Cantal",
+      "dept": "15",
+      "births_target": 573,
+      "births_base": 597
+     },
+     {
+      "nuts": "FRI31",
+      "name": "Charente",
+      "dept": "16",
+      "births_target": 1665,
+      "births_base": 1728
+     },
+     {
+      "nuts": "FRI32",
+      "name": "Charente-Maritime",
+      "dept": "17",
+      "births_target": 2950,
+      "births_base": 2889
+     },
+     {
+      "nuts": "FRB01",
+      "name": "Cher",
+      "dept": "18",
+      "births_target": 1490,
+      "births_base": 1513
+     },
+     {
+      "nuts": "FRI21",
+      "name": "Corrèze",
+      "dept": "19",
+      "births_target": 1085,
+      "births_base": 1125
+     },
+     {
+      "nuts": "FRM01",
+      "name": "Corse-du-Sud",
+      "dept": "2A",
+      "births_target": 702,
+      "births_base": 715
+     },
+     {
+      "nuts": "FRM02",
+      "name": "Haute-Corse",
+      "dept": "2B",
+      "births_target": 802,
+      "births_base": 788
+     },
+     {
+      "nuts": "FRC11",
+      "name": "Côte-d'Or",
+      "dept": "21",
+      "births_target": 2761,
+      "births_base": 2821
+     },
+     {
+      "nuts": "FRH01",
+      "name": "Côtes-d'Armor",
+      "dept": "22",
+      "births_target": 2914,
+      "births_base": 2949
+     },
+     {
+      "nuts": "FRI22",
+      "name": "Creuse",
+      "dept": "23",
+      "births_target": 477,
+      "births_base": 458
+     },
+     {
+      "nuts": "FRI11",
+      "name": "Dordogne",
+      "dept": "24",
+      "births_target": 1776,
+      "births_base": 1744
+     },
+     {
+      "nuts": "FRC21",
+      "name": "Doubs",
+      "dept": "25",
+      "births_target": 3278,
+      "births_base": 3213
+     },
+     {
+      "nuts": "FRK23",
+      "name": "Drôme",
+      "dept": "26",
+      "births_target": 2899,
+      "births_base": 2919
+     },
+     {
+      "nuts": "FRD21",
+      "name": "Eure",
+      "dept": "27",
+      "births_target": 3387,
+      "births_base": 3488
+     },
+     {
+      "nuts": "FRB02",
+      "name": "Eure-et-Loir",
+      "dept": "28",
+      "births_target": 2528,
+      "births_base": 2610
+     },
+     {
+      "nuts": "FRH02",
+      "name": "Finistère",
+      "dept": "29",
+      "births_target": 4750,
+      "births_base": 4744
+     },
+     {
+      "nuts": "FRJ12",
+      "name": "Gard",
+      "dept": "30",
+      "births_target": 4123,
+      "births_base": 4137
+     },
+     {
+      "nuts": "FRJ23",
+      "name": "Haute-Garonne",
+      "dept": "31",
+      "births_target": 9348,
+      "births_base": 9483
+     },
+     {
+      "nuts": "FRJ24",
+      "name": "Gers",
+      "dept": "32",
+      "births_target": 841,
+      "births_base": 783
+     },
+     {
+      "nuts": "FRI12",
+      "name": "Gironde",
+      "dept": "33",
+      "births_target": 9826,
+      "births_base": 10074
+     },
+     {
+      "nuts": "FRJ13",
+      "name": "Hérault",
+      "dept": "34",
+      "births_target": 7092,
+      "births_base": 7145
+     },
+     {
+      "nuts": "FRH03",
+      "name": "Ille-et-Vilaine",
+      "dept": "35",
+      "births_target": 7193,
+      "births_base": 7159
+     },
+     {
+      "nuts": "FRB03",
+      "name": "Indre",
+      "dept": "36",
+      "births_target": 978,
+      "births_base": 1013
+     },
+     {
+      "nuts": "FRB04",
+      "name": "Indre-et-Loire",
+      "dept": "37",
+      "births_target": 3531,
+      "births_base": 3513
+     },
+     {
+      "nuts": "FRK24",
+      "name": "Isère",
+      "dept": "38",
+      "births_target": 8012,
+      "births_base": 7953
+     },
+     {
+      "nuts": "FRC22",
+      "name": "Jura",
+      "dept": "39",
+      "births_target": 1238,
+      "births_base": 1312
+     },
+     {
+      "nuts": "FRI13",
+      "name": "Landes",
+      "dept": "40",
+      "births_target": 1974,
+      "births_base": 2028
+     },
+     {
+      "nuts": "FRB05",
+      "name": "Loir-et-Cher",
+      "dept": "41",
+      "births_target": 1694,
+      "births_base": 1756
+     },
+     {
+      "nuts": "FRK25",
+      "name": "Loire",
+      "dept": "42",
+      "births_target": 4736,
+      "births_base": 4648
+     },
+     {
+      "nuts": "FRK13",
+      "name": "Haute-Loire",
+      "dept": "43",
+      "births_target": 1119,
+      "births_base": 1116
+     },
+     {
+      "nuts": "FRG01",
+      "name": "Loire-Atlantique",
+      "dept": "44",
+      "births_target": 9303,
+      "births_base": 9897
+     },
+     {
+      "nuts": "FRB06",
+      "name": "Loiret",
+      "dept": "45",
+      "births_target": 4539,
+      "births_base": 4383
+     },
+     {
+      "nuts": "FRJ25",
+      "name": "Lot",
+      "dept": "46",
+      "births_target": 717,
+      "births_base": 723
+     },
+     {
+      "nuts": "FRI14",
+      "name": "Lot-et-Garonne",
+      "dept": "47",
+      "births_target": 1730,
+      "births_base": 1589
+     },
+     {
+      "nuts": "FRJ14",
+      "name": "Lozère",
+      "dept": "48",
+      "births_target": 299,
+      "births_base": 316
+     },
+     {
+      "nuts": "FRG02",
+      "name": "Maine-et-Loire",
+      "dept": "49",
+      "births_target": 5155,
+      "births_base": 5158
+     },
+     {
+      "nuts": "FRD12",
+      "name": "Manche",
+      "dept": "50",
+      "births_target": 2548,
+      "births_base": 2461
+     },
+     {
+      "nuts": "FRF23",
+      "name": "Marne",
+      "dept": "51",
+      "births_target": 3369,
+      "births_base": 3446
+     },
+     {
+      "nuts": "FRF24",
+      "name": "Haute-Marne",
+      "dept": "52",
+      "births_target": 790,
+      "births_base": 825
+     },
+     {
+      "nuts": "FRG03",
+      "name": "Mayenne",
+      "dept": "53",
+      "births_target": 1886,
+      "births_base": 1810
+     },
+     {
+      "nuts": "FRF31",
+      "name": "Meurthe-et-Moselle",
+      "dept": "54",
+      "births_target": 3572,
+      "births_base": 3782
+     },
+     {
+      "nuts": "FRF32",
+      "name": "Meuse",
+      "dept": "55",
+      "births_target": 811,
+      "births_base": 843
+     },
+     {
+      "nuts": "FRH04",
+      "name": "Morbihan",
+      "dept": "56",
+      "births_target": 4000,
+      "births_base": 4039
+     },
+     {
+      "nuts": "FRF33",
+      "name": "Moselle",
+      "dept": "57",
+      "births_target": 5445,
+      "births_base": 5510
+     },
+     {
+      "nuts": "FRC12",
+      "name": "Nièvre",
+      "dept": "58",
+      "births_target": 844,
+      "births_base": 906
+     },
+     {
+      "nuts": "FRE11",
+      "name": "Nord",
+      "dept": "59",
+      "births_target": 17111,
+      "births_base": 17086
+     },
+     {
+      "nuts": "FRE22",
+      "name": "Oise",
+      "dept": "60",
+      "births_target": 5257,
+      "births_base": 5272
+     },
+     {
+      "nuts": "FRD13",
+      "name": "Orne",
+      "dept": "61",
+      "births_target": 1398,
+      "births_base": 1462
+     },
+     {
+      "nuts": "FRE12",
+      "name": "Pas-de-Calais",
+      "dept": "62",
+      "births_target": 8672,
+      "births_base": 8749
+     },
+     {
+      "nuts": "FRK14",
+      "name": "Puy-de-Dôme",
+      "dept": "63",
+      "births_target": 3617,
+      "births_base": 3631
+     },
+     {
+      "nuts": "FRI15",
+      "name": "Pyrénées-Atlantiques",
+      "dept": "64",
+      "births_target": 3501,
+      "births_base": 3513
+     },
+     {
+      "nuts": "FRJ26",
+      "name": "Hautes-Pyrénées",
+      "dept": "65",
+      "births_target": 1025,
+      "births_base": 1048
+     },
+     {
+      "nuts": "FRJ15",
+      "name": "Pyrénées-Orientales",
+      "dept": "66",
+      "births_target": 2460,
+      "births_base": 2522
+     },
+     {
+      "nuts": "FRF11",
+      "name": "Bas-Rhin",
+      "dept": "67",
+      "births_target": 6463,
+      "births_base": 6632
+     },
+     {
+      "nuts": "FRF12",
+      "name": "Haut-Rhin",
+      "dept": "68",
+      "births_target": 4130,
+      "births_base": 4352
+     },
+     {
+      "nuts": "FRK26",
+      "name": "Rhône",
+      "dept": "69",
+      "births_target": 13853,
+      "births_base": 13899
+     },
+     {
+      "nuts": "FRC23",
+      "name": "Haute-Saône",
+      "dept": "70",
+      "births_target": 1089,
+      "births_base": 1142
+     },
+     {
+      "nuts": "FRC13",
+      "name": "Saône-et-Loire",
+      "dept": "71",
+      "births_target": 2617,
+      "births_base": 2756
+     },
+     {
+      "nuts": "FRG04",
+      "name": "Sarthe",
+      "dept": "72",
+      "births_target": 3287,
+      "births_base": 3439
+     },
+     {
+      "nuts": "FRK27",
+      "name": "Savoie",
+      "dept": "73",
+      "births_target": 2533,
+      "births_base": 2496
+     },
+     {
+      "nuts": "FRK28",
+      "name": "Haute-Savoie",
+      "dept": "74",
+      "births_target": 6077,
+      "births_base": 6009
+     },
+     {
+      "nuts": "FR101",
+      "name": "Paris",
+      "dept": "75",
+      "births_target": 14303,
+      "births_base": 14234
+     },
+     {
+      "nuts": "FRD22",
+      "name": "Seine-Maritime",
+      "dept": "76",
+      "births_target": 7583,
+      "births_base": 7871
+     },
+     {
+      "nuts": "FR102",
+      "name": "Seine-et-Marne",
+      "dept": "77",
+      "births_target": 10925,
+      "births_base": 10999
+     },
+     {
+      "nuts": "FR103",
+      "name": "Yvelines",
+      "dept": "78",
+      "births_target": 11185,
+      "births_base": 11175
+     },
+     {
+      "nuts": "FRI33",
+      "name": "Deux-Sèvres",
+      "dept": "79",
+      "births_target": 1781,
+      "births_base": 1876
+     },
+     {
+      "nuts": "FRE23",
+      "name": "Somme",
+      "dept": "80",
+      "births_target": 3153,
+      "births_base": 3314
+     },
+     {
+      "nuts": "FRJ27",
+      "name": "Tarn",
+      "dept": "81",
+      "births_target": 1867,
+      "births_base": 1948
+     },
+     {
+      "nuts": "FRJ28",
+      "name": "Tarn-et-Garonne",
+      "dept": "82",
+      "births_target": 1374,
+      "births_base": 1462
+     },
+     {
+      "nuts": "FRL05",
+      "name": "Var",
+      "dept": "83",
+      "births_target": 6002,
+      "births_base": 5969
+     },
+     {
+      "nuts": "FRL06",
+      "name": "Vaucluse",
+      "dept": "84",
+      "births_target": 3379,
+      "births_base": 3421
+     },
+     {
+      "nuts": "FRG05",
+      "name": "Vendée",
+      "dept": "85",
+      "births_target": 3424,
+      "births_base": 3426
+     },
+     {
+      "nuts": "FRI34",
+      "name": "Vienne",
+      "dept": "86",
+      "births_target": 2276,
+      "births_base": 2275
+     },
+     {
+      "nuts": "FRI23",
+      "name": "Haute-Vienne",
+      "dept": "87",
+      "births_target": 1908,
+      "births_base": 1869
+     },
+     {
+      "nuts": "FRF34",
+      "name": "Vosges",
+      "dept": "88",
+      "births_target": 1628,
+      "births_base": 1685
+     },
+     {
+      "nuts": "FRC14",
+      "name": "Yonne",
+      "dept": "89",
+      "births_target": 1639,
+      "births_base": 1706
+     },
+     {
+      "nuts": "FRC24",
+      "name": "Territoire de Belfort",
+      "dept": "90",
+      "births_target": 811,
+      "births_base": 768
+     },
+     {
+      "nuts": "FR104",
+      "name": "Essonne",
+      "dept": "91",
+      "births_target": 10799,
+      "births_base": 10976
+     },
+     {
+      "nuts": "FR105",
+      "name": "Hauts-de-Seine",
+      "dept": "92",
+      "births_target": 12958,
+      "births_base": 13077
+     },
+     {
+      "nuts": "FR106",
+      "name": "Seine-Saint-Denis",
+      "dept": "93",
+      "births_target": 16148,
+      "births_base": 16106
+     },
+     {
+      "nuts": "FR107",
+      "name": "Val-de-Marne",
+      "dept": "94",
+      "births_target": 11440,
+      "births_base": 11384
+     },
+     {
+      "nuts": "FR108",
+      "name": "Val-d'Oise",
+      "dept": "95",
+      "births_target": 11055,
+      "births_base": 11420
+     },
+     {
+      "nuts": "FRY10",
+      "name": "Guadeloupe",
+      "dept": "971",
+      "births_target": 2150,
+      "births_base": 2088
+     },
+     {
+      "nuts": "FRY20",
+      "name": "Martinique",
+      "dept": "972",
+      "births_target": 1838,
+      "births_base": 1816
+     },
+     {
+      "nuts": "FRY30",
+      "name": "Guyane",
+      "dept": "973",
+      "births_target": 4248,
+      "births_base": 4230
+     },
+     {
+      "nuts": "FRY40",
+      "name": "La Réunion",
+      "dept": "974",
+      "births_target": 7722,
+      "births_base": 8012
+     },
+     {
+      "nuts": "FRY50",
+      "name": "Mayotte",
+      "dept": "976",
+      "births_target": 6619,
+      "births_base": 6564
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "IT",
+  "country": "Italy",
+  "level": "NUTS3 (provincia); Sardinia at NUTS2 for 2026",
+  "source": "ISTAT, Bilancio demografico mensile (monthly demographic balance of the resident population, from municipal population registers), SDMX dataflow 22_315_DF_DCIS_POPORESBIL1_2 \"Monthly data\", DATA_TYPE=LBIRTH (live births), SEX=total. 2025 and 2026 provisional.",
+  "url": "https://esploradati.istat.it/SDMXWS/rest/data/IT1,22_315_DF_DCIS_POPORESBIL1_2,1.0/M..LBIRTH.9?startPeriod=2024-01",
+  "basis": "residence (births registered in the municipal population register of residence); monthly flows of the population register (registrations), which may lag the date of birth slightly",
+  "notes": "Latest available month is June 2026 (Jun 2026 vs Jun 2025: -0.9%, in line with Jan-May -0.7%), so it was kept. Sardinia: provinces were redrawn in 2026 (new codes IT113 Gallura Nord-Est Sardegna, IT119 Sulcis Iglesiente, ITG2A Ogliastra, ITG2B Medio Campidano; Sud Sardegna IT111 discontinued), so 2026 YTD is given for the region ITG2 only; 2025 vs 2024 uses the pre-2026 provinces (= NUTS 2021 ITG2D-ITG2H). ISTAT area codes differ from NUTS 2021 for the North-East/Centre (ISTAT ITD*/ITE* = NUTS ITH*/ITI*) and newer provinces; the nuts field gives the NUTS 2021 code, istat_code the original.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "ITC4D",
+      "name": "Monza e della Brianza",
+      "istat_code": "IT108",
+      "births_target": 5422,
+      "births_base": 5593
+     },
+     {
+      "nuts": "ITI35",
+      "name": "Fermo",
+      "istat_code": "IT109",
+      "births_target": 866,
+      "births_base": 911
+     },
+     {
+      "nuts": "ITF48",
+      "name": "Barletta-Andria-Trani",
+      "istat_code": "IT110",
+      "births_target": 2471,
+      "births_base": 2509
+     },
+     {
+      "nuts": "ITG2H",
+      "name": "Sud Sardegna",
+      "istat_code": "IT111",
+      "births_target": 1267,
+      "births_base": 1378
+     },
+     {
+      "nuts": "ITC11",
+      "name": "Torino",
+      "istat_code": "ITC11",
+      "births_target": 12225,
+      "births_base": 12788
+     },
+     {
+      "nuts": "ITC12",
+      "name": "Vercelli",
+      "istat_code": "ITC12",
+      "births_target": 939,
+      "births_base": 902
+     },
+     {
+      "nuts": "ITC13",
+      "name": "Biella",
+      "istat_code": "ITC13",
+      "births_target": 796,
+      "births_base": 792
+     },
+     {
+      "nuts": "ITC14",
+      "name": "Verbano-Cusio-Ossola",
+      "istat_code": "ITC14",
+      "births_target": 751,
+      "births_base": 758
+     },
+     {
+      "nuts": "ITC15",
+      "name": "Novara",
+      "istat_code": "ITC15",
+      "births_target": 2172,
+      "births_base": 2212
+     },
+     {
+      "nuts": "ITC16",
+      "name": "Cuneo",
+      "istat_code": "ITC16",
+      "births_target": 3768,
+      "births_base": 3832
+     },
+     {
+      "nuts": "ITC17",
+      "name": "Asti",
+      "istat_code": "ITC17",
+      "births_target": 1092,
+      "births_base": 1213
+     },
+     {
+      "nuts": "ITC18",
+      "name": "Alessandria",
+      "istat_code": "ITC18",
+      "births_target": 2096,
+      "births_base": 2086
+     },
+     {
+      "nuts": "ITC20",
+      "name": "Valle d'Aosta / Vallée d'Aoste",
+      "istat_code": "ITC20",
+      "births_target": 677,
+      "births_base": 639
+     },
+     {
+      "nuts": "ITC31",
+      "name": "Imperia",
+      "istat_code": "ITC31",
+      "births_target": 1065,
+      "births_base": 1212
+     },
+     {
+      "nuts": "ITC32",
+      "name": "Savona",
+      "istat_code": "ITC32",
+      "births_target": 1285,
+      "births_base": 1296
+     },
+     {
+      "nuts": "ITC33",
+      "name": "Genova",
+      "istat_code": "ITC33",
+      "births_target": 4599,
+      "births_base": 4648
+     },
+     {
+      "nuts": "ITC34",
+      "name": "La Spezia",
+      "istat_code": "ITC34",
+      "births_target": 1073,
+      "births_base": 1224
+     },
+     {
+      "nuts": "ITC41",
+      "name": "Varese",
+      "istat_code": "ITC41",
+      "births_target": 5329,
+      "births_base": 5471
+     },
+     {
+      "nuts": "ITC42",
+      "name": "Como",
+      "istat_code": "ITC42",
+      "births_target": 3522,
+      "births_base": 3731
+     },
+     {
+      "nuts": "ITC43",
+      "name": "Lecco",
+      "istat_code": "ITC43",
+      "births_target": 1958,
+      "births_base": 2050
+     },
+     {
+      "nuts": "ITC44",
+      "name": "Sondrio",
+      "istat_code": "ITC44",
+      "births_target": 1053,
+      "births_base": 1148
+     },
+     {
+      "nuts": "ITC4C",
+      "name": "Milano",
+      "istat_code": "ITC45",
+      "births_target": 21280,
+      "births_base": 21441
+     },
+     {
+      "nuts": "ITC46",
+      "name": "Bergamo",
+      "istat_code": "ITC46",
+      "births_target": 7169,
+      "births_base": 7367
+     },
+     {
+      "nuts": "ITC47",
+      "name": "Brescia",
+      "istat_code": "ITC47",
+      "births_target": 8139,
+      "births_base": 8314
+     },
+     {
+      "nuts": "ITC48",
+      "name": "Pavia",
+      "istat_code": "ITC48",
+      "births_target": 3279,
+      "births_base": 3282
+     },
+     {
+      "nuts": "ITC49",
+      "name": "Lodi",
+      "istat_code": "ITC49",
+      "births_target": 1371,
+      "births_base": 1569
+     },
+     {
+      "nuts": "ITC4A",
+      "name": "Cremona",
+      "istat_code": "ITC4A",
+      "births_target": 2208,
+      "births_base": 2240
+     },
+     {
+      "nuts": "ITC4B",
+      "name": "Mantova",
+      "istat_code": "ITC4B",
+      "births_target": 2432,
+      "births_base": 2505
+     },
+     {
+      "nuts": "ITH10",
+      "name": "Bolzano / Bozen",
+      "istat_code": "ITD10",
+      "births_target": 4650,
+      "births_base": 4537
+     },
+     {
+      "nuts": "ITH20",
+      "name": "Trento",
+      "istat_code": "ITD20",
+      "births_target": 3700,
+      "births_base": 3748
+     },
+     {
+      "nuts": "ITH31",
+      "name": "Verona",
+      "istat_code": "ITD31",
+      "births_target": 5924,
+      "births_base": 6149
+     },
+     {
+      "nuts": "ITH32",
+      "name": "Vicenza",
+      "istat_code": "ITD32",
+      "births_target": 5500,
+      "births_base": 5721
+     },
+     {
+      "nuts": "ITH33",
+      "name": "Belluno",
+      "istat_code": "ITD33",
+      "births_target": 1052,
+      "births_base": 1069
+     },
+     {
+      "nuts": "ITH34",
+      "name": "Treviso",
+      "istat_code": "ITD34",
+      "births_target": 5478,
+      "births_base": 5536
+     },
+     {
+      "nuts": "ITH35",
+      "name": "Venezia",
+      "istat_code": "ITD35",
+      "births_target": 4511,
+      "births_base": 4710
+     },
+     {
+      "nuts": "ITH36",
+      "name": "Padova",
+      "istat_code": "ITD36",
+      "births_target": 5323,
+      "births_base": 5677
+     },
+     {
+      "nuts": "ITH37",
+      "name": "Rovigo",
+      "istat_code": "ITD37",
+      "births_target": 1125,
+      "births_base": 1107
+     },
+     {
+      "nuts": "ITH41",
+      "name": "Pordenone",
+      "istat_code": "ITD41",
+      "births_target": 1820,
+      "births_base": 1870
+     },
+     {
+      "nuts": "ITH42",
+      "name": "Udine",
+      "istat_code": "ITD42",
+      "births_target": 2634,
+      "births_base": 2851
+     },
+     {
+      "nuts": "ITH43",
+      "name": "Gorizia",
+      "istat_code": "ITD43",
+      "births_target": 885,
+      "births_base": 823
+     },
+     {
+      "nuts": "ITH44",
+      "name": "Trieste",
+      "istat_code": "ITD44",
+      "births_target": 1316,
+      "births_base": 1351
+     },
+     {
+      "nuts": "ITH51",
+      "name": "Piacenza",
+      "istat_code": "ITD51",
+      "births_target": 1894,
+      "births_base": 1909
+     },
+     {
+      "nuts": "ITH52",
+      "name": "Parma",
+      "istat_code": "ITD52",
+      "births_target": 3055,
+      "births_base": 3068
+     },
+     {
+      "nuts": "ITH53",
+      "name": "Reggio nell'Emilia",
+      "istat_code": "ITD53",
+      "births_target": 3416,
+      "births_base": 3514
+     },
+     {
+      "nuts": "ITH54",
+      "name": "Modena",
+      "istat_code": "ITD54",
+      "births_target": 4723,
+      "births_base": 4809
+     },
+     {
+      "nuts": "ITH55",
+      "name": "Bologna",
+      "istat_code": "ITD55",
+      "births_target": 6273,
+      "births_base": 6573
+     },
+     {
+      "nuts": "ITH56",
+      "name": "Ferrara",
+      "istat_code": "ITD56",
+      "births_target": 1711,
+      "births_base": 1723
+     },
+     {
+      "nuts": "ITH57",
+      "name": "Ravenna",
+      "istat_code": "ITD57",
+      "births_target": 2025,
+      "births_base": 2210
+     },
+     {
+      "nuts": "ITH58",
+      "name": "Forlì-Cesena",
+      "istat_code": "ITD58",
+      "births_target": 2174,
+      "births_base": 2335
+     },
+     {
+      "nuts": "ITH59",
+      "name": "Rimini",
+      "istat_code": "ITD59",
+      "births_target": 1728,
+      "births_base": 1902
+     },
+     {
+      "nuts": "ITI11",
+      "name": "Massa-Carrara",
+      "istat_code": "ITE11",
+      "births_target": 886,
+      "births_base": 946
+     },
+     {
+      "nuts": "ITI12",
+      "name": "Lucca",
+      "istat_code": "ITE12",
+      "births_target": 1905,
+      "births_base": 2007
+     },
+     {
+      "nuts": "ITI13",
+      "name": "Pistoia",
+      "istat_code": "ITE13",
+      "births_target": 1582,
+      "births_base": 1578
+     },
+     {
+      "nuts": "ITI14",
+      "name": "Firenze",
+      "istat_code": "ITE14",
+      "births_target": 5755,
+      "births_base": 5921
+     },
+     {
+      "nuts": "ITI15",
+      "name": "Prato",
+      "istat_code": "ITE15",
+      "births_target": 1370,
+      "births_base": 1389
+     },
+     {
+      "nuts": "ITI16",
+      "name": "Livorno",
+      "istat_code": "ITE16",
+      "births_target": 1584,
+      "births_base": 1712
+     },
+     {
+      "nuts": "ITI17",
+      "name": "Pisa",
+      "istat_code": "ITE17",
+      "births_target": 2466,
+      "births_base": 2533
+     },
+     {
+      "nuts": "ITI18",
+      "name": "Arezzo",
+      "istat_code": "ITE18",
+      "births_target": 1893,
+      "births_base": 2018
+     },
+     {
+      "nuts": "ITI19",
+      "name": "Siena",
+      "istat_code": "ITE19",
+      "births_target": 1458,
+      "births_base": 1548
+     },
+     {
+      "nuts": "ITI1A",
+      "name": "Grosseto",
+      "istat_code": "ITE1A",
+      "births_target": 1008,
+      "births_base": 1096
+     },
+     {
+      "nuts": "ITI21",
+      "name": "Perugia",
+      "istat_code": "ITE21",
+      "births_target": 3374,
+      "births_base": 3606
+     },
+     {
+      "nuts": "ITI22",
+      "name": "Terni",
+      "istat_code": "ITE22",
+      "births_target": 1078,
+      "births_base": 1130
+     },
+     {
+      "nuts": "ITI31",
+      "name": "Pesaro e Urbino",
+      "istat_code": "ITE31",
+      "births_target": 1872,
+      "births_base": 1884
+     },
+     {
+      "nuts": "ITI32",
+      "name": "Ancona",
+      "istat_code": "ITE32",
+      "births_target": 2612,
+      "births_base": 2524
+     },
+     {
+      "nuts": "ITI33",
+      "name": "Macerata",
+      "istat_code": "ITE33",
+      "births_target": 1746,
+      "births_base": 1802
+     },
+     {
+      "nuts": "ITI34",
+      "name": "Ascoli Piceno",
+      "istat_code": "ITE34",
+      "births_target": 1123,
+      "births_base": 1131
+     },
+     {
+      "nuts": "ITI41",
+      "name": "Viterbo",
+      "istat_code": "ITE41",
+      "births_target": 1485,
+      "births_base": 1539
+     },
+     {
+      "nuts": "ITI42",
+      "name": "Rieti",
+      "istat_code": "ITE42",
+      "births_target": 783,
+      "births_base": 821
+     },
+     {
+      "nuts": "ITI43",
+      "name": "Roma",
+      "istat_code": "ITE43",
+      "births_target": 23808,
+      "births_base": 25200
+     },
+     {
+      "nuts": "ITI44",
+      "name": "Latina",
+      "istat_code": "ITE44",
+      "births_target": 3339,
+      "births_base": 3452
+     },
+     {
+      "nuts": "ITI45",
+      "name": "Frosinone",
+      "istat_code": "ITE45",
+      "births_target": 2395,
+      "births_base": 2687
+     },
+     {
+      "nuts": "ITF11",
+      "name": "L'Aquila",
+      "istat_code": "ITF11",
+      "births_target": 1526,
+      "births_base": 1690
+     },
+     {
+      "nuts": "ITF12",
+      "name": "Teramo",
+      "istat_code": "ITF12",
+      "births_target": 1689,
+      "births_base": 1744
+     },
+     {
+      "nuts": "ITF13",
+      "name": "Pescara",
+      "istat_code": "ITF13",
+      "births_target": 1749,
+      "births_base": 1821
+     },
+     {
+      "nuts": "ITF14",
+      "name": "Chieti",
+      "istat_code": "ITF14",
+      "births_target": 2001,
+      "births_base": 2101
+     },
+     {
+      "nuts": "ITF21",
+      "name": "Isernia",
+      "istat_code": "ITF21",
+      "births_target": 406,
+      "births_base": 422
+     },
+     {
+      "nuts": "ITF22",
+      "name": "Campobasso",
+      "istat_code": "ITF22",
+      "births_target": 1084,
+      "births_base": 1139
+     },
+     {
+      "nuts": "ITF31",
+      "name": "Caserta",
+      "istat_code": "ITF31",
+      "births_target": 6825,
+      "births_base": 7029
+     },
+     {
+      "nuts": "ITF32",
+      "name": "Benevento",
+      "istat_code": "ITF32",
+      "births_target": 1519,
+      "births_base": 1635
+     },
+     {
+      "nuts": "ITF33",
+      "name": "Napoli",
+      "istat_code": "ITF33",
+      "births_target": 21908,
+      "births_base": 22934
+     },
+     {
+      "nuts": "ITF34",
+      "name": "Avellino",
+      "istat_code": "ITF34",
+      "births_target": 2360,
+      "births_base": 2427
+     },
+     {
+      "nuts": "ITF35",
+      "name": "Salerno",
+      "istat_code": "ITF35",
+      "births_target": 6996,
+      "births_base": 7323
+     },
+     {
+      "nuts": "ITF46",
+      "name": "Foggia",
+      "istat_code": "ITF41",
+      "births_target": 3685,
+      "births_base": 3809
+     },
+     {
+      "nuts": "ITF47",
+      "name": "Bari",
+      "istat_code": "ITF42",
+      "births_target": 7402,
+      "births_base": 7902
+     },
+     {
+      "nuts": "ITF43",
+      "name": "Taranto",
+      "istat_code": "ITF43",
+      "births_target": 3044,
+      "births_base": 3215
+     },
+     {
+      "nuts": "ITF44",
+      "name": "Brindisi",
+      "istat_code": "ITF44",
+      "births_target": 2012,
+      "births_base": 2334
+     },
+     {
+      "nuts": "ITF45",
+      "name": "Lecce",
+      "istat_code": "ITF45",
+      "births_target": 4283,
+      "births_base": 4520
+     },
+     {
+      "nuts": "ITF51",
+      "name": "Potenza",
+      "istat_code": "ITF51",
+      "births_target": 1828,
+      "births_base": 1912
+     },
+     {
+      "nuts": "ITF52",
+      "name": "Matera",
+      "istat_code": "ITF52",
+      "births_target": 1141,
+      "births_base": 1147
+     },
+     {
+      "nuts": "ITF61",
+      "name": "Cosenza",
+      "istat_code": "ITF61",
+      "births_target": 4048,
+      "births_base": 4252
+     },
+     {
+      "nuts": "ITF62",
+      "name": "Crotone",
+      "istat_code": "ITF62",
+      "births_target": 1105,
+      "births_base": 1227
+     },
+     {
+      "nuts": "ITF63",
+      "name": "Catanzaro",
+      "istat_code": "ITF63",
+      "births_target": 2080,
+      "births_base": 2234
+     },
+     {
+      "nuts": "ITF64",
+      "name": "Vibo Valentia",
+      "istat_code": "ITF64",
+      "births_target": 1029,
+      "births_base": 1116
+     },
+     {
+      "nuts": "ITF65",
+      "name": "Reggio di Calabria",
+      "istat_code": "ITF65",
+      "births_target": 3610,
+      "births_base": 3850
+     },
+     {
+      "nuts": "ITG11",
+      "name": "Trapani",
+      "istat_code": "ITG11",
+      "births_target": 2739,
+      "births_base": 2731
+     },
+     {
+      "nuts": "ITG12",
+      "name": "Palermo",
+      "istat_code": "ITG12",
+      "births_target": 8437,
+      "births_base": 8762
+     },
+     {
+      "nuts": "ITG13",
+      "name": "Messina",
+      "istat_code": "ITG13",
+      "births_target": 3456,
+      "births_base": 3605
+     },
+     {
+      "nuts": "ITG14",
+      "name": "Agrigento",
+      "istat_code": "ITG14",
+      "births_target": 2752,
+      "births_base": 2978
+     },
+     {
+      "nuts": "ITG15",
+      "name": "Caltanissetta",
+      "istat_code": "ITG15",
+      "births_target": 1543,
+      "births_base": 1640
+     },
+     {
+      "nuts": "ITG16",
+      "name": "Enna",
+      "istat_code": "ITG16",
+      "births_target": 920,
+      "births_base": 938
+     },
+     {
+      "nuts": "ITG17",
+      "name": "Catania",
+      "istat_code": "ITG17",
+      "births_target": 7664,
+      "births_base": 8107
+     },
+     {
+      "nuts": "ITG18",
+      "name": "Ragusa",
+      "istat_code": "ITG18",
+      "births_target": 2279,
+      "births_base": 2441
+     },
+     {
+      "nuts": "ITG19",
+      "name": "Siracusa",
+      "istat_code": "ITG19",
+      "births_target": 2411,
+      "births_base": 2458
+     },
+     {
+      "nuts": "ITG2D",
+      "name": "Sassari",
+      "istat_code": "ITG25",
+      "births_target": 2095,
+      "births_base": 2255
+     },
+     {
+      "nuts": "ITG2E",
+      "name": "Nuoro",
+      "istat_code": "ITG26",
+      "births_target": 940,
+      "births_base": 941
+     },
+     {
+      "nuts": "ITG2F",
+      "name": "Cagliari",
+      "istat_code": "ITG27",
+      "births_target": 1570,
+      "births_base": 1819
+     },
+     {
+      "nuts": "ITG2G",
+      "name": "Oristano",
+      "istat_code": "ITG28",
+      "births_target": 556,
+      "births_base": 659
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jun",
+    "regions": [
+     {
+      "nuts": "ITC4D",
+      "name": "Monza e della Brianza",
+      "istat_code": "IT108",
+      "births_target": 2650,
+      "births_base": 2560
+     },
+     {
+      "nuts": "ITI35",
+      "name": "Fermo",
+      "istat_code": "IT109",
+      "births_target": 394,
+      "births_base": 410
+     },
+     {
+      "nuts": "ITF48",
+      "name": "Barletta-Andria-Trani",
+      "istat_code": "IT110",
+      "births_target": 1102,
+      "births_base": 1122
+     },
+     {
+      "nuts": "ITC11",
+      "name": "Torino",
+      "istat_code": "ITC11",
+      "births_target": 5576,
+      "births_base": 5896
+     },
+     {
+      "nuts": "ITC12",
+      "name": "Vercelli",
+      "istat_code": "ITC12",
+      "births_target": 420,
+      "births_base": 407
+     },
+     {
+      "nuts": "ITC13",
+      "name": "Biella",
+      "istat_code": "ITC13",
+      "births_target": 345,
+      "births_base": 368
+     },
+     {
+      "nuts": "ITC14",
+      "name": "Verbano-Cusio-Ossola",
+      "istat_code": "ITC14",
+      "births_target": 363,
+      "births_base": 367
+     },
+     {
+      "nuts": "ITC15",
+      "name": "Novara",
+      "istat_code": "ITC15",
+      "births_target": 1059,
+      "births_base": 1027
+     },
+     {
+      "nuts": "ITC16",
+      "name": "Cuneo",
+      "istat_code": "ITC16",
+      "births_target": 1685,
+      "births_base": 1780
+     },
+     {
+      "nuts": "ITC17",
+      "name": "Asti",
+      "istat_code": "ITC17",
+      "births_target": 555,
+      "births_base": 516
+     },
+     {
+      "nuts": "ITC18",
+      "name": "Alessandria",
+      "istat_code": "ITC18",
+      "births_target": 950,
+      "births_base": 977
+     },
+     {
+      "nuts": "ITC20",
+      "name": "Valle d'Aosta / Vallée d'Aoste",
+      "istat_code": "ITC20",
+      "births_target": 324,
+      "births_base": 337
+     },
+     {
+      "nuts": "ITC31",
+      "name": "Imperia",
+      "istat_code": "ITC31",
+      "births_target": 537,
+      "births_base": 510
+     },
+     {
+      "nuts": "ITC32",
+      "name": "Savona",
+      "istat_code": "ITC32",
+      "births_target": 630,
+      "births_base": 609
+     },
+     {
+      "nuts": "ITC33",
+      "name": "Genova",
+      "istat_code": "ITC33",
+      "births_target": 2146,
+      "births_base": 2168
+     },
+     {
+      "nuts": "ITC34",
+      "name": "La Spezia",
+      "istat_code": "ITC34",
+      "births_target": 492,
+      "births_base": 508
+     },
+     {
+      "nuts": "ITC41",
+      "name": "Varese",
+      "istat_code": "ITC41",
+      "births_target": 2494,
+      "births_base": 2533
+     },
+     {
+      "nuts": "ITC42",
+      "name": "Como",
+      "istat_code": "ITC42",
+      "births_target": 1653,
+      "births_base": 1683
+     },
+     {
+      "nuts": "ITC43",
+      "name": "Lecco",
+      "istat_code": "ITC43",
+      "births_target": 911,
+      "births_base": 947
+     },
+     {
+      "nuts": "ITC44",
+      "name": "Sondrio",
+      "istat_code": "ITC44",
+      "births_target": 483,
+      "births_base": 516
+     },
+     {
+      "nuts": "ITC4C",
+      "name": "Milano",
+      "istat_code": "ITC45",
+      "births_target": 10072,
+      "births_base": 10382
+     },
+     {
+      "nuts": "ITC46",
+      "name": "Bergamo",
+      "istat_code": "ITC46",
+      "births_target": 3407,
+      "births_base": 3361
+     },
+     {
+      "nuts": "ITC47",
+      "name": "Brescia",
+      "istat_code": "ITC47",
+      "births_target": 3903,
+      "births_base": 3790
+     },
+     {
+      "nuts": "ITC48",
+      "name": "Pavia",
+      "istat_code": "ITC48",
+      "births_target": 1547,
+      "births_base": 1533
+     },
+     {
+      "nuts": "ITC49",
+      "name": "Lodi",
+      "istat_code": "ITC49",
+      "births_target": 679,
+      "births_base": 641
+     },
+     {
+      "nuts": "ITC4A",
+      "name": "Cremona",
+      "istat_code": "ITC4A",
+      "births_target": 1010,
+      "births_base": 1034
+     },
+     {
+      "nuts": "ITC4B",
+      "name": "Mantova",
+      "istat_code": "ITC4B",
+      "births_target": 1214,
+      "births_base": 1125
+     },
+     {
+      "nuts": "ITH10",
+      "name": "Bolzano / Bozen",
+      "istat_code": "ITD10",
+      "births_target": 2160,
+      "births_base": 2268
+     },
+     {
+      "nuts": "ITH20",
+      "name": "Trento",
+      "istat_code": "ITD20",
+      "births_target": 1928,
+      "births_base": 1811
+     },
+     {
+      "nuts": "ITH31",
+      "name": "Verona",
+      "istat_code": "ITD31",
+      "births_target": 2873,
+      "births_base": 2762
+     },
+     {
+      "nuts": "ITH32",
+      "name": "Vicenza",
+      "istat_code": "ITD32",
+      "births_target": 2641,
+      "births_base": 2635
+     },
+     {
+      "nuts": "ITH33",
+      "name": "Belluno",
+      "istat_code": "ITD33",
+      "births_target": 488,
+      "births_base": 494
+     },
+     {
+      "nuts": "ITH34",
+      "name": "Treviso",
+      "istat_code": "ITD34",
+      "births_target": 2567,
+      "births_base": 2632
+     },
+     {
+      "nuts": "ITH35",
+      "name": "Venezia",
+      "istat_code": "ITD35",
+      "births_target": 2134,
+      "births_base": 2102
+     },
+     {
+      "nuts": "ITH36",
+      "name": "Padova",
+      "istat_code": "ITD36",
+      "births_target": 2610,
+      "births_base": 2469
+     },
+     {
+      "nuts": "ITH37",
+      "name": "Rovigo",
+      "istat_code": "ITD37",
+      "births_target": 537,
+      "births_base": 532
+     },
+     {
+      "nuts": "ITH41",
+      "name": "Pordenone",
+      "istat_code": "ITD41",
+      "births_target": 894,
+      "births_base": 844
+     },
+     {
+      "nuts": "ITH42",
+      "name": "Udine",
+      "istat_code": "ITD42",
+      "births_target": 1246,
+      "births_base": 1216
+     },
+     {
+      "nuts": "ITH43",
+      "name": "Gorizia",
+      "istat_code": "ITD43",
+      "births_target": 436,
+      "births_base": 418
+     },
+     {
+      "nuts": "ITH44",
+      "name": "Trieste",
+      "istat_code": "ITD44",
+      "births_target": 636,
+      "births_base": 641
+     },
+     {
+      "nuts": "ITH51",
+      "name": "Piacenza",
+      "istat_code": "ITD51",
+      "births_target": 931,
+      "births_base": 863
+     },
+     {
+      "nuts": "ITH52",
+      "name": "Parma",
+      "istat_code": "ITD52",
+      "births_target": 1449,
+      "births_base": 1481
+     },
+     {
+      "nuts": "ITH53",
+      "name": "Reggio nell'Emilia",
+      "istat_code": "ITD53",
+      "births_target": 1613,
+      "births_base": 1605
+     },
+     {
+      "nuts": "ITH54",
+      "name": "Modena",
+      "istat_code": "ITD54",
+      "births_target": 2271,
+      "births_base": 2229
+     },
+     {
+      "nuts": "ITH55",
+      "name": "Bologna",
+      "istat_code": "ITD55",
+      "births_target": 2959,
+      "births_base": 2935
+     },
+     {
+      "nuts": "ITH56",
+      "name": "Ferrara",
+      "istat_code": "ITD56",
+      "births_target": 836,
+      "births_base": 797
+     },
+     {
+      "nuts": "ITH57",
+      "name": "Ravenna",
+      "istat_code": "ITD57",
+      "births_target": 941,
+      "births_base": 961
+     },
+     {
+      "nuts": "ITH58",
+      "name": "Forlì-Cesena",
+      "istat_code": "ITD58",
+      "births_target": 1031,
+      "births_base": 995
+     },
+     {
+      "nuts": "ITH59",
+      "name": "Rimini",
+      "istat_code": "ITD59",
+      "births_target": 842,
+      "births_base": 801
+     },
+     {
+      "nuts": "ITI11",
+      "name": "Massa-Carrara",
+      "istat_code": "ITE11",
+      "births_target": 396,
+      "births_base": 405
+     },
+     {
+      "nuts": "ITI12",
+      "name": "Lucca",
+      "istat_code": "ITE12",
+      "births_target": 913,
+      "births_base": 899
+     },
+     {
+      "nuts": "ITI13",
+      "name": "Pistoia",
+      "istat_code": "ITE13",
+      "births_target": 752,
+      "births_base": 750
+     },
+     {
+      "nuts": "ITI14",
+      "name": "Firenze",
+      "istat_code": "ITE14",
+      "births_target": 2631,
+      "births_base": 2761
+     },
+     {
+      "nuts": "ITI15",
+      "name": "Prato",
+      "istat_code": "ITE15",
+      "births_target": 630,
+      "births_base": 661
+     },
+     {
+      "nuts": "ITI16",
+      "name": "Livorno",
+      "istat_code": "ITE16",
+      "births_target": 670,
+      "births_base": 743
+     },
+     {
+      "nuts": "ITI17",
+      "name": "Pisa",
+      "istat_code": "ITE17",
+      "births_target": 1128,
+      "births_base": 1118
+     },
+     {
+      "nuts": "ITI18",
+      "name": "Arezzo",
+      "istat_code": "ITE18",
+      "births_target": 903,
+      "births_base": 903
+     },
+     {
+      "nuts": "ITI19",
+      "name": "Siena",
+      "istat_code": "ITE19",
+      "births_target": 676,
+      "births_base": 693
+     },
+     {
+      "nuts": "ITI1A",
+      "name": "Grosseto",
+      "istat_code": "ITE1A",
+      "births_target": 470,
+      "births_base": 481
+     },
+     {
+      "nuts": "ITI21",
+      "name": "Perugia",
+      "istat_code": "ITE21",
+      "births_target": 1582,
+      "births_base": 1625
+     },
+     {
+      "nuts": "ITI22",
+      "name": "Terni",
+      "istat_code": "ITE22",
+      "births_target": 478,
+      "births_base": 505
+     },
+     {
+      "nuts": "ITI31",
+      "name": "Pesaro e Urbino",
+      "istat_code": "ITE31",
+      "births_target": 833,
+      "births_base": 863
+     },
+     {
+      "nuts": "ITI32",
+      "name": "Ancona",
+      "istat_code": "ITE32",
+      "births_target": 1159,
+      "births_base": 1261
+     },
+     {
+      "nuts": "ITI33",
+      "name": "Macerata",
+      "istat_code": "ITE33",
+      "births_target": 815,
+      "births_base": 772
+     },
+     {
+      "nuts": "ITI34",
+      "name": "Ascoli Piceno",
+      "istat_code": "ITE34",
+      "births_target": 511,
+      "births_base": 558
+     },
+     {
+      "nuts": "ITI41",
+      "name": "Viterbo",
+      "istat_code": "ITE41",
+      "births_target": 673,
+      "births_base": 722
+     },
+     {
+      "nuts": "ITI42",
+      "name": "Rieti",
+      "istat_code": "ITE42",
+      "births_target": 352,
+      "births_base": 369
+     },
+     {
+      "nuts": "ITI43",
+      "name": "Roma",
+      "istat_code": "ITE43",
+      "births_target": 11306,
+      "births_base": 11267
+     },
+     {
+      "nuts": "ITI44",
+      "name": "Latina",
+      "istat_code": "ITE44",
+      "births_target": 1452,
+      "births_base": 1539
+     },
+     {
+      "nuts": "ITI45",
+      "name": "Frosinone",
+      "istat_code": "ITE45",
+      "births_target": 1196,
+      "births_base": 1116
+     },
+     {
+      "nuts": "ITF11",
+      "name": "L'Aquila",
+      "istat_code": "ITF11",
+      "births_target": 680,
+      "births_base": 739
+     },
+     {
+      "nuts": "ITF12",
+      "name": "Teramo",
+      "istat_code": "ITF12",
+      "births_target": 782,
+      "births_base": 796
+     },
+     {
+      "nuts": "ITF13",
+      "name": "Pescara",
+      "istat_code": "ITF13",
+      "births_target": 804,
+      "births_base": 768
+     },
+     {
+      "nuts": "ITF14",
+      "name": "Chieti",
+      "istat_code": "ITF14",
+      "births_target": 931,
+      "births_base": 955
+     },
+     {
+      "nuts": "ITF21",
+      "name": "Isernia",
+      "istat_code": "ITF21",
+      "births_target": 202,
+      "births_base": 192
+     },
+     {
+      "nuts": "ITF22",
+      "name": "Campobasso",
+      "istat_code": "ITF22",
+      "births_target": 499,
+      "births_base": 534
+     },
+     {
+      "nuts": "ITF31",
+      "name": "Caserta",
+      "istat_code": "ITF31",
+      "births_target": 3134,
+      "births_base": 3100
+     },
+     {
+      "nuts": "ITF32",
+      "name": "Benevento",
+      "istat_code": "ITF32",
+      "births_target": 748,
+      "births_base": 696
+     },
+     {
+      "nuts": "ITF33",
+      "name": "Napoli",
+      "istat_code": "ITF33",
+      "births_target": 9794,
+      "births_base": 9975
+     },
+     {
+      "nuts": "ITF34",
+      "name": "Avellino",
+      "istat_code": "ITF34",
+      "births_target": 1082,
+      "births_base": 1119
+     },
+     {
+      "nuts": "ITF35",
+      "name": "Salerno",
+      "istat_code": "ITF35",
+      "births_target": 3145,
+      "births_base": 3243
+     },
+     {
+      "nuts": "ITF46",
+      "name": "Foggia",
+      "istat_code": "ITF41",
+      "births_target": 1718,
+      "births_base": 1706
+     },
+     {
+      "nuts": "ITF47",
+      "name": "Bari",
+      "istat_code": "ITF42",
+      "births_target": 3330,
+      "births_base": 3439
+     },
+     {
+      "nuts": "ITF43",
+      "name": "Taranto",
+      "istat_code": "ITF43",
+      "births_target": 1391,
+      "births_base": 1366
+     },
+     {
+      "nuts": "ITF44",
+      "name": "Brindisi",
+      "istat_code": "ITF44",
+      "births_target": 926,
+      "births_base": 929
+     },
+     {
+      "nuts": "ITF45",
+      "name": "Lecce",
+      "istat_code": "ITF45",
+      "births_target": 1943,
+      "births_base": 1928
+     },
+     {
+      "nuts": "ITF51",
+      "name": "Potenza",
+      "istat_code": "ITF51",
+      "births_target": 812,
+      "births_base": 871
+     },
+     {
+      "nuts": "ITF52",
+      "name": "Matera",
+      "istat_code": "ITF52",
+      "births_target": 481,
+      "births_base": 550
+     },
+     {
+      "nuts": "ITF61",
+      "name": "Cosenza",
+      "istat_code": "ITF61",
+      "births_target": 1875,
+      "births_base": 1927
+     },
+     {
+      "nuts": "ITF62",
+      "name": "Crotone",
+      "istat_code": "ITF62",
+      "births_target": 529,
+      "births_base": 505
+     },
+     {
+      "nuts": "ITF63",
+      "name": "Catanzaro",
+      "istat_code": "ITF63",
+      "births_target": 964,
+      "births_base": 963
+     },
+     {
+      "nuts": "ITF64",
+      "name": "Vibo Valentia",
+      "istat_code": "ITF64",
+      "births_target": 436,
+      "births_base": 456
+     },
+     {
+      "nuts": "ITF65",
+      "name": "Reggio di Calabria",
+      "istat_code": "ITF65",
+      "births_target": 1682,
+      "births_base": 1686
+     },
+     {
+      "nuts": "ITG11",
+      "name": "Trapani",
+      "istat_code": "ITG11",
+      "births_target": 1188,
+      "births_base": 1239
+     },
+     {
+      "nuts": "ITG12",
+      "name": "Palermo",
+      "istat_code": "ITG12",
+      "births_target": 3953,
+      "births_base": 3876
+     },
+     {
+      "nuts": "ITG13",
+      "name": "Messina",
+      "istat_code": "ITG13",
+      "births_target": 1525,
+      "births_base": 1615
+     },
+     {
+      "nuts": "ITG14",
+      "name": "Agrigento",
+      "istat_code": "ITG14",
+      "births_target": 1256,
+      "births_base": 1260
+     },
+     {
+      "nuts": "ITG15",
+      "name": "Caltanissetta",
+      "istat_code": "ITG15",
+      "births_target": 717,
+      "births_base": 706
+     },
+     {
+      "nuts": "ITG16",
+      "name": "Enna",
+      "istat_code": "ITG16",
+      "births_target": 391,
+      "births_base": 440
+     },
+     {
+      "nuts": "ITG17",
+      "name": "Catania",
+      "istat_code": "ITG17",
+      "births_target": 3390,
+      "births_base": 3482
+     },
+     {
+      "nuts": "ITG18",
+      "name": "Ragusa",
+      "istat_code": "ITG18",
+      "births_target": 1078,
+      "births_base": 1055
+     },
+     {
+      "nuts": "ITG19",
+      "name": "Siracusa",
+      "istat_code": "ITG19",
+      "births_target": 1089,
+      "births_base": 1056
+     },
+     {
+      "nuts": "ITG2",
+      "name": "Sardegna (region; provinces redrawn in 2026)",
+      "istat_code": "ITG2",
+      "births_target": 2896,
+      "births_base": 3008
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "ES",
+  "country": "Spain",
+  "level": "NUTS3 (provincia); Illes Balears at NUTS2 ES53, Canarias at NUTS2 ES70",
+  "source": "INE, Estimación Mensual de Nacimientos (EMN), table 46682 \"Nacimientos mensuales y acumulados. Total nacional, CCAA y provincias\" (INE Tempus API). 2024 = definitive MNP figures; 2025 and 2026 = EMN estimates (corrected for late registration). Release of 16 Sep 2026 (data to July 2026).",
+  "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/46682?nult=40&tip=AM",
+  "basis": "province of residence of the mother (EMN methodology: published by residence since May 2024; residence imputed from place of registration when missing); month of birth",
+  "notes": "2025 is an EMN estimate, not yet a definitive/provisional MNP count, compared against definitive 2024. Latest month July 2026 kept: EMN figures are already grossed up for under-registration (Jul 2026 +2.9% y/y vs +1.8% for Jan-Jun). Illes Balears is one province but three NUTS3 islands, so given as NUTS2 ES53. The Canary Islands provinces do not match NUTS3 islands; regions[] uses the CCAA total (ES70), and canarias_provinces gives the two provinces with their member NUTS3 islands. Births to non-resident mothers are in the national total only.",
+  "canarias_provinces": [
+   {
+    "nuts3_members": [
+     "ES704",
+     "ES705",
+     "ES708"
+    ],
+    "name": "Palmas, Las",
+    "ine_province": "35",
+    "2025_vs_2024": [
+     6270,
+     6355
+    ],
+    "2026_vs_2025_Jan-07": [
+     3484,
+     3557
+    ]
+   },
+   {
+    "nuts3_members": [
+     "ES703",
+     "ES706",
+     "ES707",
+     "ES709"
+    ],
+    "name": "Santa Cruz de Tenerife",
+    "ine_province": "38",
+    "2025_vs_2024": [
+     5412,
+     5344
+    ],
+    "2026_vs_2025_Jan-07": [
+     3016,
+     3070
+    ]
+   }
+  ],
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "ES211",
+      "name": "Araba/Álava",
+      "ine_province": "01",
+      "births_target": 2162,
+      "births_base": 2094
+     },
+     {
+      "nuts": "ES421",
+      "name": "Albacete",
+      "ine_province": "02",
+      "births_target": 2658,
+      "births_base": 2545
+     },
+     {
+      "nuts": "ES521",
+      "name": "Alicante/Alacant",
+      "ine_province": "03",
+      "births_target": 13310,
+      "births_base": 13207
+     },
+     {
+      "nuts": "ES611",
+      "name": "Almería",
+      "ine_province": "04",
+      "births_target": 6557,
+      "births_base": 6576
+     },
+     {
+      "nuts": "ES411",
+      "name": "Ávila",
+      "ine_province": "05",
+      "births_target": 885,
+      "births_base": 854
+     },
+     {
+      "nuts": "ES431",
+      "name": "Badajoz",
+      "ine_province": "06",
+      "births_target": 4320,
+      "births_base": 4364
+     },
+     {
+      "nuts": "ES53",
+      "name": "Balears, Illes",
+      "ine_province": "07",
+      "births_target": 8851,
+      "births_base": 9067
+     },
+     {
+      "nuts": "ES511",
+      "name": "Barcelona",
+      "ine_province": "08",
+      "births_target": 39737,
+      "births_base": 39034
+     },
+     {
+      "nuts": "ES412",
+      "name": "Burgos",
+      "ine_province": "09",
+      "births_target": 2108,
+      "births_base": 2031
+     },
+     {
+      "nuts": "ES432",
+      "name": "Cáceres",
+      "ine_province": "10",
+      "births_target": 2124,
+      "births_base": 2173
+     },
+     {
+      "nuts": "ES612",
+      "name": "Cádiz",
+      "ine_province": "11",
+      "births_target": 7935,
+      "births_base": 7992
+     },
+     {
+      "nuts": "ES522",
+      "name": "Castellón/Castelló",
+      "ine_province": "12",
+      "births_target": 4134,
+      "births_base": 4168
+     },
+     {
+      "nuts": "ES422",
+      "name": "Ciudad Real",
+      "ine_province": "13",
+      "births_target": 3175,
+      "births_base": 3224
+     },
+     {
+      "nuts": "ES613",
+      "name": "Córdoba",
+      "ine_province": "14",
+      "births_target": 5241,
+      "births_base": 5327
+     },
+     {
+      "nuts": "ES111",
+      "name": "Coruña, A",
+      "ine_province": "15",
+      "births_target": 5932,
+      "births_base": 5795
+     },
+     {
+      "nuts": "ES423",
+      "name": "Cuenca",
+      "ine_province": "16",
+      "births_target": 1335,
+      "births_base": 1322
+     },
+     {
+      "nuts": "ES512",
+      "name": "Girona",
+      "ine_province": "17",
+      "births_target": 5749,
+      "births_base": 5758
+     },
+     {
+      "nuts": "ES614",
+      "name": "Granada",
+      "ine_province": "18",
+      "births_target": 6852,
+      "births_base": 6623
+     },
+     {
+      "nuts": "ES424",
+      "name": "Guadalajara",
+      "ine_province": "19",
+      "births_target": 1977,
+      "births_base": 1850
+     },
+     {
+      "nuts": "ES212",
+      "name": "Gipuzkoa",
+      "ine_province": "20",
+      "births_target": 4553,
+      "births_base": 4430
+     },
+     {
+      "nuts": "ES615",
+      "name": "Huelva",
+      "ine_province": "21",
+      "births_target": 3684,
+      "births_base": 3618
+     },
+     {
+      "nuts": "ES241",
+      "name": "Huesca",
+      "ine_province": "22",
+      "births_target": 1446,
+      "births_base": 1504
+     },
+     {
+      "nuts": "ES616",
+      "name": "Jaén",
+      "ine_province": "23",
+      "births_target": 3989,
+      "births_base": 4171
+     },
+     {
+      "nuts": "ES413",
+      "name": "León",
+      "ine_province": "24",
+      "births_target": 2008,
+      "births_base": 1999
+     },
+     {
+      "nuts": "ES513",
+      "name": "Lleida",
+      "ine_province": "25",
+      "births_target": 3200,
+      "births_base": 3173
+     },
+     {
+      "nuts": "ES230",
+      "name": "Rioja, La",
+      "ine_province": "26",
+      "births_target": 2062,
+      "births_base": 2049
+     },
+     {
+      "nuts": "ES112",
+      "name": "Lugo",
+      "ine_province": "27",
+      "births_target": 1628,
+      "births_base": 1610
+     },
+     {
+      "nuts": "ES300",
+      "name": "Madrid",
+      "ine_province": "28",
+      "births_target": 52491,
+      "births_base": 50770
+     },
+     {
+      "nuts": "ES617",
+      "name": "Málaga",
+      "ine_province": "29",
+      "births_target": 11808,
+      "births_base": 11719
+     },
+     {
+      "nuts": "ES620",
+      "name": "Murcia",
+      "ine_province": "30",
+      "births_target": 12616,
+      "births_base": 12504
+     },
+     {
+      "nuts": "ES220",
+      "name": "Navarra",
+      "ine_province": "31",
+      "births_target": 4535,
+      "births_base": 4568
+     },
+     {
+      "nuts": "ES113",
+      "name": "Ourense",
+      "ine_province": "32",
+      "births_target": 1331,
+      "births_base": 1265
+     },
+     {
+      "nuts": "ES120",
+      "name": "Asturias",
+      "ine_province": "33",
+      "births_target": 4577,
+      "births_base": 4535
+     },
+     {
+      "nuts": "ES414",
+      "name": "Palencia",
+      "ine_province": "34",
+      "births_target": 804,
+      "births_base": 824
+     },
+     {
+      "nuts": "ES114",
+      "name": "Pontevedra",
+      "ine_province": "36",
+      "births_target": 4680,
+      "births_base": 4680
+     },
+     {
+      "nuts": "ES415",
+      "name": "Salamanca",
+      "ine_province": "37",
+      "births_target": 1629,
+      "births_base": 1670
+     },
+     {
+      "nuts": "ES130",
+      "name": "Cantabria",
+      "ine_province": "39",
+      "births_target": 2973,
+      "births_base": 3013
+     },
+     {
+      "nuts": "ES416",
+      "name": "Segovia",
+      "ine_province": "40",
+      "births_target": 938,
+      "births_base": 935
+     },
+     {
+      "nuts": "ES618",
+      "name": "Sevilla",
+      "ine_province": "41",
+      "births_target": 14257,
+      "births_base": 14103
+     },
+     {
+      "nuts": "ES417",
+      "name": "Soria",
+      "ine_province": "42",
+      "births_target": 494,
+      "births_base": 480
+     },
+     {
+      "nuts": "ES514",
+      "name": "Tarragona",
+      "ine_province": "43",
+      "births_target": 5603,
+      "births_base": 5782
+     },
+     {
+      "nuts": "ES242",
+      "name": "Teruel",
+      "ine_province": "44",
+      "births_target": 883,
+      "births_base": 880
+     },
+     {
+      "nuts": "ES425",
+      "name": "Toledo",
+      "ine_province": "45",
+      "births_target": 5447,
+      "births_base": 5256
+     },
+     {
+      "nuts": "ES523",
+      "name": "Valencia/València",
+      "ine_province": "46",
+      "births_target": 18478,
+      "births_base": 18147
+     },
+     {
+      "nuts": "ES418",
+      "name": "Valladolid",
+      "ine_province": "47",
+      "births_target": 3046,
+      "births_base": 3048
+     },
+     {
+      "nuts": "ES213",
+      "name": "Bizkaia",
+      "ine_province": "48",
+      "births_target": 6641,
+      "births_base": 6426
+     },
+     {
+      "nuts": "ES419",
+      "name": "Zamora",
+      "ine_province": "49",
+      "births_target": 744,
+      "births_base": 700
+     },
+     {
+      "nuts": "ES243",
+      "name": "Zaragoza",
+      "ine_province": "50",
+      "births_target": 6399,
+      "births_base": 6213
+     },
+     {
+      "nuts": "ES630",
+      "name": "Ceuta",
+      "ine_province": "51",
+      "births_target": 640,
+      "births_base": 685
+     },
+     {
+      "nuts": "ES640",
+      "name": "Melilla",
+      "ine_province": "52",
+      "births_target": 717,
+      "births_base": 795
+     },
+     {
+      "nuts": "ES70",
+      "name": "Canarias (CCAA; provinces Las Palmas + Santa Cruz de Tenerife, see canarias_provinces)",
+      "births_target": 11682,
+      "births_base": 11699
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jul",
+    "regions": [
+     {
+      "nuts": "ES211",
+      "name": "Araba/Álava",
+      "ine_province": "01",
+      "births_target": 1258,
+      "births_base": 1229
+     },
+     {
+      "nuts": "ES421",
+      "name": "Albacete",
+      "ine_province": "02",
+      "births_target": 1506,
+      "births_base": 1481
+     },
+     {
+      "nuts": "ES521",
+      "name": "Alicante/Alacant",
+      "ine_province": "03",
+      "births_target": 7659,
+      "births_base": 7418
+     },
+     {
+      "nuts": "ES611",
+      "name": "Almería",
+      "ine_province": "04",
+      "births_target": 3822,
+      "births_base": 3587
+     },
+     {
+      "nuts": "ES411",
+      "name": "Ávila",
+      "ine_province": "05",
+      "births_target": 535,
+      "births_base": 488
+     },
+     {
+      "nuts": "ES431",
+      "name": "Badajoz",
+      "ine_province": "06",
+      "births_target": 2516,
+      "births_base": 2442
+     },
+     {
+      "nuts": "ES53",
+      "name": "Balears, Illes",
+      "ine_province": "07",
+      "births_target": 4915,
+      "births_base": 4890
+     },
+     {
+      "nuts": "ES511",
+      "name": "Barcelona",
+      "ine_province": "08",
+      "births_target": 23178,
+      "births_base": 22686
+     },
+     {
+      "nuts": "ES412",
+      "name": "Burgos",
+      "ine_province": "09",
+      "births_target": 1288,
+      "births_base": 1199
+     },
+     {
+      "nuts": "ES432",
+      "name": "Cáceres",
+      "ine_province": "10",
+      "births_target": 1186,
+      "births_base": 1217
+     },
+     {
+      "nuts": "ES612",
+      "name": "Cádiz",
+      "ine_province": "11",
+      "births_target": 4435,
+      "births_base": 4512
+     },
+     {
+      "nuts": "ES522",
+      "name": "Castellón/Castelló",
+      "ine_province": "12",
+      "births_target": 2606,
+      "births_base": 2250
+     },
+     {
+      "nuts": "ES422",
+      "name": "Ciudad Real",
+      "ine_province": "13",
+      "births_target": 1761,
+      "births_base": 1801
+     },
+     {
+      "nuts": "ES613",
+      "name": "Córdoba",
+      "ine_province": "14",
+      "births_target": 3040,
+      "births_base": 3019
+     },
+     {
+      "nuts": "ES111",
+      "name": "Coruña, A",
+      "ine_province": "15",
+      "births_target": 3278,
+      "births_base": 3409
+     },
+     {
+      "nuts": "ES423",
+      "name": "Cuenca",
+      "ine_province": "16",
+      "births_target": 793,
+      "births_base": 775
+     },
+     {
+      "nuts": "ES512",
+      "name": "Girona",
+      "ine_province": "17",
+      "births_target": 3342,
+      "births_base": 3263
+     },
+     {
+      "nuts": "ES614",
+      "name": "Granada",
+      "ine_province": "18",
+      "births_target": 3870,
+      "births_base": 3784
+     },
+     {
+      "nuts": "ES424",
+      "name": "Guadalajara",
+      "ine_province": "19",
+      "births_target": 1111,
+      "births_base": 1133
+     },
+     {
+      "nuts": "ES212",
+      "name": "Gipuzkoa",
+      "ine_province": "20",
+      "births_target": 2661,
+      "births_base": 2595
+     },
+     {
+      "nuts": "ES615",
+      "name": "Huelva",
+      "ine_province": "21",
+      "births_target": 2095,
+      "births_base": 2140
+     },
+     {
+      "nuts": "ES241",
+      "name": "Huesca",
+      "ine_province": "22",
+      "births_target": 851,
+      "births_base": 834
+     },
+     {
+      "nuts": "ES616",
+      "name": "Jaén",
+      "ine_province": "23",
+      "births_target": 2364,
+      "births_base": 2290
+     },
+     {
+      "nuts": "ES413",
+      "name": "León",
+      "ine_province": "24",
+      "births_target": 1183,
+      "births_base": 1195
+     },
+     {
+      "nuts": "ES513",
+      "name": "Lleida",
+      "ine_province": "25",
+      "births_target": 1865,
+      "births_base": 1791
+     },
+     {
+      "nuts": "ES230",
+      "name": "Rioja, La",
+      "ine_province": "26",
+      "births_target": 1214,
+      "births_base": 1196
+     },
+     {
+      "nuts": "ES112",
+      "name": "Lugo",
+      "ine_province": "27",
+      "births_target": 921,
+      "births_base": 925
+     },
+     {
+      "nuts": "ES300",
+      "name": "Madrid",
+      "ine_province": "28",
+      "births_target": 30261,
+      "births_base": 30182
+     },
+     {
+      "nuts": "ES617",
+      "name": "Málaga",
+      "ine_province": "29",
+      "births_target": 6728,
+      "births_base": 6655
+     },
+     {
+      "nuts": "ES620",
+      "name": "Murcia",
+      "ine_province": "30",
+      "births_target": 7263,
+      "births_base": 6980
+     },
+     {
+      "nuts": "ES220",
+      "name": "Navarra",
+      "ine_province": "31",
+      "births_target": 2645,
+      "births_base": 2606
+     },
+     {
+      "nuts": "ES113",
+      "name": "Ourense",
+      "ine_province": "32",
+      "births_target": 715,
+      "births_base": 773
+     },
+     {
+      "nuts": "ES120",
+      "name": "Asturias",
+      "ine_province": "33",
+      "births_target": 2676,
+      "births_base": 2626
+     },
+     {
+      "nuts": "ES414",
+      "name": "Palencia",
+      "ine_province": "34",
+      "births_target": 454,
+      "births_base": 459
+     },
+     {
+      "nuts": "ES114",
+      "name": "Pontevedra",
+      "ine_province": "36",
+      "births_target": 2581,
+      "births_base": 2659
+     },
+     {
+      "nuts": "ES415",
+      "name": "Salamanca",
+      "ine_province": "37",
+      "births_target": 961,
+      "births_base": 955
+     },
+     {
+      "nuts": "ES130",
+      "name": "Cantabria",
+      "ine_province": "39",
+      "births_target": 1739,
+      "births_base": 1733
+     },
+     {
+      "nuts": "ES416",
+      "name": "Segovia",
+      "ine_province": "40",
+      "births_target": 580,
+      "births_base": 530
+     },
+     {
+      "nuts": "ES618",
+      "name": "Sevilla",
+      "ine_province": "41",
+      "births_target": 8065,
+      "births_base": 8035
+     },
+     {
+      "nuts": "ES417",
+      "name": "Soria",
+      "ine_province": "42",
+      "births_target": 315,
+      "births_base": 283
+     },
+     {
+      "nuts": "ES514",
+      "name": "Tarragona",
+      "ine_province": "43",
+      "births_target": 3273,
+      "births_base": 3249
+     },
+     {
+      "nuts": "ES242",
+      "name": "Teruel",
+      "ine_province": "44",
+      "births_target": 508,
+      "births_base": 506
+     },
+     {
+      "nuts": "ES425",
+      "name": "Toledo",
+      "ine_province": "45",
+      "births_target": 3030,
+      "births_base": 3048
+     },
+     {
+      "nuts": "ES523",
+      "name": "Valencia/València",
+      "ine_province": "46",
+      "births_target": 10695,
+      "births_base": 10299
+     },
+     {
+      "nuts": "ES418",
+      "name": "Valladolid",
+      "ine_province": "47",
+      "births_target": 1811,
+      "births_base": 1786
+     },
+     {
+      "nuts": "ES213",
+      "name": "Bizkaia",
+      "ine_province": "48",
+      "births_target": 3780,
+      "births_base": 3802
+     },
+     {
+      "nuts": "ES419",
+      "name": "Zamora",
+      "ine_province": "49",
+      "births_target": 370,
+      "births_base": 426
+     },
+     {
+      "nuts": "ES243",
+      "name": "Zaragoza",
+      "ine_province": "50",
+      "births_target": 3677,
+      "births_base": 3576
+     },
+     {
+      "nuts": "ES630",
+      "name": "Ceuta",
+      "ine_province": "51",
+      "births_target": 364,
+      "births_base": 373
+     },
+     {
+      "nuts": "ES640",
+      "name": "Melilla",
+      "ine_province": "52",
+      "births_target": 387,
+      "births_base": 400
+     },
+     {
+      "nuts": "ES70",
+      "name": "Canarias (CCAA; provinces Las Palmas + Santa Cruz de Tenerife, see canarias_provinces)",
+      "births_target": 6500,
+      "births_base": 6627
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "NL",
+  "country": "Netherlands",
+  "level": "NUTS3 (COROP region)",
+  "source": "CBS StatLine table 37230ned \"Bevolkingsontwikkeling; regio per maand\" (OData API), topic LevendGeborenKinderen_2 (live births), COROP regions. 2024-2025 definitive, 2026 provisional; table modified 30 Sep 2026.",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/37230ned/TypedDataSet",
+  "basis": "municipality of residence (population register BRP)",
+  "notes": "Latest month 2026MM08 kept (Aug 2026 -1.7% y/y vs +1.0% for Jan-Jul; NL births must be registered within days, so lag is small, but it is provisional). COROP aggregates in this table follow the current municipal classification (e.g. Weesp moved from Het Gooi en Vechtstreek to Groot-Amsterdam in 2022), which can differ slightly from NUTS 2021 boundaries.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "NL111",
+      "name": "Oost-Groningen",
+      "corop": "CR01",
+      "births_target": 1094,
+      "births_base": 1062
+     },
+     {
+      "nuts": "NL112",
+      "name": "Delfzijl en omgeving",
+      "corop": "CR02",
+      "births_target": 380,
+      "births_base": 374
+     },
+     {
+      "nuts": "NL113",
+      "name": "Overig Groningen",
+      "corop": "CR03",
+      "births_target": 3488,
+      "births_base": 3380
+     },
+     {
+      "nuts": "NL124",
+      "name": "Noord-Friesland",
+      "corop": "CR04",
+      "births_target": 2859,
+      "births_base": 2814
+     },
+     {
+      "nuts": "NL125",
+      "name": "Zuidwest-Friesland",
+      "corop": "CR05",
+      "births_target": 1188,
+      "births_base": 1202
+     },
+     {
+      "nuts": "NL126",
+      "name": "Zuidoost-Friesland",
+      "corop": "CR06",
+      "births_target": 1660,
+      "births_base": 1668
+     },
+     {
+      "nuts": "NL131",
+      "name": "Noord-Drenthe",
+      "corop": "CR07",
+      "births_target": 1571,
+      "births_base": 1521
+     },
+     {
+      "nuts": "NL132",
+      "name": "Zuidoost-Drenthe",
+      "corop": "CR08",
+      "births_target": 1413,
+      "births_base": 1400
+     },
+     {
+      "nuts": "NL133",
+      "name": "Zuidwest-Drenthe",
+      "corop": "CR09",
+      "births_target": 1164,
+      "births_base": 1116
+     },
+     {
+      "nuts": "NL211",
+      "name": "Noord-Overijssel",
+      "corop": "CR10",
+      "births_target": 3998,
+      "births_base": 3970
+     },
+     {
+      "nuts": "NL212",
+      "name": "Zuidwest-Overijssel",
+      "corop": "CR11",
+      "births_target": 1431,
+      "births_base": 1509
+     },
+     {
+      "nuts": "NL213",
+      "name": "Twente",
+      "corop": "CR12",
+      "births_target": 5714,
+      "births_base": 5679
+     },
+     {
+      "nuts": "NL221",
+      "name": "Veluwe",
+      "corop": "CR13",
+      "births_target": 7182,
+      "births_base": 7125
+     },
+     {
+      "nuts": "NL225",
+      "name": "Achterhoek",
+      "corop": "CR14",
+      "births_target": 3167,
+      "births_base": 3219
+     },
+     {
+      "nuts": "NL226",
+      "name": "Arnhem/Nijmegen",
+      "corop": "CR15",
+      "births_target": 6794,
+      "births_base": 6514
+     },
+     {
+      "nuts": "NL224",
+      "name": "Zuidwest-Gelderland",
+      "corop": "CR16",
+      "births_target": 2583,
+      "births_base": 2623
+     },
+     {
+      "nuts": "NL310",
+      "name": "Utrecht",
+      "corop": "CR17",
+      "births_target": 14547,
+      "births_base": 14601
+     },
+     {
+      "nuts": "NL321",
+      "name": "Kop van Noord-Holland",
+      "corop": "CR18",
+      "births_target": 3438,
+      "births_base": 3569
+     },
+     {
+      "nuts": "NL328",
+      "name": "Alkmaar en omgeving",
+      "corop": "CR19",
+      "births_target": 2236,
+      "births_base": 2283
+     },
+     {
+      "nuts": "NL323",
+      "name": "IJmond",
+      "corop": "CR20",
+      "births_target": 1816,
+      "births_base": 1884
+     },
+     {
+      "nuts": "NL324",
+      "name": "Agglomeratie Haarlem",
+      "corop": "CR21",
+      "births_target": 2147,
+      "births_base": 2183
+     },
+     {
+      "nuts": "NL325",
+      "name": "Zaanstreek",
+      "corop": "CR22",
+      "births_target": 1761,
+      "births_base": 1757
+     },
+     {
+      "nuts": "NL329",
+      "name": "Groot-Amsterdam",
+      "corop": "CR23",
+      "births_target": 14291,
+      "births_base": 14502
+     },
+     {
+      "nuts": "NL327",
+      "name": "Het Gooi en Vechtstreek",
+      "corop": "CR24",
+      "births_target": 2137,
+      "births_base": 2134
+     },
+     {
+      "nuts": "NL337",
+      "name": "Agglomeratie Leiden en Bollenstreek",
+      "corop": "CR25",
+      "births_target": 4026,
+      "births_base": 3875
+     },
+     {
+      "nuts": "NL332",
+      "name": "Agglomeratie 's-Gravenhage",
+      "corop": "CR26",
+      "births_target": 8675,
+      "births_base": 8846
+     },
+     {
+      "nuts": "NL333",
+      "name": "Delft en Westland",
+      "corop": "CR27",
+      "births_target": 2142,
+      "births_base": 2165
+     },
+     {
+      "nuts": "NL33B",
+      "name": "Oost-Zuid-Holland",
+      "corop": "CR28",
+      "births_target": 3797,
+      "births_base": 3888
+     },
+     {
+      "nuts": "NL33C",
+      "name": "Groot-Rijnmond",
+      "corop": "CR29",
+      "births_target": 14789,
+      "births_base": 14591
+     },
+     {
+      "nuts": "NL33A",
+      "name": "Zuidoost-Zuid-Holland",
+      "corop": "CR30",
+      "births_target": 3909,
+      "births_base": 3906
+     },
+     {
+      "nuts": "NL341",
+      "name": "Zeeuwsch-Vlaanderen",
+      "corop": "CR31",
+      "births_target": 775,
+      "births_base": 819
+     },
+     {
+      "nuts": "NL342",
+      "name": "Overig Zeeland",
+      "corop": "CR32",
+      "births_target": 2636,
+      "births_base": 2515
+     },
+     {
+      "nuts": "NL411",
+      "name": "West-Noord-Brabant",
+      "corop": "CR33",
+      "births_target": 5775,
+      "births_base": 5702
+     },
+     {
+      "nuts": "NL412",
+      "name": "Midden-Noord-Brabant",
+      "corop": "CR34",
+      "births_target": 4562,
+      "births_base": 4533
+     },
+     {
+      "nuts": "NL413",
+      "name": "Noordoost-Noord-Brabant",
+      "corop": "CR35",
+      "births_target": 6333,
+      "births_base": 6269
+     },
+     {
+      "nuts": "NL414",
+      "name": "Zuidoost-Noord-Brabant",
+      "corop": "CR36",
+      "births_target": 7379,
+      "births_base": 7400
+     },
+     {
+      "nuts": "NL421",
+      "name": "Noord-Limburg",
+      "corop": "CR37",
+      "births_target": 2419,
+      "births_base": 2381
+     },
+     {
+      "nuts": "NL422",
+      "name": "Midden-Limburg",
+      "corop": "CR38",
+      "births_target": 1976,
+      "births_base": 1985
+     },
+     {
+      "nuts": "NL423",
+      "name": "Zuid-Limburg",
+      "corop": "CR39",
+      "births_target": 4305,
+      "births_base": 4289
+     },
+     {
+      "nuts": "NL230",
+      "name": "Flevoland",
+      "corop": "CR40",
+      "births_target": 5031,
+      "births_base": 4890
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Aug",
+    "regions": [
+     {
+      "nuts": "NL111",
+      "name": "Oost-Groningen",
+      "corop": "CR01",
+      "births_target": 701,
+      "births_base": 737
+     },
+     {
+      "nuts": "NL112",
+      "name": "Delfzijl en omgeving",
+      "corop": "CR02",
+      "births_target": 235,
+      "births_base": 251
+     },
+     {
+      "nuts": "NL113",
+      "name": "Overig Groningen",
+      "corop": "CR03",
+      "births_target": 2261,
+      "births_base": 2340
+     },
+     {
+      "nuts": "NL124",
+      "name": "Noord-Friesland",
+      "corop": "CR04",
+      "births_target": 1972,
+      "births_base": 1941
+     },
+     {
+      "nuts": "NL125",
+      "name": "Zuidwest-Friesland",
+      "corop": "CR05",
+      "births_target": 787,
+      "births_base": 769
+     },
+     {
+      "nuts": "NL126",
+      "name": "Zuidoost-Friesland",
+      "corop": "CR06",
+      "births_target": 1024,
+      "births_base": 1117
+     },
+     {
+      "nuts": "NL131",
+      "name": "Noord-Drenthe",
+      "corop": "CR07",
+      "births_target": 1094,
+      "births_base": 1044
+     },
+     {
+      "nuts": "NL132",
+      "name": "Zuidoost-Drenthe",
+      "corop": "CR08",
+      "births_target": 905,
+      "births_base": 953
+     },
+     {
+      "nuts": "NL133",
+      "name": "Zuidwest-Drenthe",
+      "corop": "CR09",
+      "births_target": 767,
+      "births_base": 761
+     },
+     {
+      "nuts": "NL211",
+      "name": "Noord-Overijssel",
+      "corop": "CR10",
+      "births_target": 2681,
+      "births_base": 2682
+     },
+     {
+      "nuts": "NL212",
+      "name": "Zuidwest-Overijssel",
+      "corop": "CR11",
+      "births_target": 1044,
+      "births_base": 966
+     },
+     {
+      "nuts": "NL213",
+      "name": "Twente",
+      "corop": "CR12",
+      "births_target": 3917,
+      "births_base": 3799
+     },
+     {
+      "nuts": "NL221",
+      "name": "Veluwe",
+      "corop": "CR13",
+      "births_target": 4917,
+      "births_base": 4801
+     },
+     {
+      "nuts": "NL225",
+      "name": "Achterhoek",
+      "corop": "CR14",
+      "births_target": 2174,
+      "births_base": 2107
+     },
+     {
+      "nuts": "NL226",
+      "name": "Arnhem/Nijmegen",
+      "corop": "CR15",
+      "births_target": 4439,
+      "births_base": 4457
+     },
+     {
+      "nuts": "NL224",
+      "name": "Zuidwest-Gelderland",
+      "corop": "CR16",
+      "births_target": 1781,
+      "births_base": 1712
+     },
+     {
+      "nuts": "NL310",
+      "name": "Utrecht",
+      "corop": "CR17",
+      "births_target": 9796,
+      "births_base": 9765
+     },
+     {
+      "nuts": "NL321",
+      "name": "Kop van Noord-Holland",
+      "corop": "CR18",
+      "births_target": 2341,
+      "births_base": 2299
+     },
+     {
+      "nuts": "NL328",
+      "name": "Alkmaar en omgeving",
+      "corop": "CR19",
+      "births_target": 1515,
+      "births_base": 1473
+     },
+     {
+      "nuts": "NL323",
+      "name": "IJmond",
+      "corop": "CR20",
+      "births_target": 1229,
+      "births_base": 1223
+     },
+     {
+      "nuts": "NL324",
+      "name": "Agglomeratie Haarlem",
+      "corop": "CR21",
+      "births_target": 1409,
+      "births_base": 1458
+     },
+     {
+      "nuts": "NL325",
+      "name": "Zaanstreek",
+      "corop": "CR22",
+      "births_target": 1200,
+      "births_base": 1166
+     },
+     {
+      "nuts": "NL329",
+      "name": "Groot-Amsterdam",
+      "corop": "CR23",
+      "births_target": 9839,
+      "births_base": 9639
+     },
+     {
+      "nuts": "NL327",
+      "name": "Het Gooi en Vechtstreek",
+      "corop": "CR24",
+      "births_target": 1451,
+      "births_base": 1439
+     },
+     {
+      "nuts": "NL337",
+      "name": "Agglomeratie Leiden en Bollenstreek",
+      "corop": "CR25",
+      "births_target": 2740,
+      "births_base": 2712
+     },
+     {
+      "nuts": "NL332",
+      "name": "Agglomeratie 's-Gravenhage",
+      "corop": "CR26",
+      "births_target": 5739,
+      "births_base": 5750
+     },
+     {
+      "nuts": "NL333",
+      "name": "Delft en Westland",
+      "corop": "CR27",
+      "births_target": 1430,
+      "births_base": 1401
+     },
+     {
+      "nuts": "NL33B",
+      "name": "Oost-Zuid-Holland",
+      "corop": "CR28",
+      "births_target": 2514,
+      "births_base": 2497
+     },
+     {
+      "nuts": "NL33C",
+      "name": "Groot-Rijnmond",
+      "corop": "CR29",
+      "births_target": 9873,
+      "births_base": 9962
+     },
+     {
+      "nuts": "NL33A",
+      "name": "Zuidoost-Zuid-Holland",
+      "corop": "CR30",
+      "births_target": 2656,
+      "births_base": 2606
+     },
+     {
+      "nuts": "NL341",
+      "name": "Zeeuwsch-Vlaanderen",
+      "corop": "CR31",
+      "births_target": 514,
+      "births_base": 497
+     },
+     {
+      "nuts": "NL342",
+      "name": "Overig Zeeland",
+      "corop": "CR32",
+      "births_target": 1734,
+      "births_base": 1763
+     },
+     {
+      "nuts": "NL411",
+      "name": "West-Noord-Brabant",
+      "corop": "CR33",
+      "births_target": 3840,
+      "births_base": 3902
+     },
+     {
+      "nuts": "NL412",
+      "name": "Midden-Noord-Brabant",
+      "corop": "CR34",
+      "births_target": 3116,
+      "births_base": 3106
+     },
+     {
+      "nuts": "NL413",
+      "name": "Noordoost-Noord-Brabant",
+      "corop": "CR35",
+      "births_target": 4395,
+      "births_base": 4185
+     },
+     {
+      "nuts": "NL414",
+      "name": "Zuidoost-Noord-Brabant",
+      "corop": "CR36",
+      "births_target": 5120,
+      "births_base": 4922
+     },
+     {
+      "nuts": "NL421",
+      "name": "Noord-Limburg",
+      "corop": "CR37",
+      "births_target": 1593,
+      "births_base": 1638
+     },
+     {
+      "nuts": "NL422",
+      "name": "Midden-Limburg",
+      "corop": "CR38",
+      "births_target": 1323,
+      "births_base": 1316
+     },
+     {
+      "nuts": "NL423",
+      "name": "Zuid-Limburg",
+      "corop": "CR39",
+      "births_target": 2773,
+      "births_base": 2898
+     },
+     {
+      "nuts": "NL230",
+      "name": "Flevoland",
+      "corop": "CR40",
+      "births_target": 3305,
+      "births_base": 3397
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "PL",
+  "country": "Poland",
+  "level": "NUTS3 (podregion)",
+  "source": "GUS, Bank Danych Lokalnych (BDL) API, variable 59 \"Urodzenia żywe - ogółem\" (subject P1873), unit level 4 (podregiony = NUTS 2021 NUTS3), years 2024 and 2025 (annual).",
+  "url": "https://bdl.stat.gov.pl/api/v1/data/by-variable/59?format=json&unit-level=4&year=2024&year=2025&page-size=100",
+  "basis": "place of permanent residence of the mother",
+  "notes": "Only annual data could be retrieved. No 2026 year-to-date regional births found: BDL half-year/quarter variables (63216-63220) end in 2025; GUS \"Sytuacja społeczno-gospodarcza województw\" 2/2026 (10 Sep 2026) and Biuletyn Statystyczny 8/2026 contain only annual-2025 regional or national monthly vital statistics. The GUS territorial publication for 30 June 2026 (with H1 2026 births by voivodeship/powiat) was not yet out.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "PL214",
+      "name": "Podregion Krakowski",
+      "bdl_unit": "011212000000",
+      "births_target": 5957,
+      "births_base": 6102
+     },
+     {
+      "nuts": "PL213",
+      "name": "Podregion Miasto Kraków",
+      "bdl_unit": "011212100000",
+      "births_target": 6980,
+      "births_base": 7057
+     },
+     {
+      "nuts": "PL218",
+      "name": "Podregion Nowosądecki",
+      "bdl_unit": "011212200000",
+      "births_target": 4187,
+      "births_base": 4326
+     },
+     {
+      "nuts": "PL21A",
+      "name": "Podregion Oświęcimski",
+      "bdl_unit": "011212300000",
+      "births_target": 3053,
+      "births_base": 3340
+     },
+     {
+      "nuts": "PL217",
+      "name": "Podregion Tarnowski",
+      "bdl_unit": "011212400000",
+      "births_target": 2846,
+      "births_base": 3043
+     },
+     {
+      "nuts": "PL219",
+      "name": "Podregion Nowotarski",
+      "bdl_unit": "011216900000",
+      "births_target": 2585,
+      "births_base": 2726
+     },
+     {
+      "nuts": "PL225",
+      "name": "Podregion Bielski",
+      "bdl_unit": "012414400000",
+      "births_target": 3910,
+      "births_base": 4111
+     },
+     {
+      "nuts": "PL228",
+      "name": "Podregion Bytomski",
+      "bdl_unit": "012414500000",
+      "births_target": 2201,
+      "births_base": 2389
+     },
+     {
+      "nuts": "PL224",
+      "name": "Podregion Częstochowski",
+      "bdl_unit": "012414600000",
+      "births_target": 2461,
+      "births_base": 2632
+     },
+     {
+      "nuts": "PL229",
+      "name": "Podregion Gliwicki",
+      "bdl_unit": "012414700000",
+      "births_target": 2469,
+      "births_base": 2702
+     },
+     {
+      "nuts": "PL22A",
+      "name": "Podregion Katowicki",
+      "bdl_unit": "012414800000",
+      "births_target": 4003,
+      "births_base": 4219
+     },
+     {
+      "nuts": "PL227",
+      "name": "Podregion Rybnicki",
+      "bdl_unit": "012414900000",
+      "births_target": 3439,
+      "births_base": 3688
+     },
+     {
+      "nuts": "PL22B",
+      "name": "Podregion Sosnowiecki",
+      "bdl_unit": "012415000000",
+      "births_target": 3003,
+      "births_base": 3178
+     },
+     {
+      "nuts": "PL22C",
+      "name": "Podregion Tyski",
+      "bdl_unit": "012415100000",
+      "births_target": 2316,
+      "births_base": 2480
+     },
+     {
+      "nuts": "PL431",
+      "name": "Podregion Gorzowski",
+      "bdl_unit": "020811300000",
+      "births_target": 1962,
+      "births_base": 2190
+     },
+     {
+      "nuts": "PL432",
+      "name": "Podregion Zielonogórski",
+      "bdl_unit": "020811400000",
+      "births_target": 3483,
+      "births_base": 3660
+     },
+     {
+      "nuts": "PL416",
+      "name": "Podregion Kaliski",
+      "bdl_unit": "023015700000",
+      "births_target": 4415,
+      "births_base": 4641
+     },
+     {
+      "nuts": "PL414",
+      "name": "Podregion Koniński",
+      "bdl_unit": "023015800000",
+      "births_target": 3870,
+      "births_base": 4229
+     },
+     {
+      "nuts": "PL417",
+      "name": "Podregion Leszczyński",
+      "bdl_unit": "023015900000",
+      "births_target": 3996,
+      "births_base": 4300
+     },
+     {
+      "nuts": "PL411",
+      "name": "Podregion Pilski",
+      "bdl_unit": "023016000000",
+      "births_target": 2252,
+      "births_base": 2569
+     },
+     {
+      "nuts": "PL418",
+      "name": "Podregion Poznański",
+      "bdl_unit": "023016100000",
+      "births_target": 5370,
+      "births_base": 5715
+     },
+     {
+      "nuts": "PL415",
+      "name": "Podregion Miasto Poznań",
+      "bdl_unit": "023016200000",
+      "births_target": 3900,
+      "births_base": 3999
+     },
+     {
+      "nuts": "PL426",
+      "name": "Podregion Koszaliński",
+      "bdl_unit": "023216300000",
+      "births_target": 1807,
+      "births_base": 1958
+     },
+     {
+      "nuts": "PL427",
+      "name": "Podregion Szczecinecko-Pyrzycki",
+      "bdl_unit": "023216400000",
+      "births_target": 1943,
+      "births_base": 2085
+     },
+     {
+      "nuts": "PL424",
+      "name": "Podregion Miasto Szczecin",
+      "bdl_unit": "023216500000",
+      "births_target": 2409,
+      "births_base": 2588
+     },
+     {
+      "nuts": "PL428",
+      "name": "Podregion Szczeciński",
+      "bdl_unit": "023216600000",
+      "births_target": 2774,
+      "births_base": 2945
+     },
+     {
+      "nuts": "PL515",
+      "name": "Podregion Jeleniogórski",
+      "bdl_unit": "030210100000",
+      "births_target": 2303,
+      "births_base": 2501
+     },
+     {
+      "nuts": "PL516",
+      "name": "Podregion Legnicko-Głogowski",
+      "bdl_unit": "030210200000",
+      "births_target": 2398,
+      "births_base": 2600
+     },
+     {
+      "nuts": "PL517",
+      "name": "Podregion Wałbrzyski",
+      "bdl_unit": "030210300000",
+      "births_target": 2752,
+      "births_base": 2937
+     },
+     {
+      "nuts": "PL518",
+      "name": "Podregion Wrocławski",
+      "bdl_unit": "030210400000",
+      "births_target": 4636,
+      "births_base": 4784
+     },
+     {
+      "nuts": "PL514",
+      "name": "Podregion Miasto Wrocław",
+      "bdl_unit": "030210500000",
+      "births_target": 5327,
+      "births_base": 5372
+     },
+     {
+      "nuts": "PL523",
+      "name": "Podregion Nyski",
+      "bdl_unit": "031613100000",
+      "births_target": 1713,
+      "births_base": 1844
+     },
+     {
+      "nuts": "PL524",
+      "name": "Podregion Opolski",
+      "bdl_unit": "031613200000",
+      "births_target": 3407,
+      "births_base": 3566
+     },
+     {
+      "nuts": "PL613",
+      "name": "Podregion Bydgosko-Toruński",
+      "bdl_unit": "040410600000",
+      "births_target": 4560,
+      "births_base": 4710
+     },
+     {
+      "nuts": "PL616",
+      "name": "Podregion Grudziądzki",
+      "bdl_unit": "040410700000",
+      "births_target": 2093,
+      "births_base": 2314
+     },
+     {
+      "nuts": "PL619",
+      "name": "Podregion Włocławski",
+      "bdl_unit": "040410800000",
+      "births_target": 1825,
+      "births_base": 1964
+     },
+     {
+      "nuts": "PL617",
+      "name": "Podregion Inowrocławski",
+      "bdl_unit": "040416700000",
+      "births_target": 1812,
+      "births_base": 1946
+     },
+     {
+      "nuts": "PL618",
+      "name": "Podregion Świecki",
+      "bdl_unit": "040416800000",
+      "births_target": 1112,
+      "births_base": 1176
+     },
+     {
+      "nuts": "PL634",
+      "name": "Podregion Gdański",
+      "bdl_unit": "042214000000",
+      "births_target": 5477,
+      "births_base": 5731
+     },
+     {
+      "nuts": "PL636",
+      "name": "Podregion Słupski",
+      "bdl_unit": "042214100000",
+      "births_target": 1954,
+      "births_base": 2111
+     },
+     {
+      "nuts": "PL638",
+      "name": "Podregion Starogardzki",
+      "bdl_unit": "042214200000",
+      "births_target": 2509,
+      "births_base": 2696
+     },
+     {
+      "nuts": "PL633",
+      "name": "Podregion Trójmiejski",
+      "bdl_unit": "042214300000",
+      "births_target": 5178,
+      "births_base": 5457
+     },
+     {
+      "nuts": "PL637",
+      "name": "Podregion Chojnicki",
+      "bdl_unit": "042217200000",
+      "births_target": 1537,
+      "births_base": 1626
+     },
+     {
+      "nuts": "PL621",
+      "name": "Podregion Elbląski",
+      "bdl_unit": "042815400000",
+      "births_target": 2774,
+      "births_base": 3012
+     },
+     {
+      "nuts": "PL623",
+      "name": "Podregion Ełcki",
+      "bdl_unit": "042815500000",
+      "births_target": 1445,
+      "births_base": 1639
+     },
+     {
+      "nuts": "PL622",
+      "name": "Podregion Olsztyński",
+      "bdl_unit": "042815600000",
+      "births_target": 3160,
+      "births_base": 3426
+     },
+     {
+      "nuts": "PL712",
+      "name": "Podregion Łódzki",
+      "bdl_unit": "051011500000",
+      "births_target": 2322,
+      "births_base": 2252
+     },
+     {
+      "nuts": "PL711",
+      "name": "Podregion Miasto Łódź",
+      "bdl_unit": "051011600000",
+      "births_target": 4038,
+      "births_base": 4146
+     },
+     {
+      "nuts": "PL713",
+      "name": "Podregion Piotrkowski",
+      "bdl_unit": "051011700000",
+      "births_target": 3388,
+      "births_base": 3435
+     },
+     {
+      "nuts": "PL714",
+      "name": "Podregion Sieradzki",
+      "bdl_unit": "051011800000",
+      "births_target": 2465,
+      "births_base": 2761
+     },
+     {
+      "nuts": "PL715",
+      "name": "Podregion Skierniewicki",
+      "bdl_unit": "051011900000",
+      "births_target": 2103,
+      "births_base": 2257
+     },
+     {
+      "nuts": "PL721",
+      "name": "Podregion Kielecki",
+      "bdl_unit": "052615200000",
+      "births_target": 3816,
+      "births_base": 4041
+     },
+     {
+      "nuts": "PL722",
+      "name": "Podregion Sandomiersko-Jędrzejowski",
+      "bdl_unit": "052615300000",
+      "births_target": 2265,
+      "births_base": 2431
+     },
+     {
+      "nuts": "PL811",
+      "name": "Podregion Bialski",
+      "bdl_unit": "060610900000",
+      "births_target": 1692,
+      "births_base": 1842
+     },
+     {
+      "nuts": "PL812",
+      "name": "Podregion Chełmsko-Zamojski",
+      "bdl_unit": "060611000000",
+      "births_target": 2741,
+      "births_base": 3012
+     },
+     {
+      "nuts": "PL814",
+      "name": "Podregion Lubelski",
+      "bdl_unit": "060611100000",
+      "births_target": 4508,
+      "births_base": 4944
+     },
+     {
+      "nuts": "PL815",
+      "name": "Podregion Puławski",
+      "bdl_unit": "060611200000",
+      "births_target": 2579,
+      "births_base": 2754
+     },
+     {
+      "nuts": "PL821",
+      "name": "Podregion Krośnieński",
+      "bdl_unit": "061813300000",
+      "births_target": 2432,
+      "births_base": 2583
+     },
+     {
+      "nuts": "PL822",
+      "name": "Podregion Przemyski",
+      "bdl_unit": "061813400000",
+      "births_target": 2025,
+      "births_base": 2314
+     },
+     {
+      "nuts": "PL823",
+      "name": "Podregion Rzeszowski",
+      "bdl_unit": "061813500000",
+      "births_target": 5098,
+      "births_base": 5296
+     },
+     {
+      "nuts": "PL824",
+      "name": "Podregion Tarnobrzeski",
+      "bdl_unit": "061813600000",
+      "births_target": 3283,
+      "births_base": 3660
+     },
+     {
+      "nuts": "PL841",
+      "name": "Podregion Białostocki",
+      "bdl_unit": "062013700000",
+      "births_target": 3499,
+      "births_base": 3607
+     },
+     {
+      "nuts": "PL842",
+      "name": "Podregion Łomżyński",
+      "bdl_unit": "062013800000",
+      "births_target": 2258,
+      "births_base": 2348
+     },
+     {
+      "nuts": "PL843",
+      "name": "Podregion Suwalski",
+      "bdl_unit": "062013900000",
+      "births_target": 1534,
+      "births_base": 1602
+     },
+     {
+      "nuts": "PL911",
+      "name": "Podregion Miasto Warszawa",
+      "bdl_unit": "071412800000",
+      "births_target": 14439,
+      "births_base": 14859
+     },
+     {
+      "nuts": "PL912",
+      "name": "Podregion Warszawski Wschodni",
+      "bdl_unit": "071412900000",
+      "births_target": 5474,
+      "births_base": 5424
+     },
+     {
+      "nuts": "PL913",
+      "name": "Podregion Warszawski Zachodni",
+      "bdl_unit": "071413000000",
+      "births_target": 5595,
+      "births_base": 5510
+     },
+     {
+      "nuts": "PL922",
+      "name": "Podregion Ciechanowski",
+      "bdl_unit": "071422500000",
+      "births_target": 2143,
+      "births_base": 2391
+     },
+     {
+      "nuts": "PL924",
+      "name": "Podregion Ostrołęcki",
+      "bdl_unit": "071422600000",
+      "births_target": 2590,
+      "births_base": 2866
+     },
+     {
+      "nuts": "PL921",
+      "name": "Podregion Radomski",
+      "bdl_unit": "071422700000",
+      "births_target": 3569,
+      "births_base": 3909
+     },
+     {
+      "nuts": "PL923",
+      "name": "Podregion Płocki",
+      "bdl_unit": "071427000000",
+      "births_target": 1853,
+      "births_base": 2026
+     },
+     {
+      "nuts": "PL925",
+      "name": "Podregion Siedlecki",
+      "bdl_unit": "071427100000",
+      "births_target": 3152,
+      "births_base": 3348
+     },
+     {
+      "nuts": "PL926",
+      "name": "Podregion Żyrardowski",
+      "bdl_unit": "071427300000",
+      "births_target": 1840,
+      "births_base": 1880
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "SE",
+  "country": "Sweden",
+  "level": "NUTS3 (län)",
+  "source": "SCB Statistikdatabasen, BE0101G: MBefStatRegionCKM / TAB6473 \"Befolkningsstatistik efter region och kön. Månad 2025M01-2026M08\" (2025-2026) and ManadBefStatRegion / TAB1625 (2000M01-2024M12), förändringar=115 födda, both sexes.",
+  "url": "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101G/MBefStatRegionCKM",
+  "url_base_2024": "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101G/ManadBefStatRegion",
+  "basis": "county of residence (population register); month of event",
+  "notes": "From reference year 2025 SCB adds small controlled random noise to every cell (Cell Key Method), so 2025-2026 county figures are perturbed by a few units; 2024 figures are not. Latest month 2026M08 kept (Aug 2026 +0.6% y/y, in line with Jan-Jul +0.7%). 2026 figures preliminary.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "SE110",
+      "name": "Stockholms län",
+      "births_target": 25801,
+      "births_base": 25657
+     },
+     {
+      "nuts": "SE121",
+      "name": "Uppsala län",
+      "births_target": 3736,
+      "births_base": 3845
+     },
+     {
+      "nuts": "SE122",
+      "name": "Södermanlands län",
+      "births_target": 2472,
+      "births_base": 2570
+     },
+     {
+      "nuts": "SE123",
+      "name": "Östergötlands län",
+      "births_target": 4155,
+      "births_base": 4243
+     },
+     {
+      "nuts": "SE211",
+      "name": "Jönköpings län",
+      "births_target": 3382,
+      "births_base": 3468
+     },
+     {
+      "nuts": "SE212",
+      "name": "Kronobergs län",
+      "births_target": 1848,
+      "births_base": 1836
+     },
+     {
+      "nuts": "SE213",
+      "name": "Kalmar län",
+      "births_target": 1902,
+      "births_base": 2026
+     },
+     {
+      "nuts": "SE214",
+      "name": "Gotlands län",
+      "births_target": 453,
+      "births_base": 417
+     },
+     {
+      "nuts": "SE221",
+      "name": "Blekinge län",
+      "births_target": 1219,
+      "births_base": 1161
+     },
+     {
+      "nuts": "SE224",
+      "name": "Skåne län",
+      "births_target": 13450,
+      "births_base": 13521
+     },
+     {
+      "nuts": "SE231",
+      "name": "Hallands län",
+      "births_target": 3057,
+      "births_base": 3141
+     },
+     {
+      "nuts": "SE232",
+      "name": "Västra Götalands län",
+      "births_target": 17073,
+      "births_base": 17114
+     },
+     {
+      "nuts": "SE311",
+      "name": "Värmlands län",
+      "births_target": 2166,
+      "births_base": 2279
+     },
+     {
+      "nuts": "SE124",
+      "name": "Örebro län",
+      "births_target": 2665,
+      "births_base": 2814
+     },
+     {
+      "nuts": "SE125",
+      "name": "Västmanlands län",
+      "births_target": 2507,
+      "births_base": 2514
+     },
+     {
+      "nuts": "SE312",
+      "name": "Dalarnas län",
+      "births_target": 2184,
+      "births_base": 2334
+     },
+     {
+      "nuts": "SE313",
+      "name": "Gävleborgs län",
+      "births_target": 2205,
+      "births_base": 2231
+     },
+     {
+      "nuts": "SE321",
+      "name": "Västernorrlands län",
+      "births_target": 1825,
+      "births_base": 1786
+     },
+     {
+      "nuts": "SE322",
+      "name": "Jämtlands län",
+      "births_target": 1114,
+      "births_base": 1138
+     },
+     {
+      "nuts": "SE331",
+      "name": "Västerbottens län",
+      "births_target": 2333,
+      "births_base": 2394
+     },
+     {
+      "nuts": "SE332",
+      "name": "Norrbottens län",
+      "births_target": 1959,
+      "births_base": 1962
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Aug",
+    "regions": [
+     {
+      "nuts": "SE110",
+      "name": "Stockholms län",
+      "births_target": 18164,
+      "births_base": 17971
+     },
+     {
+      "nuts": "SE121",
+      "name": "Uppsala län",
+      "births_target": 2563,
+      "births_base": 2581
+     },
+     {
+      "nuts": "SE122",
+      "name": "Södermanlands län",
+      "births_target": 1707,
+      "births_base": 1697
+     },
+     {
+      "nuts": "SE123",
+      "name": "Östergötlands län",
+      "births_target": 2821,
+      "births_base": 2866
+     },
+     {
+      "nuts": "SE211",
+      "name": "Jönköpings län",
+      "births_target": 2298,
+      "births_base": 2367
+     },
+     {
+      "nuts": "SE212",
+      "name": "Kronobergs län",
+      "births_target": 1250,
+      "births_base": 1259
+     },
+     {
+      "nuts": "SE213",
+      "name": "Kalmar län",
+      "births_target": 1274,
+      "births_base": 1297
+     },
+     {
+      "nuts": "SE214",
+      "name": "Gotlands län",
+      "births_target": 306,
+      "births_base": 337
+     },
+     {
+      "nuts": "SE221",
+      "name": "Blekinge län",
+      "births_target": 808,
+      "births_base": 838
+     },
+     {
+      "nuts": "SE224",
+      "name": "Skåne län",
+      "births_target": 9350,
+      "births_base": 9232
+     },
+     {
+      "nuts": "SE231",
+      "name": "Hallands län",
+      "births_target": 2113,
+      "births_base": 2114
+     },
+     {
+      "nuts": "SE232",
+      "name": "Västra Götalands län",
+      "births_target": 11804,
+      "births_base": 11745
+     },
+     {
+      "nuts": "SE311",
+      "name": "Värmlands län",
+      "births_target": 1486,
+      "births_base": 1495
+     },
+     {
+      "nuts": "SE124",
+      "name": "Örebro län",
+      "births_target": 1920,
+      "births_base": 1841
+     },
+     {
+      "nuts": "SE125",
+      "name": "Västmanlands län",
+      "births_target": 1728,
+      "births_base": 1738
+     },
+     {
+      "nuts": "SE312",
+      "name": "Dalarnas län",
+      "births_target": 1582,
+      "births_base": 1510
+     },
+     {
+      "nuts": "SE313",
+      "name": "Gävleborgs län",
+      "births_target": 1558,
+      "births_base": 1518
+     },
+     {
+      "nuts": "SE321",
+      "name": "Västernorrlands län",
+      "births_target": 1274,
+      "births_base": 1274
+     },
+     {
+      "nuts": "SE322",
+      "name": "Jämtlands län",
+      "births_target": 795,
+      "births_base": 776
+     },
+     {
+      "nuts": "SE331",
+      "name": "Västerbottens län",
+      "births_target": 1667,
+      "births_base": 1611
+     },
+     {
+      "nuts": "SE332",
+      "name": "Norrbottens län",
+      "births_target": 1428,
+      "births_base": 1360
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "NO",
+  "country": "Norway",
+  "level": "NUTS3 (NUTS 2021 fylke; 2024 counties aggregated)",
+  "source": "Statistics Norway (SSB) StatBank table 01222 \"Befolkning og kvartalsvise endringar\" (quarterly), variable Fodte2 (live births), counties. Retrieved via SSB PxWeb API.",
+  "url": "https://data.ssb.no/api/v0/no/table/01222",
+  "basis": "county of residence (population register); quarterly",
+  "notes": "Quarterly data only (latest 2026Q2), so the 2026 period is Jan-Jun. Norway re-split its counties on 1 Jan 2024; the 2024 counties were summed back to the NUTS 2021 units: Viken NO082 = Østfold+Akershus+Buskerud, Vestfold og Telemark NO091 = Vestfold+Telemark, Troms og Finnmark NO074 = Troms+Finnmark. Per-county figures are in county_detail. Svalbard/unknown had 0 births.",
+  "county_detail": [
+   {
+    "county": "34",
+    "name": "Innlandet",
+    "2025_vs_2024": [
+     3236,
+     2935
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     1678,
+     1616
+    ]
+   },
+   {
+    "county": "50",
+    "name": "Trøndelag - Trööndelage",
+    "2025_vs_2024": [
+     4775,
+     4673
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     2493,
+     2423
+    ]
+   },
+   {
+    "county": "18",
+    "name": "Nordland - Nordlánnda",
+    "2025_vs_2024": [
+     2210,
+     2062
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     1181,
+     1128
+    ]
+   },
+   {
+    "county": "55",
+    "name": "Troms - Romsa - Tromssa",
+    "2025_vs_2024": [
+     1597,
+     1532
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     808,
+     808
+    ]
+   },
+   {
+    "county": "56",
+    "name": "Finnmark - Finnmárku - Finmarkku",
+    "2025_vs_2024": [
+     720,
+     720
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     357,
+     356
+    ]
+   },
+   {
+    "county": "03",
+    "name": "Oslo - Oslove",
+    "2025_vs_2024": [
+     9284,
+     9099
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     4909,
+     4540
+    ]
+   },
+   {
+    "county": "31",
+    "name": "Østfold",
+    "2025_vs_2024": [
+     2728,
+     2676
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     1419,
+     1335
+    ]
+   },
+   {
+    "county": "32",
+    "name": "Akershus",
+    "2025_vs_2024": [
+     7308,
+     7109
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     3802,
+     3584
+    ]
+   },
+   {
+    "county": "33",
+    "name": "Buskerud",
+    "2025_vs_2024": [
+     2354,
+     2347
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     1280,
+     1176
+    ]
+   },
+   {
+    "county": "39",
+    "name": "Vestfold",
+    "2025_vs_2024": [
+     2174,
+     2153
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     1138,
+     1079
+    ]
+   },
+   {
+    "county": "40",
+    "name": "Telemark",
+    "2025_vs_2024": [
+     1458,
+     1428
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     764,
+     743
+    ]
+   },
+   {
+    "county": "42",
+    "name": "Agder",
+    "2025_vs_2024": [
+     3155,
+     3032
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     1726,
+     1616
+    ]
+   },
+   {
+    "county": "11",
+    "name": "Rogaland",
+    "2025_vs_2024": [
+     5395,
+     5321
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     2816,
+     2700
+    ]
+   },
+   {
+    "county": "46",
+    "name": "Vestland",
+    "2025_vs_2024": [
+     6467,
+     6372
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     3560,
+     3256
+    ]
+   },
+   {
+    "county": "15",
+    "name": "Møre og Romsdal",
+    "2025_vs_2024": [
+     2520,
+     2481
+    ],
+    "2026_vs_2025_Jan-Jun": [
+     1263,
+     1250
+    ]
+   }
+  ],
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "NO020",
+      "name": "Innlandet",
+      "births_target": 3236,
+      "births_base": 2935
+     },
+     {
+      "nuts": "NO060",
+      "name": "Trøndelag",
+      "births_target": 4775,
+      "births_base": 4673
+     },
+     {
+      "nuts": "NO071",
+      "name": "Nordland",
+      "births_target": 2210,
+      "births_base": 2062
+     },
+     {
+      "nuts": "NO074",
+      "name": "Troms og Finnmark",
+      "counties_2024": [
+       "55 Troms - Romsa - Tromssa",
+       "56 Finnmark - Finnmárku - Finmarkku"
+      ],
+      "births_target": 2317,
+      "births_base": 2252
+     },
+     {
+      "nuts": "NO081",
+      "name": "Oslo",
+      "births_target": 9284,
+      "births_base": 9099
+     },
+     {
+      "nuts": "NO082",
+      "name": "Viken",
+      "counties_2024": [
+       "31 Østfold",
+       "32 Akershus",
+       "33 Buskerud"
+      ],
+      "births_target": 12390,
+      "births_base": 12132
+     },
+     {
+      "nuts": "NO091",
+      "name": "Vestfold og Telemark",
+      "counties_2024": [
+       "39 Vestfold",
+       "40 Telemark"
+      ],
+      "births_target": 3632,
+      "births_base": 3581
+     },
+     {
+      "nuts": "NO092",
+      "name": "Agder",
+      "births_target": 3155,
+      "births_base": 3032
+     },
+     {
+      "nuts": "NO0A1",
+      "name": "Rogaland",
+      "births_target": 5395,
+      "births_base": 5321
+     },
+     {
+      "nuts": "NO0A2",
+      "name": "Vestland",
+      "births_target": 6467,
+      "births_base": 6372
+     },
+     {
+      "nuts": "NO0A3",
+      "name": "Møre og Romsdal",
+      "births_target": 2520,
+      "births_base": 2481
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jun",
+    "regions": [
+     {
+      "nuts": "NO020",
+      "name": "Innlandet",
+      "births_target": 1678,
+      "births_base": 1616
+     },
+     {
+      "nuts": "NO060",
+      "name": "Trøndelag",
+      "births_target": 2493,
+      "births_base": 2423
+     },
+     {
+      "nuts": "NO071",
+      "name": "Nordland",
+      "births_target": 1181,
+      "births_base": 1128
+     },
+     {
+      "nuts": "NO074",
+      "name": "Troms og Finnmark",
+      "counties_2024": [
+       "55 Troms - Romsa - Tromssa",
+       "56 Finnmark - Finnmárku - Finmarkku"
+      ],
+      "births_target": 1165,
+      "births_base": 1164
+     },
+     {
+      "nuts": "NO081",
+      "name": "Oslo",
+      "births_target": 4909,
+      "births_base": 4540
+     },
+     {
+      "nuts": "NO082",
+      "name": "Viken",
+      "counties_2024": [
+       "31 Østfold",
+       "32 Akershus",
+       "33 Buskerud"
+      ],
+      "births_target": 6501,
+      "births_base": 6095
+     },
+     {
+      "nuts": "NO091",
+      "name": "Vestfold og Telemark",
+      "counties_2024": [
+       "39 Vestfold",
+       "40 Telemark"
+      ],
+      "births_target": 1902,
+      "births_base": 1822
+     },
+     {
+      "nuts": "NO092",
+      "name": "Agder",
+      "births_target": 1726,
+      "births_base": 1616
+     },
+     {
+      "nuts": "NO0A1",
+      "name": "Rogaland",
+      "births_target": 2816,
+      "births_base": 2700
+     },
+     {
+      "nuts": "NO0A2",
+      "name": "Vestland",
+      "births_target": 3560,
+      "births_base": 3256
+     },
+     {
+      "nuts": "NO0A3",
+      "name": "Møre og Romsdal",
+      "births_target": 1263,
+      "births_base": 1250
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "DK",
+  "country": "Denmark",
+  "level": "NUTS3 (landsdel; aggregated from 98 kommuner)",
+  "source": "Statistics Denmark StatBank: BEV107 \"Befolkningens udvikling\" (annual, final; 2024 and 2025) and BEV22 \"Befolkningens udvikling (foreløbig opgørelse)\" (quarterly, preliminary; 2025K1-2026K2), movement B02 Levendefødte, both sexes, by kommune; kommuner aggregated to NUTS 2021 NUTS3 with the Eurostat LAU 2023-NUTS 2021 correspondence.",
+  "url": "https://api.statbank.dk/v1/data/BEV107/CSV?lang=da&valuePresentation=Code&OMR%C3%85DE=*&BEV%C3%86GELSE=B02&K%C3%98N=M,K&Tid=2024,2025",
+  "url_2026": "https://api.statbank.dk/v1/data/BEV22/CSV?lang=da&valuePresentation=Code&OMR%C3%85DE=*&BEV%C3%86GELSE=B02&K%C3%98N=M,K&Tid=2025K1,2025K2,2026K1,2026K2",
+  "basis": "municipality of residence (CPR population register); quarterly/annual",
+  "notes": "Regional data are quarterly (latest 2026Q2), so 2026 period is Jan-Jun; both 2026 and 2025 H1 come from the same preliminary quarterly table BEV22. Full-year 2025 vs 2024 uses the final annual table BEV107.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "DK011",
+      "name": "Byen København",
+      "births_target": 11775,
+      "births_base": 11013
+     },
+     {
+      "nuts": "DK012",
+      "name": "Københavns omegn",
+      "births_target": 6089,
+      "births_base": 5611
+     },
+     {
+      "nuts": "DK013",
+      "name": "Nordsjælland",
+      "births_target": 4093,
+      "births_base": 3886
+     },
+     {
+      "nuts": "DK014",
+      "name": "Bornholm",
+      "births_target": 249,
+      "births_base": 273
+     },
+     {
+      "nuts": "DK021",
+      "name": "Østsjælland",
+      "births_target": 2418,
+      "births_base": 2376
+     },
+     {
+      "nuts": "DK022",
+      "name": "Vest- og Sydsjælland",
+      "births_target": 4511,
+      "births_base": 4314
+     },
+     {
+      "nuts": "DK031",
+      "name": "Fyn",
+      "births_target": 4684,
+      "births_base": 4556
+     },
+     {
+      "nuts": "DK032",
+      "name": "Sydjylland",
+      "births_target": 6265,
+      "births_base": 6237
+     },
+     {
+      "nuts": "DK041",
+      "name": "Vestjylland",
+      "births_target": 3692,
+      "births_base": 3692
+     },
+     {
+      "nuts": "DK042",
+      "name": "Østjylland",
+      "births_target": 10265,
+      "births_base": 9953
+     },
+     {
+      "nuts": "DK050",
+      "name": "Nordjylland",
+      "births_target": 5402,
+      "births_base": 5168
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jun",
+    "regions": [
+     {
+      "nuts": "DK011",
+      "name": "Byen København",
+      "births_target": 5792,
+      "births_base": 5729
+     },
+     {
+      "nuts": "DK012",
+      "name": "Københavns omegn",
+      "births_target": 3064,
+      "births_base": 2954
+     },
+     {
+      "nuts": "DK013",
+      "name": "Nordsjælland",
+      "births_target": 2037,
+      "births_base": 1979
+     },
+     {
+      "nuts": "DK014",
+      "name": "Bornholm",
+      "births_target": 106,
+      "births_base": 119
+     },
+     {
+      "nuts": "DK021",
+      "name": "Østsjælland",
+      "births_target": 1275,
+      "births_base": 1181
+     },
+     {
+      "nuts": "DK022",
+      "name": "Vest- og Sydsjælland",
+      "births_target": 2143,
+      "births_base": 2286
+     },
+     {
+      "nuts": "DK031",
+      "name": "Fyn",
+      "births_target": 2357,
+      "births_base": 2287
+     },
+     {
+      "nuts": "DK032",
+      "name": "Sydjylland",
+      "births_target": 3187,
+      "births_base": 3193
+     },
+     {
+      "nuts": "DK041",
+      "name": "Vestjylland",
+      "births_target": 1762,
+      "births_base": 1775
+     },
+     {
+      "nuts": "DK042",
+      "name": "Østjylland",
+      "births_target": 5201,
+      "births_base": 4984
+     },
+     {
+      "nuts": "DK050",
+      "name": "Nordjylland",
+      "births_target": 2640,
+      "births_base": 2626
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "FI",
+  "country": "Finland",
+  "level": "NUTS3 (maakunta; aggregated from municipalities)",
+  "source": "Statistics Finland StatFin: synt/12dv \"Vital statistics by month and area, 1990M01-2025M12\" (final; 2024, 2025) and vamuu/11lk \"Preliminary vital statistics by area, 2026Q1*-2026Q2*\" (preliminary), live births by municipality; municipalities aggregated to NUTS 2021 NUTS3 with the Eurostat LAU 2023-NUTS 2021 correspondence.",
+  "url": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/synt/12dv.px",
+  "url_2026": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/vamuu/11lk.px",
+  "basis": "municipality of residence (Population Information System); monthly (final) / quarterly (preliminary)",
+  "notes": "Regional preliminary data exist only by quarter (2026Q1-Q2), so 2026 period is Jan-Jun. The 2026 numerator is PRELIMINARY while the 2025 Jan-Jun base is FINAL (from 12dv); preliminary counts are usually revised slightly upward, so the ratio is if anything slightly understated. National preliminary monthly table 11ll runs to Aug 2026 but has no regional breakdown.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "FI193",
+      "name": "Keski-Suomi",
+      "births_target": 2079,
+      "births_base": 2006
+     },
+     {
+      "nuts": "FI194",
+      "name": "Etelä-Pohjanmaa",
+      "births_target": 1437,
+      "births_base": 1340
+     },
+     {
+      "nuts": "FI195",
+      "name": "Pohjanmaa",
+      "births_target": 1641,
+      "births_base": 1537
+     },
+     {
+      "nuts": "FI196",
+      "name": "Satakunta",
+      "births_target": 1381,
+      "births_base": 1370
+     },
+     {
+      "nuts": "FI197",
+      "name": "Pirkanmaa",
+      "births_target": 4583,
+      "births_base": 4407
+     },
+     {
+      "nuts": "FI1B1",
+      "name": "Helsinki-Uusimaa",
+      "births_target": 17051,
+      "births_base": 16163
+     },
+     {
+      "nuts": "FI1C1",
+      "name": "Varsinais-Suomi",
+      "births_target": 3867,
+      "births_base": 3730
+     },
+     {
+      "nuts": "FI1C2",
+      "name": "Kanta-Häme",
+      "births_target": 1107,
+      "births_base": 1048
+     },
+     {
+      "nuts": "FI1C3",
+      "name": "Päijät-Häme",
+      "births_target": 1264,
+      "births_base": 1251
+     },
+     {
+      "nuts": "FI1C4",
+      "name": "Kymenlaakso",
+      "births_target": 885,
+      "births_base": 805
+     },
+     {
+      "nuts": "FI1C5",
+      "name": "Etelä-Karjala",
+      "births_target": 735,
+      "births_base": 682
+     },
+     {
+      "nuts": "FI1D1",
+      "name": "Etelä-Savo",
+      "births_target": 738,
+      "births_base": 675
+     },
+     {
+      "nuts": "FI1D2",
+      "name": "Pohjois-Savo",
+      "births_target": 1782,
+      "births_base": 1698
+     },
+     {
+      "nuts": "FI1D3",
+      "name": "Pohjois-Karjala",
+      "births_target": 981,
+      "births_base": 961
+     },
+     {
+      "nuts": "FI1D5",
+      "name": "Keski-Pohjanmaa",
+      "births_target": 554,
+      "births_base": 598
+     },
+     {
+      "nuts": "FI1D7",
+      "name": "Lappi",
+      "births_target": 1266,
+      "births_base": 1236
+     },
+     {
+      "nuts": "FI1D8",
+      "name": "Kainuu",
+      "births_target": 405,
+      "births_base": 364
+     },
+     {
+      "nuts": "FI1D9",
+      "name": "Pohjois-Pohjanmaa",
+      "births_target": 3825,
+      "births_base": 3631
+     },
+     {
+      "nuts": "FI200",
+      "name": "Åland",
+      "births_target": 251,
+      "births_base": 218
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jun",
+    "regions": [
+     {
+      "nuts": "FI193",
+      "name": "Keski-Suomi",
+      "births_target": 1034,
+      "births_base": 1007
+     },
+     {
+      "nuts": "FI194",
+      "name": "Etelä-Pohjanmaa",
+      "births_target": 741,
+      "births_base": 690
+     },
+     {
+      "nuts": "FI195",
+      "name": "Pohjanmaa",
+      "births_target": 827,
+      "births_base": 816
+     },
+     {
+      "nuts": "FI196",
+      "name": "Satakunta",
+      "births_target": 716,
+      "births_base": 694
+     },
+     {
+      "nuts": "FI197",
+      "name": "Pirkanmaa",
+      "births_target": 2442,
+      "births_base": 2224
+     },
+     {
+      "nuts": "FI1B1",
+      "name": "Helsinki-Uusimaa",
+      "births_target": 8849,
+      "births_base": 8373
+     },
+     {
+      "nuts": "FI1C1",
+      "name": "Varsinais-Suomi",
+      "births_target": 2040,
+      "births_base": 1855
+     },
+     {
+      "nuts": "FI1C2",
+      "name": "Kanta-Häme",
+      "births_target": 554,
+      "births_base": 538
+     },
+     {
+      "nuts": "FI1C3",
+      "name": "Päijät-Häme",
+      "births_target": 700,
+      "births_base": 616
+     },
+     {
+      "nuts": "FI1C4",
+      "name": "Kymenlaakso",
+      "births_target": 470,
+      "births_base": 431
+     },
+     {
+      "nuts": "FI1C5",
+      "name": "Etelä-Karjala",
+      "births_target": 321,
+      "births_base": 347
+     },
+     {
+      "nuts": "FI1D1",
+      "name": "Etelä-Savo",
+      "births_target": 369,
+      "births_base": 372
+     },
+     {
+      "nuts": "FI1D2",
+      "name": "Pohjois-Savo",
+      "births_target": 881,
+      "births_base": 886
+     },
+     {
+      "nuts": "FI1D3",
+      "name": "Pohjois-Karjala",
+      "births_target": 511,
+      "births_base": 480
+     },
+     {
+      "nuts": "FI1D5",
+      "name": "Keski-Pohjanmaa",
+      "births_target": 290,
+      "births_base": 258
+     },
+     {
+      "nuts": "FI1D7",
+      "name": "Lappi",
+      "births_target": 629,
+      "births_base": 615
+     },
+     {
+      "nuts": "FI1D8",
+      "name": "Kainuu",
+      "births_target": 193,
+      "births_base": 225
+     },
+     {
+      "nuts": "FI1D9",
+      "name": "Pohjois-Pohjanmaa",
+      "births_target": 1989,
+      "births_base": 1862
+     },
+     {
+      "nuts": "FI200",
+      "name": "Åland",
+      "births_target": 106,
+      "births_base": 118
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "AT",
+  "country": "Austria",
+  "level": "NUTS3",
+  "source": "Statistik Austria, \"Bevölkerungsveränderung nach demographischen Komponenten und administrativen Gebietseinheiten\" 01.01.2025-01.01.2026 (BevVeraend_Komp_Gebietseinh_2025.ods, created 29.06.2026) and 01.01.2024-01.01.2025 (BevVeraend_Komp_Gebietseinh_2024.ods), column Lebendgeborene, section NUTS 3-Regionen. Final annual results; totals 76,067 (2025) and 77,238 (2024) match the vital-statistics press releases of 22.05.2026 and 26.05.2025.",
+  "url": "https://www.statistik.at/fileadmin/pages/408/BevVeraend_Komp_Gebietseinh_2025.ods",
+  "url_base_2024": "https://www.statistik.at/fileadmin/pages/408/BevVeraend_Komp_Gebietseinh_2024.ods",
+  "basis": "residence of mother (Hauptwohnsitz); includes births abroad to resident mothers",
+  "notes": "No 2026 year-to-date regional births found: Statistik Austria publishes births by month and Bundesland only in annual tables (latest year 2025, file neu_Geborene_nach_demographischen_Merkmalen.ods, Tabelle 5); no provisional 2026 monthly or quarterly regional births were found on statistik.at or in the OGD catalogue (STATcube was not tried, it needs an account/API key).",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "AT111",
+      "name": "Mittelburgenland",
+      "births_target": 205,
+      "births_base": 226
+     },
+     {
+      "nuts": "AT112",
+      "name": "Nordburgenland",
+      "births_target": 1049,
+      "births_base": 1060
+     },
+     {
+      "nuts": "AT113",
+      "name": "Südburgenland",
+      "births_target": 521,
+      "births_base": 584
+     },
+     {
+      "nuts": "AT121",
+      "name": "Mostviertel-Eisenwurzen",
+      "births_target": 2094,
+      "births_base": 2149
+     },
+     {
+      "nuts": "AT122",
+      "name": "Niederösterreich-Süd",
+      "births_target": 1998,
+      "births_base": 2149
+     },
+     {
+      "nuts": "AT123",
+      "name": "Sankt Pölten",
+      "births_target": 1334,
+      "births_base": 1294
+     },
+     {
+      "nuts": "AT124",
+      "name": "Waldviertel",
+      "births_target": 1519,
+      "births_base": 1566
+     },
+     {
+      "nuts": "AT125",
+      "name": "Weinviertel",
+      "births_target": 899,
+      "births_base": 884
+     },
+     {
+      "nuts": "AT126",
+      "name": "Wiener Umland/Nordteil",
+      "births_target": 2546,
+      "births_base": 2619
+     },
+     {
+      "nuts": "AT127",
+      "name": "Wiener Umland/Südteil",
+      "births_target": 2675,
+      "births_base": 2601
+     },
+     {
+      "nuts": "AT130",
+      "name": "Wien",
+      "births_target": 19030,
+      "births_base": 19070
+     },
+     {
+      "nuts": "AT211",
+      "name": "Klagenfurt-Villach",
+      "births_target": 2147,
+      "births_base": 2170
+     },
+     {
+      "nuts": "AT212",
+      "name": "Oberkärnten",
+      "births_target": 923,
+      "births_base": 871
+     },
+     {
+      "nuts": "AT213",
+      "name": "Unterkärnten",
+      "births_target": 1050,
+      "births_base": 1042
+     },
+     {
+      "nuts": "AT221",
+      "name": "Graz",
+      "births_target": 4253,
+      "births_base": 4209
+     },
+     {
+      "nuts": "AT222",
+      "name": "Liezen",
+      "births_target": 580,
+      "births_base": 586
+     },
+     {
+      "nuts": "AT223",
+      "name": "Östliche Obersteiermark",
+      "births_target": 994,
+      "births_base": 1035
+     },
+     {
+      "nuts": "AT224",
+      "name": "Oststeiermark",
+      "births_target": 1868,
+      "births_base": 1953
+     },
+     {
+      "nuts": "AT225",
+      "name": "West- und Südsteiermark",
+      "births_target": 1333,
+      "births_base": 1407
+     },
+     {
+      "nuts": "AT226",
+      "name": "Westliche Obersteiermark",
+      "births_target": 652,
+      "births_base": 748
+     },
+     {
+      "nuts": "AT311",
+      "name": "Innviertel",
+      "births_target": 2599,
+      "births_base": 2739
+     },
+     {
+      "nuts": "AT312",
+      "name": "Linz-Wels",
+      "births_target": 5424,
+      "births_base": 5584
+     },
+     {
+      "nuts": "AT313",
+      "name": "Mühlviertel",
+      "births_target": 1834,
+      "births_base": 1964
+     },
+     {
+      "nuts": "AT314",
+      "name": "Steyr-Kirchdorf",
+      "births_target": 1338,
+      "births_base": 1324
+     },
+     {
+      "nuts": "AT315",
+      "name": "Traunviertel",
+      "births_target": 2061,
+      "births_base": 2067
+     },
+     {
+      "nuts": "AT321",
+      "name": "Lungau",
+      "births_target": 177,
+      "births_base": 167
+     },
+     {
+      "nuts": "AT322",
+      "name": "Pinzgau-Pongau",
+      "births_target": 1577,
+      "births_base": 1510
+     },
+     {
+      "nuts": "AT323",
+      "name": "Salzburg und Umgebung",
+      "births_target": 3238,
+      "births_base": 3199
+     },
+     {
+      "nuts": "AT331",
+      "name": "Außerfern",
+      "births_target": 280,
+      "births_base": 290
+     },
+     {
+      "nuts": "AT332",
+      "name": "Innsbruck",
+      "births_target": 2635,
+      "births_base": 2642
+     },
+     {
+      "nuts": "AT333",
+      "name": "Osttirol",
+      "births_target": 411,
+      "births_base": 458
+     },
+     {
+      "nuts": "AT334",
+      "name": "Tiroler Oberland",
+      "births_target": 976,
+      "births_base": 957
+     },
+     {
+      "nuts": "AT335",
+      "name": "Tiroler Unterland",
+      "births_target": 2242,
+      "births_base": 2362
+     },
+     {
+      "nuts": "AT341",
+      "name": "Bludenz-Bregenzer Wald",
+      "births_target": 831,
+      "births_base": 841
+     },
+     {
+      "nuts": "AT342",
+      "name": "Rheintal-Bodenseegebiet",
+      "births_target": 2774,
+      "births_base": 2911
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "PT",
+  "country": "Portugal",
+  "level": "NUTS3 (NUTS 2021; Grande Lisboa + Península de Setúbal summed to PT170 AML)",
+  "source": "INE Portugal (Statistics Portugal) JSON API: indicator 0012436 \"Nados-vivos por Local de residência da mãe (NUTS 2024), Sexo e Mês de nascimento; Anual\" (final 2024 and 2025, updated 30 Apr 2026) and indicator 0012094 \"Nados-vivos por Local de residência da mãe (NUTS 2024) e Sexo; Mensal\" (preliminary Jan-Jul 2026, registrations up to 11 Sep 2026, updated 18 Sep 2026).",
+  "url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012436&Dim1=S7A2025&lang=PT",
+  "url_2026": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0012094&Dim1=S3A202606&lang=PT",
+  "basis": "residence of mother; month of birth",
+  "notes": "Data are published on NUTS 2024 regions. The NUTS 2024 NUTS3 units match NUTS 2021 except that AML (PT170) is split into Grande Lisboa (1A0) and Peninsula de Setubal (1B0); these were summed. A check summing the 2025 municipality data to NUTS 2021 with the Eurostat LAU-NUTS 2021 file reproduced every NUTS 2021 total exactly. July 2026 dropped: preliminary July 2026 was -3.1% y/y vs -1.1% in June and between +4.7% and -0.8% earlier, so it may be incomplete. The 2026 numerator is preliminary while the 2025 Jan-Jun base is final. Mothers resident abroad excluded. Full-year 2025 vs 2024 was built by summing municipalities to exact NUTS 2021 units. For 2026 the monthly preliminary data exist only at NUTS 2024 NUTS3 level; in NUTS 2024 the municipalities of Sertã and Vila de Rei (about 127 births in 2025) moved from Médio Tejo (PT16I) to Beira Baixa (PT16H), so the 2026 PT16H/PT16I entries use NUTS 2024 boundaries (target and base on the same boundaries).",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "PT111",
+      "name": "Alto Minho",
+      "births_target": 1627,
+      "births_base": 1518
+     },
+     {
+      "nuts": "PT112",
+      "name": "Cávado",
+      "births_target": 3495,
+      "births_base": 3306
+     },
+     {
+      "nuts": "PT119",
+      "name": "Ave",
+      "births_target": 3199,
+      "births_base": 3110
+     },
+     {
+      "nuts": "PT11A",
+      "name": "Área Metropolitana do Porto",
+      "births_target": 13467,
+      "births_base": 12674
+     },
+     {
+      "nuts": "PT11B",
+      "name": "Alto Tâmega",
+      "births_target": 438,
+      "births_base": 402
+     },
+     {
+      "nuts": "PT11C",
+      "name": "Tâmega e Sousa",
+      "births_target": 2884,
+      "births_base": 2746
+     },
+     {
+      "nuts": "PT11D",
+      "name": "Douro",
+      "births_target": 1051,
+      "births_base": 952
+     },
+     {
+      "nuts": "PT11E",
+      "name": "Terras de Trás-os-Montes",
+      "births_target": 606,
+      "births_base": 544
+     },
+     {
+      "nuts": "PT150",
+      "name": "Algarve",
+      "births_target": 4431,
+      "births_base": 4347
+     },
+     {
+      "nuts": "PT16B",
+      "name": "Oeste",
+      "births_target": 3102,
+      "births_base": 3026
+     },
+     {
+      "nuts": "PT16D",
+      "name": "Região de Aveiro",
+      "births_target": 2984,
+      "births_base": 2791
+     },
+     {
+      "nuts": "PT16E",
+      "name": "Região de Coimbra",
+      "births_target": 3099,
+      "births_base": 3085
+     },
+     {
+      "nuts": "PT16F",
+      "name": "Região de Leiria",
+      "births_target": 2367,
+      "births_base": 2213
+     },
+     {
+      "nuts": "PT16G",
+      "name": "Viseu Dão Lafões",
+      "births_target": 1815,
+      "births_base": 1686
+     },
+     {
+      "nuts": "PT16H",
+      "name": "Beira Baixa",
+      "births_target": 555,
+      "births_base": 553
+     },
+     {
+      "nuts": "PT16I",
+      "name": "Médio Tejo",
+      "births_target": 1720,
+      "births_base": 1645
+     },
+     {
+      "nuts": "PT16J",
+      "name": "Beiras e Serra da Estrela",
+      "births_target": 1230,
+      "births_base": 1199
+     },
+     {
+      "nuts": "PT170",
+      "name": "Área Metropolitana de Lisboa",
+      "births_target": 30530,
+      "births_base": 29836
+     },
+     {
+      "nuts": "PT181",
+      "name": "Alentejo Litoral",
+      "births_target": 770,
+      "births_base": 792
+     },
+     {
+      "nuts": "PT184",
+      "name": "Baixo Alentejo",
+      "births_target": 895,
+      "births_base": 890
+     },
+     {
+      "nuts": "PT185",
+      "name": "Lezíria do Tejo",
+      "births_target": 1976,
+      "births_base": 1896
+     },
+     {
+      "nuts": "PT186",
+      "name": "Alto Alentejo",
+      "births_target": 652,
+      "births_base": 631
+     },
+     {
+      "nuts": "PT187",
+      "name": "Alentejo Central",
+      "births_target": 1158,
+      "births_base": 1136
+     },
+     {
+      "nuts": "PT200",
+      "name": "Região Autónoma dos Açores",
+      "births_target": 1968,
+      "births_base": 1871
+     },
+     {
+      "nuts": "PT300",
+      "name": "Região Autónoma da Madeira",
+      "births_target": 1745,
+      "births_base": 1793
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jun",
+    "regions": [
+     {
+      "nuts": "PT111",
+      "name": "Alto Minho",
+      "births_target": 772,
+      "births_base": 770
+     },
+     {
+      "nuts": "PT112",
+      "name": "Cávado",
+      "births_target": 1682,
+      "births_base": 1690
+     },
+     {
+      "nuts": "PT119",
+      "name": "Ave",
+      "births_target": 1535,
+      "births_base": 1546
+     },
+     {
+      "nuts": "PT11A",
+      "name": "Área Metropolitana do Porto",
+      "births_target": 6503,
+      "births_base": 6433
+     },
+     {
+      "nuts": "PT11B",
+      "name": "Alto Tâmega",
+      "births_target": 163,
+      "births_base": 223
+     },
+     {
+      "nuts": "PT11C",
+      "name": "Tâmega e Sousa",
+      "births_target": 1415,
+      "births_base": 1334
+     },
+     {
+      "nuts": "PT11D",
+      "name": "Douro",
+      "births_target": 498,
+      "births_base": 469
+     },
+     {
+      "nuts": "PT11E",
+      "name": "Terras de Trás-os-Montes",
+      "births_target": 281,
+      "births_base": 290
+     },
+     {
+      "nuts": "PT150",
+      "name": "Algarve",
+      "births_target": 2181,
+      "births_base": 2101
+     },
+     {
+      "nuts": "PT16B",
+      "name": "Oeste",
+      "births_target": 1578,
+      "births_base": 1493
+     },
+     {
+      "nuts": "PT16D",
+      "name": "Região de Aveiro",
+      "births_target": 1412,
+      "births_base": 1454
+     },
+     {
+      "nuts": "PT16E",
+      "name": "Região de Coimbra",
+      "births_target": 1556,
+      "births_base": 1477
+     },
+     {
+      "nuts": "PT16F",
+      "name": "Região de Leiria",
+      "births_target": 1181,
+      "births_base": 1130
+     },
+     {
+      "nuts": "PT16G",
+      "name": "Viseu Dão Lafões",
+      "births_target": 812,
+      "births_base": 862
+     },
+     {
+      "nuts": "PT16H",
+      "name": "Beira Baixa",
+      "births_target": 324,
+      "births_base": 333
+     },
+     {
+      "nuts": "PT16I",
+      "name": "Médio Tejo",
+      "births_target": 760,
+      "births_base": 726
+     },
+     {
+      "nuts": "PT16J",
+      "name": "Beiras e Serra da Estrela",
+      "births_target": 638,
+      "births_base": 579
+     },
+     {
+      "nuts": "PT170",
+      "name": "Área Metropolitana de Lisboa",
+      "births_target": 14778,
+      "births_base": 14792
+     },
+     {
+      "nuts": "PT181",
+      "name": "Alentejo Litoral",
+      "births_target": 373,
+      "births_base": 385
+     },
+     {
+      "nuts": "PT184",
+      "name": "Baixo Alentejo",
+      "births_target": 446,
+      "births_base": 412
+     },
+     {
+      "nuts": "PT185",
+      "name": "Lezíria do Tejo",
+      "births_target": 936,
+      "births_base": 927
+     },
+     {
+      "nuts": "PT186",
+      "name": "Alto Alentejo",
+      "births_target": 306,
+      "births_base": 318
+     },
+     {
+      "nuts": "PT187",
+      "name": "Alentejo Central",
+      "births_target": 578,
+      "births_base": 570
+     },
+     {
+      "nuts": "PT200",
+      "name": "Região Autónoma dos Açores",
+      "births_target": 967,
+      "births_base": 940
+     },
+     {
+      "nuts": "PT300",
+      "name": "Região Autónoma da Madeira",
+      "births_target": 868,
+      "births_base": 795
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "CZ",
+  "country": "Czechia",
+  "level": "NUTS3 (kraj)",
+  "source": "CZSO DataStat API: OBY01B \"Základní údaje o stavu a pohybu obyvatel - roční údaje\" (final 2024, 2025), OBY01A \"... čtvrtletní kumulace\" (final Q1-Q2 2025) and OBY01PD \"Stav a pohyb obyvatel - předběžné údaje\" (preliminary Q1-Q2 2026), indicator Živě narození (live births), kraje.",
+  "url": "https://data.csu.gov.cz/api/dotaz/v1/data/sady/OBY01B/vlastni?format=CSV&kodCiselniku=true&Uz02A=*&CasR.poslednich=3&IndicatorType=4355ZN",
+  "url_2026": "https://data.csu.gov.cz/api/dotaz/v1/data/sady/OBY01PD/vlastni?format=CSV&kodCiselniku=true&Uz02A=*&CASKQ3=2026-Q2&IndicatorType=*",
+  "url_2025H1": "https://data.csu.gov.cz/api/dotaz/v1/data/sady/OBY01A/vlastni?format=CSV&kodCiselniku=true&Uz02A=*&CASKQ.poslednich=12&IndicatorType=4355ZN",
+  "basis": "residence (permanent or long-term residence, as published by CZSO); quarterly cumulative",
+  "notes": "Regional data are quarterly cumulative (latest Q1-Q2 2026), so 2026 period is Jan-Jun. The 2026 numerator is PRELIMINARY (OBY01PD) and the Jan-Jun 2025 base is FINAL (OBY01A); earlier preliminary vintages cannot be retrieved without authentication.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "CZ010",
+      "name": "Hlavní město Praha",
+      "births_target": 10946,
+      "births_base": 12085
+     },
+     {
+      "nuts": "CZ020",
+      "name": "Středočeský kraj",
+      "births_target": 10201,
+      "births_base": 10981
+     },
+     {
+      "nuts": "CZ031",
+      "name": "Jihočeský kraj",
+      "births_target": 4645,
+      "births_base": 5082
+     },
+     {
+      "nuts": "CZ032",
+      "name": "Plzeňský kraj",
+      "births_target": 4239,
+      "births_base": 4569
+     },
+     {
+      "nuts": "CZ041",
+      "name": "Karlovarský kraj",
+      "births_target": 1798,
+      "births_base": 1814
+     },
+     {
+      "nuts": "CZ042",
+      "name": "Ústecký kraj",
+      "births_target": 5443,
+      "births_base": 6132
+     },
+     {
+      "nuts": "CZ051",
+      "name": "Liberecký kraj",
+      "births_target": 3055,
+      "births_base": 3253
+     },
+     {
+      "nuts": "CZ052",
+      "name": "Královéhradecký kraj",
+      "births_target": 3855,
+      "births_base": 4142
+     },
+     {
+      "nuts": "CZ053",
+      "name": "Pardubický kraj",
+      "births_target": 3809,
+      "births_base": 4201
+     },
+     {
+      "nuts": "CZ063",
+      "name": "Kraj Vysočina",
+      "births_target": 3896,
+      "births_base": 4184
+     },
+     {
+      "nuts": "CZ064",
+      "name": "Jihomoravský kraj",
+      "births_target": 8912,
+      "births_base": 9868
+     },
+     {
+      "nuts": "CZ071",
+      "name": "Olomoucký kraj",
+      "births_target": 4576,
+      "births_base": 4943
+     },
+     {
+      "nuts": "CZ072",
+      "name": "Zlínský kraj",
+      "births_target": 4091,
+      "births_base": 4447
+     },
+     {
+      "nuts": "CZ080",
+      "name": "Moravskoslezský kraj",
+      "births_target": 8170,
+      "births_base": 8610
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jun",
+    "regions": [
+     {
+      "nuts": "CZ010",
+      "name": "Hlavní město Praha",
+      "births_target": 5130,
+      "births_base": 5470
+     },
+     {
+      "nuts": "CZ020",
+      "name": "Středočeský kraj",
+      "births_target": 4809,
+      "births_base": 5006
+     },
+     {
+      "nuts": "CZ031",
+      "name": "Jihočeský kraj",
+      "births_target": 2132,
+      "births_base": 2288
+     },
+     {
+      "nuts": "CZ032",
+      "name": "Plzeňský kraj",
+      "births_target": 1988,
+      "births_base": 2094
+     },
+     {
+      "nuts": "CZ041",
+      "name": "Karlovarský kraj",
+      "births_target": 824,
+      "births_base": 912
+     },
+     {
+      "nuts": "CZ042",
+      "name": "Ústecký kraj",
+      "births_target": 2721,
+      "births_base": 2683
+     },
+     {
+      "nuts": "CZ051",
+      "name": "Liberecký kraj",
+      "births_target": 1376,
+      "births_base": 1535
+     },
+     {
+      "nuts": "CZ052",
+      "name": "Královéhradecký kraj",
+      "births_target": 1750,
+      "births_base": 1941
+     },
+     {
+      "nuts": "CZ053",
+      "name": "Pardubický kraj",
+      "births_target": 1870,
+      "births_base": 1844
+     },
+     {
+      "nuts": "CZ063",
+      "name": "Kraj Vysočina",
+      "births_target": 1756,
+      "births_base": 1929
+     },
+     {
+      "nuts": "CZ064",
+      "name": "Jihomoravský kraj",
+      "births_target": 4253,
+      "births_base": 4309
+     },
+     {
+      "nuts": "CZ071",
+      "name": "Olomoucký kraj",
+      "births_target": 2176,
+      "births_base": 2241
+     },
+     {
+      "nuts": "CZ072",
+      "name": "Zlínský kraj",
+      "births_target": 1901,
+      "births_base": 1988
+     },
+     {
+      "nuts": "CZ080",
+      "name": "Moravskoslezský kraj",
+      "births_target": 3780,
+      "births_base": 3985
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "HU",
+  "country": "Hungary",
+  "level": "NUTS3 (vármegye + Budapest)",
+  "source": "KSH (Hungarian Central Statistical Office) STADAT table 22.2.2.1 \"Élveszületések vármegye és régió szerint, negyedévente kumulált\" (nep0067).",
+  "url": "https://www.ksh.hu/stadat_files/nep/hu/nep0067.csv",
+  "basis": "residence of mother (as published by KSH); quarterly cumulative",
+  "notes": "Regional data are quarterly cumulative (latest 2026 Q1-Q2), so the 2026 period is Jan-Jun. 2026 figures are preliminary. National Jan-Jun 2026 = 34,312 vs 35,015 (matches the KSH press release: 703 fewer, -2.0%). The sum of the counties is below the published national total for 2024 (76,741 vs 77,511), 2025 (71,500 vs 72,017) and Jan-Jun 2025 (34,769 vs 35,015), but not for Jan-Jun 2026 (34,312 = 34,312). The national total presumably also counts births whose mother lives abroad or in an unknown place, which the preliminary 2026 data do not yet assign. The county ratios use county figures only. Because of this, the 2026 county ratios may run about 0.7 points high on average: the county-sum ratio is 0.987, against 0.980 for the national total.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "HU110",
+      "name": "Budapest",
+      "births_target": 11532,
+      "births_base": 12318
+     },
+     {
+      "nuts": "HU120",
+      "name": "Pest",
+      "births_target": 10739,
+      "births_base": 11083
+     },
+     {
+      "nuts": "HU211",
+      "name": "Fejér",
+      "births_target": 3125,
+      "births_base": 3450
+     },
+     {
+      "nuts": "HU212",
+      "name": "Komárom-Esztergom",
+      "births_target": 2138,
+      "births_base": 2340
+     },
+     {
+      "nuts": "HU213",
+      "name": "Veszprém",
+      "births_target": 2212,
+      "births_base": 2355
+     },
+     {
+      "nuts": "HU221",
+      "name": "Győr-Moson-Sopron",
+      "births_target": 3583,
+      "births_base": 3890
+     },
+     {
+      "nuts": "HU222",
+      "name": "Vas",
+      "births_target": 1599,
+      "births_base": 1718
+     },
+     {
+      "nuts": "HU223",
+      "name": "Zala",
+      "births_target": 1454,
+      "births_base": 1544
+     },
+     {
+      "nuts": "HU231",
+      "name": "Baranya",
+      "births_target": 2366,
+      "births_base": 2508
+     },
+     {
+      "nuts": "HU232",
+      "name": "Somogy",
+      "births_target": 1845,
+      "births_base": 2076
+     },
+     {
+      "nuts": "HU233",
+      "name": "Tolna",
+      "births_target": 1366,
+      "births_base": 1521
+     },
+     {
+      "nuts": "HU311",
+      "name": "Borsod-Abaúj-Zemplén",
+      "births_target": 5614,
+      "births_base": 6018
+     },
+     {
+      "nuts": "HU312",
+      "name": "Heves",
+      "births_target": 2198,
+      "births_base": 2351
+     },
+     {
+      "nuts": "HU313",
+      "name": "Nógrád",
+      "births_target": 1401,
+      "births_base": 1491
+     },
+     {
+      "nuts": "HU321",
+      "name": "Hajdú-Bihar",
+      "births_target": 4332,
+      "births_base": 4751
+     },
+     {
+      "nuts": "HU322",
+      "name": "Jász-Nagykun-Szolnok",
+      "births_target": 2679,
+      "births_base": 2869
+     },
+     {
+      "nuts": "HU323",
+      "name": "Szabolcs-Szatmár-Bereg",
+      "births_target": 4986,
+      "births_base": 5358
+     },
+     {
+      "nuts": "HU331",
+      "name": "Bács-Kiskun",
+      "births_target": 3546,
+      "births_base": 3950
+     },
+     {
+      "nuts": "HU332",
+      "name": "Békés",
+      "births_target": 1989,
+      "births_base": 2268
+     },
+     {
+      "nuts": "HU333",
+      "name": "Csongrád-Csanád",
+      "births_target": 2796,
+      "births_base": 2882
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jun",
+    "regions": [
+     {
+      "nuts": "HU110",
+      "name": "Budapest",
+      "births_target": 5092,
+      "births_base": 5744
+     },
+     {
+      "nuts": "HU120",
+      "name": "Pest",
+      "births_target": 5161,
+      "births_base": 5261
+     },
+     {
+      "nuts": "HU211",
+      "name": "Fejér",
+      "births_target": 1537,
+      "births_base": 1531
+     },
+     {
+      "nuts": "HU212",
+      "name": "Komárom-Esztergom",
+      "births_target": 1073,
+      "births_base": 1071
+     },
+     {
+      "nuts": "HU213",
+      "name": "Veszprém",
+      "births_target": 1070,
+      "births_base": 1068
+     },
+     {
+      "nuts": "HU221",
+      "name": "Győr-Moson-Sopron",
+      "births_target": 1572,
+      "births_base": 1751
+     },
+     {
+      "nuts": "HU222",
+      "name": "Vas",
+      "births_target": 748,
+      "births_base": 746
+     },
+     {
+      "nuts": "HU223",
+      "name": "Zala",
+      "births_target": 702,
+      "births_base": 703
+     },
+     {
+      "nuts": "HU231",
+      "name": "Baranya",
+      "births_target": 1073,
+      "births_base": 1124
+     },
+     {
+      "nuts": "HU232",
+      "name": "Somogy",
+      "births_target": 888,
+      "births_base": 893
+     },
+     {
+      "nuts": "HU233",
+      "name": "Tolna",
+      "births_target": 661,
+      "births_base": 660
+     },
+     {
+      "nuts": "HU311",
+      "name": "Borsod-Abaúj-Zemplén",
+      "births_target": 2734,
+      "births_base": 2601
+     },
+     {
+      "nuts": "HU312",
+      "name": "Heves",
+      "births_target": 1114,
+      "births_base": 1081
+     },
+     {
+      "nuts": "HU313",
+      "name": "Nógrád",
+      "births_target": 722,
+      "births_base": 651
+     },
+     {
+      "nuts": "HU321",
+      "name": "Hajdú-Bihar",
+      "births_target": 2124,
+      "births_base": 2115
+     },
+     {
+      "nuts": "HU322",
+      "name": "Jász-Nagykun-Szolnok",
+      "births_target": 1414,
+      "births_base": 1333
+     },
+     {
+      "nuts": "HU323",
+      "name": "Szabolcs-Szatmár-Bereg",
+      "births_target": 2518,
+      "births_base": 2391
+     },
+     {
+      "nuts": "HU331",
+      "name": "Bács-Kiskun",
+      "births_target": 1794,
+      "births_base": 1709
+     },
+     {
+      "nuts": "HU332",
+      "name": "Békés",
+      "births_target": 1040,
+      "births_base": 936
+     },
+     {
+      "nuts": "HU333",
+      "name": "Csongrád-Csanád",
+      "births_target": 1275,
+      "births_base": 1400
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "SK",
+  "country": "Slovakia",
+  "level": "NUTS3 (kraj)",
+  "source": "Statistical Office of the Slovak Republic, DATAcube om7104mr \"Population Change - SR-Area-Reg-District, U-R (monthly)\", indicator IN010106 Live births (updated 2026-08-31).",
+  "url": "https://data.statistics.sk/api/v2/dataset/om7104mr/SK0,SK010,SK021,SK022,SK023,SK031,SK032,SK041,SK042/<months>/IN010106?lang=en",
+  "basis": "permanent residence (of mother); month of event (since 2021); births in Slovakia only (since 2012)",
+  "notes": "Extra country (not in the requested list). Latest month is June 2026. Monthly data for the current year are preliminary; 2024-2025 are final. District-level (okres) monthly data also exist in the same table.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "SK010",
+      "name": "Bratislavský kraj",
+      "births_target": 5268,
+      "births_base": 6071
+     },
+     {
+      "nuts": "SK021",
+      "name": "Trnavský kraj",
+      "births_target": 3667,
+      "births_base": 4154
+     },
+     {
+      "nuts": "SK022",
+      "name": "Trenčiansky kraj",
+      "births_target": 3522,
+      "births_base": 3727
+     },
+     {
+      "nuts": "SK023",
+      "name": "Nitriansky kraj",
+      "births_target": 4193,
+      "births_base": 4831
+     },
+     {
+      "nuts": "SK031",
+      "name": "Žilinský kraj",
+      "births_target": 4886,
+      "births_base": 5650
+     },
+     {
+      "nuts": "SK032",
+      "name": "Banskobystrický kraj",
+      "births_target": 4359,
+      "births_base": 4662
+     },
+     {
+      "nuts": "SK041",
+      "name": "Prešovský kraj",
+      "births_target": 8607,
+      "births_base": 9295
+     },
+     {
+      "nuts": "SK042",
+      "name": "Košický kraj",
+      "births_target": 7517,
+      "births_base": 7851
+     }
+    ]
+   },
+   {
+    "target_year": 2026,
+    "base_year": 2025,
+    "months": "Jan–Jun",
+    "regions": [
+     {
+      "nuts": "SK010",
+      "name": "Bratislavský kraj",
+      "births_target": 2493,
+      "births_base": 2655
+     },
+     {
+      "nuts": "SK021",
+      "name": "Trnavský kraj",
+      "births_target": 1749,
+      "births_base": 1756
+     },
+     {
+      "nuts": "SK022",
+      "name": "Trenčiansky kraj",
+      "births_target": 1559,
+      "births_base": 1745
+     },
+     {
+      "nuts": "SK023",
+      "name": "Nitriansky kraj",
+      "births_target": 2042,
+      "births_base": 2028
+     },
+     {
+      "nuts": "SK031",
+      "name": "Žilinský kraj",
+      "births_target": 2367,
+      "births_base": 2411
+     },
+     {
+      "nuts": "SK032",
+      "name": "Banskobystrický kraj",
+      "births_target": 2093,
+      "births_base": 2042
+     },
+     {
+      "nuts": "SK041",
+      "name": "Prešovský kraj",
+      "births_target": 4219,
+      "births_base": 4217
+     },
+     {
+      "nuts": "SK042",
+      "name": "Košický kraj",
+      "births_target": 3715,
+      "births_base": 3616
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "CH",
+  "country": "Switzerland",
+  "level": "NUTS3 (canton)",
+  "source": "Swiss Federal Statistical Office (BFS/FSO) STAT-TAB px-x-0102020000_101 \"Demografische Bilanz nach Kanton\", component Lebendgeburt (live births), permanent resident population, years 2024 and 2025.",
+  "url": "https://www.pxweb.bfs.admin.ch/api/v1/de/px-x-0102020000_101/px-x-0102020000_101.px",
+  "basis": "canton of residence (permanent resident population)",
+  "notes": "Extra country (not in the requested list). Annual only: no 2026 year-to-date births by canton were found in STAT-TAB; the only provisional balance table, px-x-0102020000_202, covers 2025.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "CH040",
+      "name": "Zürich",
+      "births_target": 14981,
+      "births_base": 14949
+     },
+     {
+      "nuts": "CH021",
+      "name": "Bern / Berne",
+      "births_target": 8743,
+      "births_base": 8727
+     },
+     {
+      "nuts": "CH061",
+      "name": "Luzern",
+      "births_target": 3885,
+      "births_base": 4069
+     },
+     {
+      "nuts": "CH062",
+      "name": "Uri",
+      "births_target": 322,
+      "births_base": 353
+     },
+     {
+      "nuts": "CH063",
+      "name": "Schwyz",
+      "births_target": 1412,
+      "births_base": 1436
+     },
+     {
+      "nuts": "CH064",
+      "name": "Obwalden",
+      "births_target": 298,
+      "births_base": 314
+     },
+     {
+      "nuts": "CH065",
+      "name": "Nidwalden",
+      "births_target": 374,
+      "births_base": 348
+     },
+     {
+      "nuts": "CH051",
+      "name": "Glarus",
+      "births_target": 317,
+      "births_base": 338
+     },
+     {
+      "nuts": "CH066",
+      "name": "Zug",
+      "births_target": 1175,
+      "births_base": 1185
+     },
+     {
+      "nuts": "CH022",
+      "name": "Fribourg / Freiburg",
+      "births_target": 3280,
+      "births_base": 3288
+     },
+     {
+      "nuts": "CH023",
+      "name": "Solothurn",
+      "births_target": 2468,
+      "births_base": 2406
+     },
+     {
+      "nuts": "CH031",
+      "name": "Basel-Stadt",
+      "births_target": 1837,
+      "births_base": 1772
+     },
+     {
+      "nuts": "CH032",
+      "name": "Basel-Landschaft",
+      "births_target": 2266,
+      "births_base": 2353
+     },
+     {
+      "nuts": "CH052",
+      "name": "Schaffhausen",
+      "births_target": 710,
+      "births_base": 694
+     },
+     {
+      "nuts": "CH053",
+      "name": "Appenzell Ausserrhoden",
+      "births_target": 507,
+      "births_base": 482
+     },
+     {
+      "nuts": "CH054",
+      "name": "Appenzell Innerrhoden",
+      "births_target": 153,
+      "births_base": 138
+     },
+     {
+      "nuts": "CH055",
+      "name": "St. Gallen",
+      "births_target": 4826,
+      "births_base": 4918
+     },
+     {
+      "nuts": "CH056",
+      "name": "Graubünden / Grigioni / Grischun",
+      "births_target": 1421,
+      "births_base": 1504
+     },
+     {
+      "nuts": "CH033",
+      "name": "Aargau",
+      "births_target": 6443,
+      "births_base": 6536
+     },
+     {
+      "nuts": "CH057",
+      "name": "Thurgau",
+      "births_target": 2642,
+      "births_base": 2675
+     },
+     {
+      "nuts": "CH070",
+      "name": "Ticino",
+      "births_target": 2285,
+      "births_base": 2319
+     },
+     {
+      "nuts": "CH011",
+      "name": "Vaud",
+      "births_target": 7833,
+      "births_base": 7612
+     },
+     {
+      "nuts": "CH012",
+      "name": "Valais / Wallis",
+      "births_target": 2981,
+      "births_base": 3047
+     },
+     {
+      "nuts": "CH024",
+      "name": "Neuchâtel",
+      "births_target": 1432,
+      "births_base": 1467
+     },
+     {
+      "nuts": "CH013",
+      "name": "Genève",
+      "births_target": 5002,
+      "births_base": 4747
+     },
+     {
+      "nuts": "CH025",
+      "name": "Jura",
+      "births_target": 560,
+      "births_base": 579
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso2": "SI",
+  "country": "Slovenia",
+  "level": "NUTS3 (statistical region)",
+  "source": "Statistical Office of Slovenia (SURS), SiStat table 05I1004S \"Natural change of population, statistical regions, Slovenia, annually\", measure Live births - Total, 2024 and 2025.",
+  "url": "https://pxweb.stat.si/SiStatData/api/v1/en/Data/05I1004S.px",
+  "basis": "region of residence (as published by SURS)",
+  "notes": "Extra country (not in the requested list). Annual only: SiStat has monthly births only for the whole country (05J1031S), no regional 2026 data.",
+  "estimates": [
+   {
+    "target_year": 2025,
+    "base_year": 2024,
+    "months": "Jan–Dec",
+    "regions": [
+     {
+      "nuts": "SI031",
+      "name": "Pomurska",
+      "births_target": 736,
+      "births_base": 774
+     },
+     {
+      "nuts": "SI032",
+      "name": "Podravska",
+      "births_target": 2427,
+      "births_base": 2396
+     },
+     {
+      "nuts": "SI033",
+      "name": "Koroška",
+      "births_target": 586,
+      "births_base": 573
+     },
+     {
+      "nuts": "SI034",
+      "name": "Savinjska",
+      "births_target": 2150,
+      "births_base": 2116
+     },
+     {
+      "nuts": "SI035",
+      "name": "Zasavska",
+      "births_target": 426,
+      "births_base": 440
+     },
+     {
+      "nuts": "SI036",
+      "name": "Posavska",
+      "births_target": 643,
+      "births_base": 645
+     },
+     {
+      "nuts": "SI037",
+      "name": "Jugovzhodna Slovenija",
+      "births_target": 1380,
+      "births_base": 1402
+     },
+     {
+      "nuts": "SI041",
+      "name": "Osrednjeslovenska",
+      "births_target": 4728,
+      "births_base": 4646
+     },
+     {
+      "nuts": "SI042",
+      "name": "Gorenjska",
+      "births_target": 1837,
+      "births_base": 1763
+     },
+     {
+      "nuts": "SI038",
+      "name": "Primorsko-notranjska",
+      "births_target": 384,
+      "births_base": 378
+     },
+     {
+      "nuts": "SI043",
+      "name": "Goriška",
+      "births_target": 902,
+      "births_base": 965
+     },
+     {
+      "nuts": "SI044",
+      "name": "Obalno-kraška",
+      "births_target": 762,
+      "births_base": 777
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -29,8 +29,16 @@ After changing `style.css`, `app.js` or `projection.js`, run `python3 stamp_vers
 1. `sh fetch_sub_sources.sh` downloads raw boundaries and data into `build/raw/` (not committed) and refreshes `build/sub/`.
 2. Research outputs from national statistics offices go in `build/sub/agent_*.json`; `python3 prep_national.py`
    normalizes them into `build/sub/national_*.json`.
-3. `python3 us_counties.py` builds US county estimates (`data/sub/USA/US-XX.json`), then
-   `python3 subnational.py` builds every country file plus `data/sub/index.json`.
-   Both need mapshaper (`npm i -g mapshaper`, or set `MAPSHAPER=/path/to/mapshaper`).
+3. `python3 subnational.py` builds every country file plus `data/sub/index.json` and `data/sub/overseas.json`
+   (France's overseas regions, colored on the world map). Display names come from `sub/names_en.json`
+   (`python3 make_names_en.py <names_in.json> sub/names_en.json` regenerates it from a dump of unit names).
+   Eurostat NUTS 3 series are extended to 2025/2026 with regional births in `sub/europe_births.json`.
+4. Then `python3 us_counties.py` builds US county estimates (`data/sub/USA/US-XX.json`) and swaps the US state
+   shapes for Census counties dissolved by state. Run it after subnational.py.
+   Both need mapshaper (`npm i -g mapshaper`, or set `MAPSHAPER=/path/to/mapshaper`) and shapely.
+5. `python3 sub_pop.py` builds `data/subpop/`: each unit's share of its country's population (Eurostat, Census,
+   official counts from Wikidata in `sub/wikidata_pop.json`, else GHS-POP grid sums), official counts by age and sex,
+   and recorded births and deaths, used for subdivision pyramids and projections. Needs numpy and rasterio.
+6. `python3 lakes.py` builds `data/lakes-50m.json` and `data/lakes-10m.json` (big lakes drawn as water).
 
 Priority per country: national statistics, then Eurostat NUTS 3 (2013+), then DHS surveys (one boundary set per survey).

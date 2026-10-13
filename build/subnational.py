@@ -6,14 +6,22 @@ The app picks the epoch nearest the timeline year (DHS survey regions change bet
 Sources, in priority order per country:
   1. national statistics (build/sub/national_*.json, from prep_national.py) -> Natural Earth admin-1
      matched by ISO 3166-2 code, then name, then Natural Earth's region grouping
-  2. Eurostat TFR by NUTS 3 region, 2013+ (build/sub/eurostat_find3.json) -> GISCO NUTS 3 at 1:1M
+  2. Eurostat TFR by NUTS 3 region, 2013+ (build/sub/eurostat_find3.json) -> GISCO NUTS 3 at 1:1M, extended to
+     2025/2026 with regional births from national offices (build/sub/europe_births.json, see eu_births_extend)
   3. DHS surveys since 1990 (build/sub/dhs_pick.json) -> each survey's own region boundaries
-US counties are built separately by us_counties.py.
+US counties are built separately by us_counties.py, which also replaces the US state shapes: run it after this.
+Holes that no other unit covers (Baikonur inside Kyzylorda, lakes) are filled; data/lakes-*.json draws big lakes.
+Names are shown in English: build/sub/names_en.json, else Natural Earth's English name for non-Latin names.
+Also writes data/sub/overseas.json: regions far from the mainland (France's overseas regions) that the world map
+colors with their own fertility rate.
 
 Raw boundary files live in build/raw/ (see fetch_sub_sources.sh). Needs mapshaper (MAPSHAPER env var or on PATH).
 Usage: python3 build/subnational.py
 """
 import glob, json, os, re, shutil, subprocess, sys, tempfile, unicodedata
+from shapely import make_valid
+from shapely.geometry import MultiPolygon, Polygon, mapping, shape
+from shapely.strtree import STRtree
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(HERE, "raw")
@@ -34,6 +42,12 @@ LEVEL_NAMES = {  # short unit names for the legend ("47 prefectures")
     "BEL": "arrondissement",
 }
 
+
+# English display names, {ISO3: {code or name: English name}} (local names come from the sources)
+NAMES_EN = json.load(open(os.path.join(SUB, "names_en.json"))) if os.path.exists(os.path.join(SUB, "names_en.json")) else {}
+# regions far from the mainland that the world map colors on their own, without zooming into the country
+OVERSEAS = {"FRA": "FRY"}  # Guadeloupe, Martinique, French Guiana, Réunion, Mayotte (NUTS FRY*)
+HOLE_MIN_AREA = 0.01  # square degrees (~100 km²); smaller holes are left alone (the Vatican in Rome, etc.)
 
 CODE_ALIASES = {"MX-CMX": "MX-DIF"}  # new ISO code -> the one Natural Earth uses
 REGION_ALIASES = {  # data unit -> Natural Earth 'region' values making it up
@@ -73,14 +87,66 @@ def simplify_to_topo(features, interval_m):
         return json.load(open(dst))
 
 
-def make_epoch(units, sources, interval_m):
-    feats = []
+def latin(s):
+    return not re.search(r"[^\x00-\u024F\u1E00-\u1EFF’ʻ]", s or "")
+
+
+def fill_uncovered_holes(units):
+    """Fill holes in a unit that no other unit covers (Baikonur inside Kyzylorda, lakes), so they don't read as gaps."""
+    geoms = []
     for u in units:
-        props = {"n": u["name"], "s": {str(y): round(v, 3) for y, v in sorted(u["series"].items())}}
+        try: geoms.append(make_valid(shape(u["geometry"])))
+        except Exception: geoms.append(Polygon())
+    tree = STRtree(geoms)
+    for i, u in enumerate(units):
+        g = shape(u["geometry"])
+        if g.geom_type not in ("Polygon", "MultiPolygon"): continue
+        polys, out, changed = ([g] if g.geom_type == "Polygon" else list(g.geoms)), [], False
+        for p in polys:
+            keep = []
+            for ring in p.interiors:
+                hole = Polygon(ring)
+                if hole.area < HOLE_MIN_AREA: keep.append(ring); continue
+                try: cov = sum(geoms[j].intersection(hole).area for j in tree.query(hole) if j != i)
+                except Exception: cov = hole.area
+                if cov >= 0.5 * hole.area: keep.append(ring)
+                else: changed = True
+            out.append(Polygon(p.exterior, keep))
+        if changed: u["geometry"] = mapping(out[0] if len(out) == 1 else MultiPolygon(out))
+
+
+def make_epoch(units, sources, interval_m, iso3=None):
+    fill_uncovered_holes(units)
+    names, feats = NAMES_EN.get(iso3, {}), []
+    for u in units:
+        name = names.get(u.get("code") or u["name"]) or names.get(u["name"]) or u["name"]
+        props = {"n": name, "s": {str(y): round(v, 3) for y, v in sorted(u["series"].items())}}
         if u.get("code"): props["c"] = u["code"]
         feats.append({"type": "Feature", "properties": props, "geometry": u["geometry"]})
     years = sorted({y for u in units for y in u["series"]})
     return {"years": years, "sources": sources, "topo": simplify_to_topo(feats, interval_m)}
+
+
+def eu_births_extend(cc, raw):
+    """Add 2025/2026 estimates to Eurostat NUTS 3 series, Birth Gauge style: the base year's TFR times births in
+    the target year over births in the same months of the base year, using the smallest region containing the unit
+    (build/sub/europe_births.json: regional births from national statistics offices). Returns {year: source}."""
+    path = os.path.join(SUB, "europe_births.json")
+    entry = next((c for c in json.load(open(path)) if c["iso2"] == cc), None) if os.path.exists(path) else None
+    metas = {}
+    for est in sorted(entry["estimates"] if entry else [], key=lambda e: e["target_year"]):
+        ty, by = est["target_year"], est["base_year"]
+        regs = [r for r in est["regions"] if r.get("births_target") and r.get("births_base")]
+        n = 0
+        for code, ser in raw.items():
+            if by not in ser or ty in ser: continue
+            r = max((r for r in regs if code.startswith(r["nuts"])), key=lambda r: len(r["nuts"]), default=None)
+            if r:
+                ser[ty] = ser[by] * r["births_target"] / r["births_base"]; n += 1
+        if n:
+            metas[str(ty)] = {"kind": "estimate", "months": est["months"], "source": entry["source"], "url": entry["url"],
+                              "method": f"{by} TFR × births {est['months']} {ty} / same months {by}, by region"}
+    return metas
 
 
 def eurostat_units():
@@ -112,7 +178,7 @@ def main():
         p = f["properties"]
         if p.get("iso_a2") and p.get("adm0_a3"): iso2to3.setdefault(p["iso_a2"], p["adm0_a3"])
     iso2to3.update({"XK": "KOS", "GR": "GRC", "NO": "NOR", "FR": "FRA"})
-    index, done = {}, set()
+    index, done, overseas = {}, set(), {}
     only = set(sys.argv[1:])  # optionally rebuild just some countries
 
     def emit(iso3, level, epochs, n_units):
@@ -158,11 +224,12 @@ def main():
                 series = {int(s["year"]): float(s["tfr"]) for s in u["series"]}
                 for s in u["series"]:
                     sources.setdefault(str(s["year"]), {k: s[k] for k in ("kind", "source", "url", "months", "method") if s.get(k)})
-                units.append({"name": u["name"], "code": u.get("code"), "series": series, "geometry": geom})
+                name = u["name"] if latin(u["name"]) else (u.get("name_en") or (f and f["properties"].get("name_en")) or u["name"])
+                units.append({"name": name, "code": u.get("code"), "series": series, "geometry": geom})
             if missing: print(f"  {iso3}: no boundary for {missing}", file=sys.stderr)
             if only and iso3 not in only: done.add(iso3); continue
             if len(units) >= max(2, 0.6 * len(c["units"])):
-                emit(iso3, c.get("level", "region"), [make_epoch(units, sources, 400)], len(units))
+                emit(iso3, c.get("level", "region"), [make_epoch(units, sources, 400, iso3)], len(units))
             else:
                 print(f"  {iso3}: matched only {len(units)}/{len(c['units'])}, skipped", file=sys.stderr)
 
@@ -171,12 +238,17 @@ def main():
     for cc, raw in sorted(eurostat_units().items()):
         iso3 = iso2to3.get(ISO2_FIX.get(cc, cc))
         if not iso3 or iso3 in done or (only and iso3 not in only): continue
+        recent = eu_births_extend(ISO2_FIX.get(cc, cc) if cc == "EL" else cc, raw)
         units = [{"name": nuts3[code]["properties"]["NAME_LATN"], "code": code, "series": s, "geometry": nuts3[code]["geometry"]}
                  for code, s in raw.items() if code in nuts3 and s]
         if len(units) < 2: continue
         meta = {"kind": "official", "source": "Eurostat, fertility indicators by NUTS 3 region (demo_r_find3)",
                 "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table"}
-        emit(iso3, "region", [make_epoch(units, {str(y): meta for y in range(2013, 2026)}, 300)], len(units))
+        sources = {**{str(y): meta for y in range(2013, 2025)}, **recent}
+        emit(iso3, "region", [make_epoch(units, sources, 300, iso3)], len(units))
+        if iso3 in OVERSEAS and not only:
+            far = [u for u in units if u["code"].startswith(OVERSEAS[iso3])]
+            overseas[iso3] = {"iso3": iso3, "level": "region", "epochs": [make_epoch(far, sources, 300, iso3)]}
 
     # 3) DHS surveys, one epoch per survey
     dhs = json.load(open(os.path.join(SUB, "dhs_pick.json")))
@@ -195,7 +267,7 @@ def main():
             if len(units) < 2: continue
             meta = {"kind": "survey", "source": f"DHS Program, {sv['survey']} (TFR for the 3 years before the survey)",
                     "url": "https://api.dhsprogram.com/rest/dhs/data?indicatorIds=FE_FRTR_W_TFR&breakdown=subnational&surveyIds=" + sv["survey"]}
-            epochs.append(make_epoch(units, {str(sv["year"]): meta}, 1500))
+            epochs.append(make_epoch(units, {str(sv["year"]): meta}, 1500, iso3))
             n_last = len(units)
         if epochs:
             emit(iso3, "region", epochs, n_last)
@@ -204,6 +276,7 @@ def main():
         if glob.glob(os.path.join(OUT, "USA", "*.json")) and "USA" in index:
             index["USA"]["children"] = "county"
         json.dump(index, open(os.path.join(OUT, "index.json"), "w"), separators=(",", ":"))
+        json.dump(overseas, open(os.path.join(OUT, "overseas.json"), "w"), separators=(",", ":"), ensure_ascii=False)
     print(len(index), "countries with subdivisions")
 
 
