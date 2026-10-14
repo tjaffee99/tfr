@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fertility Explorer</title>
 <meta name="description" content="Interactive map of total fertility rates worldwide, with population projections you can steer by changing future fertility.">
-<link rel="stylesheet" href="style.css?v=edad9e66">
+<link rel="stylesheet" href="style.css?v=c16ed51d">
 </head>
 <body>
 <div class="wrap">
@@ -37,7 +37,8 @@
       <div class="viewbox">
         <div class="view" id="mapwrap">
           <div id="map"><div class="loading">Loading map…</div></div>
-          <div class="zoom-ctl"><button type="button" id="zin" aria-label="Zoom in">+</button><button type="button" id="zout" aria-label="Zoom out">−</button></div>
+          <div class="map-hint" id="map-hint">Use two fingers to move the map</div>
+          <div class="zoom-ctl"><button type="button" id="fs-btn" aria-label="Full screen" title="Full screen"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path class="fs-in" d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/><path class="fs-out" d="M6 2v4H2M14 6h-4V2M10 14v-4h4M2 10h4v4"/></svg></button><button type="button" id="zin" aria-label="Zoom in">+</button><button type="button" id="zout" aria-label="Zoom out">−</button></div>
         </div>
         <div class="view" id="table-view"></div>
         <div class="view" id="about-view">
@@ -105,6 +106,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script src="projection.js?v=10a96d5f"></script>
-<script src="app.js?v=6f17e1e1"></script>
+<script src="app.js?v=4d619d76"></script>
 </body>
 </html>

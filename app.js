@@ -56,6 +56,8 @@
     tip.style.top = Math.max(8, y) + "px";
   }
   const hideTip = () => (tip.style.opacity = 0);
+  document.addEventListener("touchstart", () => { hideTip(); hoverTip = null; }, { passive: true });
+  window.addEventListener("scroll", () => hideTip(), { passive: true });
 
   const unAt = (loc, key, year) => {
     const a = loc.un[key], i = year - loc.un.y0;
@@ -253,7 +255,9 @@
       .on("click", (ev, f) => { ev.stopPropagation(); if (state.byId.has(f.locId)) pick(f.locId); });
     lakesG = mapG.append("g").attr("class", "lakes");
     fetch(DATA + "lakes-50m.json").then((r) => r.json()).then((t) => { lakes50 = lakeFeats(t); drawLakes(); }).catch(() => {});
-    zoom = d3.zoom().scaleExtent([1, 160]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => {
+    // touch: one finger scrolls the page, two fingers move the map (one finger too in full screen)
+    zoom = d3.zoom().scaleExtent([1, 160])
+      .filter((ev) => (ev.type.startsWith("touch") ? mapFull || ev.touches.length > 1 : (!ev.ctrlKey || ev.type === "wheel") && !ev.button)).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => {
       mapG.attr("transform", ev.transform);
       setMapDetail(ev.transform.k >= 2.5);
     });
@@ -263,10 +267,70 @@
       if (childLayer || (state.loc && state.loc.sub)) return backToCountry();
       if (state.loc && state.loc.id === 900) zoomWorld(); else pick(900);
     });
+    fitViewBox();
+    new ResizeObserver(fitViewBox).observe(el);
+    let hintTimer = null;
+    el.addEventListener("touchmove", (e) => {
+      if (mapFull || e.touches.length > 1) return;
+      $("#map-hint").classList.add("on");
+      clearTimeout(hintTimer);
+      hintTimer = setTimeout(() => $("#map-hint").classList.remove("on"), 1100);
+    }, { passive: true });
+    $("#fs-btn").onclick = () => setMapFull(!mapFull);
     $("#zin").onclick = () => mapSvg.transition().duration(250).call(zoom.scaleBy, 1.6);
     $("#zout").onclick = () => mapSvg.transition().duration(250).call(zoom.scaleBy, 1 / 1.6);
     colorMap();
   }
+
+  // The map's world frame is MAP_W x MAP_H; the viewBox grows around it to fill whatever box the map is in
+  // (taller on phones, the whole screen in full screen), so the map is never letterboxed.
+  let vb = { x: 0, y: 0, w: MAP_W, h: MAP_H }, reframeNext = false;
+  function fitViewBox() {
+    const el = $("#map"), w = el.clientWidth, h = el.clientHeight;
+    if (!mapSvg || !w || !h) return;
+    const a = w / h, vw = a > MAP_W / MAP_H ? MAP_H * a : MAP_W, vh = a > MAP_W / MAP_H ? MAP_H : MAP_W / a;
+    const same = Math.abs(vw - vb.w) < 0.5 && Math.abs(vh - vb.h) < 0.5 && mapSvg.attr("viewBox");
+    if (!same) {
+    vb = { x: (MAP_W - vw) / 2, y: (MAP_H - vh) / 2, w: vw, h: vh };
+    mapSvg.attr("viewBox", `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+    zoom.extent([[vb.x, vb.y], [vb.x + vb.w, vb.y + vb.h]])
+      .translateExtent([[Math.min(0, vb.x), Math.min(0, vb.y)], [Math.max(MAP_W, vb.x + vb.w), Math.max(MAP_H, vb.y + vb.h)]]);
+    mapSvg.call(zoom.transform, d3.zoomTransform(mapSvg.node())); // re-apply the constraints
+    }
+    if (reframeNext) { reframeNext = false; reframe(); }
+  }
+
+  // Full screen: the map card (with the timeline moved into it) covers the window, and the browser goes full
+  // screen where it can (not on iPhone, where the overlay alone does it). Esc or the button leaves.
+  let mapFull = false;
+  function setMapFull(on) {
+    if (on === mapFull) return;
+    mapFull = on;
+    const tb = $(".timebar");
+    if (on) $(".atlas-map").prepend(tb); else $(".wrap").prepend(tb);
+    document.body.classList.toggle("map-full", on);
+    const btn = $("#fs-btn");
+    btn.setAttribute("aria-label", on ? "Exit full screen" : "Full screen"); btn.title = btn.getAttribute("aria-label");
+    const root = document.documentElement;
+    if (on && !document.fullscreenElement && root.requestFullscreen) root.requestFullscreen().catch(() => {});
+    if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    reframeNext = true;
+    requestAnimationFrame(() => { fitViewBox(); drawLegend(); drawTimeline(); });
+  }
+  // frame the selection again for the new box: the selected region (its state, when counties are shown) or country
+  function reframe(ms = 300) {
+    const loc = state.loc;
+    if (!loc) return;
+    if (loc.sub) {
+      const up = loc.sub.chain.find((c) => c.kind === "parent");
+      const L = up ? up.layer : [childLayer, subLayer].find((l) => l && l.feats && l.feats.some((f) => isSelectedUnit(l, f)));
+      const f = L && L.feats && L.feats.find((d) => (up ? unitKey(d) === up.key : isSelectedUnit(L, d)));
+      if (f) return zoomToFeature(f, ms);
+    }
+    if (state.byId.get(selCountryId())?.region) zoomWorld(ms); else zoomToLoc(selCountryId(), ms);
+  }
+  document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement && mapFull) setMapFull(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && mapFull) setMapFull(false); });
 
   function locTip(s) {
     const info = tfrInfo(s, state.year);
@@ -345,7 +409,7 @@
       x0 = Math.min(x0, px); x1 = Math.max(x1, px); y0 = Math.min(y0, py); y1 = Math.max(y1, py);
     }
     if (!isFinite(x0)) [[x0, y0], [x1, y1]] = mapPath.bounds(geom);
-    const k = Math.max(1, Math.min(120, 0.75 / Math.max((x1 - x0) / MAP_W, (y1 - y0) / MAP_H)));
+    const k = Math.max(1, Math.min(120, 0.75 / Math.max((x1 - x0) / vb.w, (y1 - y0) / vb.h)));
     const t = d3.zoomIdentity.translate(MAP_W / 2, MAP_H / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
     mapSvg.transition().duration(ms).call(zoom.transform, t);
   }

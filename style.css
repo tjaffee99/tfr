@@ -116,7 +116,7 @@ input[type="range"] { accent-color: var(--scenario); }
 .viewbox { position: relative; width: 100%; aspect-ratio: 1.8 / 1; min-height: 230px; }
 .view { position: absolute; inset: 0; }
 #map { width: 100%; height: 100%; }
-#map svg { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
+#map svg { display: block; width: 100%; height: 100%; cursor: grab; touch-action: pan-y; }
 #map svg:active { cursor: grabbing; }
 #map .sphere { fill: none; stroke: var(--grid); }
 #map path.country { stroke: var(--stroke); stroke-width: .4; vector-effect: non-scaling-stroke; cursor: pointer; }
@@ -128,7 +128,25 @@ input[type="range"] { accent-color: var(--scenario); }
 #map path.sub.selected { stroke: var(--ink); stroke-width: 2; }
 #map .lakes path { fill: var(--surface); stroke: none; }
 .zoom-ctl { position: absolute; right: 8px; bottom: 8px; display: flex; flex-direction: column; gap: 4px; }
-.zoom-ctl button { width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--ink); font-size: 16px; cursor: pointer; }
+.zoom-ctl button { width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--ink); font-size: 16px; cursor: pointer; display: grid; place-items: center; padding: 0; }
+.zoom-ctl svg path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.zoom-ctl .fs-out, body.map-full .zoom-ctl .fs-in { display: none; }
+body.map-full .zoom-ctl .fs-out { display: inline; }
+.map-hint { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px;
+  background: rgba(0, 0, 0, .5); color: #fff; font-size: .95rem; pointer-events: none; opacity: 0; transition: opacity .25s; }
+.map-hint.on { opacity: 1; }
+
+/* full screen: the map card covers the window, with the timeline on top */
+body.map-full { overflow: hidden; }
+body.map-full .atlas-map { position: fixed; inset: 0; z-index: 60; background: var(--surface); display: flex; flex-direction: column; gap: 8px;
+  padding: max(10px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+body.map-full .atlas-map .timebar { position: static; margin: 0; box-shadow: none; padding: 6px 10px; }
+body.map-full .map-head { margin-bottom: 0; }
+body.map-full .viewbox { flex: 1 1 auto; aspect-ratio: auto; min-height: 0; }
+body.map-full .map-foot { margin-top: 0; }
+body.map-full .regions { display: none; }
+body.map-full #map svg { touch-action: none; }
+body.map-full .map-hint { display: none; }
 .map-foot { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: center; margin-top: 8px; }
 .map-foot svg { display: block; width: min(360px, 100%); height: 34px; overflow: visible; }
 .map-foot svg text { font-size: 10.5px; fill: var(--ink-2); font-variant-numeric: tabular-nums; }
@@ -260,7 +278,7 @@ input[type="range"] { accent-color: var(--scenario); }
 .handle { cursor: grab; }
 .handle:active { cursor: grabbing; }
 
-.tip { position: fixed; pointer-events: none; z-index: 50; background: var(--surface); color: var(--ink); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: .8rem; line-height: 1.35; box-shadow: 0 4px 18px rgba(0,0,0,.16); max-width: 280px; opacity: 0; transition: opacity .08s; }
+.tip { position: fixed; pointer-events: none; z-index: 100; background: var(--surface); color: var(--ink); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: .8rem; line-height: 1.35; box-shadow: 0 4px 18px rgba(0,0,0,.16); max-width: 280px; opacity: 0; transition: opacity .08s; }
 .tip .t { font-weight: 650; margin-bottom: 2px; }
 .tip .r { display: flex; justify-content: space-between; gap: 14px; font-variant-numeric: tabular-nums; }
 .tip .r span:first-child { color: var(--ink-2); display: inline-flex; align-items: center; gap: 6px; }
@@ -268,3 +286,37 @@ input[type="range"] { accent-color: var(--scenario); }
 .tip i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; }
 
 .loading { color: var(--muted); padding: 40px 0; text-align: center; }
+
+/* phones */
+@media (max-width: 640px) {
+  .wrap { padding: 10px 10px 48px; }
+  .card { padding: 12px; border-radius: 10px; }
+  .timebar { gap: 0 10px; padding: 6px 10px 4px; margin-bottom: 10px; top: 4px; }
+  .timebar .play { width: 34px; height: 34px; }
+  .timebar .btn { padding: 4px 9px; }
+  .year-readout .y { font-size: 1.25rem; }
+  .year-readout .s { font-size: .7rem; }
+  .scrubber { height: 34px; }
+  .map-head { gap: 8px; }
+  .map-head .toolbar { width: 100%; flex-wrap: nowrap; }
+  .map-head input[type="search"] { flex: 1 1 0; width: 0; min-width: 0; }
+  .map-head .seg { flex: none; }
+  .map-head .seg .btn { padding: 5px 9px; }
+  .viewbox { aspect-ratio: 1.3 / 1; }
+  input[type="search"], select, .ctl .lbl input.num-edit { font-size: 16px; } /* below 16px iOS zooms the page on focus */
+  .zoom-ctl button { width: 36px; height: 36px; }
+  .regions { gap: 5px; }
+  .atlas-country { padding-top: 12px; margin-top: 12px; }
+  .atlas-country h2.name { font-size: 1.25rem; margin-bottom: 8px; }
+  .figs .v { font-size: 1.1rem; }
+  #pyramid { min-height: 360px; }
+  .future { margin-top: 14px; }
+  .panel-head { margin-bottom: 8px; }
+  .panel-head h2 { font-size: 1.2rem; }
+  .panel-head .seg { margin-left: 0; }
+  .layout, .charts { gap: 10px; }
+  .tiles { gap: 8px; margin-bottom: 10px; }
+  .tiles > div { padding: 10px 12px; border-radius: 10px; }
+  .tiles .v { font-size: 1.25rem; }
+  .ctl { margin: 12px 0; }
+}
