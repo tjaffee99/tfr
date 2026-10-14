@@ -1,4 +1,4 @@
-/* Fertility Explorer — one master year drives the map, the country dossier, the pyramid and every chart.
+/* TFR Atlas — one master year drives the map, the country dossier, the pyramid and every chart.
    Data: UN WPP 2024 (estimates + medium projection) and newer national figures / current-year estimates. */
 (function () {
   "use strict";

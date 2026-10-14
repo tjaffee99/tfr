@@ -1,4 +1,4 @@
-# Rebuilding the Fertility Explorer data
+# Rebuilding the TFR Atlas data
 
 `../data/` is generated; the page itself (`../index.html`, `../app.js`, `../projection.js`) is static.
 

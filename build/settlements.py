@@ -23,7 +23,7 @@ QUERY = """SELECT ?item ?itemLabel ?coord (MAX(?p) AS ?pop) (GROUP_CONCAT(DISTIN
 
 def main():
     req = urllib.request.Request("https://query.wikidata.org/sparql?" + urllib.parse.urlencode({"query": QUERY}),
-                                 headers={"Accept": "text/csv", "User-Agent": "tfr-explorer-build/1.0 (https://tfr.theojaffee.net)"})
+                                 headers={"Accept": "text/csv", "User-Agent": "tfr-atlas-build/1.0 (https://tfr.theojaffee.net)"})
     rows = list(csv.DictReader(io.StringIO(urllib.request.urlopen(req, timeout=120).read().decode())))
     ne = json.load(open(os.path.join(HERE, "raw", "ne_admin1.geojson")))["features"]
     wb = shape(next(f for f in ne if f["properties"]["iso_3166_2"] == "PS-WBK")["geometry"])
