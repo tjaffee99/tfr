@@ -27,8 +27,9 @@ After changing `style.css`, `app.js` or `projection.js`, run `python3 stamp_vers
 ## Subdivisions (data/sub/)
 
 1. `sh fetch_sub_sources.sh` downloads raw boundaries and data into `build/raw/` (not committed) and refreshes `build/sub/`.
-2. Research outputs from national statistics offices go in `build/sub/agent_*.json`; `python3 prep_national.py`
-   normalizes them into `build/sub/national_*.json`.
+2. Research outputs from national statistics offices and surveys (MICS, censuses...) go in `build/sub/agent_*.json`
+   (the `research_*.py` scripts hold the data and sources behind the newer ones and rewrite them);
+   `python3 prep_national.py` normalizes them into `build/sub/national_*.json`.
 3. `python3 subnational.py` builds every country file plus `data/sub/index.json` and `data/sub/overseas.json`
    (France's overseas regions, colored on the world map). Display names come from `sub/names_en.json`
    (`python3 make_names_en.py <names_in.json> sub/names_en.json` regenerates it from a dump of unit names).

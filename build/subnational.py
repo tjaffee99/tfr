@@ -39,7 +39,9 @@ LEVEL_NAMES = {  # short unit names for the legend ("47 prefectures")
     "KAZ": "region", "UZB": "region", "GEO": "region", "AZE": "region", "EGY": "governorate", "MAR": "region",
     "DZA": "province", "TUN": "governorate", "SRB": "district",
     "DEU": "district", "FRA": "département", "ITA": "province", "ESP": "province", "POL": "subregion",
-    "BEL": "arrondissement",
+    "BEL": "arrondissement", "PAN": "province", "PSE": "region", "PAK": "province", "DOM": "region",
+    "MDA": "district", "ARM": "province", "KGZ": "region", "BIH": "entity", "MNG": "region", "DZA": "region",
+    "TKM": "province", "TLS": "municipality", "LKA": "district", "SOM": "region", "MUS": "island",
 }
 
 
@@ -88,9 +90,9 @@ def simplify_to_topo(features, interval_m):
     with tempfile.TemporaryDirectory() as td:
         src, dst = os.path.join(td, "units.json"), os.path.join(td, "out.json")
         json.dump({"type": "FeatureCollection", "features": features}, open(src, "w"))
-        # the outline is the country's edge: units modeled as another country's (settlements) are left out
+        # the outline is the country's edge: Israel's settlements unit (outside Israel's own districts) is left out
         subprocess.run([MAPSHAPER, src, "-clean", "-simplify", f"interval={interval_m}", "keep-shapes",
-                        "-filter", "!this.properties.k && this.properties.c != 'IL-JS'", "+", "name=outline", "-dissolve", "target=outline",
+                        "-filter", "this.properties.c != 'IL-JS' || !!this.properties.k", "+", "name=outline", "-dissolve", "target=outline",
                         "-o", dst, "target=*", "format=topojson", "quantization=100000"],
                        check=True, capture_output=True)
         return json.load(open(dst))
@@ -223,6 +225,7 @@ def main():
 
     def emit(iso3, level, epochs, n_units):
         epochs = sorted(epochs, key=lambda e: e["years"][0])
+        level = re.sub(r"\s*\(.*?\)", "", level).split("/")[0].split(",")[0].strip().lower() or "region"  # "marz (+ Yerevan)" -> "marz"
         doc = {"iso3": iso3, "level": LEVEL_NAMES.get(iso3, level), "epochs": epochs}
         path = os.path.join(OUT, f"{iso3}.json")
         json.dump(doc, open(path, "w"), separators=(",", ":"), ensure_ascii=False)
@@ -240,10 +243,10 @@ def main():
             iso3 = c["iso3"]
             if iso3 in done or iso3 == "ISR_JS": continue
             cand = [f for f in ne if f["properties"]["adm0_a3"] in NE_ADM0.get(iso3, [iso3])]
-            by_code, by_name, by_region, by_region_code = {}, {}, {}, {}
+            by_code, by_name, by_region, by_region_code, all_code = {}, {}, {}, {}, {}
             for f in cand:
                 p = f["properties"]
-                if p.get("iso_3166_2"): by_code[p["iso_3166_2"]] = f
+                if p.get("iso_3166_2"): by_code[p["iso_3166_2"]] = f; all_code.setdefault(p["iso_3166_2"], []).append(f)
                 for k in ("name", "name_alt", "name_local", "gn_name", "woe_name"):
                     for nm in str(p.get(k) or "").split("|"):
                         if nm: by_name.setdefault(norm(nm), f)
@@ -261,9 +264,12 @@ def main():
             for u in c["units"]:
                 codes = [u.get("code"), CODE_ALIASES.get(u.get("code"))] + list(u.get("alt_codes") or []) + [u.get("code_legacy_alpha")]
                 comps = u.get("component_codes") or []
-                f = by_adm1.get(u.get("ne_adm1_code")) or (next((by_code[k] for k in codes if k in by_code), None) if not comps else None)
-                if comps and all(k in by_code for k in comps):
-                    grp = [by_code[k] for k in comps]
+                f = by_adm1.get(u.get("ne_adm1_code")) or (next((by_code[k] for k in codes if k in by_code), None) if not (comps or u.get("component_ne_adm1_codes")) else None)
+                ne_comps = u.get("component_ne_adm1_codes") or []  # where Natural Earth repeats an ISO code (IR-07)
+                if ne_comps and all(k in by_adm1 for k in ne_comps):
+                    grp = [by_adm1[k] for k in ne_comps]
+                elif comps and all(k in by_code for k in comps):
+                    grp = [f_ for k in dict.fromkeys(comps) for f_ in all_code[k]]  # every unit sharing a code (BiH cantons)
                 else:
                     grp = group_for(u) if (coarse or f is None) else None
                 if f is None and not grp: f = by_name.get(norm(u.get("name"))) or by_name.get(norm(u.get("name_local")))
@@ -271,7 +277,7 @@ def main():
                 geom = merge(grp) if use_grp else (f["geometry"] if f else None)
                 foot = {g["properties"]["adm1_code"] for g in grp} if use_grp else ({f["properties"]["adm1_code"]} if f else set())
                 if iso3 == "ISR" and "Judea" in u.get("name", "") and settle:
-                    geom, foot, u = settle, {"IL-JS"}, {**u, "name": JS_NAME, "code": "IL-JS"}
+                    geom, foot, u = settle, {"IL-JS"}, {**u, "name": JS_NAME, "code": "IL-JS", "series": list(js_series.values()) or u["series"]}
                 if geom is None:
                     missing.append(u.get("code") or u.get("name")); continue
                 series = {int(s["year"]): float(s["tfr"]) for s in u["series"]}
@@ -319,11 +325,11 @@ def main():
     for cc, surveys in sorted(dhs.items()):
         iso3 = dhs_iso.get(cc)
         if not iso3 or (only and iso3 not in only): continue
-        # combined with national data: skip surveys for years the national data already covers as fully
+        # combined with national data: skip surveys within 2 years of national data that is at least as detailed
         have = {y: len(e["topo"]["objects"]["units"]["geometries"]) for e in collected.get(iso3, {}).get("epochs", []) for y in e["years"]}
         epochs, n_last = [], 0
         for sv in surveys:
-            if have.get(int(sv["year"]), 0) >= len(sv["regions"]): continue
+            if any(abs(y - int(sv["year"])) <= 2 and n >= len(sv["regions"]) for y, n in have.items()): continue
             gpath = os.path.join(RAW, "dhs_geom", f"{sv['survey']}.json")
             if not os.path.exists(gpath): continue
             try: geo = {g["RegionID"]: g for g in json.load(open(gpath))["Data"]}

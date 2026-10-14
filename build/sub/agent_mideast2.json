@@ -2249,7 +2249,7 @@
   "units": [
    {
     "code": "PS-WBK",
-    "name": "West Bank (incl. East Jerusalem)",
+    "name": "West Bank",
     "series": [
      {
       "year": 1997,
@@ -2402,7 +2402,7 @@
       "year": 2005,
       "tfr": 4.61,
       "kind": "official",
-      "source": "CBS Israel, Statistical Abstract of Israel 2007, Table 3.10 'Live births, deaths and infant deaths, by district and sub-district' (row 'Judea, Samaria and Gaza Area', total population), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "source": "CBS Israel, Statistical Abstract of Israel 2007, Table 3.10 'Live births, deaths and infant deaths, by district and sub-district' (row 'Judea, Samaria and Gaza Area', total population), column 'Total fertility rate'",
       "url": "https://www.cbs.gov.il/he/publications/DocLib/2007/3.Shnaton%20VitalStatistics/st03_10x.xls",
       "births": 8684,
       "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition",
@@ -2674,6 +2674,1046 @@
      }
     ],
     "note": "CBS 'Judea and Samaria Area' covers residents of Israeli localities only (no Palestinian population); no ISO/Natural Earth unit - lies inside PS-WBK. 2013 edition (data for 2013) not retrievable."
+   }
+  ]
+ },
+ {
+  "iso3": "IRN",
+  "country": "Iran",
+  "level": "province",
+  "national": {
+   "1986": 6.23,
+   "1996": 2.52,
+   "1998": 2.06,
+   "2011": 1.8,
+   "2016": 2.01,
+   "note": "1986/1996 own-children (Abbasi-Shavazi 2001 Table 2); 1998 PGES (Table 3); 2011 and 2016 census per PLOS ONE (Hosseini et al. 2021)"
+  },
+  "note": "Patchy: the Statistical Centre of Iran, Civil Registration Organization and Iranian news sites were unreachable from this environment, so only provinces quoted in accessible papers/news are included. Natural Earth uses IR-07 for both Tehran and Alborz; units carry ne_adm1_code (IRN-3216 Tehran, IRN-5490 Alborz) and groups carry component_ne_adm1_codes so both polygons can be matched.",
+  "units": [
+   {
+    "code": "IR-19",
+    "name": "Gilan",
+    "series": [
+     {
+      "year": 1982,
+      "tfr": 5.3,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1983,
+      "tfr": 5.2,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1984,
+      "tfr": 5.43,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1985,
+      "tfr": 5.13,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1986,
+      "tfr": 4.93,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1987,
+      "tfr": 4.43,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1988,
+      "tfr": 4.07,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1989,
+      "tfr": 3.72,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1990,
+      "tfr": 3.79,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1991,
+      "tfr": 3.48,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1992,
+      "tfr": 3.17,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1993,
+      "tfr": 2.74,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1994,
+      "tfr": 2.33,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1995,
+      "tfr": 1.97,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1996,
+      "tfr": 1.82,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1999,
+      "tfr": 1.67,
+      "kind": "survey",
+      "source": "M.J. Abbasi-Shavazi, 'Recent changes and the future of fertility in Iran' (UN Population Division Expert Group Meeting, 2002): TFR 1998-2000 from the 2000 Iran Demographic and Health Survey (text)",
+      "url": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/unpd_egm_200203_countrypapers_recent_changes_and_the_future_of_fertility_in_iran_abbasi-shavazi.pdf",
+      "note": "period 1998-2000"
+     },
+     {
+      "year": 2010,
+      "tfr": 1.3,
+      "kind": "official",
+      "source": "Abbasi-Shavazi et al., 'Assessment of the own-children fertility estimates in Iran' (IUSSP paper), section 'Provincial fertility trends': own-children TFR for 2009-2011 from the 2011 census",
+      "url": "https://iussp.org/sites/default/files/event_call_for_papers/Assessment%20of%20the%20Own-children%20fertility%20estimates%20in%20Iran%2C-%20IUSSP%20Paper-%20Abbasi%20et%20al._0.pdf",
+      "note": "own-children estimate (census-based); period 2009-2011"
+     },
+     {
+      "year": 2019,
+      "tfr": 1.1,
+      "kind": "official",
+      "source": "Tasnim News Agency, 16 Feb 2021 (reposted by hcsm.ir): head of the Health Economics Policy Research Center citing 1398 (2019/20) provincial TFRs ('آمار سال 98'); original https://www.tasnimnews.com/fa/news/1399/11/28/2453832/25",
+      "url": "https://hcsm.ir/1399/11/%D9%86%D8%B1%D8%AE-%D8%A8%D8%A7%D8%B1%D9%88%D8%B1%DB%8C-%DA%A9%D9%84-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DA%A9%D8%B4%D9%88%D8%B1/",
+      "verification": "secondary",
+      "note": "Iranian year 1398 (Mar 2019 - Mar 2020)"
+     },
+     {
+      "year": 2020,
+      "tfr": 1.03,
+      "kind": "official",
+      "source": "Radio Farda, 15 Nov 2021, quoting the head of Tehran Province Management and Planning Organization: TFR in 1399 (2020/21) for the 5 lowest and 3 highest provinces",
+      "url": "https://www.radiofarda.com/a/population-aging-and-government-incentive-packages-for-childbearing/31562158.html",
+      "verification": "secondary",
+      "note": "Iranian year 1399 (Mar 2020 - Mar 2021); civil-registration-based provincial TFR"
+     }
+    ]
+   },
+   {
+    "code": "IR-04",
+    "name": "Isfahan",
+    "series": [
+     {
+      "year": 1982,
+      "tfr": 5.88,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1983,
+      "tfr": 5.92,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1984,
+      "tfr": 6.16,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1985,
+      "tfr": 5.99,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1986,
+      "tfr": 5.7,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1987,
+      "tfr": 5.08,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1988,
+      "tfr": 4.82,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1989,
+      "tfr": 4.69,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1990,
+      "tfr": 4.29,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1991,
+      "tfr": 3.74,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1992,
+      "tfr": 3.22,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1993,
+      "tfr": 2.78,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1994,
+      "tfr": 2.41,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1995,
+      "tfr": 2.11,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1996,
+      "tfr": 1.91,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     }
+    ]
+   },
+   {
+    "code": "IR-12",
+    "name": "Semnan",
+    "series": [
+     {
+      "year": 1982,
+      "tfr": 5.4,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1983,
+      "tfr": 5.47,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1984,
+      "tfr": 5.83,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1985,
+      "tfr": 5.56,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1986,
+      "tfr": 5.52,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1987,
+      "tfr": 4.67,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1988,
+      "tfr": 4.66,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1989,
+      "tfr": 4.54,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1990,
+      "tfr": 4.01,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1991,
+      "tfr": 3.68,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1992,
+      "tfr": 3.22,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1993,
+      "tfr": 2.89,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1994,
+      "tfr": 2.57,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1995,
+      "tfr": 2.24,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1996,
+      "tfr": 1.95,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 2019,
+      "tfr": 1.2,
+      "kind": "official",
+      "source": "Tasnim News Agency, 16 Feb 2021 (reposted by hcsm.ir): head of the Health Economics Policy Research Center citing 1398 (2019/20) provincial TFRs ('آمار سال 98'); original https://www.tasnimnews.com/fa/news/1399/11/28/2453832/25",
+      "url": "https://hcsm.ir/1399/11/%D9%86%D8%B1%D8%AE-%D8%A8%D8%A7%D8%B1%D9%88%D8%B1%DB%8C-%DA%A9%D9%84-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DA%A9%D8%B4%D9%88%D8%B1/",
+      "verification": "secondary",
+      "note": "Iranian year 1398 (Mar 2019 - Mar 2020)"
+     },
+     {
+      "year": 2020,
+      "tfr": 1.11,
+      "kind": "official",
+      "source": "Radio Farda, 15 Nov 2021, quoting the head of Tehran Province Management and Planning Organization: TFR in 1399 (2020/21) for the 5 lowest and 3 highest provinces",
+      "url": "https://www.radiofarda.com/a/population-aging-and-government-incentive-packages-for-childbearing/31562158.html",
+      "verification": "secondary",
+      "note": "Iranian year 1399 (Mar 2020 - Mar 2021); civil-registration-based provincial TFR"
+     }
+    ]
+   },
+   {
+    "code": "IR-07",
+    "name": "Tehran",
+    "series": [
+     {
+      "year": 1982,
+      "tfr": 5.14,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1983,
+      "tfr": 5.02,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1984,
+      "tfr": 5.17,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1985,
+      "tfr": 4.93,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1986,
+      "tfr": 4.64,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1987,
+      "tfr": 4.2,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1988,
+      "tfr": 3.92,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1989,
+      "tfr": 3.75,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1990,
+      "tfr": 3.45,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1991,
+      "tfr": 3.03,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1992,
+      "tfr": 2.7,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1993,
+      "tfr": 2.3,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1994,
+      "tfr": 2.17,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1995,
+      "tfr": 1.95,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1996,
+      "tfr": 1.8,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 2010,
+      "tfr": 1.4,
+      "kind": "official",
+      "source": "Abbasi-Shavazi et al., 'Assessment of the own-children fertility estimates in Iran' (IUSSP paper), section 'Provincial fertility trends': own-children TFR for 2009-2011 from the 2011 census",
+      "url": "https://iussp.org/sites/default/files/event_call_for_papers/Assessment%20of%20the%20Own-children%20fertility%20estimates%20in%20Iran%2C-%20IUSSP%20Paper-%20Abbasi%20et%20al._0.pdf",
+      "note": "own-children estimate (census-based); period 2009-2011"
+     },
+     {
+      "year": 2016,
+      "tfr": 1.5,
+      "kind": "official",
+      "source": "Hosseini et al. (2021), PLOS ONE 16(9): e0257128, abstract/introduction citing the 2016 Iranian census (Tehran province TFR about 1.5)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8439469/",
+      "verification": "secondary"
+     },
+     {
+      "year": 2019,
+      "tfr": 1.3,
+      "kind": "official",
+      "source": "Tasnim News Agency, 16 Feb 2021 (reposted by hcsm.ir): head of the Health Economics Policy Research Center citing 1398 (2019/20) provincial TFRs ('آمار سال 98'); original https://www.tasnimnews.com/fa/news/1399/11/28/2453832/25",
+      "url": "https://hcsm.ir/1399/11/%D9%86%D8%B1%D8%AE-%D8%A8%D8%A7%D8%B1%D9%88%D8%B1%DB%8C-%DA%A9%D9%84-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DA%A9%D8%B4%D9%88%D8%B1/",
+      "verification": "secondary",
+      "note": "Iranian year 1398 (Mar 2019 - Mar 2020)"
+     },
+     {
+      "year": 2020,
+      "tfr": 1.23,
+      "kind": "official",
+      "source": "Radio Farda, 15 Nov 2021, quoting the head of Tehran Province Management and Planning Organization: TFR in 1399 (2020/21) for the 5 lowest and 3 highest provinces",
+      "url": "https://www.radiofarda.com/a/population-aging-and-government-incentive-packages-for-childbearing/31562158.html",
+      "verification": "secondary",
+      "note": "Iranian year 1399 (Mar 2020 - Mar 2021); civil-registration-based provincial TFR"
+     }
+    ],
+    "ne_adm1_code": "IRN-3216",
+    "note": "values up to 1999 refer to Tehran province before the 2010 split of Alborz, so they are repeated for the Alborz polygon; Natural Earth gives both polygons iso_3166_2 IR-07 - use ne_adm1_code to tell them apart"
+   },
+   {
+    "code": "IR-07",
+    "name": "Alborz",
+    "series": [
+     {
+      "year": 1982,
+      "tfr": 5.14,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1983,
+      "tfr": 5.02,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1984,
+      "tfr": 5.17,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1985,
+      "tfr": 4.93,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1986,
+      "tfr": 4.64,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1987,
+      "tfr": 4.2,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1988,
+      "tfr": 3.92,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1989,
+      "tfr": 3.75,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1990,
+      "tfr": 3.45,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1991,
+      "tfr": 3.03,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1992,
+      "tfr": 2.7,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1993,
+      "tfr": 2.3,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1994,
+      "tfr": 2.17,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1995,
+      "tfr": 1.95,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 1996,
+      "tfr": 1.8,
+      "kind": "official",
+      "source": "M.J. Abbasi-Shavazi (2001), 'Below replacement-level fertility in Iran: progress and prospects' (IUSSP seminar, Tokyo), Table 2 'Trends of TFRs for Iran and the selected provinces, 1982-96' - own-children estimates from the 1986 and 1996 censuses (Statistical Centre of Iran data) - Tehran province (then including Alborz)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf",
+      "note": "own-children estimate (census-based)"
+     },
+     {
+      "year": 2019,
+      "tfr": 1.2,
+      "kind": "official",
+      "source": "Tasnim News Agency, 16 Feb 2021 (reposted by hcsm.ir): head of the Health Economics Policy Research Center citing 1398 (2019/20) provincial TFRs ('آمار سال 98'); original https://www.tasnimnews.com/fa/news/1399/11/28/2453832/25",
+      "url": "https://hcsm.ir/1399/11/%D9%86%D8%B1%D8%AE-%D8%A8%D8%A7%D8%B1%D9%88%D8%B1%DB%8C-%DA%A9%D9%84-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DA%A9%D8%B4%D9%88%D8%B1/",
+      "verification": "secondary",
+      "note": "Iranian year 1398 (Mar 2019 - Mar 2020)"
+     },
+     {
+      "year": 2020,
+      "tfr": 1.01,
+      "kind": "official",
+      "source": "Radio Farda, 15 Nov 2021, quoting the head of Tehran Province Management and Planning Organization: TFR in 1399 (2020/21) for the 5 lowest and 3 highest provinces",
+      "url": "https://www.radiofarda.com/a/population-aging-and-government-incentive-packages-for-childbearing/31562158.html",
+      "verification": "secondary",
+      "note": "Iranian year 1399 (Mar 2020 - Mar 2021); civil-registration-based provincial TFR"
+     }
+    ],
+    "ne_adm1_code": "IRN-5490",
+    "note": "values up to 1999 refer to Tehran province before the 2010 split of Alborz, so they are repeated for the Alborz polygon; Natural Earth gives both polygons iso_3166_2 IR-07 - use ne_adm1_code to tell them apart"
+   },
+   {
+    "code": "IR-13",
+    "name": "Sistan and Baluchestan",
+    "series": [
+     {
+      "year": 1999,
+      "tfr": 4.69,
+      "kind": "survey",
+      "source": "M.J. Abbasi-Shavazi, 'Recent changes and the future of fertility in Iran' (UN Population Division Expert Group Meeting, 2002): TFR 1998-2000 from the 2000 Iran Demographic and Health Survey (text)",
+      "url": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/unpd_egm_200203_countrypapers_recent_changes_and_the_future_of_fertility_in_iran_abbasi-shavazi.pdf",
+      "note": "period 1998-2000"
+     },
+     {
+      "year": 2010,
+      "tfr": 3.7,
+      "kind": "official",
+      "source": "Abbasi-Shavazi et al., 'Assessment of the own-children fertility estimates in Iran' (IUSSP paper), section 'Provincial fertility trends': own-children TFR for 2009-2011 from the 2011 census",
+      "url": "https://iussp.org/sites/default/files/event_call_for_papers/Assessment%20of%20the%20Own-children%20fertility%20estimates%20in%20Iran%2C-%20IUSSP%20Paper-%20Abbasi%20et%20al._0.pdf",
+      "note": "own-children estimate (census-based); period 2009-2011"
+     },
+     {
+      "year": 2019,
+      "tfr": 3.3,
+      "kind": "official",
+      "source": "Tasnim News Agency, 16 Feb 2021 (reposted by hcsm.ir): head of the Health Economics Policy Research Center citing 1398 (2019/20) provincial TFRs ('آمار سال 98'); original https://www.tasnimnews.com/fa/news/1399/11/28/2453832/25",
+      "url": "https://hcsm.ir/1399/11/%D9%86%D8%B1%D8%AE-%D8%A8%D8%A7%D8%B1%D9%88%D8%B1%DB%8C-%DA%A9%D9%84-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DA%A9%D8%B4%D9%88%D8%B1/",
+      "verification": "secondary",
+      "note": "Iranian year 1398 (Mar 2019 - Mar 2020)"
+     },
+     {
+      "year": 2020,
+      "tfr": 3.62,
+      "kind": "official",
+      "source": "Radio Farda, 15 Nov 2021, quoting the head of Tehran Province Management and Planning Organization: TFR in 1399 (2020/21) for the 5 lowest and 3 highest provinces",
+      "url": "https://www.radiofarda.com/a/population-aging-and-government-incentive-packages-for-childbearing/31562158.html",
+      "verification": "secondary",
+      "note": "Iranian year 1399 (Mar 2020 - Mar 2021); civil-registration-based provincial TFR"
+     }
+    ]
+   },
+   {
+    "code": "IR-21",
+    "name": "Mazandaran",
+    "series": [
+     {
+      "year": 2010,
+      "tfr": 1.3,
+      "kind": "official",
+      "source": "Abbasi-Shavazi et al., 'Assessment of the own-children fertility estimates in Iran' (IUSSP paper), section 'Provincial fertility trends': own-children TFR for 2009-2011 from the 2011 census",
+      "url": "https://iussp.org/sites/default/files/event_call_for_papers/Assessment%20of%20the%20Own-children%20fertility%20estimates%20in%20Iran%2C-%20IUSSP%20Paper-%20Abbasi%20et%20al._0.pdf",
+      "note": "own-children estimate (census-based); period 2009-2011"
+     },
+     {
+      "year": 2019,
+      "tfr": 1.2,
+      "kind": "official",
+      "source": "Tasnim News Agency, 16 Feb 2021 (reposted by hcsm.ir): head of the Health Economics Policy Research Center citing 1398 (2019/20) provincial TFRs ('آمار سال 98'); original https://www.tasnimnews.com/fa/news/1399/11/28/2453832/25",
+      "url": "https://hcsm.ir/1399/11/%D9%86%D8%B1%D8%AE-%D8%A8%D8%A7%D8%B1%D9%88%D8%B1%DB%8C-%DA%A9%D9%84-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DA%A9%D8%B4%D9%88%D8%B1/",
+      "verification": "secondary",
+      "note": "Iranian year 1398 (Mar 2019 - Mar 2020)"
+     },
+     {
+      "year": 2020,
+      "tfr": 1.1,
+      "kind": "official",
+      "source": "Radio Farda, 15 Nov 2021, quoting the head of Tehran Province Management and Planning Organization: TFR in 1399 (2020/21) for the 5 lowest and 3 highest provinces",
+      "url": "https://www.radiofarda.com/a/population-aging-and-government-incentive-packages-for-childbearing/31562158.html",
+      "verification": "secondary",
+      "note": "Iranian year 1399 (Mar 2020 - Mar 2021); civil-registration-based provincial TFR"
+     }
+    ]
+   },
+   {
+    "code": "IR-22",
+    "name": "Markazi",
+    "series": [
+     {
+      "year": 2019,
+      "tfr": 1.3,
+      "kind": "official",
+      "source": "Tasnim News Agency, 16 Feb 2021 (reposted by hcsm.ir): head of the Health Economics Policy Research Center citing 1398 (2019/20) provincial TFRs ('آمار سال 98'); original https://www.tasnimnews.com/fa/news/1399/11/28/2453832/25",
+      "url": "https://hcsm.ir/1399/11/%D9%86%D8%B1%D8%AE-%D8%A8%D8%A7%D8%B1%D9%88%D8%B1%DB%8C-%DA%A9%D9%84-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DA%A9%D8%B4%D9%88%D8%B1/",
+      "verification": "secondary",
+      "note": "Iranian year 1398 (Mar 2019 - Mar 2020)"
+     }
+    ]
+   },
+   {
+    "code": "IR-29",
+    "name": "South Khorasan",
+    "series": [
+     {
+      "year": 2019,
+      "tfr": 2.4,
+      "kind": "official",
+      "source": "Tasnim News Agency, 16 Feb 2021 (reposted by hcsm.ir): head of the Health Economics Policy Research Center citing 1398 (2019/20) provincial TFRs ('آمار سال 98'); original https://www.tasnimnews.com/fa/news/1399/11/28/2453832/25",
+      "url": "https://hcsm.ir/1399/11/%D9%86%D8%B1%D8%AE-%D8%A8%D8%A7%D8%B1%D9%88%D8%B1%DB%8C-%DA%A9%D9%84-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DA%A9%D8%B4%D9%88%D8%B1/",
+      "verification": "secondary",
+      "note": "Iranian year 1398 (Mar 2019 - Mar 2020)"
+     },
+     {
+      "year": 2020,
+      "tfr": 2.34,
+      "kind": "official",
+      "source": "Radio Farda, 15 Nov 2021, quoting the head of Tehran Province Management and Planning Organization: TFR in 1399 (2020/21) for the 5 lowest and 3 highest provinces",
+      "url": "https://www.radiofarda.com/a/population-aging-and-government-incentive-packages-for-childbearing/31562158.html",
+      "verification": "secondary",
+      "note": "Iranian year 1399 (Mar 2020 - Mar 2021); civil-registration-based provincial TFR"
+     }
+    ]
+   },
+   {
+    "code": "IR-10",
+    "name": "Khuzestan",
+    "series": [
+     {
+      "year": 2019,
+      "tfr": 2.3,
+      "kind": "official",
+      "source": "Tasnim News Agency, 16 Feb 2021 (reposted by hcsm.ir): head of the Health Economics Policy Research Center citing 1398 (2019/20) provincial TFRs ('آمار سال 98'); original https://www.tasnimnews.com/fa/news/1399/11/28/2453832/25",
+      "url": "https://hcsm.ir/1399/11/%D9%86%D8%B1%D8%AE-%D8%A8%D8%A7%D8%B1%D9%88%D8%B1%DB%8C-%DA%A9%D9%84-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DA%A9%D8%B4%D9%88%D8%B1/",
+      "verification": "secondary",
+      "note": "Iranian year 1398 (Mar 2019 - Mar 2020)"
+     },
+     {
+      "year": 2020,
+      "tfr": 2.16,
+      "kind": "official",
+      "source": "Radio Farda, 15 Nov 2021, quoting the head of Tehran Province Management and Planning Organization: TFR in 1399 (2020/21) for the 5 lowest and 3 highest provinces",
+      "url": "https://www.radiofarda.com/a/population-aging-and-government-incentive-packages-for-childbearing/31562158.html",
+      "verification": "secondary",
+      "note": "Iranian year 1399 (Mar 2020 - Mar 2021); civil-registration-based provincial TFR"
+     }
+    ]
+   },
+   {
+    "code": "IR-R1",
+    "name": "Region 1 (Tehran incl. Alborz, Gilan)",
+    "component_codes": [
+     "IR-07",
+     "IR-19"
+    ],
+    "component_ne_adm1_codes": [
+     "IRN-3216",
+     "IRN-5490",
+     "IRN-3240"
+    ],
+    "series": [
+     {
+      "year": 1998,
+      "tfr": 1.68,
+      "kind": "survey",
+      "source": "M.J. Abbasi-Shavazi (2001), IUSSP seminar paper, Table 3 'TFRs for different regions in the Islamic Republic of Iran, 1998' (source: Statistical Centre of Iran, 1998 Population Growth Estimation Survey)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf"
+     }
+    ],
+    "note": "1998 survey regions (groups of provinces by development level); Khorasan was later split into Razavi, North and South Khorasan"
+   },
+   {
+    "code": "IR-R2",
+    "name": "Region 2 (East Azarbaijan, Qom, Isfahan, Mazandaran, Yazd, Markazi, Semnan, Golestan)",
+    "component_codes": [
+     "IR-01",
+     "IR-26",
+     "IR-04",
+     "IR-21",
+     "IR-25",
+     "IR-22",
+     "IR-12",
+     "IR-27"
+    ],
+    "component_ne_adm1_codes": [
+     "IRN-3238",
+     "IRN-3232",
+     "IRN-3211",
+     "IRN-3214",
+     "IRN-3217",
+     "IRN-3231",
+     "IRN-3215",
+     "IRN-3213"
+    ],
+    "series": [
+     {
+      "year": 1998,
+      "tfr": 1.88,
+      "kind": "survey",
+      "source": "M.J. Abbasi-Shavazi (2001), IUSSP seminar paper, Table 3 'TFRs for different regions in the Islamic Republic of Iran, 1998' (source: Statistical Centre of Iran, 1998 Population Growth Estimation Survey)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf"
+     }
+    ],
+    "note": "1998 survey regions (groups of provinces by development level); Khorasan was later split into Razavi, North and South Khorasan"
+   },
+   {
+    "code": "IR-R3",
+    "name": "Region 3 (Kermanshah, West Azarbaijan, Fars, Kerman, Khorasan, Zanjan, Ardabil, Hamadan, Qazvin)",
+    "component_codes": [
+     "IR-17",
+     "IR-02",
+     "IR-14",
+     "IR-15",
+     "IR-30",
+     "IR-31",
+     "IR-29",
+     "IR-11",
+     "IR-03",
+     "IR-24",
+     "IR-28"
+    ],
+    "component_ne_adm1_codes": [
+     "IRN-3239",
+     "IRN-3237",
+     "IRN-3212",
+     "IRN-3248",
+     "IRN-3245",
+     "IRN-3246",
+     "IRN-3244",
+     "IRN-3234",
+     "IRN-3230",
+     "IRN-3233",
+     "IRN-3235"
+    ],
+    "series": [
+     {
+      "year": 1998,
+      "tfr": 2.16,
+      "kind": "survey",
+      "source": "M.J. Abbasi-Shavazi (2001), IUSSP seminar paper, Table 3 'TFRs for different regions in the Islamic Republic of Iran, 1998' (source: Statistical Centre of Iran, 1998 Population Growth Estimation Survey)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf"
+     }
+    ],
+    "note": "1998 survey regions (groups of provinces by development level); Khorasan was later split into Razavi, North and South Khorasan"
+   },
+   {
+    "code": "IR-R4",
+    "name": "Region 4 (Ilam, Chaharmahal and Bakhtiari, Khuzestan, Hormozgan, Lorestan, Bushehr)",
+    "component_codes": [
+     "IR-05",
+     "IR-08",
+     "IR-10",
+     "IR-23",
+     "IR-20",
+     "IR-06"
+    ],
+    "component_ne_adm1_codes": [
+     "IRN-3221",
+     "IRN-3218",
+     "IRN-3219",
+     "IRN-3228",
+     "IRN-3220",
+     "IRN-3210"
+    ],
+    "series": [
+     {
+      "year": 1998,
+      "tfr": 2.41,
+      "kind": "survey",
+      "source": "M.J. Abbasi-Shavazi (2001), IUSSP seminar paper, Table 3 'TFRs for different regions in the Islamic Republic of Iran, 1998' (source: Statistical Centre of Iran, 1998 Population Growth Estimation Survey)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf"
+     }
+    ],
+    "note": "1998 survey regions (groups of provinces by development level); Khorasan was later split into Razavi, North and South Khorasan"
+   },
+   {
+    "code": "IR-R5",
+    "name": "Region 5 (Kurdistan, Kohgiluyeh and Boyer-Ahmad, Sistan and Baluchestan)",
+    "component_codes": [
+     "IR-16",
+     "IR-18",
+     "IR-13"
+    ],
+    "component_ne_adm1_codes": [
+     "IRN-3241",
+     "IRN-3209",
+     "IRN-3247"
+    ],
+    "series": [
+     {
+      "year": 1998,
+      "tfr": 2.91,
+      "kind": "survey",
+      "source": "M.J. Abbasi-Shavazi (2001), IUSSP seminar paper, Table 3 'TFRs for different regions in the Islamic Republic of Iran, 1998' (source: Statistical Centre of Iran, 1998 Population Growth Estimation Survey)",
+      "url": "https://openresearch-repository.anu.edu.au/bitstream/1885/41476/3/PaperAbbasi.pdf"
+     }
+    ],
+    "note": "1998 survey regions (groups of provinces by development level); Khorasan was later split into Razavi, North and South Khorasan"
    }
   ]
  }

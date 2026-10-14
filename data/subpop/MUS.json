@@ -1,1 +1,1 @@
-{"iso3":"MUS","src":{"sh":"GHS-POP R2023A (JRC), population inside each boundary in 2000, 2010 and 2025"},"epochs":[{"units":{"MU-ISL":{"sh":{"2000":0.97308,"2010":0.97135,"2025":0.97185}},"MU-RO":{"sh":{"2000":0.026915,"2010":0.028649,"2025":0.02815}}}}]}
+{"iso3":"MUS","src":{"sh":"GHS-POP R2023A (JRC), population inside each boundary in 2000, 2010 and 2025"},"epochs":[{"units":{"MU-ISL":{"sh":{"2000":0.97427,"2010":0.97249,"2025":0.97288}},"MU-RO":{"sh":{"2000":0.02573,"2010":0.027512,"2025":0.027121}}}}]}

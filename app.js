@@ -253,7 +253,7 @@
       .on("click", (ev, f) => { ev.stopPropagation(); if (state.byId.has(f.locId)) pick(f.locId); });
     lakesG = mapG.append("g").attr("class", "lakes");
     fetch(DATA + "lakes-50m.json").then((r) => r.json()).then((t) => { lakes50 = lakeFeats(t); drawLakes(); }).catch(() => {});
-    zoom = d3.zoom().scaleExtent([1, 48]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => {
+    zoom = d3.zoom().scaleExtent([1, 160]).translateExtent([[0, 0], [W, H]]).on("zoom", (ev) => {
       mapG.attr("transform", ev.transform);
       setMapDetail(ev.transform.k >= 2.5);
     });
@@ -345,7 +345,7 @@
       x0 = Math.min(x0, px); x1 = Math.max(x1, px); y0 = Math.min(y0, py); y1 = Math.max(y1, py);
     }
     if (!isFinite(x0)) [[x0, y0], [x1, y1]] = mapPath.bounds(geom);
-    const k = Math.max(1, Math.min(40, 0.75 / Math.max((x1 - x0) / MAP_W, (y1 - y0) / MAP_H)));
+    const k = Math.max(1, Math.min(120, 0.75 / Math.max((x1 - x0) / MAP_W, (y1 - y0) / MAP_H)));
     const t = d3.zoomIdentity.translate(MAP_W / 2, MAP_H / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
     mapSvg.transition().duration(ms).call(zoom.transform, t);
   }
