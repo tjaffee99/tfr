@@ -1,4 +1,4 @@
-# Fertility Explorer
+# TFR Atlas
 
 Interactive map of total fertility rates with population projections you can steer: https://tfr.theojaffee.net
 

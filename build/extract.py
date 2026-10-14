@@ -1,4 +1,4 @@
-"""Extract compact per-location JSON from UN WPP 2024 CSVs for the TFR explorer."""
+"""Extract compact per-location JSON from UN WPP 2024 CSVs for the TFR Atlas."""
 import json, math, os, sys
 import numpy as np
 import pandas as pd
