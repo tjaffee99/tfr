@@ -6,7 +6,9 @@ Per unit:
         Eurostat NUTS 3: population on 1 January (demo_r_gind3), 2000+
         US states and counties: Census Vintage 2025 estimates, 2020-2025
         units with ISO 3166-2 codes: each unit's latest official census / estimate population since 2010 from
-                       Wikidata (P1082 with a date, build/sub/wikidata_pop.json), when nearly all units have one
+                       Wikidata (P1082 with a date, build/sub/wikidata_pop.json) or reported with the research data
+                       (build/sub/national_*.json), when nearly all units have one
+        units modeled as another country's (property "k": Israeli localities in the West Bank): share of that country
         everyone else: GHS-POP 2000 / 2010 / 2025 (JRC Global Human Settlement population grid, 30 arc-seconds)
                        summed inside the unit's boundary
   ag  {year: [men 0-4 ... 80-84, 85+, women 0-4 ... 85+]}  official counts by age and sex, where we have them
@@ -190,6 +192,17 @@ def build_country(iso3, grids, eu, cache, wd=None, natpop=None):
         for (p, _), g in zip(feats, gsh):
             units[unit_key(p)] = {"sh": {str(y): v for y, v in g.items()}}
         codes = [unit_key(p) for p, _ in feats]
+        # units modeled as another country's (Israeli localities in Palestine's West Bank): share of that country
+        kun = {unit_key(p): p["k"] for p, _ in feats if p.get("k")}
+        if kun:
+            for y in GHS_YEARS:
+                tot = sum(v["sh"].get(str(y), 0) for c, v in units.items() if c not in kun)
+                for c, v in units.items():
+                    if c not in kun and tot and str(y) in v["sh"]: v["sh"][str(y)] = sig(v["sh"][str(y)] / tot)
+            for c, k in kun.items():
+                recs = [(y, v) for y, v in (wd or {}).get(c, []) if natpop(k, y)]
+                units[c] = {"sh": {str(y): sig(v / natpop(k, y)) for y, v in recs}}
+            codes = [c for c in codes if c not in kun]
         if not eurostat and wd and all(c in units for c in codes):
             ghs = {c: units[c]["sh"].get("2025", 0) for c in codes}
             off = official_shares(codes, wd, lambda y: natpop(iso3, y), ghs)
@@ -264,6 +277,15 @@ def main():
     grids = [Grid(os.path.join(RAW, f"ghs_pop_{y}.tif")) for y in GHS_YEARS]
     eu, cache = eurostat_data(), {}
     wd = {k: [tuple(x) for x in v] for k, v in json.load(open(os.path.join(HERE, "sub", "wikidata_pop.json"))).items()}
+    # populations reported alongside the research data (build/sub/national_*.json) count as official too
+    for path in glob.glob(os.path.join(HERE, "sub", "national_*.json")):
+        for c in json.load(open(path)):
+            for u in c["units"]:
+                for r in u.get("population") or []:
+                    if u.get("code") and r.get("value") and r.get("year"):
+                        wd.setdefault(u["code"], []).append((int(r["year"]), float(r["value"])))
+    if "IL-JS" not in wd and os.path.exists(os.path.join(HERE, "sub", "settlements.geojson")):
+        wd["IL-JS"] = [(2024, json.load(open(os.path.join(HERE, "sub", "settlements.geojson")))["properties"]["pop_wikidata"])]
     summary = json.load(open(os.path.join(HERE, "..", "data", "summary.json")))
     ids = {s["iso3"]: s["id"] for s in summary["locs"] if s.get("iso3")}
     unpop = {}

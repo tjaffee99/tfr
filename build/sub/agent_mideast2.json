@@ -1,0 +1,2680 @@
+[
+ {
+  "iso3": "IRQ",
+  "country": "Iraq",
+  "level": "governorate",
+  "national": {
+   "2013": 4.2,
+   "2017": 3.6,
+   "2024": 3.1,
+   "note": "2013 PMMS; 2017 = MICS 2018 (3-yr window); 2024 = census 2024 (COSIT Table 8/2)"
+  },
+  "units": [
+   {
+    "code": "IQ-DA",
+    "name": "Duhok",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 2.7,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 1599871,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-NI",
+    "name": "Nineveh",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.7,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 4261980,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-SU",
+    "name": "Sulaymaniyah",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 2.8,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 2.4,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 2401724,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-TS",
+    "name": "Kirkuk",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 2.1,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.1,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 2034627,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-AR",
+    "name": "Erbil",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 3.1,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 2.6,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 2517534,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-DI",
+    "name": "Diyala",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 4.5,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.1,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 1934504,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-AN",
+    "name": "Al Anbar",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 2.5,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.4,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 2004418,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-BG",
+    "name": "Baghdad",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.3,
+      "kind": "survey",
+      "source": "COSIT Annual Statistical Abstract, Table (2/14) 'Key indicators of Poverty Map and Maternal Mortality Survey 2013' (TFR columns: Rest of governorates / Kurdistan Region / Baghdad) - Baghdad column",
+      "url": "https://cosit.gov.iq/documents/AAS2023/2.pdf"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 2.7,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 9780429,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-BB",
+    "name": "Babylon",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.0,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 2482324,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-KA",
+    "name": "Karbala",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 4.0,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.0,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 1754065,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-WA",
+    "name": "Wasit",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 4.0,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.1,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 1644273,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-SD",
+    "name": "Saladin",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 2.6,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.7,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 1774542,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-NA",
+    "name": "Najaf",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 3.9,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 2.9,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 1950833,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-QA",
+    "name": "Al-Qadisiyyah",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 3.8,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.0,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 1477310,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-MU",
+    "name": "Al Muthanna",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 5.1,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.6,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 1043087,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-DQ",
+    "name": "Dhi Qar",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 3.8,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.4,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 2499468,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-MA",
+    "name": "Maysan",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 4.9,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.8,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 1293636,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-BA",
+    "name": "Basra",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 4.2,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018)",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr",
+      "note": "reference year = middle of the 3-year period preceding the 2018 survey"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.2,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024'",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2024,
+      "value": 3664168,
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (3/2) 'Population by governorate, environment and sex according to General Census 2024' (census 20-22 Nov 2024)",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-KRG",
+    "name": "Kurdistan Region (Duhok, Erbil, Sulaymaniyah)",
+    "component_codes": [
+     "IQ-DA",
+     "IQ-AR",
+     "IQ-SU"
+    ],
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.5,
+      "kind": "survey",
+      "source": "COSIT Annual Statistical Abstract, Table (2/14) 'Key indicators of Poverty Map and Maternal Mortality Survey 2013' (TFR columns: Rest of governorates / Kurdistan Region / Baghdad) - Kurdistan Region column",
+      "url": "https://cosit.gov.iq/documents/AAS2023/2.pdf"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.1,
+      "kind": "survey",
+      "source": "Iraq MICS6 2018 Survey Findings Report (CSO/KRSO/UNICEF, Feb 2019), Table TM.2.1 'Adolescent birth rate and total fertility rate' (3-year period preceding the survey, fieldwork Feb-Jun 2018) - Region: Kurdistan",
+      "url": "https://washdata.org/report/iraq-mics-2018-sfr"
+     },
+     {
+      "year": 2024,
+      "tfr": 2.6,
+      "kind": "official",
+      "source": "Iraq Statistics Authority (COSIT), Annual Statistical Abstract 2024-2025, Part 2, Table (8/2) 'Total fertility rate by governorate according to Iraq Population and Housing Census results 2024' - Kurdistan Region row",
+      "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+     }
+    ]
+   },
+   {
+    "code": "IQ-XKB",
+    "name": "Iraq excluding Kurdistan Region and Baghdad (14 governorates)",
+    "component_codes": [
+     "IQ-NI",
+     "IQ-TS",
+     "IQ-DI",
+     "IQ-AN",
+     "IQ-BB",
+     "IQ-KA",
+     "IQ-WA",
+     "IQ-SD",
+     "IQ-NA",
+     "IQ-QA",
+     "IQ-MU",
+     "IQ-DQ",
+     "IQ-MA",
+     "IQ-BA"
+    ],
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 4.8,
+      "kind": "survey",
+      "source": "COSIT Annual Statistical Abstract, Table (2/14) 'Key indicators of Poverty Map and Maternal Mortality Survey 2013' (TFR columns: Rest of governorates / Kurdistan Region / Baghdad) - 'Rest of governorates' column",
+      "url": "https://cosit.gov.iq/documents/AAS2023/2.pdf"
+     }
+    ],
+    "note": "survey grouping = all governorates except Kurdistan Region and Baghdad"
+   }
+  ]
+ },
+ {
+  "iso3": "YEM",
+  "country": "Yemen",
+  "level": "governorate",
+  "national": {
+   "2021": 4.6,
+   "note": "MICS 2022-23 national TFR, 3-year period preceding survey"
+  },
+  "units": [
+   {
+    "code": "YE-IB",
+    "name": "Ibb",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 4.3,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-AB",
+    "name": "Abyan",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 4.5,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-SA",
+    "name": "Amanat Al Asimah (Sana'a City)",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 3.5,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-BA",
+    "name": "Al Bayda",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-TA",
+    "name": "Taiz",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 4.0,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-JA",
+    "name": "Al Jawf",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 5.5,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-HJ",
+    "name": "Hajjah",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 6.3,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-HU",
+    "name": "Al Hudaydah",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 4.5,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-HD",
+    "name": "Hadramaut",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 3.6,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ],
+    "note": "Socotra governorate (separate since 2013; MICS TFR 5.2) is not included; Natural Earth places Socotra within Hadramawt"
+   },
+   {
+    "code": "YE-DH",
+    "name": "Dhamar",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 5.5,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-SH",
+    "name": "Shabwah",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-SD",
+    "name": "Sa'dah",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 4.7,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-SN",
+    "name": "Sana'a",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 4.8,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-AD",
+    "name": "Aden",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 3.3,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-LA",
+    "name": "Lahij",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 4.7,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-MA",
+    "name": "Ma'rib",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 4.8,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-MW",
+    "name": "Al Mahwit",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 5.7,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-MR",
+    "name": "Al Mahrah",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-AM",
+    "name": "Amran",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 6.4,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-DA",
+    "name": "Ad Dali'",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 4.2,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   },
+   {
+    "code": "YE-RA",
+    "name": "Raymah",
+    "series": [
+     {
+      "year": 2020,
+      "tfr": 6.3,
+      "kind": "survey",
+      "source": "Yemen MICS6 2022-2023 Survey Findings Report (Central Statistical Organization / UNICEF), Table TM.2.1 'Adolescent birth rate and total fertility rate' - governorate TFRs are for the FIVE-year period preceding the survey (fieldwork Jul 2022 - May 2023)",
+      "url": "https://www.ecoi.net/en/file/local/2103645/Yemen%202022-23%20MICS%20Survey%20Findings%20Report_English.pdf",
+      "note": "reference year = middle of the 5-year window preceding the survey"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso3": "EGY",
+  "country": "Egypt",
+  "level": "governorate",
+  "national": {
+   "2013": 3.5,
+   "2017": 3.38,
+   "2018": 3.11,
+   "2021": 2.85,
+   "2023": 2.54,
+   "2024": 2.41,
+   "note": "2013 = EDHS 2014; 2017-18 UNFPA/MoPMAR registration-based; 2021 EFHS; 2023-24 CAPMAS registration-based"
+  },
+  "units": [
+   {
+    "code": "EG-C",
+    "name": "Cairo",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 2.6,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.12,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.85,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.25,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.17,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-ALX",
+    "name": "Alexandria",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 2.2,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 2.93,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.7,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.1,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.09,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-PTS",
+    "name": "Port Said",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.0,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 2.33,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.04,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 1.84,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 1.64,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 1.54,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-SUZ",
+    "name": "Suez",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.2,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 2.76,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.55,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.33,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.07,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 1.94,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-DT",
+    "name": "Damietta",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.0,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 2.98,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.7,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.13,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.02,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 1.92,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-DK",
+    "name": "Dakahlia",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.1,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 2.96,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.73,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.65,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.07,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 1.99,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-SHR",
+    "name": "Sharqia",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.6,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.17,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.93,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.65,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.42,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-KB",
+    "name": "Qalyubia",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.8,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 2.81,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.56,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.42,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.32,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-KFS",
+    "name": "Kafr El Sheikh",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.4,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.28,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.03,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.55,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.28,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-GH",
+    "name": "Gharbia",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.1,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.04,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.76,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.54,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.12,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 1.99,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-MNF",
+    "name": "Monufia",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.5,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.25,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.96,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.63,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.38,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-BH",
+    "name": "Beheira",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.5,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.54,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.19,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.99,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.55,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-IS",
+    "name": "Ismailia",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.61,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.38,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.63,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.63,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-GZ",
+    "name": "Giza",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.3,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.07,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.86,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.54,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.42,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-BNS",
+    "name": "Beni Suef",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.9,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.9,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.59,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 3.59,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.93,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-FYM",
+    "name": "Faiyum",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 4.6,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.73,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.41,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 3.67,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.96,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-MN",
+    "name": "Minya",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.9,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 4.08,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.76,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 3.25,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 3.09,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 2.96,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-AST",
+    "name": "Asyut",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 4.2,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 4.3,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 4.09,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 3.77,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 3.31,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.17,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-SHG",
+    "name": "Sohag",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 4.3,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 4.26,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 4.01,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 3.68,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 3.28,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.2,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-KN",
+    "name": "Qena",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 4.0,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.71,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 3.46,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 3.09,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-ASN",
+    "name": "Aswan",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.6,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.68,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.29,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.92,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.7,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-LX",
+    "name": "Luxor",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.4,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.45,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.22,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.89,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.82,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-BA",
+    "name": "Red Sea",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.4,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.21,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.9,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.14,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 3.29,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-WAD",
+    "name": "New Valley",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 3.3,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.94,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.48,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 2.96,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     }
+    ]
+   },
+   {
+    "code": "EG-MT",
+    "name": "Matrouh",
+    "series": [
+     {
+      "year": 2013,
+      "tfr": 4.8,
+      "kind": "survey",
+      "source": "Egypt Demographic and Health Survey 2014 (Ministry of Health and Population / El-Zanaty / ICF), Appendix Table A-4.1 'Fertility' - TFR by governorate for 1-36 months before interview (fieldwork Apr-Jun 2014)",
+      "url": "https://dhsprogram.com/pubs/pdf/FR302/FR302.pdf",
+      "note": "reference year = middle of the 3-year period preceding the 2014 survey"
+     },
+     {
+      "year": 2017,
+      "tfr": 7.23,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf",
+      "note": "source flags Matrouh's registration-based TFR as anomalously high (registered births vs. census-based female population estimates); EDHS 2014 gave 4.8, EFHS 2021 4.38"
+     },
+     {
+      "year": 2018,
+      "tfr": 7.01,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf",
+      "note": "source flags Matrouh's registration-based TFR as anomalously high (registered births vs. census-based female population estimates); EDHS 2014 gave 4.8, EFHS 2021 4.38"
+     },
+     {
+      "year": 2021,
+      "tfr": 4.38,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 5.08,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 4.75,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-SIN",
+    "name": "North Sinai",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 3.21,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 2.56,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2023,
+      "tfr": 3.19,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.01,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   },
+   {
+    "code": "EG-JS",
+    "name": "South Sinai",
+    "series": [
+     {
+      "year": 2017,
+      "tfr": 3.88,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 14 (TFR by governorate 2017, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.43,
+      "kind": "official",
+      "source": "UNFPA Egypt / H. A. A. Sayed, 'Trends of Fertility Levels in Egypt in Recent Years' (Aug 2019), Table 15 (TFR by governorate 2018, from MoPMAR electronic birth registration and census-2017-based female population)",
+      "url": "https://egypt.un.org/sites/default/files/2019-09/Trends%20of%20Fertility%20Levels%20Final%20Version%2012Sept2019.pdf"
+     },
+     {
+      "year": 2021,
+      "tfr": 2.32,
+      "kind": "survey",
+      "source": "CAPMAS Egypt Family Health Survey 2021 governorate TFRs, as shown in CAPMAS Figure 3 'TFR 2021, 2023' (2021 = EFHS 2021) reproduced in Amwal Al Ghad, 8 Dec 2024; national 2.85; lowest/highest values (Port Said 1.84, Alexandria 2.10, Damietta 2.13; Matrouh 4.38, Asyut 3.77, Sohag 3.68) also stated in CAPMAS press release text",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ssssssss.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of the CAPMAS chart as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2023,
+      "tfr": 3.98,
+      "kind": "official",
+      "source": "CAPMAS, 'Total fertility rates for governorates 2023' (estimated from electronic birth registration, MoHP/MoPED, with UNFPA), Figure 2 'Estimated TFR 2023 by governorate' - chart with data labels reproduced in Amwal Al Ghad, 8 Dec 2024",
+      "url": "https://amwalalghad.com/wp-content/uploads/2024/12/ppppppppp.jpg",
+      "verification": "secondary",
+      "note": "read from data labels of CAPMAS Figure 2 as republished by Amwal Al Ghad (article: https://amwalalghad.com/2024/12/08/%D8%A7%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1-8-%D8%A7%D9%86%D8%AE%D9%81%D8%A7%D8%B6%D9%8B%D8%A7-%D8%A8%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85)"
+     },
+     {
+      "year": 2024,
+      "tfr": 3.46,
+      "kind": "official",
+      "source": "CAPMAS release 'TFR for governorates 2024' (21 May 2025; electronic birth registration), values quoted by Youm7 22 May 2025 (only the 6 highest and 5 lowest governorates were published in text; national 2.41)",
+      "url": "https://www.youm7.com/story/2025/5/22/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D9%88%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A3%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D8%A7%D8%A8-%D9%81%D9%89-%D9%85%D8%B5%D8%B1/6995057",
+      "verification": "secondary"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso3": "PSE",
+  "country": "Palestine",
+  "level": "region (West Bank / Gaza Strip)",
+  "national": {
+   "1997": 6.0,
+   "2001": 4.6,
+   "2006": 4.6,
+   "2007": 4.6,
+   "2009": 4.4,
+   "2012": 4.1,
+   "2018": 3.8,
+   "note": "PCBS figures from the same releases; Natural Earth adm0_a3 = PSX"
+  },
+  "units": [
+   {
+    "code": "PS-WBK",
+    "name": "West Bank (incl. East Jerusalem)",
+    "series": [
+     {
+      "year": 1997,
+      "tfr": 5.6,
+      "kind": "official",
+      "source": "PCBS, International Population Day 2014 press release (1997 census-based TFR, West Bank)",
+      "url": "https://www.pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_IntPopD2014E.pdf"
+     },
+     {
+      "year": 2001,
+      "tfr": 4.1,
+      "kind": "survey",
+      "source": "PCBS, World Population Day 2021 press release, chart 'Fertility Rate in the State of Palestine, selected years' - period 1999-2003, source: PCBS Demographic and Health Survey 2004 database",
+      "url": "https://pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_11-7-2021-pop-en.pdf",
+      "note": "period 1999-2003; PCBS's 2005 'DHS 2004 main findings' summary table had given higher figures (2003: West Bank 5.2, Gaza 6.6)"
+     },
+     {
+      "year": 2006,
+      "tfr": 4.2,
+      "kind": "survey",
+      "source": "PCBS, Palestinian Family Health Survey 2006 Preliminary Report, Table 4 (ASFR and TFR during the year preceding the survey, direct method)",
+      "url": "https://www.pcbs.gov.ps/Portals/_pcbs/PressRelease/English_Report.pdf"
+     },
+     {
+      "year": 2007,
+      "tfr": 4.1,
+      "kind": "official",
+      "source": "PCBS, 'Palestinians at the end of 2010' press release (TFR 2007, census-based)",
+      "url": "https://www.pcbs.gov.ps/Portals/_pcbs/PressRelease/palpeople2010_E.pdf"
+     },
+     {
+      "year": 2009,
+      "tfr": 4.0,
+      "kind": "survey",
+      "source": "PCBS, International Population Day 2014 press release (Palestinian Family Survey 2010, period 2008-2009)",
+      "url": "https://www.pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_IntPopD2014E.pdf"
+     },
+     {
+      "year": 2012,
+      "tfr": 3.7,
+      "kind": "survey",
+      "source": "PCBS, International Population Day 2017 press release (Palestinian MICS 2014, period 2011-2013)",
+      "url": "https://pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_IntPopDy2017E.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.8,
+      "kind": "survey",
+      "source": "PCBS, World Population Day 2021 press release (Palestinian MICS 2019-2020, period 2017-2019)",
+      "url": "https://pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_11-7-2021-pop-en.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2017,
+      "value": 2856691,
+      "source": "PCBS, mid-year population estimates by region 2017-2026 (revised estimates based on 2017 census; prepared before Oct 2023 - PCBS notes Gaza mid-2025 population revised down to 2,114,301)",
+      "url": "https://www.pcbs.gov.ps/statisticsIndicatorsTables.aspx?lang=en&table_id=1011"
+     },
+     {
+      "year": 2023,
+      "value": 3256906,
+      "source": "PCBS, mid-year population estimates by region 2017-2026 (revised estimates based on 2017 census; prepared before Oct 2023 - PCBS notes Gaza mid-2025 population revised down to 2,114,301)",
+      "url": "https://www.pcbs.gov.ps/statisticsIndicatorsTables.aspx?lang=en&table_id=1011"
+     }
+    ]
+   },
+   {
+    "code": "PS-GZZ",
+    "name": "Gaza Strip",
+    "series": [
+     {
+      "year": 1997,
+      "tfr": 6.9,
+      "kind": "official",
+      "source": "PCBS, International Population Day 2014 press release (1997 census-based TFR, Gaza Strip)",
+      "url": "https://www.pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_IntPopD2014E.pdf"
+     },
+     {
+      "year": 2001,
+      "tfr": 5.8,
+      "kind": "survey",
+      "source": "PCBS, World Population Day 2021 press release, chart 'Fertility Rate in the State of Palestine, selected years' - period 1999-2003, source: PCBS Demographic and Health Survey 2004 database",
+      "url": "https://pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_11-7-2021-pop-en.pdf",
+      "note": "period 1999-2003; PCBS's 2005 'DHS 2004 main findings' summary table had given higher figures (2003: West Bank 5.2, Gaza 6.6)"
+     },
+     {
+      "year": 2006,
+      "tfr": 5.4,
+      "kind": "survey",
+      "source": "PCBS, Palestinian Family Health Survey 2006 Preliminary Report, Table 4 (ASFR and TFR during the year preceding the survey, direct method)",
+      "url": "https://www.pcbs.gov.ps/Portals/_pcbs/PressRelease/English_Report.pdf"
+     },
+     {
+      "year": 2007,
+      "tfr": 5.3,
+      "kind": "official",
+      "source": "PCBS, 'Palestinians at the end of 2010' press release (TFR 2007, census-based)",
+      "url": "https://www.pcbs.gov.ps/Portals/_pcbs/PressRelease/palpeople2010_E.pdf"
+     },
+     {
+      "year": 2009,
+      "tfr": 5.2,
+      "kind": "survey",
+      "source": "PCBS, International Population Day 2014 press release (Palestinian Family Survey 2010, period 2008-2009)",
+      "url": "https://www.pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_IntPopD2014E.pdf"
+     },
+     {
+      "year": 2012,
+      "tfr": 4.5,
+      "kind": "survey",
+      "source": "PCBS, International Population Day 2017 press release (Palestinian MICS 2014, period 2011-2013)",
+      "url": "https://pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_IntPopDy2017E.pdf"
+     },
+     {
+      "year": 2018,
+      "tfr": 3.9,
+      "kind": "survey",
+      "source": "PCBS, World Population Day 2021 press release (Palestinian MICS 2019-2020, period 2017-2019)",
+      "url": "https://pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_11-7-2021-pop-en.pdf"
+     }
+    ],
+    "population": [
+     {
+      "year": 2017,
+      "value": 1876666,
+      "source": "PCBS, mid-year population estimates by region 2017-2026 (revised estimates based on 2017 census; prepared before Oct 2023 - PCBS notes Gaza mid-2025 population revised down to 2,114,301)",
+      "url": "https://www.pcbs.gov.ps/statisticsIndicatorsTables.aspx?lang=en&table_id=1011"
+     },
+     {
+      "year": 2023,
+      "value": 2226544,
+      "source": "PCBS, mid-year population estimates by region 2017-2026 (revised estimates based on 2017 census; prepared before Oct 2023 - PCBS notes Gaza mid-2025 population revised down to 2,114,301)",
+      "url": "https://www.pcbs.gov.ps/statisticsIndicatorsTables.aspx?lang=en&table_id=1011"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "iso3": "ISR_JS",
+  "country": "Israeli localities in the West Bank (Judea and Samaria Area)",
+  "level": "CBS statistical area",
+  "units": [
+   {
+    "code": "IL-JS",
+    "name": "Israeli settlements (Judea and Samaria)",
+    "series": [
+     {
+      "year": 2005,
+      "tfr": 4.61,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2007, Table 3.10 'Live births, deaths and infant deaths, by district and sub-district' (row 'Judea, Samaria and Gaza Area', total population), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2007/3.Shnaton%20VitalStatistics/st03_10x.xls",
+      "births": 8684,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition",
+      "note": "row covers 'Judea, Samaria and Gaza Area' (Israeli localities in Gaza were evacuated in Aug 2005)"
+     },
+     {
+      "year": 2006,
+      "tfr": 4.72,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2007, Table 3.10 'Live births, deaths and infant deaths, by district and sub-district' (Judea and Samaria Area, total population), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2007/3.Shnaton%20VitalStatistics/st03_10x.xls",
+      "births": 9039,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2007,
+      "tfr": 4.78,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2008, Table 3.14 'Fertility rates, average age of mother and sex ratio at birth, by selected characteristics of the mother' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2008/3.Shnaton%20VitalStatistics/st03_14x.xls",
+      "births": 9602,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2008,
+      "tfr": 4.79,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2009, Table 3.14 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2009/3.Shnaton%20VitalStatistics/st03_14x.xls",
+      "births": 10119,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2009,
+      "tfr": 5.06,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2010, Table 3.14 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2010/3.%20ShnatonVitalStatistics/st03_14x.xls",
+      "births": 10625,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2010,
+      "tfr": 5.1,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2011, Table 3.14 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2011/3.%20ShnatonVitalStatistics/st03_14x.xls",
+      "births": 11126,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2011,
+      "tfr": 4.99,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2012, Table 3.14 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2012/3.%20ShnatonVitalStatistics/st03_14x.xls",
+      "births": 11373,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2012,
+      "tfr": 4.97,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2013, Table 3.14 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2013/3.%20ShnatonVitalStatistics/st03_14x.xls",
+      "births": 11613,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2014,
+      "tfr": 4.94,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2015, Table 3.14 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2015/3.%20ShnatonVitalStatistics/st03_14x.xls",
+      "births": 12288,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2015,
+      "tfr": 4.89,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2016, Table 3.14 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2016/3.ShnatonVitalStatistics/st03_14x.xls",
+      "births": 12470,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2016,
+      "tfr": 4.9,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2017, Table 3.14 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2017/3.%20ShnatonVitalStatistics/st03_14x.xls",
+      "births": 12755,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2017,
+      "tfr": 4.8,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2018, Table 3.14 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2018/3.%20ShnatonVitalStatistics/st03_14x.xls",
+      "births": 12764,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2018,
+      "tfr": 4.89,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2019, Table 2.42 'Fertility rates, average age of mother and sex ratio at birth, by selected characteristics of the mother' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2019/2.ShnatonPopulation/st02_42x.xls",
+      "births": 13286,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2019,
+      "tfr": 4.75,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2020, Table 2.42 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2020/2.ShnatonPopulation/st02_42x.xls",
+      "births": 13196,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2020,
+      "tfr": 4.58,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2021, Table 2.42 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2021/2.ShnatonPopulation/st02_42x.xls",
+      "births": 12931,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2021,
+      "tfr": 4.75,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2022, Table 2.42 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2022/2.ShnatonPopulation/st02_42x.xls",
+      "births": 13610,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2022,
+      "tfr": 4.59,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2023, Table 2.42 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2023/2.ShnatonPopulation/st02_42x.xlsx",
+      "births": 13378,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition"
+     },
+     {
+      "year": 2023,
+      "tfr": 4.42,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2024, Table 2.42 'Fertility rates, average age of mother ...' (district rows), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2024/2.ShnatonPopulation/st02_42x.xlsx",
+      "note": "rates based on average population updated after the 2022 Census"
+     },
+     {
+      "year": 2024,
+      "tfr": 4.54,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2025, Table 2.29 'Fertility rates, average age of mother and sex ratio at birth, by selected characteristics of the mother' (district rows); births from Table 2.26, row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2025/2.ShnatonPopulation/st02_29x.xlsx",
+      "births": 13916,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition",
+      "note": "rates based on average population updated after the 2022 Census (excl. foreign population)"
+     },
+     {
+      "year": 2025,
+      "tfr": 4.47,
+      "kind": "official",
+      "source": "CBS Israel, Statistical Abstract of Israel 2026, Table 2.29 'Fertility rates, average age of mother ...' (district rows); births from Table 2.26 (published 12.10.2026), row 'Judea and Samaria Area (Israeli localities)', column 'Total fertility rate'",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2026/2.ShnatonPopulation/st02_29x.xlsx",
+      "births": 13891,
+      "births_note": "live births, Judea and Samaria Area, from the district live-births table of the same Statistical Abstract edition",
+      "note": "rates based on average population updated after the 2022 Census (excl. foreign population)"
+     }
+    ],
+    "population": [
+     {
+      "year": 1972,
+      "value": 1500,
+      "source": "CBS Israel, Statistical Abstract of Israel 2024, localities and population by district table, Judea and Samaria Area: 20.5.1972 (census)",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2024/2.ShnatonPopulation/st02_17.xlsx"
+     },
+     {
+      "year": 1983,
+      "value": 23700,
+      "source": "CBS Israel, Statistical Abstract of Israel 2024, localities and population by district table, Judea and Samaria Area: 4.6.1983 (census)",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2024/2.ShnatonPopulation/st02_17.xlsx"
+     },
+     {
+      "year": 1995,
+      "value": 134300,
+      "source": "CBS Israel, Statistical Abstract of Israel 2024, localities and population by district table, Judea and Samaria Area: 31.12.1995",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2024/2.ShnatonPopulation/st02_17.xlsx"
+     },
+     {
+      "year": 2008,
+      "value": 281100,
+      "source": "CBS Israel, Statistical Abstract of Israel 2024, localities and population by district table, Judea and Samaria Area: 27.12.2008 (census)",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2024/2.ShnatonPopulation/st02_17.xlsx"
+     },
+     {
+      "year": 2015,
+      "value": 385900,
+      "source": "CBS Israel, Statistical Abstract of Israel 2017, localities and population by district table, Judea and Samaria Area: 31.12.2015",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2017/2.%20ShnatonPopulation/st02_17.xls"
+     },
+     {
+      "year": 2016,
+      "value": 399300,
+      "source": "CBS Israel, Statistical Abstract of Israel 2017, localities and population by district table, Judea and Samaria Area: 31.12.2016",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2017/2.%20ShnatonPopulation/st02_17.xls"
+     },
+     {
+      "year": 2017,
+      "value": 413400,
+      "source": "CBS Israel, Statistical Abstract of Israel 2018, localities and population by district table, Judea and Samaria Area: 31.12.2017",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2018/2.%20ShnatonPopulation/st02_17.xls"
+     },
+     {
+      "year": 2018,
+      "value": 427800,
+      "source": "CBS Israel, Statistical Abstract of Israel 2019, localities and population by district table, Judea and Samaria Area: 31.12.2018",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2019/2.ShnatonPopulation/st02_17.xls"
+     },
+     {
+      "year": 2019,
+      "value": 441600,
+      "source": "CBS Israel, Statistical Abstract of Israel 2020, localities and population by district table, Judea and Samaria Area: 31.12.2019",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2020/2.ShnatonPopulation/st02_17.xls"
+     },
+     {
+      "year": 2020,
+      "value": 451700,
+      "source": "CBS Israel, Statistical Abstract of Israel 2021, localities and population by district table, Judea and Samaria Area: 31.12.2020",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2021/2.ShnatonPopulation/st02_17.xls"
+     },
+     {
+      "year": 2021,
+      "value": 465400,
+      "source": "CBS Israel, Statistical Abstract of Israel 2022, localities and population by district table, Judea and Samaria Area: 31.12.2021",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2022/2.ShnatonPopulation/st02_17.xls"
+     },
+     {
+      "year": 2022,
+      "value": 478600,
+      "source": "CBS Israel, Statistical Abstract of Israel 2023, localities and population by district table, Judea and Samaria Area: 31.12.2022 (before revision by the 2022 census, which counted 481,900 on 2.4.2022)",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2023/2.ShnatonPopulation/st02_17.xlsx"
+     },
+     {
+      "year": 2023,
+      "value": 501100,
+      "source": "CBS Israel, Statistical Abstract of Israel 2024, localities and population by district table, Judea and Samaria Area: 31.12.2023, Israelis (post-2022-census series; 504,700 incl. 3,500 foreigners)",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2024/2.ShnatonPopulation/st02_17.xlsx"
+     },
+     {
+      "year": 2024,
+      "value": 511100,
+      "source": "CBS Israel, Statistical Abstract of Israel 2025, localities and population by district table, Judea and Samaria Area: 31.12.2024, population of Israelis (Table 2.11)",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2025/2.ShnatonPopulation/st02_11x.xlsx"
+     },
+     {
+      "year": 2025,
+      "value": 520600,
+      "source": "CBS Israel, Statistical Abstract of Israel 2026, localities and population by district table, Judea and Samaria Area: 31.12.2025, population of Israelis (Table 2.11)",
+      "url": "https://www.cbs.gov.il/he/publications/DocLib/2026/2.ShnatonPopulation/st02_11x.xlsx"
+     }
+    ],
+    "note": "CBS 'Judea and Samaria Area' covers residents of Israeli localities only (no Palestinian population); no ISO/Natural Earth unit - lies inside PS-WBK. 2013 edition (data for 2013) not retrievable."
+   }
+  ]
+ }
+]

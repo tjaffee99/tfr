@@ -49,6 +49,13 @@ NAMES_EN = json.load(open(os.path.join(SUB, "names_en.json"))) if os.path.exists
 OVERSEAS = {"FRA": "FRY"}  # Guadeloupe, Martinique, French Guiana, Réunion, Mayotte (NUTS FRY*)
 HOLE_MIN_AREA = 0.01  # square degrees (~100 km²); smaller holes are left alone (the Vatican in Rome, etc.)
 
+# Natural Earth's adm0_a3 where it differs from the UN/ISO code (Somalia includes Somaliland's regions)
+NE_ADM0 = {"PSE": ["PSX"], "SSD": ["SDS"], "XKX": ["KOS"], "SOM": ["SOM", "SOL"]}
+# Israeli localities in the West Bank (Israel's "Judea and Samaria Area" district): circles from settlements.py,
+# shown in Israel's subdivisions and, cut out of the Palestinian West Bank, in Palestine's (modeled as Israeli)
+SETTLEMENTS = os.path.join(SUB, "settlements.geojson")
+JS_NAME = "Israeli settlements (Judea and Samaria)"
+
 CODE_ALIASES = {"MX-CMX": "MX-DIF"}  # new ISO code -> the one Natural Earth uses
 REGION_ALIASES = {  # data unit -> Natural Earth 'region' values making it up
     "GBR": {"London": ["Greater London"], "East of England": ["East"], "Yorkshire and The Humber": ["Yorkshire and the Humber"],
@@ -81,8 +88,10 @@ def simplify_to_topo(features, interval_m):
     with tempfile.TemporaryDirectory() as td:
         src, dst = os.path.join(td, "units.json"), os.path.join(td, "out.json")
         json.dump({"type": "FeatureCollection", "features": features}, open(src, "w"))
+        # the outline is the country's edge: units modeled as another country's (settlements) are left out
         subprocess.run([MAPSHAPER, src, "-clean", "-simplify", f"interval={interval_m}", "keep-shapes",
-                        "-dissolve", "+", "name=outline", "-o", dst, "target=*", "format=topojson", "quantization=100000"],
+                        "-filter", "!this.properties.k && this.properties.c != 'IL-JS'", "+", "name=outline", "-dissolve", "target=outline",
+                        "-o", dst, "target=*", "format=topojson", "quantization=100000"],
                        check=True, capture_output=True)
         return json.load(open(dst))
 
@@ -115,12 +124,34 @@ def fill_uncovered_holes(units):
         if changed: u["geometry"] = mapping(out[0] if len(out) == 1 else MultiPolygon(out))
 
 
+def split_overlaps(units):
+    """Group a country's units into boundary sets that don't overlap, year by year: a survey reporting groups of
+    provinces (2019) and one reporting the provinces themselves (2010) become separate epochs. Each unit's series is
+    cut to its epoch's years. Units carry "foot", the Natural Earth units they cover. Returns [(units, years)]."""
+    years = sorted({y for u in units for y in u["series"]})
+    epochs = []
+    for y in years:
+        here = [u for u in units if y in u["series"]]
+        cur = epochs[-1] if epochs else None
+        clash = cur is not None and any(a is not b and a["foot"] & b["foot"] for a in here for b in cur["units"])
+        if cur is None or clash:
+            epochs.append({"units": list(here), "years": [y]})
+        else:
+            cur["units"] += [u for u in here if u not in cur["units"]]
+            cur["years"].append(y)
+    return [([{**u, "series": {y: v for y, v in u["series"].items() if y in e["years"]}} for u in e["units"]], set(e["years"])) for e in epochs]
+
+
 def make_epoch(units, sources, interval_m, iso3=None):
     fill_uncovered_holes(units)
     names, feats = NAMES_EN.get(iso3, {}), []
     for u in units:
         name = names.get(u.get("code") or u["name"]) or names.get(u["name"]) or u["name"]
         props = {"n": name, "s": {str(y): round(v, 3) for y, v in sorted(u["series"].items())}}
+        if u.get("k"): props["k"] = u["k"]  # unit modeled with another country's demography
+        # a unit's own source where it differs from the epoch's for that year (e.g. one survey report per state)
+        own = {str(y): m for y, m in (u.get("meta") or {}).items() if y in u["series"] and m.get("source") != (sources.get(str(y)) or {}).get("source")}
+        if own: props["src"] = own
         if u.get("code"): props["c"] = u["code"]
         feats.append({"type": "Feature", "properties": props, "geometry": u["geometry"]})
     years = sorted({y for u in units for y in u["series"]})
@@ -171,31 +202,44 @@ def eurostat_units():
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    for f in glob.glob(os.path.join(OUT, "*.json")): os.remove(f)
+    only = set(sys.argv[1:])  # optionally rebuild just some countries
+    if not only:
+        for f in glob.glob(os.path.join(OUT, "*.json")): os.remove(f)
     ne = json.load(open(os.path.join(RAW, "ne_admin1.geojson")))["features"]
     iso2to3 = {}
     for f in ne:
         p = f["properties"]
         if p.get("iso_a2") and p.get("adm0_a3"): iso2to3.setdefault(p["iso_a2"], p["adm0_a3"])
     iso2to3.update({"XK": "KOS", "GR": "GRC", "NO": "NOR", "FR": "FRA"})
-    index, done, overseas = {}, set(), {}
-    only = set(sys.argv[1:])  # optionally rebuild just some countries
+    index, done, overseas, collected = {}, set(), {}, {}
+    settle = json.load(open(SETTLEMENTS))["geometry"] if os.path.exists(SETTLEMENTS) else None
+    js_series = {}  # Judea and Samaria TFR, from whichever research file has it
+
+    # a country can combine sources: national statistics for recent years, older DHS surveys before them
+    def collect(iso3, level, epochs, n_units):
+        c = collected.setdefault(iso3, {"level": level, "epochs": [], "n": n_units})
+        c["epochs"] += epochs
+        done.add(iso3)
 
     def emit(iso3, level, epochs, n_units):
+        epochs = sorted(epochs, key=lambda e: e["years"][0])
         doc = {"iso3": iso3, "level": LEVEL_NAMES.get(iso3, level), "epochs": epochs}
         path = os.path.join(OUT, f"{iso3}.json")
         json.dump(doc, open(path, "w"), separators=(",", ":"), ensure_ascii=False)
         years = sorted({y for e in epochs for y in e["years"]})
         index[iso3] = {"level": doc["level"], "first": years[0], "latest": years[-1], "n": n_units}
         print(f"{iso3}: {n_units} {doc['level']}s, {len(epochs)} epoch(s), {years[0]}-{years[-1]}, {os.path.getsize(path) // 1024} KB")
-        done.add(iso3)
 
     # 1) national statistics -> Natural Earth admin-1
-    for path in sorted(glob.glob(os.path.join(SUB, "national_*.json"))):
-        for c in json.load(open(path)):
+    national = [c for path in sorted(glob.glob(os.path.join(SUB, "national_*.json"))) for c in json.load(open(path))]
+    for c in national:
+        for u in c["units"]:
+            if c["iso3"] == "ISR_JS" or (c["iso3"] == "ISR" and "Judea" in u.get("name", "")):
+                for s_ in u["series"]: js_series.setdefault(int(s_["year"]), s_)
+    for c in national:
             iso3 = c["iso3"]
-            if iso3 in done: continue
-            cand = [f for f in ne if f["properties"]["adm0_a3"] == iso3]
+            if iso3 in done or iso3 == "ISR_JS": continue
+            cand = [f for f in ne if f["properties"]["adm0_a3"] in NE_ADM0.get(iso3, [iso3])]
             by_code, by_name, by_region, by_region_code = {}, {}, {}, {}
             for f in cand:
                 p = f["properties"]
@@ -212,24 +256,43 @@ def main():
                 alias = REGION_ALIASES.get(iso3, {}).get(u.get("name"))
                 if alias: return [f for a in alias for f in by_region.get(norm(a), [])]
                 return by_region_code.get(u.get("code")) or by_region.get(norm(u.get("name")))
+            by_adm1 = {f["properties"]["adm1_code"]: f for f in cand}
             units, sources, missing = [], {}, []
             for u in c["units"]:
                 codes = [u.get("code"), CODE_ALIASES.get(u.get("code"))] + list(u.get("alt_codes") or []) + [u.get("code_legacy_alpha")]
-                f = next((by_code[k] for k in codes if k in by_code), None)
-                grp = group_for(u) if (coarse or f is None) else None
+                comps = u.get("component_codes") or []
+                f = by_adm1.get(u.get("ne_adm1_code")) or (next((by_code[k] for k in codes if k in by_code), None) if not comps else None)
+                if comps and all(k in by_code for k in comps):
+                    grp = [by_code[k] for k in comps]
+                else:
+                    grp = group_for(u) if (coarse or f is None) else None
                 if f is None and not grp: f = by_name.get(norm(u.get("name"))) or by_name.get(norm(u.get("name_local")))
-                geom = merge(grp) if (grp and (coarse or f is None)) else (f["geometry"] if f else None)
+                use_grp = bool(grp and (coarse or f is None))
+                geom = merge(grp) if use_grp else (f["geometry"] if f else None)
+                foot = {g["properties"]["adm1_code"] for g in grp} if use_grp else ({f["properties"]["adm1_code"]} if f else set())
+                if iso3 == "ISR" and "Judea" in u.get("name", "") and settle:
+                    geom, foot, u = settle, {"IL-JS"}, {**u, "name": JS_NAME, "code": "IL-JS"}
                 if geom is None:
                     missing.append(u.get("code") or u.get("name")); continue
                 series = {int(s["year"]): float(s["tfr"]) for s in u["series"]}
-                for s in u["series"]:
-                    sources.setdefault(str(s["year"]), {k: s[k] for k in ("kind", "source", "url", "months", "method") if s.get(k)})
+                meta = {int(s["year"]): {k: s[k] for k in ("kind", "source", "url", "months", "method") if s.get(k)} for s in u["series"]}
+                for y, m in meta.items(): sources.setdefault(str(y), m)
                 name = u["name"] if latin(u["name"]) else (u.get("name_en") or (f and f["properties"].get("name_en")) or u["name"])
-                units.append({"name": name, "code": u.get("code"), "series": series, "geometry": geom})
+                units.append({"name": name, "code": u.get("code"), "series": series, "geometry": geom, "foot": foot, "meta": meta})
+            if iso3 == "PSE" and settle and js_series:
+                # the Palestinian West Bank without the Israeli localities, which are modeled as Israeli
+                circles = make_valid(shape(settle))
+                for u in units:
+                    if u["code"] == "PS-WBK": u["geometry"] = mapping(make_valid(shape(u["geometry"])).difference(circles))
+                units.append({"name": JS_NAME, "code": "IL-JS", "k": "ISR", "geometry": settle, "foot": {"IL-JS"},
+                              "series": {y: float(s_["tfr"]) for y, s_ in js_series.items()}})
+                for y, s_ in js_series.items():
+                    sources.setdefault(str(y), {k: s_[k] for k in ("kind", "source", "url", "months", "method") if s_.get(k)})
             if missing: print(f"  {iso3}: no boundary for {missing}", file=sys.stderr)
             if only and iso3 not in only: done.add(iso3); continue
             if len(units) >= max(2, 0.6 * len(c["units"])):
-                emit(iso3, c.get("level", "region"), [make_epoch(units, sources, 400, iso3)], len(units))
+                collect(iso3, c.get("level", "region"), [make_epoch(e, {y: v for y, v in sources.items() if int(y) in ys}, 400, iso3)
+                                                        for e, ys in split_overlaps(units)], len(units))
             else:
                 print(f"  {iso3}: matched only {len(units)}/{len(c['units'])}, skipped", file=sys.stderr)
 
@@ -245,7 +308,7 @@ def main():
         meta = {"kind": "official", "source": "Eurostat, fertility indicators by NUTS 3 region (demo_r_find3)",
                 "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table"}
         sources = {**{str(y): meta for y in range(2013, 2025)}, **recent}
-        emit(iso3, "region", [make_epoch(units, sources, 300, iso3)], len(units))
+        collect(iso3, "region", [make_epoch(units, sources, 300, iso3)], len(units))
         if iso3 in OVERSEAS and not only:
             far = [u for u in units if u["code"].startswith(OVERSEAS[iso3])]
             overseas[iso3] = {"iso3": iso3, "level": "region", "epochs": [make_epoch(far, sources, 300, iso3)]}
@@ -255,9 +318,12 @@ def main():
     dhs_iso = {c["DHS_CountryCode"]: c["ISO3_CountryCode"] for c in json.load(open(os.path.join(SUB, "dhs_countries.json")))["Data"]}
     for cc, surveys in sorted(dhs.items()):
         iso3 = dhs_iso.get(cc)
-        if not iso3 or iso3 in done or (only and iso3 not in only): continue
+        if not iso3 or (only and iso3 not in only): continue
+        # combined with national data: skip surveys for years the national data already covers as fully
+        have = {y: len(e["topo"]["objects"]["units"]["geometries"]) for e in collected.get(iso3, {}).get("epochs", []) for y in e["years"]}
         epochs, n_last = [], 0
         for sv in surveys:
+            if have.get(int(sv["year"]), 0) >= len(sv["regions"]): continue
             gpath = os.path.join(RAW, "dhs_geom", f"{sv['survey']}.json")
             if not os.path.exists(gpath): continue
             try: geo = {g["RegionID"]: g for g in json.load(open(gpath))["Data"]}
@@ -270,7 +336,10 @@ def main():
             epochs.append(make_epoch(units, {str(sv["year"]): meta}, 1500, iso3))
             n_last = len(units)
         if epochs:
-            emit(iso3, "region", epochs, n_last)
+            collect(iso3, "region", epochs, n_last)
+
+    for iso3, c in collected.items():
+        emit(iso3, c["level"], c["epochs"], c["n"])
 
     if not only:
         if glob.glob(os.path.join(OUT, "USA", "*.json")) and "USA" in index:

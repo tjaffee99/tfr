@@ -105,7 +105,7 @@
   }
 
   // the selected place's country (itself, unless a subdivision is selected)
-  const selCountryId = () => (state.loc ? (state.loc.sub ? state.loc.sub.countryId : state.loc.id) : null);
+  const selCountryId = () => (state.loc ? (state.loc.sub ? state.loc.sub.homeId : state.loc.id) : null);
   // Best TFR for the selected place (country, region or subdivision) in a year, with provenance.
   function placeInfo(y) {
     const loc = state.loc;
@@ -364,10 +364,18 @@
   // state) changed between the two years, i.e. its level relative to the parent is carried over. Projection
   // years carry its latest level relative to the parent's path (or show the scenario, for the selected unit).
   // Beyond that the parent's color shows through.
-  const SUB_GAP = 10;
+  const SUB_GAP = 10, SUB_FWD = 15; // years a value is carried; toward today its latest value carries further
   let subLayer = null, childLayer = null, subToken = 0, overseasLayers = [];
   const plural = (w, n) => (n === 1 ? w : w.endsWith("y") ? w.slice(0, -1) + "ies" : w + "s");
   const unitKey = (f) => f.properties.c || f.properties.n;
+  // a unit can belong to another country's statistics (Israeli localities in the West Bank, "k": "ISR")
+  const idOfIso3 = (iso3) => state.summary.locs.find((d) => d.iso3 === iso3)?.id;
+  const modelCountry = (layer, f) => (f.properties.k ? idOfIso3(f.properties.k) ?? layer.ctx.countryId : layer.ctx.countryId);
+  const parentAtOf = (layer, f) => {
+    if (!f.properties.k) return layer.ctx.parentAt;
+    const s = state.byId.get(modelCountry(layer, f));
+    return (y) => tfrInfo(s, y).v;
+  };
 
   function loadSubDoc(path) {
     if (!state.subCache) state.subCache = new Map();
@@ -455,11 +463,13 @@
   function makeLayer(doc, ctx) {
     return { doc, ctx, g: mapG.append("g").attr("class", "subs"), epoch: -1 };
   }
+  // the boundary set whose data is nearest the year (ties: the more recent set, then the one with more units)
   function pickEpoch(doc, y) {
+    const n = (e) => (e.topo.objects.units || Object.values(e.topo.objects)[0]).geometries.length;
     let best = 0, bestD = Infinity;
     doc.epochs.forEach((e, i) => {
-      const a = e.years[0], b = e.years[e.years.length - 1], d = y < a ? a - y : y > b ? y - b : 0;
-      if (d < bestD || (d === bestD && b > doc.epochs[best].years.at(-1))) { best = i; bestD = d; }
+      const d = Math.min(...e.years.map((ey) => Math.abs(ey - Math.min(y, BASE)))), b = doc.epochs[best];
+      if (d < bestD || (d === bestD && (e.years.at(-1) > b.years.at(-1) || (e.years.at(-1) === b.years.at(-1) && n(e) > n(b))))) { best = i; bestD = d; }
     });
     return best;
   }
@@ -485,7 +495,7 @@
     }
     colorLayer(layer);
   }
-  const isSelectedUnit = (layer, f) => !!(state.loc && state.loc.sub && state.loc.sub.countryId === layer.ctx.countryId &&
+  const isSelectedUnit = (layer, f) => !!(state.loc && state.loc.sub && state.loc.sub.homeId === layer.ctx.countryId &&
     state.loc.sub.level === layer.doc.level && state.loc.sub.key === unitKey(f));
   // value of a {year: tfr} series in year y: exact, or its nearest year's level relative to the parent
   function seriesValue(s, parentAt, y, gap = SUB_GAP) {
@@ -495,14 +505,15 @@
       const ky = +k;
       if (y > BASE ? ky <= BASE && (y0 == null || ky > y0) : y0 == null || Math.abs(ky - y) < Math.abs(y0 - y)) y0 = ky;
     }
-    if (y0 == null || Math.abs(Math.min(y, BASE) - y0) > gap) return null;
+    const latest = Math.max(...Object.keys(s).map(Number));
+    if (y0 == null || Math.abs(Math.min(y, BASE) - y0) > (y > y0 && y0 === latest ? Math.max(gap, SUB_FWD) : gap)) return null;
     const p1 = parentAt(y), p0 = parentAt(y0);
     if (!p1 || !p0) return null;
     return { v: s[y0] * (p1 / p0), y: y0, exact: false };
   }
   function unitValue(layer, f, y) {
     if (state.proj && y > BASE && state.resByYear && isSelectedUnit(layer, f)) return { v: state.resByYear.get(y).tfr, y, exact: false, scen: true };
-    return seriesValue(f.properties.s, layer.ctx.parentAt, y);
+    return seriesValue(f.properties.s, parentAtOf(layer, f), y);
   }
   function colorLayer(layer) {
     if (!layer || !layer.paths) return;
@@ -528,11 +539,12 @@
   function subTip(layer, f) {
     const y = state.year, r = unitValue(layer, f, y), x = f.properties.x || [];
     if (!r) return `<div class="t">${esc(f.properties.n)}</div><div class="m">No ${esc(layer.doc.level)} data near ${y}</div>`;
-    const src = r.scen ? null : layer.doc.epochs[layer.epoch].sources[r.y];
+    const src = r.scen ? null : (f.properties.src && f.properties.src[r.y]) || layer.doc.epochs[layer.epoch].sources[r.y];
     let basis;
+    const rel = f.properties.k ? state.byId.get(modelCountry(layer, f))?.name : layer.ctx.name;
     if (r.scen) basis = `${y} projection · ${MODE_SRC[state.sc.mode]}`;
-    else if (y > BASE) basis = `${y} projection: its ${r.y} level relative to ${esc(layer.ctx.name)}`;
-    else if (!r.exact) basis = `${y} estimate: its ${r.y} level relative to ${esc(layer.ctx.name)}`;
+    else if (y > BASE) basis = `${y} projection: its ${r.y} level relative to ${esc(rel)}`;
+    else if (!r.exact) basis = `${y} estimate: its ${r.y} level relative to ${esc(rel)}`;
     else if (x.includes(y)) basis = `${y} estimate: Census births look misassigned this year, so its level in nearby years`;
     else if (src && src.kind === "estimate") basis = `${y} estimate${src.months ? " from " + esc(src.months) + " births" : ""}`;
     else if (src && src.kind === "survey") basis = `${y} survey`;
@@ -572,7 +584,7 @@
       for (const g of obj.geometries) {
         const p = g.properties;
         if ((p.c || p.n) !== key) continue;
-        for (const y in p.s) { series[y] = p.s[y]; srcs[y] = e.sources[y] || {}; }
+        for (const y in p.s) { series[y] = p.s[y]; srcs[y] = (p.src && p.src[y]) || e.sources[y] || {}; }
         for (const y of p.x || []) approx.add(y);
       }
     }
@@ -580,8 +592,8 @@
   }
 
   function buildSubPlace(layer, f, nat, natPyr, popDoc) {
-    const key = unitKey(f), countryId = layer.ctx.countryId, natS = state.byId.get(countryId);
-    const hist = unitHistory(layer, f), parentAt = layer.ctx.parentAt;
+    const key = unitKey(f), countryId = modelCountry(layer, f), homeId = layer.ctx.countryId, natS = state.byId.get(countryId);
+    const hist = unitHistory(layer, f), parentAt = parentAtOf(layer, f);
     const ep = popDoc ? popDoc.epochs[Math.min(Math.max(layer.epoch, 0), popDoc.epochs.length - 1)] : null;
     const pu = (ep && ep.units[key]) || {};
     const tfrAt = (y, gap) => seriesValue(hist.series, parentAt, y, gap);
@@ -662,7 +674,7 @@
       id: `${countryId}:${key}`, name: f.properties.n, iso3: null, variants: {},
       base: { year: BASE, m: base, f: P.f[BASE - Y0] }, mort, asfr: nat.asfr, migAge, un, tfrPaths,
       sub: {
-        key, countryId, natName: natS.name, level: layer.doc.level, parent: layer.ctx.name, chain: layer.ctx.chain,
+        key, countryId, homeId, natName: natS.name, level: layer.doc.level, parent: f.properties.k ? natS.name : layer.ctx.name, chain: layer.ctx.chain,
         hist, tfrAt, natPyrAt, start, first, ages: agYears.length > 0, src: (popDoc && popDoc.src) || {}, mortK,
       },
     };
@@ -670,7 +682,7 @@
   }
 
   async function selectSub(layer, f, fromHash) {
-    const token = ++state.selToken, cid = layer.ctx.countryId;
+    const token = ++state.selToken, cid = modelCountry(layer, f);
     let nat, natPyr, popDoc = null;
     try { [nat, natPyr] = await loadLoc(cid); } catch (e) { return; }
     try { popDoc = await loadSubDoc(layer.ctx.popPath); } catch (e) { /* fall back to an even share */ }

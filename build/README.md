@@ -41,4 +41,8 @@ After changing `style.css`, `app.js` or `projection.js`, run `python3 stamp_vers
    and recorded births and deaths, used for subdivision pyramids and projections. Needs numpy and rasterio.
 6. `python3 lakes.py` builds `data/lakes-50m.json` and `data/lakes-10m.json` (big lakes drawn as water).
 
-Priority per country: national statistics, then Eurostat NUTS 3 (2013+), then DHS surveys (one boundary set per survey).
+Per country: national statistics and recent surveys (research files), else Eurostat NUTS 3 (2013+); DHS surveys
+(one boundary set per survey) fill the years the national data doesn't cover. Survey rounds that report different
+groupings of provinces become separate boundary sets ("epochs"); the app shows the one with data nearest the year.
+`python3 settlements.py` builds `sub/settlements.geojson` (Israeli localities in the West Bank, from Wikidata),
+drawn as Israel's "Judea and Samaria" district and, cut out of the Palestinian West Bank, in Palestine's map.
